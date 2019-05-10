@@ -19,7 +19,7 @@ layout: results_index
 
      end.each do |filename, rep| %>
 
-  <a href="<%= filename %>" class="list-group-item">
+  <a href="/results/<%= filename %>" class="list-group-item">
     <i class="material-icons">keyboard_arrow_right</i>
 
     <% tournament = rep[:Tournament] %>
