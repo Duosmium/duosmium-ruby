@@ -23,7 +23,7 @@ header.results-index {
     }
   }
 
-  @include media-breakpoint-up(lg) {
+  @include media-breakpoint-up(xl) {
     h1 {
       @include typography-display-4;
     }
