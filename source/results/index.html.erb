@@ -1,0 +1,31 @@
+<div class="card">
+<div class="card-body">
+  <h2 class="card-title">All Results</h2>
+</div>
+<ul class="list-group list-group-flush">
+
+  <% data.to_h.sort do |rep1, rep2| 
+       rep1 = rep1.last
+       rep2 = rep2.last
+
+       compare = rep2[:Tournament][:date] <=> rep1[:Tournament][:date]
+       next compare unless compare.zero?
+       compare = rep1[:Tournament][:location] <=> rep2[:Tournament][:location]
+       next compare unless compare.zero?
+       rep1[:Tournament][:division] <=> rep2[:Tournament][:division]
+
+     end.each do |filename, rep| %>
+
+  <a href="<%= filename %>" class="list-group-item">
+    <i class="material-icons">keyboard_arrow_right</i>
+
+    <% tournament = rep[:Tournament] %>
+    <%= tournament[:date] %> Nationals (Div.
+    <%= tournament[:division] %>) @
+    <%= tournament[:location] %>
+
+  </a>
+  <% end %>
+
+</ul>
+</div>
