@@ -4,16 +4,22 @@ body {
   background-color: theme-color-light(primary);
 }
 
-a {
-  color: rgba(#000, 0.7);
-
-  &:focus,
-  &:hover {
-    color: rgba(#000, 0.6);
+header.results-index {
+  @include media-breakpoint-up(sm) {
+    h1 {
+      @include typography-display-2;
+    }
   }
-}
 
-.middleman-logo {
-  margin-bottom: 1rem;
-  width: 10rem;
+  @include media-breakpoint-up(md) {
+    h1 {
+      @include typography-display-3;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    h1 {
+      @include typography-display-4;
+    }
+  }
 }
