@@ -4,8 +4,8 @@
   <tr>
     <th>#</th>
     <th>School</th>
-    <th>Total Team Points</th>
     <th>Overall Rank</th>
+    <th>Total Team Points</th>
   <% t.events_by_name.values.sort do |a, b|
        if a[:trial] && !b[:trial] then 1
        elsif !a[:trial] && b[:trial] then -1
@@ -19,8 +19,8 @@
   <tr>
     <td><%= tm[:number] %></td>
     <td><%= tm[:school] %></td>
-    <td><%= t.team_points tm[:number] %></td>
     <td><%= i + 1 %></td>
+    <td><%= t.team_points tm[:number] %></td>
   <% t.events_by_name.values.sort do |a, b|
        if a[:trial] && !b[:trial] then 1
        elsif !a[:trial] && b[:trial] then -1
