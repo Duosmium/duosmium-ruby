@@ -19,6 +19,14 @@ page '/*.txt', layout: false
 # Proxy pages
 # https://middlemanapp.com/advanced/dynamic-pages/
 
+Dir.new(Pathname.new(__dir__) + 'data')
+  .children
+  .map { |f| f.delete_suffix(".yaml") }
+  .each do |t|
+  proxy "/results/#{t}.html", "/results/template.html",
+    locals: { tournament: t }, ignore: true
+end
+
 # proxy(
 #   '/this-page-has-no-template.html',
 #   '/template-file.html',
