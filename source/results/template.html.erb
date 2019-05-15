@@ -1,24 +1,25 @@
 <% t = SciolyFF::Helper.new(data[tournament]) %>
 
-<table>
+<div class="card container mt-5 pt-5" style="overflow: auto">
+<table style="table-layout: fixed; width: 100%" class="mt-5">
   <tr>
-    <th>#</th>
-    <th>School</th>
-    <th>Overall Rank</th>
-    <th>Total Team Points</th>
+    <th style="width: 2em">#</th>
+    <th style="width: 18em">School</th>
+    <th style="width: 3em">Rank</th>
+    <th style="width: 5em">Total Points</th>
   <% t.events_by_name.values.sort do |a, b|
        if a[:trial] && !b[:trial] then 1
        elsif !a[:trial] && b[:trial] then -1
        else a[:name] <=> b[:name]
        end
      end.each do |e| %>
-    <th><%= e[:name] %></th>
+    <th style="width: 2em; transform: rotate(-90deg); white-space: nowrap"><%= e[:name] %></th>
   <% end %>
   </tr>
 <% t.sort_teams_by_rank.each.with_index do |tm, i| %>
   <tr>
     <td><%= tm[:number] %></td>
-    <td><%= tm[:school] %></td>
+    <td style="white-space: nowrap"><%= tm[:school] %></td>
     <td><%= i + 1 %></td>
     <td><%= t.team_points tm[:number] %></td>
   <% t.events_by_name.values.sort do |a, b|
@@ -32,3 +33,4 @@
   </tr>
 <% end %>
 </table>
+</div>
