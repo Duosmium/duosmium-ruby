@@ -1,0 +1,34 @@
+<% t = SciolyFF::Helper.new(data["2018-05-19_nationals_b"]) %>
+
+<table>
+  <tr>
+    <th>#</th>
+    <th>School</th>
+    <th>Total Team Points</th>
+    <th>Overall Rank</th>
+  <% t.events_by_name.values.sort do |a, b|
+       if a[:trial] && !b[:trial] then 1
+       elsif !a[:trial] && b[:trial] then -1
+       else a[:name] <=> b[:name]
+       end
+     end.each do |e| %>
+    <th><%= e[:name] %></th>
+  <% end %>
+  </tr>
+<% t.sort_teams_by_rank.each.with_index do |tm, i| %>
+  <tr>
+    <td><%= tm[:number] %></td>
+    <td><%= tm[:school] %></td>
+    <td><%= t.team_points tm[:number] %></td>
+    <td><%= i + 1 %></td>
+  <% t.events_by_name.values.sort do |a, b|
+       if a[:trial] && !b[:trial] then 1
+       elsif !a[:trial] && b[:trial] then -1
+       else a[:name] <=> b[:name]
+       end
+     end.each do |e| %>
+    <td><%= t.event_points tm[:number], e[:name] %></td>
+  <% end %>
+  </tr>
+<% end %>
+</table>

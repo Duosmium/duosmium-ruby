@@ -7,3 +7,5 @@ gem 'wdm', '~> 0.1', platforms: [:mswin, :mingw]
 
 gem "bootstrap", ">= 4.3.1"
 gem 'material-sass', '4.1.1'
+
+gem 'sciolyff'
