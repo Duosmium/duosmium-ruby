@@ -1,8 +1,5 @@
 @import "material";
 
-body {
-  background-color: theme-color-light(primary);
-}
 
 header.results-index {
   @include media-breakpoint-down(sm) {
@@ -28,6 +25,15 @@ header.results-index {
       @include typography-display-4;
     }
   }
+}
+
+div.results-classic-thead-background {
+  position: sticky;
+  top: 0;
+  height: calc(11em + 2.5ex);
+  background: white;
+  width: 80em;
+  margin: calc(-11em - 2.5ex) auto 0;
 }
 
 table.results-classic {
