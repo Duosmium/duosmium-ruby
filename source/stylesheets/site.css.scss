@@ -33,27 +33,30 @@ header.results-index {
 table.results-classic {
   table-layout: fixed;
   width: 100%;
+  margin-top: 8em;
 
-  th.number {
-    width: 2em;
-  }
-
-  th.school {
-    width: 18em;
-  }
-
-  th.rank {
-    width: 3em;
-  }
-
-  th.total-points {
-    width: 5em;
-  }
+  // fixed table widths
+  th.number { width: 2em; }
+  th.school { width: 18em; }
+  th.rank { width: 3em; }
+  th.total-points { width: 5em; }
 
   th.event-points {
     width: 2em;
     transform: rotate(-90deg);
     white-space: nowrap;
+    padding-left: 0.7em;
+  }
+
+  td.event-points,
+  th.total-points, td.total-points,
+  th.rank, td.rank {
+    text-align: center;
+  }
+
+  th.number, td.number {
+    text-align: right;
+    padding-right: 0.5em;
   }
 
   td.school {
