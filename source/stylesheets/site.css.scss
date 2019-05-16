@@ -66,7 +66,14 @@ table.results-classic {
     padding-right: 0.5em;
   }
 
-  thead, th {
+  thead {
+    position: sticky;
+    top: 11em;
+  }
+
+  // hacky hotfixes for Chrome and related browsers,
+  // makes Firefox for Android not perform as well = (
+  th {
     position: sticky;
     top: 11em;
     z-index: 1;
