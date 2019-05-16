@@ -25,9 +25,9 @@
     <th class="event-points">
       <%= e[:name] %>
     <% if e[:trial] %>
-      <span class="badge badge-info">Trial</span>
+      <span class="badge badge-info"><small>Trial</small></span>
     <% elsif e[:trialed] %>
-      <span class="badge badge-warning">Trialed</span>
+      <span class="badge badge-warning"><small>Trialed</small></span>
     <% end %>
     </th>
   <% end %>
