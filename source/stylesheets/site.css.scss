@@ -33,14 +33,14 @@ div.results-classic-thead-background {
   height: calc(11em + 2.5ex);
   background: white;
   width: 80em;
-  margin: calc(-11em - 2.5ex) auto 0;
+  margin: 0 auto;
   padding: 2em 1em;
 }
 
 table.results-classic {
   table-layout: fixed;
   width: 80em;
-  margin: 11em auto 2em;
+  margin: -2.5ex auto 2em;
 
   // fixed table widths
   th.number { width: 2em; }
