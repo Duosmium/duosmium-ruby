@@ -30,11 +30,11 @@ header.results-index {
 div.results-classic-thead-background {
   position: sticky;
   top: 0;
-  height: calc(11em + 2.5ex);
+  height: calc(15em + 2.5ex);
   background: white;
   width: 80em;
   margin: 0 auto;
-  padding: 2em 1em;
+  padding: 4em 1em;
 }
 
 table.results-classic {
@@ -68,14 +68,14 @@ table.results-classic {
 
   thead {
     position: sticky;
-    top: 11em;
+    top: 15em;
   }
 
   // hacky hotfixes for Chrome and related browsers,
   // makes Firefox for Android not perform as well = (
   th {
     position: sticky;
-    top: 11em;
+    top: 15em;
     z-index: 1;
   }
 }

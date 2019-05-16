@@ -22,7 +22,14 @@
        else a[:name] <=> b[:name]
        end
      end.each do |e| %>
-    <th class="event-points"><%= e[:name] %></th>
+    <th class="event-points">
+      <%= e[:name] %>
+    <% if e[:trial] %>
+      <span class="badge badge-info">Trial</span>
+    <% elsif e[:trialed] %>
+      <span class="badge badge-warning">Trialed</span>
+    <% end %>
+    </th>
   <% end %>
   </tr>
 </thead>
