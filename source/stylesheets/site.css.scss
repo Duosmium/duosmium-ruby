@@ -66,6 +66,10 @@ table.results-classic {
     padding-right: 0.5em;
   }
 
+  colgroup.event-columns col.hover {
+    background-color: #eeeeee;
+  }
+
   thead {
     position: sticky;
     top: 15em;
