@@ -1,6 +1,7 @@
 <% t = SciolyFF::Helper.new(data[tournament]) %>
 
 <table class="results-classic">
+<thead>
   <tr>
     <th class="number">#</th>
     <th class="school">School</th>
@@ -15,6 +16,8 @@
     <th class="event-points"><%= e[:name] %></th>
   <% end %>
   </tr>
+</thead>
+<tbody>
 <% t.sort_teams_by_rank.each.with_index do |tm, i| %>
   <tr>
     <td class="number"><%= tm[:number] %></td>
@@ -30,5 +33,6 @@
     <td class="event-points"><%= t.event_points tm[:number], e[:name] %></td>
   <% end %>
   </tr>
+</tbody>
 <% end %>
 </table>
