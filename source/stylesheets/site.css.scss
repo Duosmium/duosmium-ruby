@@ -32,8 +32,8 @@ header.results-index {
 
 table.results-classic {
   table-layout: fixed;
-  width: 100%;
-  margin-top: 8em;
+  width: 80em;
+  margin: 11em auto;
 
   // fixed table widths
   th.number { width: 2em; }
@@ -59,7 +59,20 @@ table.results-classic {
     padding-right: 0.5em;
   }
 
+  th {
+    position: sticky;
+    top: 11em;
+  }
+
+  td.number {
+    position: sticky;
+    left: 0;
+  }
+
+
   td.school {
     white-space: nowrap;
+    position: sticky;
+    left: 2em;
   }
 }
