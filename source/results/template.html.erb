@@ -37,7 +37,7 @@
 <% t.sort_teams_by_rank.each.with_index do |tm, i| %>
   <tr>
     <td class="number"><%= tm[:number] %></td>
-    <td class="school"><%= tm[:school] %></td>
+    <td class="school"><%= tm[:school] %> <small><%= tm[:state] %></small></td>
     <td class="rank"><%= i + 1 %></td>
     <td class="total-points"><%= t.team_points tm[:number] %></td>
   <% t.events_by_name.values.sort do |a, b|
