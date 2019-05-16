@@ -29,3 +29,34 @@ header.results-index {
     }
   }
 }
+
+table.results-classic {
+  table-layout: fixed;
+  width: 100%;
+
+  th.number {
+    width: 2em;
+  }
+
+  th.school {
+    width: 18em;
+  }
+
+  th.rank {
+    width: 3em;
+  }
+
+  th.total-points {
+    width: 5em;
+  }
+
+  th.event-points {
+    width: 2em;
+    transform: rotate(-90deg);
+    white-space: nowrap;
+  }
+
+  td.school {
+    white-space: nowrap;
+  }
+}
