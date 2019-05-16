@@ -66,8 +66,9 @@ table.results-classic {
     padding-right: 0.5em;
   }
 
-  thead {
+  thead, th {
     position: sticky;
     top: 11em;
+    z-index: 1;
   }
 }
