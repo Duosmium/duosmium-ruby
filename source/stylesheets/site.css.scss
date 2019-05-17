@@ -25,6 +25,11 @@ header.results-index {
       @include typography-display-4;
     }
   }
+
+  h1 i.u-logo {
+    margin: 0 -0.14em;
+  }
+
 }
 
 div.results-classic-thead-background {
