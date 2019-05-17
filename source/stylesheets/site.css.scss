@@ -123,11 +123,14 @@ table.results-classic {
     top: 15em;
   }
 
-  // hacky hotfixes for Chrome and related browsers,
-  // makes Firefox for Android not perform as well = (
-  th {
-    position: sticky;
-    top: 15em;
-    z-index: 1;
+  // hacky hotfixes for Chrome and related browsers
+  th { z-index: 1; }
+  @include media-breakpoint-up(sm) {
+    // many sticky th tags makes Firefox for Android not perform as well, so
+    // disable sticky headers (for Chrome) on small screens
+    th {
+      position: sticky;
+      top: 15em;
+    }
   }
 }
