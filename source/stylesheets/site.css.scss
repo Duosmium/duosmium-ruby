@@ -93,6 +93,19 @@ table.results-classic {
     background-color: #eeeeee;
   }
 
+  td.event-points[data-points='1'] {
+    background-color: $material-color-yellow-400;
+    border-radius: 1em;
+  }
+  td.event-points[data-points='2'] {
+    background-color: $material-color-blue-grey-100;
+    border-radius: 1em;
+  }
+  td.event-points[data-points='3'] {
+    background-color: $material-color-amber-200;
+    border-radius: 1em;
+  }
+
   thead {
     position: sticky;
     top: 15em;

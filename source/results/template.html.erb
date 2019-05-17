@@ -57,7 +57,8 @@
        else a[:name] <=> b[:name]
        end
      end.each do |e| %>
-    <td class="event-points"><%= t.event_points tm[:number], e[:name] %></td>
+    <% ep = t.event_points tm[:number], e[:name] %>
+    <td class="event-points" data-points="<%= ep %>"><%= ep %></td>
   <% end %>
   </tr>
 <% end %>
