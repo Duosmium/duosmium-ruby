@@ -1,13 +1,14 @@
 // This is where it all goes :)
 
-// Adapted from https://css-tricks.com/row-and-column-highlighting/
-$(function(){
-  $("table.results-classic").delegate('td','mouseover mouseleave', function(e) {
-    if (e.type == 'mouseover') {
+$(document).ready(function(){
+
+  // Highlight table columns on hover
+  // Adapted from https://css-tricks.com/row-and-column-highlighting/
+  $("table.results-classic td").hover(
+    function() {
       $("colgroup col").eq($(this).index()).addClass("hover");
-    }
-    else {
+    }, function() {
       $("colgroup col").eq($(this).index()).removeClass("hover");
-    }
-  });
-})
+    });
+
+});
