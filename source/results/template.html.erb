@@ -1,7 +1,7 @@
 <% t = SciolyFF::Helper.new(data[tournament]) %>
 
-<div class="results-classic-thead-background shadow-sm">
-  <div class="results-classic-header">
+<div class="results-classic-thead-background bg-secondary-dark shadow-sm">
+  <div class="results-classic-header text-light">
     <h1 class="display-4 mb-0">
       <%= t.tournament[:year] %>
       <%= t.tournament[:level] %> Div.
@@ -24,7 +24,7 @@
 <% end %>
 </colgroup>
 <thead>
-  <tr>
+  <tr class="text-light">
     <th class="number">#</th>
     <th class="school">School</th>
     <th class="rank">Rank</th>
