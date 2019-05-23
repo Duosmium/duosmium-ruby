@@ -2,6 +2,8 @@
 
 The official website for the Unosmium Scoring System and Unosmium Results.
 
+Visit: [https://unosmium.netlify.com/](https://unosmium.netlify.com/)
+
 ## Unosmium Scoring System
 
 Homepage is a work in progress (aka has not yet been started on). Will be used
@@ -10,9 +12,9 @@ instructions on how to use it.
 
 ## Unosmium Results
 
-An archive of any tournament results that have been output as or converted into
-the [SciolyFF](https://github.com/unosmium/sciolyff) (Science Olympiad File
-Format). 
+An [archive](https://unosmium.netlify.com/results/) of any tournament results
+that have been output as or converted into the
+[SciolyFF](https://github.com/unosmium/sciolyff) (Science Olympiad File Format). 
 
 ### Contributing
 
