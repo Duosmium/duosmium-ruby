@@ -1,5 +1,7 @@
 # Unosmium Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ff03ce31-0235-4742-b95e-389ec3ebb96a/deploy-status)](https://app.netlify.com/sites/unosmium/deploys)
+
 The official website for the Unosmium Scoring System and Unosmium Results.
 
 Visit: [https://unosmium.netlify.com/](https://unosmium.netlify.com/)
