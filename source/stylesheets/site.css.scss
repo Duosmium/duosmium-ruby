@@ -57,17 +57,21 @@ header.results-index {
 div.results-classic-thead-background {
   position: sticky;
   top: 0;
-  height: calc(15em + 2.5ex);
+  height: calc(15em + 3ex);
   background: white;
-  width: 80em;
-  margin: 0 auto;
+  min-width: 80em;
+}
+
+div.results-classic-header {
   padding: 3em 1em;
+  margin: 0 auto;
+  width: 80em;
 }
 
 table.results-classic {
   table-layout: fixed;
   width: 80em;
-  margin: -2.5ex auto 2em;
+  margin: -3ex auto 2em;
 
   // fixed table widths
   th.number { width: 2em; }
@@ -125,6 +129,10 @@ table.results-classic {
   thead {
     position: sticky;
     top: 15em;
+  }
+
+  tr {
+    height: 2em;
   }
 
   // hacky hotfixes for Chrome and related browsers

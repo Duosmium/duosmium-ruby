@@ -1,13 +1,15 @@
 <% t = SciolyFF::Helper.new(data[tournament]) %>
 
-<div class="results-classic-thead-background">
-  <h1 class="display-4 mb-0">
-    <%= t.tournament[:year] %>
-    <%= t.tournament[:level] %> Div.
-    <%= t.tournament[:division] %>
-  </h1>
-  <p class="lead mb-2">@ <%= t.tournament[:location] %></p>
-  <p><%= t.tournament[:date].strftime('%A, %B %-d, %Y') %></p>
+<div class="results-classic-thead-background shadow-sm">
+  <div class="results-classic-header">
+    <h1 class="display-4 mb-0">
+      <%= t.tournament[:year] %>
+      <%= t.tournament[:level] %> Div.
+      <%= t.tournament[:division] %>
+    </h1>
+    <p class="lead mb-2">@ <%= t.tournament[:location] %></p>
+    <p><%= t.tournament[:date].strftime('%A, %B %-d, %Y') %></p>
+  </div>
 </div>
 <table class="results-classic table-hover">
 <colgroup>
