@@ -126,7 +126,7 @@ table.results-classic {
     border-radius: 1em;
   }
 
-  thead {
+  th {
     position: sticky;
     top: 15em;
   }
@@ -135,14 +135,6 @@ table.results-classic {
     height: 2em;
   }
 
-  // hacky hotfixes for Chrome and related browsers
+  // hacky hotfix for Chrome and related browsers
   th { z-index: 1; }
-  @include media-breakpoint-up(sm) {
-    // many sticky th tags makes Firefox for Android not perform as well, so
-    // disable sticky headers (for Chrome) on small screens
-    th {
-      position: sticky;
-      top: 15em;
-    }
-  }
 }
