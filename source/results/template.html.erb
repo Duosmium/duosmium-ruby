@@ -12,6 +12,9 @@
     <p><%= t.tournament[:date].strftime('%A, %B %-d, %Y') %></p>
     <div class="actions">
       <a href="/results"><i class="material-icons text-light">arrow_back</i></a>
+      <a href="/data/<%= File.basename(current_page.path, '.html') + '.yaml' %>">
+        <i class="material-icons text-light">file_download</i>
+      </a>
       <a href="#" onclick="window.print()">
         <i class="material-icons text-light">print</i>
       </a>
