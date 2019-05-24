@@ -55,8 +55,11 @@ header.results-index {
 }
 
 div.results-classic-thead-background {
-  position: sticky;
-  top: 0;
+  // see comment on th { positon: sticky } below
+  @include media-breakpoint-up(sm) {
+    position: sticky;
+    top: 0;
+  }
   height: calc(15em + 3ex);
   background: white;
   min-width: 80em;
@@ -126,9 +129,13 @@ table.results-classic {
     border-radius: 1em;
   }
 
-  th {
-    position: sticky;
-    top: 15em;
+  // disabled on mobile browsers for now because the stickiness does not respect
+  // the zoomed in viewport (only sticks when zoomed almost all the way out)
+  @include media-breakpoint-up(sm) {
+    th { // ideally would be thead, but a lot of browsers don't support it
+      position: sticky;
+      top: 15em;
+    }
   }
 
   tr {
