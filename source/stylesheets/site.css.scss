@@ -54,6 +54,11 @@ header.results-index {
   100% { color: crimson; }
 }
 
+div.results-classic-sticky-wrapper {
+  overflow: auto;
+  height: 100vh;
+}
+
 div.results-classic-thead-background {
   position: sticky;
   top: 0;
@@ -66,6 +71,10 @@ div.results-classic-header {
   padding: 3em 1em;
   margin: 0 auto;
   width: 80em;
+
+  p.source {
+    display: none; // only needed when printing
+  }
 }
 
 table.results-classic {
@@ -137,4 +146,36 @@ table.results-classic {
 
   // hacky hotfix for Chrome and related browsers
   th { z-index: 1; }
+}
+
+@media print {
+  div.results-classic-sticky-wrapper {
+    overflow: visible;
+    height: auto;
+  }
+
+  div.results-classic-thead-background {
+    -webkit-box-shadow: none !important;
+    shadox-box: none !important;
+  }
+
+  div.results-classic-header {
+    div.actions {
+      display: none;
+    }
+
+    p.source {
+      display: block;
+
+      a {
+        color: #0000EE;
+      }
+    }
+  }
+
+  table.results-classic {
+    tr {
+      height: auto;
+    }
+  }
 }

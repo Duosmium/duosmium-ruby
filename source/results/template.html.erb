@@ -1,6 +1,6 @@
 <% t = SciolyFF::Helper.new(data[tournament]) %>
 
-<div style="overflow: auto; height: 100vh">
+<div class="results-classic-sticky-wrapper">
 <div class="results-classic-thead-background bg-secondary-dark shadow-sm">
   <div class="results-classic-header text-light">
     <h1 class="display-4 mb-0">
@@ -10,7 +10,18 @@
     </h1>
     <p class="lead mb-2">@ <%= t.tournament[:location] %></p>
     <p><%= t.tournament[:date].strftime('%A, %B %-d, %Y') %></p>
-    <a href="/results"><i class="material-icons text-light">arrow_back</i></a>
+    <div class="actions">
+      <a href="/results"><i class="material-icons text-light">arrow_back</i></a>
+      <a href="#" onclick="window.print()">
+        <i class="material-icons text-light">print</i>
+      </a>
+    </div>
+    <p class="source">
+      Source:
+      <a href="https://unosmium.netlify.com<%= current_page.url %>">
+        Unosmium Results
+      </a>
+    </p>
   </div>
 </div>
 <table class="results-classic table-hover">
