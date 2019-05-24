@@ -13,7 +13,7 @@ $(document).ready(function(){
 
   // Sort teams (rows) by various things
   // Adapted from https://blog.niklasottosson.com/javascript/jquery-sort-table-rows-on-column-value/
-  $("#sort-select").change(function() {
+  sort_select = function() {
     let thing = $("#sort-select option:selected").val()
 
     switch(thing) {
@@ -57,5 +57,7 @@ $(document).ready(function(){
     $.each(rows, function(index, row) {
       $("table.results-classic tbody").append(row);
     });
-  });
+  }
+  sort_select(); // call sort immediately if selection is different from default
+  $("#sort-select").change(sort_select); // call sort on selection change
 });
