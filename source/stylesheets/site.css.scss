@@ -75,6 +75,19 @@ div.results-classic-header {
   p.source {
     display: none; // only needed when printing
   }
+
+  select.custom-select {
+    display: inline;
+    width: 7em;
+    margin-left: 1em;
+    border-color: inherit;
+    background-image: url('data:image/svg+xml;charset=utf8,%3Csvg fill="white" fill-opacity="0.54" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M7 10l5 5 5-5z"/%3E%3Cpath d="M0 0h24v24H0z" fill="none"/%3E%3C/svg%3E');
+
+    &:hover {
+      -webkit-box-shadow: inset 0 -2px 0 -1px white;
+            box-shadow: inset 0 -2px 0 -1px white;
+    }
+  }
 }
 
 table.results-classic {
