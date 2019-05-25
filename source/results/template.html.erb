@@ -89,7 +89,7 @@
     <td class="number"><%= tm[:number] %></td>
     <td class="school"><%= tm[:school] %> <small><%= tm[:state] %></small></td>
     <td class="event-points-focus" data-points=""><div></div></td>
-    <td class="rank" data-points="<%= i + 1 %>"><div><%= i + 1 %></div></td>
+    <td class="rank" data-points="<%= i + 1 %>"><%= i + 1 %></td>
     <td class="total-points"><%= t.team_points tm[:number] %></td>
   <% events.each do |e| %>
     <% ep = t.event_points tm[:number], e[:name] %>

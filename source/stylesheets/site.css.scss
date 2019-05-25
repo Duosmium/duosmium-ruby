@@ -135,32 +135,38 @@ table.results-classic {
   }
 
   td.event-points[data-points='1'],
-  td.rank[data-points='1'] div {
+  td.event-points-focus[data-points='1'] div,
+  td.rank[data-points='1'] {
     background-color: $material-color-yellow-400;
     border-radius: 1em;
   }
   td.event-points[data-points='2'],
-  td.rank[data-points='2'] div {
+  td.event-points-focus[data-points='2'] div,
+  td.rank[data-points='2'] {
     background-color: $material-color-blue-grey-100;
     border-radius: 1em;
   }
   td.event-points[data-points='3'],
-  td.rank[data-points='3'] div {
+  td.event-points-focus[data-points='3'] div,
+  td.rank[data-points='3'] {
     background-color: $material-color-amber-200;
     border-radius: 1em;
   }
   td.event-points[data-points='4'],
-  td.rank[data-points='4'] div {
+  td.event-points-focus[data-points='4'] div,
+  td.rank[data-points='4'] {
     background-color: $material-color-yellow-100;
     border-radius: 1em;
   }
   td.event-points[data-points='5'],
-  td.rank[data-points='5'] div {
+  td.event-points-focus[data-points='5'] div,
+  td.rank[data-points='5'] {
     background-color: $material-color-light-green-100;
     border-radius: 1em;
   }
   td.event-points[data-points='6'],
-  td.rank[data-points='6'] div {
+  td.event-points-focus[data-points='6'] div,
+  td.rank[data-points='6'] {
     background-color: $material-color-pink-100;
     border-radius: 1em;
   }
@@ -200,14 +206,29 @@ table.results-classic {
 div.results-classic-wrapper.event-focused {
 
   // make table slightly wider
-  div.results-classic-thead-background { min-width: 82em; }
-  div.results-classic-header { width: 82em; }
-  table.results-classic { width: 82em; }
+  div.results-classic-thead-background { min-width: 83em; }
+  div.results-classic-header { width: 83em; }
+  table.results-classic { width: 83em; }
 
   table.results-classic {
 
     th.event-points-focus {
-      width: 4em;
+      width: 5em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    td.event-points-focus {
+      padding: 0;
+
+      div {
+        width: 2em;
+        height: 2em;
+        margin: 0 auto;
+        line-height: 2em;
+        text-align: center;
+      }
     }
   }
 }
