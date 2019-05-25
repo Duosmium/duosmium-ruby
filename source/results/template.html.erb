@@ -27,7 +27,7 @@
       <select id="event-select" class="custom-select custom-select-sm text-light">
         <option value="all" selected>All</option>
       <% events.each.with_index do |e, i| %>
-        <option value="<%= i %>" selected>
+        <option value="<%= i %>">
           <%= e[:name] %>
           <% if e[:trial] %>
             (Trial)
