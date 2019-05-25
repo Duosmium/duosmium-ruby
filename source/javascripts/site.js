@@ -71,5 +71,11 @@ $(document).ready(function(){
   }
   sort_select(); // call sort immediately if selection is different from default
   $("#sort-select").change(sort_select); // call sort on selection change
-  $("#event-select").change(sort_select); // call to resort if by rank
+
+  // Sort by event "rank" by default when changing events so that something
+  // always changes and stuff doesn't seem broken
+  $("#event-select").change(function() {
+    $("#sort-select").val("rank"); // change selection to rank
+    sort_select();
+  });
 });
