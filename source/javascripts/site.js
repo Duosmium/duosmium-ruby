@@ -77,6 +77,11 @@ $(document).ready(function(){
   var sort_and_toggle_event_rank = function() {
     let rank_col = $("#event-select option:selected").val();
 
+    // re-sort if by rank is selected (needed because rank would be by event)
+    if($("#sort-select option:selected").val() === "rank") {
+      sort_select();
+    }
+
     if (rank_col !== "all") {
       $("div.results-classic-wrapper").addClass("event-focused");
       $("th.event-points-focus").text($("th.event-points").eq(rank_col).text());
