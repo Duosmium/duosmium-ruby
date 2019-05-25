@@ -1,4 +1,10 @@
 <% t = SciolyFF::Helper.new(data[tournament]) %>
+<% events = t.events_by_name.values.sort do |a, b|
+              if a[:trial] && !b[:trial] then 1
+              elsif !a[:trial] && b[:trial] then -1
+              else a[:name] <=> b[:name]
+              end
+            end %>
 
 <div class="results-classic-sticky-wrapper">
 <div class="results-classic-thead-background bg-secondary-dark shadow-sm">
@@ -50,12 +56,7 @@
     <th class="school">School</th>
     <th class="rank">Rank</th>
     <th class="total-points">Total</th>
-  <% t.events_by_name.values.sort do |a, b|
-       if a[:trial] && !b[:trial] then 1
-       elsif !a[:trial] && b[:trial] then -1
-       else a[:name] <=> b[:name]
-       end
-     end.each do |e| %>
+  <% events.each do |e| %>
     <th class="event-points">
       <%= e[:name] %>
     <% if e[:trial] %>
@@ -74,12 +75,7 @@
     <td class="school"><%= tm[:school] %> <small><%= tm[:state] %></small></td>
     <td class="rank" data-points="<%= i + 1 %>"><%= i + 1 %></td>
     <td class="total-points"><%= t.team_points tm[:number] %></td>
-  <% t.events_by_name.values.sort do |a, b|
-       if a[:trial] && !b[:trial] then 1
-       elsif !a[:trial] && b[:trial] then -1
-       else a[:name] <=> b[:name]
-       end
-     end.each do |e| %>
+  <% events.each do |e| %>
     <% ep = t.event_points tm[:number], e[:name] %>
     <td class="event-points" data-points="<%= ep %>"><%= ep %></td>
   <% end %>
