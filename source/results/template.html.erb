@@ -6,7 +6,7 @@
               end
             end %>
 
-<div class="results-classic-sticky-wrapper">
+<div class="results-classic-wrapper">
 <div class="results-classic-thead-background bg-secondary-dark shadow-sm">
   <div class="results-classic-header text-light">
     <h1 class="display-4 mb-0">
@@ -57,6 +57,7 @@
   <col>
   <col>
   <col>
+  <col>
 </colgroup>
 <colgroup class="event-columns">
 <% t.events_by_name.count.times do %>
@@ -67,6 +68,7 @@
   <tr class="text-light">
     <th class="number">#</th>
     <th class="school">School</th>
+    <th class="event-points-focus"></th>
     <th class="rank">Overall</th>
     <th class="total-points">Total</th>
   <% events.each do |e| %>
@@ -86,6 +88,7 @@
   <tr>
     <td class="number"><%= tm[:number] %></td>
     <td class="school"><%= tm[:school] %> <small><%= tm[:state] %></small></td>
+    <td class="event-points-focus" data-points=""><div></div></td>
     <td class="rank" data-points="<%= i + 1 %>"><div><%= i + 1 %></div></td>
     <td class="total-points"><%= t.team_points tm[:number] %></td>
   <% events.each do |e| %>

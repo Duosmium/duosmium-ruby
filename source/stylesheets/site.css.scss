@@ -54,9 +54,11 @@ header.results-index {
   100% { color: crimson; }
 }
 
-div.results-classic-sticky-wrapper {
+div.results-classic-wrapper {
+  // make sticky stuff work
   overflow: auto;
   height: 100vh;
+  // also used to change table layout when focusing on one event
 }
 
 div.results-classic-thead-background {
@@ -175,6 +177,11 @@ table.results-classic {
     }
   }
 
+  // event points that are displayed directly next to team, hidden by default
+  th.event-points-focus {
+    width: 0;
+  }
+
   th {
     position: sticky;
     top: 15em;
@@ -188,8 +195,25 @@ table.results-classic {
   th { z-index: 1; }
 }
 
+// slightly modified table layout for when focusing on one event
+// JS triggered
+div.results-classic-wrapper.event-focused {
+
+  // make table slightly wider
+  div.results-classic-thead-background { min-width: 82em; }
+  div.results-classic-header { width: 82em; }
+  table.results-classic { width: 82em; }
+
+  table.results-classic {
+
+    th.event-points-focus {
+      width: 4em;
+    }
+  }
+}
+
 @media print {
-  div.results-classic-sticky-wrapper {
+  div.results-classic-wrapper {
     overflow: visible;
     height: auto;
   }
