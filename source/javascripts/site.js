@@ -72,10 +72,29 @@ $(document).ready(function(){
   sort_select(); // call sort immediately if selection is different from default
   $("#sort-select").change(sort_select); // call sort on selection change
 
-  // Sort by event "rank" by default when changing events so that something
-  // always changes and stuff doesn't seem broken
-  $("#event-select").change(function() {
-    $("#sort-select").val("rank"); // change selection to rank
-    sort_select();
-  });
+  // Show the hidden column with event points directly next to team name for
+  // small screens
+  var sort_and_toggle_event_rank = function() {
+    let rank_col = $("#event-select option:selected").val();
+
+    if (rank_col !== "all") {
+      $("div.results-classic-wrapper").addClass("event-focused");
+      $("th.event-points-focus").text($("th.event-points").eq(rank_col).text());
+
+      // copy info from event-points to event-points-focus
+      let rows = $("table.results-classic tbody tr").get();
+      $.each(rows, function(index, row) {
+        let points = $(row).find("td.event-points").eq(rank_col).text();
+        let points_elem = $(row).find("td.event-points-focus");
+        points_elem.children("div").text(points);
+        points_elem.attr("data-points", points);
+      });
+    } else {
+      $("div.results-classic-wrapper").removeClass("event-focused");
+      $("th.event-points-focus").text("");
+      $("td.event-points-focus div").text("");
+    }
+  }
+  sort_and_toggle_event_rank();
+  $("#event-select").change(sort_and_toggle_event_rank);
 });
