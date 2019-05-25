@@ -17,15 +17,15 @@ $(document).ready(function(){
     let thing = $("#sort-select option:selected").val()
 
     var sort_by_number = function(a, b) {
-      number_a = parseInt($(a).find("td.number").text());
-      number_b = parseInt($(b).find("td.number").text());
+      let number_a = parseInt($(a).find("td.number").text());
+      let number_b = parseInt($(b).find("td.number").text());
 
       return number_a - number_b;
     }
 
     var sort_by_school = function(a, b) {
-      school_a = $(a).find("td.school").text();
-      school_b = $(b).find("td.school").text();
+      let school_a = $(a).find("td.school").text();
+      let school_b = $(b).find("td.school").text();
 
       if (school_a > school_b) { return 1; }
       else if (school_a < school_b) { return -1; }
@@ -33,10 +33,19 @@ $(document).ready(function(){
     }
 
     var sort_by_rank = function(a, b) {
-      rank_a = parseInt($(a).find("td.rank").text());
-      rank_b = parseInt($(b).find("td.rank").text());
+      let rank_col = $("#event-select option:selected").val();
 
-      return rank_a - rank_b;
+      if (rank_col === "all") {
+        var rank_a = parseInt($(a).find("td.rank").text());
+        var rank_b = parseInt($(b).find("td.rank").text());
+      } else {
+        var rank_a = parseInt($(a).find("td.event-points").eq(rank_col).text());
+        var rank_b = parseInt($(b).find("td.event-points").eq(rank_col).text());
+      }
+
+      let diff = rank_a - rank_b;
+      if (diff !== 0) { return diff; }
+      else { return sort_by_number(a, b); }
     }
 
     switch(thing) {
@@ -62,4 +71,5 @@ $(document).ready(function(){
   }
   sort_select(); // call sort immediately if selection is different from default
   $("#sort-select").change(sort_select); // call sort on selection change
+  $("#event-select").change(sort_select); // call to resort if by rank
 });
