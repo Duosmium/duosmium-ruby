@@ -24,6 +24,19 @@
       <a href="#" onclick="window.print()">
         <i class="material-icons text-light">print</i>
       </a>
+      <select id="event-select" class="custom-select custom-select-sm text-light">
+        <option value="all" selected>All</option>
+      <% events.each.with_index do |e, i| %>
+        <option value="<%= i %>" selected>
+          <%= e[:name] %>
+          <% if e[:trial] %>
+            (Trial)
+          <% elsif e[:trialed] %>
+            (Trialed)
+          <% end %>
+        </option>
+      <% end %>
+      </select>
       <select id="sort-select" class="custom-select custom-select-sm text-light">
         <option value="number">by Number</option>
         <option value="school">by School</option>
