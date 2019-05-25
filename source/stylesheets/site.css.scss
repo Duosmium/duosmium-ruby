@@ -215,8 +215,13 @@ div.results-classic-wrapper.event-focused {
     th.event-points-focus {
       width: 5em;
       white-space: nowrap;
-      overflow: hidden;
       text-overflow: ellipsis;
+
+      div {
+        margin-left: -12em;
+        margin-right: 1em;
+        text-align: right;
+      }
     }
 
     td.event-points-focus {

@@ -84,7 +84,7 @@ $(document).ready(function(){
 
     if (rank_col !== "all") {
       $("div.results-classic-wrapper").addClass("event-focused");
-      $("th.event-points-focus").text($("th.event-points").eq(rank_col).text());
+      $("th.event-points-focus div").text($("#event-select option:selected").text());
 
       // copy info from event-points to event-points-focus
       let rows = $("table.results-classic tbody tr").get();
@@ -96,7 +96,7 @@ $(document).ready(function(){
       });
     } else {
       $("div.results-classic-wrapper").removeClass("event-focused");
-      $("th.event-points-focus").text("");
+      $("th.event-points-focus div").text("");
       $("td.event-points-focus div").text("");
     }
   }
