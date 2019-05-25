@@ -16,36 +16,38 @@ $(document).ready(function(){
   sort_select = function() {
     let thing = $("#sort-select option:selected").val()
 
-    switch(thing) {
-      case "rank":
-        var sort_fun = function(a, b) {
-          rank_a = parseInt($(a).find("td.rank").text());
-          rank_b = parseInt($(b).find("td.rank").text());
+    var sort_by_number = function(a, b) {
+      number_a = parseInt($(a).find("td.number").text());
+      number_b = parseInt($(b).find("td.number").text());
 
-          return rank_a - rank_b;
-        };
+      return number_a - number_b;
+    }
+
+    var sort_by_school = function(a, b) {
+      school_a = $(a).find("td.school").text();
+      school_b = $(b).find("td.school").text();
+
+      if (school_a > school_b) { return 1; }
+      else if (school_a < school_b) { return -1; }
+      else { return sort_by_number(a, b); }
+    }
+
+    var sort_by_rank = function(a, b) {
+      rank_a = parseInt($(a).find("td.rank").text());
+      rank_b = parseInt($(b).find("td.rank").text());
+
+      return rank_a - rank_b;
+    }
+
+    switch(thing) {
+      case "number":
+        var sort_fun = sort_by_number;
         break;
       case "school":
-        var sort_fun = function(a, b) {
-          school_a = $(a).find("td.school").text();
-          school_b = $(b).find("td.school").text();
-
-          if (school_a > school_b) { return 1; }
-          if (school_a < school_b) { return -1; }
-
-          rank_a = parseInt($(a).find("td.rank").text());
-          rank_b = parseInt($(b).find("td.rank").text());
-
-          return rank_a - rank_b;
-        };
+        var sort_fun = sort_by_school;
         break;
-      case "number":
-        var sort_fun = function(a, b) {
-          number_a = parseInt($(a).find("td.number").text());
-          number_b = parseInt($(b).find("td.number").text());
-
-          return number_a - number_b;
-        };
+      case "rank":
+        var sort_fun = sort_by_rank;
         break;
       default:
         return;
