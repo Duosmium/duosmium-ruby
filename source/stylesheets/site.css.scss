@@ -98,6 +98,12 @@ div.results-classic-header {
       margin-left: 0.2em;
       width: 7em;
     }
+
+    background-color: $material-color-pink-500;
+    option {
+			// for the select boxes on Windows, which inherit the white text color
+			color: #424242 !important;
+    }
   }
 }
 
