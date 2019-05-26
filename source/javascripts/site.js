@@ -102,4 +102,35 @@ $(document).ready(function(){
   }
   sort_and_toggle_event_rank();
   $("#event-select").change(sort_and_toggle_event_rank);
+
+  // Toggle rows based on checkboxes
+  // First, make sure all checkboxes are checked initially (browser might tend
+  // to remember previous state)
+  $("div#team-filter input").prop("checked", true);
+  $("div#team-filter input").change(function() {
+    let id = $(this).attr("id");
+
+    if (id === "allTeams") {
+      let boxes = $("div#team-filter input").not("#allTeams");
+      if ($(this).prop("checked")) {
+        boxes.not(":checked").trigger("click");
+      } else {
+        boxes.filter(":checked").trigger("click");
+      }
+      $("div#team-filter input#allTeams").prop("indeterminate", false);
+
+    } else {
+      let team_number = id.slice("team".length);
+      let r = "table.results-classic tr[data-team-number='" + team_number + "']";
+
+      if ($(this).prop("checked")) {
+        $(r).show();
+      } else {
+        $(r).hide();
+      }
+      // being lazy here, should technically check if all boxes are checked or
+      // not checked before assigning intermediate state
+      $("div#team-filter input#allTeams").prop("indeterminate", true);
+    }
+  });
 });

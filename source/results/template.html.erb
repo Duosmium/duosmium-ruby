@@ -93,7 +93,7 @@
 <tbody>
 <% rank = 1 %>
 <% teams_by_rank.each do |tm| %>
-  <tr>
+  <tr data-team-number="<%= tm[:number] %>">
     <td class="number"><%= tm[:number] %></td>
     <td class="school"><%= tm[:school] %> <small><%= tm[:state] %></small></td>
     <td class="event-points-focus" data-points=""><div></div></td>
@@ -123,7 +123,6 @@
         </button>
       </div>
       <div class="modal-body">
-        <p>Note: this modal does nothing currently; functionality to be implemented.</p>
         <div class="custom-control custom-checkbox">
           <input type="checkbox" class="custom-control-input"
                  id="allTeams" checked>
