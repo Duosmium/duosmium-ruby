@@ -109,15 +109,16 @@ $(document).ready(function(){
   $("div#team-filter input").prop("checked", true);
   $("div#team-filter input").change(function() {
     let id = $(this).attr("id");
+    let all_box = $("div#team-filter input#allTeams");
+    let team_boxes = $("div#team-filter input").not("#allTeams");
 
     if (id === "allTeams") {
-      let boxes = $("div#team-filter input").not("#allTeams");
       if ($(this).prop("checked")) {
-        boxes.not(":checked").trigger("click");
+        team_boxes.not(":checked").trigger("click");
       } else {
-        boxes.filter(":checked").trigger("click");
+        team_boxes.filter(":checked").trigger("click");
       }
-      $("div#team-filter input#allTeams").prop("indeterminate", false);
+      all_box.prop("indeterminate", false);
 
     } else {
       let team_number = id.slice("team".length);
@@ -128,9 +129,17 @@ $(document).ready(function(){
       } else {
         $(r).hide();
       }
-      // being lazy here, should technically check if all boxes are checked or
-      // not checked before assigning intermediate state
-      $("div#team-filter input#allTeams").prop("indeterminate", true);
+      if (team_boxes.not(":checked").length === 0) {
+        all_box.prop("indeterminate", false);
+        all_box.prop("checked", true);
+
+      } else if (team_boxes.filter(":checked").length === 0) {
+        all_box.prop("indeterminate", false);
+        all_box.prop("checked", false);
+
+      } else {
+        all_box.prop("indeterminate", true);
+      }
     }
   });
 });
