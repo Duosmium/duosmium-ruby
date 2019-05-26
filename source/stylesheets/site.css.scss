@@ -115,8 +115,8 @@ table.results-classic {
   // fixed table widths
   th.number { width: 2em; }
   th.school { width: 18em; }
-  th.rank { width: 3em; }
-  th.total-points { width: 5em; }
+  th.rank { width: 4em; }
+  th.total-points { width: 4em; }
 
   th.event-points {
     width: 2em;
@@ -191,8 +191,9 @@ table.results-classic {
   }
 
   // event points that are displayed directly next to team, hidden by default
-  th.event-points-focus {
+  th.event-points-focus, td.event-points-focus {
     width: 0;
+    padding: 0;
   }
 
   th {
@@ -204,6 +205,14 @@ table.results-classic {
     height: 2em;
   }
 
+  th.rank {
+    div {
+      margin-left: -12em;
+      margin-right: 0.5em;
+      text-align: right;
+    }
+  }
+
   // hacky hotfix for Chrome and related browsers
   th { z-index: 1; }
 }
@@ -213,14 +222,14 @@ table.results-classic {
 div.results-classic-wrapper.event-focused {
 
   // make table slightly wider
-  div.results-classic-thead-background { min-width: 83em; }
-  div.results-classic-header { width: 83em; }
-  table.results-classic { width: 83em; }
+  div.results-classic-thead-background { min-width: 84em; }
+  div.results-classic-header { width: 84em; }
+  table.results-classic { width: 84em; }
 
   table.results-classic {
 
     th.event-points-focus {
-      width: 5em;
+      width: 4em;
       white-space: nowrap;
       text-overflow: ellipsis;
 
