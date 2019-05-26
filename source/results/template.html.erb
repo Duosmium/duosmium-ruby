@@ -5,6 +5,8 @@
               else a[:name] <=> b[:name]
               end
             end %>
+<% teams_by_rank = t.sort_teams_by_rank %>
+<% teams_by_number = t.teams_by_number.sort.map(&:last) %>
 
 <div class="results-classic-wrapper">
 <div class="results-classic-thead-background bg-secondary-dark shadow-sm">
@@ -23,6 +25,9 @@
       </a>
       <a href="#" onclick="window.print()">
         <i class="material-icons text-light">print</i>
+      </a>
+      <a href="#" data-toggle="modal" data-target="#team-filter">
+        <i class="material-icons text-light">filter_list</i>
       </a>
       <select id="event-select" class="custom-select custom-select-sm text-light"
               aria-label="Select Event Filter">
@@ -87,7 +92,7 @@
 </thead>
 <tbody>
 <% rank = 1 %>
-<% t.sort_teams_by_rank.each do |tm| %>
+<% teams_by_rank.each do |tm| %>
   <tr>
     <td class="number"><%= tm[:number] %></td>
     <td class="school"><%= tm[:school] %> <small><%= tm[:state] %></small></td>
@@ -103,4 +108,45 @@
 <% end %>
 </tbody>
 </table>
+</div>
+<div class="modal" id="team-filter" tabindex="-1" role="dialog"
+     aria-labelledby="team-filter-label" aria-hidden="true">
+  <div class="modal-dialog" role="form">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="team-filter-label">
+          Select which teams to show
+        </h5>
+        <button type="button" class="close" data-dismiss="modal"
+                aria-label="Close">
+          <span aria-hidden="true" style="vertical-align: super">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>Note: this modal does nothing currently; functionality to be implemented.</p>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input"
+                 id="allTeams" checked>
+          <label class="custom-control-label" for="allTeams">
+            All Teams
+          </label>
+        </div>
+        <hr>
+      <% teams_by_number.each do |tm| %>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input"
+                 id="team<%= tm[:number] %>" checked>
+          <label class="custom-control-label" for="team<%= tm[:number] %>">
+            <%= tm[:number] %> <%= tm[:school] %> <small><%= tm[:state] %></small>
+          </label>
+        </div>
+      <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
