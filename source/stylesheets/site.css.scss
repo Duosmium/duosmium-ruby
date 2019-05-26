@@ -1,6 +1,5 @@
 @import "material";
 
-
 header.results-index {
   @include media-breakpoint-down(sm) {
     h1 {
@@ -58,6 +57,8 @@ div.results-classic-wrapper {
   // make sticky stuff work
   overflow: auto;
   height: 100vh;
+  // always show scrollbar area on Firefox for layout consistenty when filtering
+  overflow-y: scroll;
   // also used to change table layout when focusing on one event
 }
 
