@@ -190,6 +190,8 @@ table.results-classic {
     }
   }
 
+  td.rank div { width: 3em; } // wider badge for overall rank
+
   // event points that are displayed directly next to team, hidden by default
   th.event-points-focus, td.event-points-focus {
     width: 0;
