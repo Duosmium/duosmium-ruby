@@ -75,6 +75,11 @@ div.results-classic-header {
   margin: 0 auto;
   width: 80em;
 
+  div.actions a {
+    display: inline-block;
+    margin-right: 0.5em;
+  }
+
   p.source {
     display: none; // only needed when printing
   }
@@ -90,7 +95,6 @@ div.results-classic-header {
     }
 
     &#event-select {
-      margin-left: 1em;
       text-overflow: ellipsis;
       width: 7em;
     }
