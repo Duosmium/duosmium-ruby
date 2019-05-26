@@ -24,7 +24,8 @@
       <a href="#" onclick="window.print()">
         <i class="material-icons text-light">print</i>
       </a>
-      <select id="event-select" class="custom-select custom-select-sm text-light">
+      <select id="event-select" class="custom-select custom-select-sm text-light"
+              aria-label="Select Event Filter">
         <option value="all" selected>All Events</option>
       <% events.each.with_index do |e, i| %>
         <option value="<%= i %>">
@@ -37,7 +38,8 @@
         </option>
       <% end %>
       </select>
-      <select id="sort-select" class="custom-select custom-select-sm text-light">
+      <select id="sort-select" class="custom-select custom-select-sm text-light"
+              aria-label="Select Sort Method">
         <option value="number">by Number</option>
         <option value="school">by School</option>
         <option value="rank" selected>by Rank</option>
