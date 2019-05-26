@@ -24,7 +24,8 @@ Contributions of code and tournament results are welcome.
 
 To add new tournament results, make a [Pull
 Request](https://help.github.com/en/articles/creating-a-pull-request) that adds
-a YAML file in format of SciolyFF in the [data directory](/data).
+a YAML file in format of [SciolyFF](https://github.com/unosmium/sciolyff) in the
+[data directory](/data).
 
 If converting, the files already in the data directory should serve as an
 example. For additional details on converting a file to the SciolyFF, see
