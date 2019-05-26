@@ -4,7 +4,7 @@ $(document).ready(function(){
 
   // Highlight table columns on hover
   // Adapted from https://css-tricks.com/row-and-column-highlighting/
-  $("table.results-classic td").hover(
+  $("table.results-classic td, table.results-classic th").hover(
     function() {
       $("colgroup col").eq($(this).index()).addClass("hover");
     }, function() {
