@@ -66,7 +66,7 @@ div.results-classic-thead-background {
   top: 0;
   height: calc(12.5em + 3ex);
   background: white;
-  min-width: 80em;
+  min-width: 80.5em;
 }
 
 div.results-classic-header {
@@ -111,7 +111,7 @@ div.results-classic-header {
 table.results-classic {
   table-layout: fixed;
   width: 80em;
-  margin: -3ex auto 2em;
+  margin: -3ex auto 0.75em;
 
   // fixed table widths
   th.number { width: 2em; }
@@ -226,7 +226,7 @@ table.results-classic {
 div.results-classic-wrapper.event-focused {
 
   // make table slightly wider
-  div.results-classic-thead-background { min-width: 84em; }
+  div.results-classic-thead-background { min-width: 84.5em; }
   div.results-classic-header { width: 84em; }
   table.results-classic { width: 84em; }
 
