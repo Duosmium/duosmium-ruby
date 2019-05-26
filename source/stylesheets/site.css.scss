@@ -272,6 +272,12 @@ div.results-classic-wrapper.event-focused {
   div.results-classic-thead-background {
     -webkit-box-shadow: none !important;
     shadox-box: none !important;
+    background-color: transparent !important;
+    position: static;
+
+    div.results-classic-header {
+      color: rgba(0, 0, 0, 0.87) !important;
+    }
   }
 
   div.results-classic-header {
@@ -281,16 +287,26 @@ div.results-classic-wrapper.event-focused {
 
     p.source {
       display: block;
-
-      a {
-        color: #0000EE;
-      }
     }
   }
 
   table.results-classic {
     tr {
       height: auto;
+
+      th {
+        color: rgba(0, 0, 0, 0.87);
+        position: static;
+      }
+
+      td div {
+        line-height: normal !important;
+        height: auto !important;
+      }
+    }
+
+    colgroup.event-columns col.hover {
+      background-color: transparent;
     }
   }
 }
