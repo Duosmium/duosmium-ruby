@@ -64,13 +64,13 @@ div.results-classic-wrapper {
 div.results-classic-thead-background {
   position: sticky;
   top: 0;
-  height: calc(15em + 3ex);
+  height: calc(12.5em + 3ex);
   background: white;
   min-width: 80em;
 }
 
 div.results-classic-header {
-  padding: 3em 1em;
+  padding: 1.5em 1em;
   margin: 0 auto;
   width: 80em;
 
@@ -197,7 +197,7 @@ table.results-classic {
 
   th {
     position: sticky;
-    top: 15em;
+    top: 12.5em;
   }
 
   tr {
