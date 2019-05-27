@@ -67,9 +67,10 @@
   <col>
 </colgroup>
 <colgroup class="event-columns">
-<% t.events_by_name.count.times do %>
+<% events.count.times do %>
   <col>
 <% end %>
+  <col> <%# for team penalties, which kinda act like an additional event %>
 </colgroup>
 <thead>
   <tr class="text-light">
@@ -88,6 +89,7 @@
     <% end %>
     </th>
   <% end %>
+  <th class="team-penalties">Team Penalties</th>
   </tr>
 </thead>
 <tbody>
@@ -104,6 +106,10 @@
     <% ep = t.event_points tm[:number], e[:name] %>
     <td class="event-points" data-points="<%= ep %>"><div><%= ep %></div></td>
   <% end %>
+    <% points = t.team_points_from_penalties(tm[:number]) %>
+    <td class="team-penalties text-muted" data-points="<%= points %>">
+      <%= points.zero? ? "00" : points %>
+    </td>
   </tr>
 <% end %>
 </tbody>

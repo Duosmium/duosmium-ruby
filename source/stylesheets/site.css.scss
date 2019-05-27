@@ -124,7 +124,7 @@ table.results-classic {
   th.rank { width: 4em; }
   th.total-points { width: 4em; }
 
-  th.event-points {
+  th.event-points, th.team-penalties {
     width: 2em;
     transform: rotate(-90deg);
     white-space: nowrap;
@@ -133,7 +133,7 @@ table.results-classic {
 
   td.event-points,
   th.total-points, td.total-points,
-  th.rank, td.rank {
+  th.rank, td.rank, td.team-penalties {
     text-align: center;
   }
 
