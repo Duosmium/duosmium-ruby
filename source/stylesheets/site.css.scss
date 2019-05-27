@@ -265,6 +265,12 @@ div.results-classic-wrapper.event-focused {
 
 @media print {
 
+  html {
+    // attempt to get backgrounds to print
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+  }
+
   // all following until note of custom print styling just revert page back to
   // printable state, kept separate for clarity
 
