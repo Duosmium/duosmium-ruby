@@ -49,6 +49,9 @@
         <option value="school">by School</option>
         <option value="rank" selected>by Rank</option>
       </select>
+      <a href="#" data-toggle="modal" data-target="#settings" class="settings">
+        <i class="material-icons text-light">settings</i>
+      </a>
     </div>
     <p class="source">
       Source:
@@ -228,6 +231,40 @@
            href="/data/<%= File.basename(current_page.path, '.html') + '.yaml' %>">
           Download
         </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="settings" tabindex="-1" role="dialog"
+     aria-labelledby="settings-label" aria-hidden="true">
+  <div class="modal-dialog" role="form">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="settings-label">
+          Settings
+        </h5>
+        <button type="button" class="close" data-dismiss="modal"
+                aria-label="Close">
+          <span aria-hidden="true" style="vertical-align: super">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6>Select which medals to highlight</h6>
+      <% (1..6).each do |x| %>
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input"
+                 id="medal<%= x %>" checked>
+          <label class="custom-control-label" for="medal<%= x %>">
+            <% suffix =  case x
+                         when 1 then 'st'
+                         when 2 then 'nd'
+                         when 3 then 'rd'
+                         when 4..6 then 'th'
+                         end %>
+            <%= x %><sup><%= suffix %></sup> place medals
+          </label>
+        </div>
+      <% end %>
       </div>
     </div>
   </div>

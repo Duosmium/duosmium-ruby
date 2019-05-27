@@ -142,4 +142,18 @@ $(document).ready(function(){
       }
     }
   });
+
+  // Toggle medal highlighting based on checkboxes
+  // Make all checkboxes checked initially
+  $("div#settings input").prop("checked", true);
+  $("div#settings input").change(function() {
+      let medal_number = $(this).attr("id").slice("medal".length);
+      let medals = $("td[data-points='" + medal_number + "'] div")
+      
+      if ($(this).prop("checked")) {
+        medals.removeAttr("style"); // default state is 'highlighted'
+      } else {
+        medals.css("background-color", "transparent");
+      }
+  });
 });
