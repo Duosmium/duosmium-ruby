@@ -108,7 +108,7 @@
   <% end %>
     <% points = t.team_points_from_penalties(tm[:number]) %>
     <td class="team-penalties text-muted" data-points="<%= points %>">
-      <%= points.zero? ? "00" : points %>
+      <%= points.zero? ? "00" : "+#{points}" %>
     </td>
   </tr>
 <% end %>
