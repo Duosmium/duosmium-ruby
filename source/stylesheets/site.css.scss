@@ -264,6 +264,10 @@ div.results-classic-wrapper.event-focused {
 }
 
 @media print {
+
+  // all following until note of custom print styling just revert page back to
+  // printable state, kept separate for clarity
+
   div.results-classic-wrapper {
     overflow: visible;
     height: auto;
@@ -302,11 +306,19 @@ div.results-classic-wrapper.event-focused {
       td div {
         line-height: normal !important;
         height: auto !important;
+        background-color: transparent !important;
       }
     }
 
     colgroup.event-columns col.hover {
       background-color: transparent;
+    }
+
+    // override .table-hover
+    tbody tr {
+      @include hover {
+        background-color: inherit;
+      }
     }
   }
 }
