@@ -20,7 +20,7 @@
     <p><%= t.tournament[:date].strftime('%A, %B %-d, %Y') %></p>
     <div class="actions">
       <a href="/results"><i class="material-icons text-light">arrow_back</i></a>
-      <a href="/data/<%= File.basename(current_page.path, '.html') + '.yaml' %>">
+      <a href="#" data-toggle="modal" data-target="#download-info">
         <i class="material-icons text-light">file_download</i>
       </a>
       <a href="#" data-toggle="modal" data-target="#print-instructions">
@@ -190,6 +190,44 @@
         <button type="button" class="btn btn-secondary" onclick="window.print();">
           Print
         </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="download-info" tabindex="-1" role="dialog"
+     aria-labelledby="download-info-label" aria-hidden="true">
+  <div class="modal-dialog" role="form">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="download-info-label">
+          About downloading
+        </h5>
+        <button type="button" class="close" data-dismiss="modal"
+                aria-label="Close">
+          <span aria-hidden="true" style="vertical-align: super">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>
+          To download these results as a PDF, select CANCEL and see the
+          instructions for printing (<i class="material-icons">print</i>)
+          instead.
+        </p>
+        <p>
+          The results will be downloaded as a YAML file, specifically in the
+          SciolyFF, and can be opened with any text editor or parsed with your
+          favorite programming language. For more info about SciolyFF, see
+          <a href="https://github.com/unosmium/sciolyff">here</a>.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Cancel
+        </button>
+        <a type="button" class="btn btn-secondary"
+           href="/data/<%= File.basename(current_page.path, '.html') + '.yaml' %>">
+          Download
+        </a>
       </div>
     </div>
   </div>
