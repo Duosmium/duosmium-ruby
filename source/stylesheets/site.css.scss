@@ -356,7 +356,7 @@ div.results-classic-wrapper.event-focused {
           background-color: #ffff8d;
 
           &[data-points='0'] {
-            color: #ffff00 !important; // hide text if no penalty
+            color: #ffff8d !important; // hide text if no penalty
           }
         }
       }
