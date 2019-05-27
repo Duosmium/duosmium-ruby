@@ -325,11 +325,6 @@ div.results-classic-wrapper.event-focused {
   // custom print styling starts here
 
   table.results-classic {
-    thead {
-      th.total-points, th.rank {
-        border-left: 1px solid black;
-      }
-    }
 
     tbody {
       tr:nth-child(6n-5), tr:nth-child(6n-4), tr:nth-child(6n-3) {
@@ -348,14 +343,6 @@ div.results-classic-wrapper.event-focused {
     }
 
     colgroup {
-      col:first-child {
-        border-left: 1px solid black;
-      }
-
-      col:last-child {
-        border-right: 1px solid black;
-      }
-
       &.event-columns col:nth-child(3n-2) {
         border-left: 1px solid black;
       }
