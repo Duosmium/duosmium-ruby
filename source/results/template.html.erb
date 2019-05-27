@@ -23,7 +23,7 @@
       <a href="/data/<%= File.basename(current_page.path, '.html') + '.yaml' %>">
         <i class="material-icons text-light">file_download</i>
       </a>
-      <a href="#" onclick="window.print()">
+      <a href="#" data-toggle="modal" data-target="#print-instructions">
         <i class="material-icons text-light">print</i>
       </a>
       <a href="#" data-toggle="modal" data-target="#team-filter">
@@ -150,6 +150,45 @@
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
           Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" id="print-instructions" tabindex="-1" role="dialog"
+     aria-labelledby="print-instructions-label" aria-hidden="true">
+  <div class="modal-dialog" role="form">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="print-instructions-label">
+          Instructions for printing
+        </h5>
+        <button type="button" class="close" data-dismiss="modal"
+                aria-label="Close">
+          <span aria-hidden="true" style="vertical-align: super">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p>For best results, ensure the following:</p>
+        <ul>
+          <li>You are using Chrome or Safari. (Sorry, Firefox users.)</li>
+          <li>The printer is set to "Save as PDF", not "Microsoft Print to PDF".</li>
+        </ul>
+        <p class="small">
+          Note: You may want to use your browser's Print Preview feature instead
+          of the button below.
+        </p>
+        <p>
+          The output will be in style of official results from the National
+          competition, suitable for distributing to teams after awards.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Cancel
+        </button>
+        <button type="button" class="btn btn-secondary" onclick="window.print();">
+          Print
         </button>
       </div>
     </div>
