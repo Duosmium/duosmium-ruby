@@ -74,6 +74,8 @@ div.results-classic-header {
   padding: 1.5em 0.75em;
   margin: 0 auto;
   width: 80em;
+  user-select: none; // make header text unselectable so that CTRL+A only
+                     // selects the table for easy CSV for user
 
   div.actions a {
     display: inline-block;
