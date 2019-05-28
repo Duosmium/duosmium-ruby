@@ -53,6 +53,22 @@ header.results-index {
   100% { color: crimson; }
 }
 
+// CSS Grid!
+div.results-index-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
+  grid-auto-columns: 50em;
+  grid-gap: 2em;
+}
+
+// allow for arbitrary narrow cards on small screens
+@include media-breakpoint-down(sm) {
+  div.results-index-card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 div.results-classic-wrapper {
   // make sticky stuff work
   overflow: auto;
