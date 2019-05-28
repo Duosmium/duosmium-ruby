@@ -2,6 +2,12 @@
 
 $(document).ready(function(){
 
+  // First, make sure all default checkboxes are checked initially (browser
+  // might tend to remember previous state and it's not apparent to the user
+  // that the boxes would be unchecked without going into the menu)
+  $("div#team-filter input").prop("checked", true);
+  $("div#settings input").prop("checked", true);
+
   // Highlight table columns on hover
   // Adapted from https://css-tricks.com/row-and-column-highlighting/
   $("table.results-classic td, table.results-classic th").hover(
@@ -117,9 +123,6 @@ $(document).ready(function(){
   $("#event-select").change(sort_and_toggle_event_rank);
 
   // Toggle rows based on checkboxes
-  // First, make sure all checkboxes are checked initially (browser might tend
-  // to remember previous state)
-  $("div#team-filter input").prop("checked", true);
   $("div#team-filter input").change(function() {
     let id = $(this).attr("id");
     let all_box = $("div#team-filter input#allTeams");
@@ -157,8 +160,6 @@ $(document).ready(function(){
   });
 
   // Toggle medal highlighting based on checkboxes
-  // Make all checkboxes checked initially
-  $("div#settings input").prop("checked", true);
   $("div#settings input").change(function() {
       let medal_number = $(this).attr("id").slice("medal".length);
       let medals = $("td[data-points='" + medal_number + "'] div")
