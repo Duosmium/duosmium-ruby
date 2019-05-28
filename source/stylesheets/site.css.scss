@@ -63,14 +63,15 @@ div.results-classic-wrapper {
 }
 
 div.results-classic-thead-background {
+  background-color: theme-color-dark(secondary);
   position: sticky;
   top: 0;
   height: calc(12.5em + 3ex);
-  background: white;
   min-width: 80.5em;
 }
 
 div.results-classic-header {
+  @extend .text-light;
   padding: 1.5em 0.75em;
   margin: 0 auto;
   width: 80em;
@@ -80,6 +81,7 @@ div.results-classic-header {
   div.actions a {
     display: inline-block;
     margin-right: 0.6em;
+    color: inherit;
   }
 
   p.source {
@@ -88,6 +90,7 @@ div.results-classic-header {
 
   select.custom-select {
     display: inline;
+    color: inherit;
     border-color: inherit;
     background-image: url('data:image/svg+xml;charset=utf8,%3Csvg fill="white" fill-opacity="0.54" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M7 10l5 5 5-5z"/%3E%3Cpath d="M0 0h24v24H0z" fill="none"/%3E%3C/svg%3E');
     margin-left: 0.2em;
@@ -126,6 +129,10 @@ table.results-classic {
   th.school { width: 18em; }
   th.rank { width: 4em; }
   th.total-points { width: 4em; }
+
+  thead {
+    @extend .text-light;
+  }
 
   th.event-points, th.team-penalties {
     width: 2em;

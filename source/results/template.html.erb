@@ -9,8 +9,8 @@
 <% teams_by_number = t.teams_by_number.sort.map(&:last) %>
 
 <div class="results-classic-wrapper">
-<div class="results-classic-thead-background bg-secondary-dark shadow-sm">
-  <div class="results-classic-header text-light">
+<div class="results-classic-thead-background shadow-sm">
+  <div class="results-classic-header">
     <h1 class="display-4 mb-0">
       <%= t.tournament[:year] %>
       <%= t.tournament[:level] %> Div.
@@ -19,17 +19,17 @@
     <p class="lead mb-2">@ <%= t.tournament[:location] %></p>
     <p><%= t.tournament[:date].strftime('%A, %B %-d, %Y') %></p>
     <div class="actions">
-      <a href="/results"><i class="material-icons text-light">arrow_back</i></a>
+      <a href="/results"><i class="material-icons">arrow_back</i></a>
       <a href="#" data-toggle="modal" data-target="#download-info">
-        <i class="material-icons text-light">file_download</i>
+        <i class="material-icons">file_download</i>
       </a>
       <a href="#" data-toggle="modal" data-target="#print-instructions">
-        <i class="material-icons text-light">print</i>
+        <i class="material-icons">print</i>
       </a>
       <a href="#" data-toggle="modal" data-target="#team-filter">
-        <i class="material-icons text-light">filter_list</i>
+        <i class="material-icons">filter_list</i>
       </a>
-      <select id="event-select" class="custom-select custom-select-sm text-light"
+      <select id="event-select" class="custom-select custom-select-sm"
               aria-label="Select Event Filter">
         <option value="all" selected>All Events</option>
       <% events.each.with_index do |e, i| %>
@@ -43,14 +43,14 @@
         </option>
       <% end %>
       </select>
-      <select id="sort-select" class="custom-select custom-select-sm text-light"
+      <select id="sort-select" class="custom-select custom-select-sm"
               aria-label="Select Sort Method">
         <option value="number">by Number</option>
         <option value="school">by School</option>
         <option value="rank" selected>by Rank</option>
       </select>
       <a href="#" data-toggle="modal" data-target="#settings" class="settings">
-        <i class="material-icons text-light">settings</i>
+        <i class="material-icons">settings</i>
       </a>
     </div>
     <p class="source">
@@ -76,7 +76,7 @@
   <col> <%# for team penalties, which kinda act like an additional event %>
 </colgroup>
 <thead>
-  <tr class="text-light">
+  <tr>
     <th class="number">#</th>
     <th class="school">School</th>
     <th class="event-points-focus"><div></div></th>
