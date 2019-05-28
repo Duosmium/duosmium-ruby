@@ -348,6 +348,10 @@ div#print-instructions {
     }
   }
 
+  .modal, .modal-backdrop {
+    display: none !important;
+  }
+
   // custom print styling starts here
 
   table.results-classic {
