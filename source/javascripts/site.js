@@ -9,10 +9,13 @@ $(document).ready(function(){
   $("div#settings input").prop("checked", true);
 
   // Correct minimum width of header based on number of events
-  let width = $("colgroup.event-columns col").length * 2 + 28;
-  let min_width = width + 0.5;
-  $("div.results-classic-thead-background").css("min-width", min_width + "em");
-  $("div.results-classic-header").css("width", width + "em");
+  var fix_width = function(extra) {
+    let width = $("colgroup.event-columns col").length * 2 + 28 + extra;
+    let min_width = width + 0.5;
+    $("div.results-classic-thead-background").css("min-width", min_width + "em");
+    $("div.results-classic-header").css("width", width + "em");
+  };
+  fix_width(0);
 
   // Highlight table columns on hover
   // Adapted from https://css-tricks.com/row-and-column-highlighting/
@@ -118,11 +121,13 @@ $(document).ready(function(){
           medals.css("background-color", "transparent");
         }
       });
+      fix_width(4);
 
     } else {
       $("div.results-classic-wrapper").removeClass("event-focused");
       $("th.event-points-focus div").text("");
       $("td.event-points-focus div").text("");
+      fix_width(0);
     }
   }
   sort_and_toggle_event_rank();
