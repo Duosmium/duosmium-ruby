@@ -8,6 +8,12 @@ $(document).ready(function(){
   $("div#team-filter input").prop("checked", true);
   $("div#settings input").prop("checked", true);
 
+  // Correct minimum width of header based on number of events
+  let width = $("colgroup.event-columns col").length * 2 + 28;
+  let min_width = width + 0.5;
+  $("div.results-classic-thead-background").css("min-width", min_width + "em");
+  $("div.results-classic-header").css("width", width + "em");
+
   // Highlight table columns on hover
   // Adapted from https://css-tricks.com/row-and-column-highlighting/
   $("table.results-classic td, table.results-classic th").hover(
