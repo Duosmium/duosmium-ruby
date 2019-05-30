@@ -39,7 +39,7 @@ layout: results_index
       </h3>
     </div>
     <div class="card-body">
-      <div class="summary" id="summary-<%= i %>">
+      <div class="summary collapse" id="summary-<%= i %>">
         <dl class="list-unstyled row">
           <dt class="col-sm-3">Champion:</dt>
           <dd class="col-sm-9">
@@ -63,7 +63,11 @@ layout: results_index
       </div>
     </div>
     <div class="card-footer card-actions">
-      <button class="btn btn-outline-primary" data-target="summary-<%= i %>">Summary</button>
+      <button class="btn btn-outline-primary"
+              data-toggle="collapse"
+              data-target="#summary-<%= i %>"
+              aria-expanded="false"
+              aria-controls="summary-<%= i %>">Summary</button>
       <a href="/results/<%= filename %>.html" class="btn btn-outline-primary">Full Results</a>
     </div>
   </div>

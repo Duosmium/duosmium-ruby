@@ -67,11 +67,6 @@ div.results-index-card-grid {
     div.summary {
       position: absolute;
       bottom: 0;
-      display: none;
-
-      &.show {
-        display: block;
-      }
     }
   }
 }
