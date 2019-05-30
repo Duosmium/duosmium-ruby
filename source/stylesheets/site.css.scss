@@ -67,6 +67,10 @@ div.results-index-card-grid {
     div.summary {
       position: absolute;
       bottom: 0;
+
+      dt {
+        white-space: nowrap;
+      }
     }
   }
 }
