@@ -59,6 +59,21 @@ div.results-index-card-grid {
   grid-template-columns: repeat(auto-fit, minmax(30em, 1fr));
   grid-auto-columns: 50em;
   grid-gap: 2em;
+
+  div.card-body {
+    height: 200px;
+    position: relative;
+
+    div.summary {
+      position: absolute;
+      bottom: 0;
+      display: none;
+
+      &.show {
+        display: block;
+      }
+    }
+  }
 }
 
 // allow for arbitrary narrow cards on small screens
