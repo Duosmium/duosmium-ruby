@@ -181,4 +181,12 @@ $(document).ready(function(){
         medals.css("background-color", "transparent");
       }
   });
+
+  // Blur logo when showing tournament summary (in results index)
+  $("div.card-body div.summary").on("show.bs.collapse", function() {
+    $(this).parent().children("img").addClass("blur");
+  });
+  $("div.card-body div.summary").on("hide.bs.collapse", function() {
+    $(this).parent().children("img").removeClass("blur");
+  });
 });

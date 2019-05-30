@@ -63,6 +63,19 @@ div.results-index-card-grid {
   div.card-body {
     height: 200px;
     position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: scale-down;
+      filter: none;
+      transition: filter 0.2s;
+
+      &.blur {
+        filter: blur(20px);
+      }
+    }
 
     div.summary {
       position: absolute;
