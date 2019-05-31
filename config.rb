@@ -39,11 +39,23 @@ end
 # Methods defined in the helpers block are available in templates
 # https://middlemanapp.com/basics/helper-methods/
 
-# helpers do
-#   def some_helper
-#     'Helping'
-#   end
-# end
+helpers do
+  def find_logo_path(filename)
+    image_dir = Dir.new(Pathname.new(__dir__) + 'source' + 'images' + 'logos')
+    potential_logos = [
+      filename + '.png',
+      filename + '.jpg',
+      filename.split('_')[0..-2].join('_') + '.png', # remove _b or _c suffix
+      filename.split('_')[0..-2].join('_') + '.jpg', # remove _b or _c suffix
+      filename.split('_')[1..-2].join('_') + '.png', # remove date as well
+      filename.split('_')[1..-2].join('_') + '.jpg'  # remove date as well
+    ]
+    potential_logos.concat(%w[
+      default.jpg
+    ].shuffle)
+    '/images/logos/' + potential_logos.find { |l| image_dir.children.include? l }
+  end
+end
 
 # Build-specific configuration
 # https://middlemanapp.com/advanced/configuration/#environment-specific-settings

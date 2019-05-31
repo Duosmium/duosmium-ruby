@@ -43,7 +43,7 @@ layout: results_index
          data-target="#summary-<%= i %>"
          aria-expanded="false"
          aria-controls="summary-<%= i %>">
-      <img src="https://www.soinc.org/sites/default/files/uploaded_files/S.O.%20Logo_1.jpg"/>
+      <img src="<%= find_logo_path(filename) %>"/>
       <div class="summary collapse" id="summary-<%= i %>">
         <dl class="list-unstyled row">
           <dt class="col-sm-3">Champion</dt>
