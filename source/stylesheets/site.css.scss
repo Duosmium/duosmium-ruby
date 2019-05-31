@@ -82,6 +82,10 @@ div.results-index-card-grid {
       position: absolute;
       bottom: 0;
 
+      dl {
+        margin-bottom: 60px; // based on height of div.card-body
+      }
+
       dt {
         white-space: nowrap;
       }
