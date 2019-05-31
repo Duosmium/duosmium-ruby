@@ -15,7 +15,8 @@ $(document).ready(function(){
     $("div.results-classic-thead-background").css("min-width", min_width + "em");
     $("div.results-classic-header").css("width", width + "em");
   };
-  fix_width(0);
+  // called later by sort_and_toggle_event_rank(), and intial values set by
+  // inline CSS anyways (to prevent jump when JS loads)
 
   // Highlight table columns on hover
   // Adapted from https://css-tricks.com/row-and-column-highlighting/

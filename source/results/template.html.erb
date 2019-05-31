@@ -9,8 +9,10 @@
 <% teams_by_number = t.teams_by_number.sort.map(&:last) %>
 
 <div class="results-classic-wrapper">
-<div class="results-classic-thead-background shadow-sm">
-  <div class="results-classic-header">
+<div class="results-classic-thead-background shadow-sm"
+     style="min-width: <%= 2*(events.count + 1) + 28.5 %>em">
+  <div class="results-classic-header"
+       style="width: <%= 2*(events.count + 1) + 28 %>em">
     <h1 class="display-4 mb-0">
       <%= t.tournament[:year] %>
       <%= t.tournament[:level] %> Div.
