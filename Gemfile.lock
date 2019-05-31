@@ -142,7 +142,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    sciolyff (0.2.1)
+    sciolyff (0.3.0)
       minitest (~> 5.11)
       optimist (~> 3.0)
     servolux (0.13.0)
@@ -170,7 +170,7 @@ DEPENDENCIES
   material-sass (= 4.1.1)
   middleman (~> 4.2)
   middleman-autoprefixer (~> 2.7)
-  sciolyff (~> 0.2.1)
+  sciolyff (= 0.3.0)
   tzinfo-data
   wdm (~> 0.1)
 
