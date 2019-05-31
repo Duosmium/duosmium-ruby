@@ -83,7 +83,8 @@ div.results-index-card-grid {
       bottom: 0;
 
       dl {
-        margin-bottom: 60px; // based on height of div.card-body
+        height: 180px; // based on height of div.card-body
+        margin-bottom: 0;
       }
 
       dt {
