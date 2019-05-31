@@ -38,7 +38,11 @@ layout: results_index
         @ <%= t.tournament[:location] %>
       </h3>
     </div>
-    <div class="card-body">
+    <div class="card-body"
+         data-toggle="collapse"
+         data-target="#summary-<%= i %>"
+         aria-expanded="false"
+         aria-controls="summary-<%= i %>">
       <img src="https://www.soinc.org/sites/default/files/uploaded_files/S.O.%20Logo_1.jpg"/>
       <div class="summary collapse" id="summary-<%= i %>">
         <dl class="list-unstyled row">
@@ -64,11 +68,7 @@ layout: results_index
       </div>
     </div>
     <div class="card-footer card-actions">
-      <button class="btn btn-outline-primary"
-              data-toggle="collapse"
-              data-target="#summary-<%= i %>"
-              aria-expanded="false"
-              aria-controls="summary-<%= i %>">Summary</button>
+      <button class="btn btn-outline-primary">Summary</button>
       <a href="/results/<%= filename %>.html" class="btn btn-outline-primary">Full Results</a>
     </div>
   </div>
