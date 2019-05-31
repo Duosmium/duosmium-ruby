@@ -71,10 +71,10 @@ div.results-index-card-grid {
       height: 100%;
       object-fit: scale-down;
       filter: none;
-      transition: filter 0.2s;
+      transition: filter 0.6s;
 
       &.blur {
-        filter: blur(20px);
+        filter: blur(120px);
       }
     }
 
