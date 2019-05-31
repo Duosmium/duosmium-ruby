@@ -98,14 +98,17 @@
   </tr>
 </thead>
 <tbody>
-<% rank = 1 %>
-<% teams_by_rank.each do |tm| %>
+<% teams_by_rank.each.with_index do |tm, i| %>
   <tr data-team-number="<%= tm[:number] %>">
     <td class="number"><%= tm[:number] %></td>
-    <td class="school"><%= tm[:school] %> <small><%= tm[:state] %></small></td>
+    <td class="school">
+      <%= tm[:school] %> <small><%= tm[:state] %></small>
+    <% if tm[:exhibition] %>
+      <span class="badge badge-warning"><small>Exhibition</small></span>
+    <% end %>
+    </td>
     <td class="event-points-focus" data-points=""><div></div></td>
-    <td class="rank" data-points="<%= rank %>"><div><%= rank %></div></td>
-    <% rank += 1 unless tm[:exhibition] %>
+    <td class="rank" data-points="<%= i + 1 %>"><div><%= i + 1 %></div></td>
     <td class="total-points"><%= t.team_points tm[:number] %></td>
   <% events.each do |e| %>
     <% ep = t.event_points tm[:number], e[:name] %>
