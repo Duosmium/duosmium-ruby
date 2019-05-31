@@ -64,13 +64,13 @@ div.results-index-card-grid {
     height: 200px;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
 
     img {
       width: 100%;
       height: 100%;
       object-fit: scale-down;
       filter: none;
-      cursor: pointer;
       transition: filter 0.2s;
 
       &.blur {
@@ -81,7 +81,6 @@ div.results-index-card-grid {
     div.summary {
       position: absolute;
       bottom: 0;
-      cursor: pointer;
 
       dt {
         white-space: nowrap;

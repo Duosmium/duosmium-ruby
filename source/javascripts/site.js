@@ -194,8 +194,8 @@ $(document).ready(function(){
   });
 
   // Make tournament summary toggle when clicking image/summary
-  $("div.card-body img, div.card-body div.summary").on("click", function() {
-    let button = $(this).parent().parent().find("div.card-actions button")
+  $("div.card-body").on("click", function() {
+    let button = $(this).parent().find("div.card-actions button")
     button.focus();
     button.click();
   });
