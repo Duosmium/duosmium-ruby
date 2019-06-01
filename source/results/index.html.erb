@@ -30,7 +30,9 @@ layout: results_index
         <% case t.tournament[:level] %>
         <% when 'Nationals' %>
           <%= t.tournament[:year] %> Science Olympiad National Tournament
-          <small>Division <%= t.tournament[:division] %></small>
+          <span class="badge division-<%= t.tournament[:division].downcase %>">
+            <small>Division <%= t.tournament[:division] %></small>
+          </span>
         <% end %>
       </h2>
       <h3 class="card-subtitle">

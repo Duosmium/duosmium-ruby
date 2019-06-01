@@ -60,6 +60,20 @@ div.results-index-card-grid {
   grid-auto-columns: 50em;
   grid-gap: 2em;
 
+  span.badge {
+    color: white;
+
+    &.division-a {
+      background-color: #85c648
+    }
+    &.division-b {
+      background-color: #0072bb;
+    }
+    &.division-c {
+      background-color: #d5232a;
+    }
+  }
+
   div.card-body {
     height: 200px;
     position: relative;
