@@ -10,7 +10,8 @@
 
 <div class="results-classic-wrapper">
 <div class="results-classic-thead-background shadow-sm"
-     style="min-width: <%= 2*(events.count + 1) + 28.5 %>em">
+     style="min-width: <%= 2*(events.count + 1) + 28.5 %>em;
+            background-color: <%= find_bg_color(current_page.path) %>;">
   <div class="results-classic-header"
        style="width: <%= 2*(events.count + 1) + 28 %>em">
     <h1 class="display-4 mb-0">

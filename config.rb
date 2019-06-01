@@ -1,6 +1,8 @@
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
+require 'miro'
+
 activate :autoprefixer do |prefix|
   prefix.browsers = "last 2 versions"
 end
@@ -55,6 +57,15 @@ helpers do
       default.jpg
     ].shuffle)
     '/images/logos/' + potential_logos.find { |l| image_dir.children.include? l }
+  end
+
+  def find_bg_color(path)
+    filename = path.delete_prefix('results/').delete_suffix('.html')
+    logo_file_path = (Pathname.new(__dir__) +
+                      'source' +
+                      find_logo_path(filename).delete_prefix('/')).to_s
+    colors = Miro::DominantColors.new(logo_file_path)
+    colors.to_hex[3]
   end
 end
 
