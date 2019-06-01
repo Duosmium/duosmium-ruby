@@ -1,4 +1,87 @@
-@import "material";
+// All imports copied from the gem in order to allow for custom theme colours
+@charset "UTF-8";
+
+@import 'material/colors';
+
+// custom theme colours
+$primary: (
+  color: #000064,
+  dark:  darken(#000064, 10%),
+  light: lighten(#000064, 10%)
+);
+
+$secondary: (
+  color: #5b8294,
+  dark:  darken(#5b8294, 10%),
+  light: lighten(#5b8294, 10%)
+);
+
+
+@import 'material/functions';
+@import 'material/mixins';
+@import 'material/variables';
+
+// Base CSS
+
+@import 'material/base/base';
+@import 'material/base/grid';
+@import 'material/base/typography';
+
+// Bootstrap components
+// Components covered in Bootstrap's css but not in Material design
+
+@import 'material/bootstrap/alert';
+@import 'material/bootstrap/badge';
+@import 'material/bootstrap/breadcrumb';
+@import 'material/bootstrap/carousel';
+@import 'material/bootstrap/close';
+@import 'material/bootstrap/code';
+@import 'material/bootstrap/form';
+@import 'material/bootstrap/image';
+@import 'material/bootstrap/jumbotron';
+@import 'material/bootstrap/media';
+@import 'material/bootstrap/nav';
+@import 'material/bootstrap/pagination';
+@import 'material/bootstrap/popover';
+@import 'material/bootstrap/responsive-embed';
+@import 'material/bootstrap/transition';
+
+// Material components
+// Components covered in Material design (https://material.google.com/components)
+
+@import 'material/material/button';
+@import 'material/material/button-flat';
+@import 'material/material/button-float';
+@import 'material/material/button-group';
+@import 'material/material/card';
+@import 'material/material/chip';
+@import 'material/material/data-table';
+@import 'material/material/dialog';
+@import 'material/material/expansion-panel';
+@import 'material/material/menu';
+@import 'material/material/navdrawer';
+@import 'material/material/picker';
+@import 'material/material/progress';
+@import 'material/material/progress-circular';
+@import 'material/material/selection-control';
+@import 'material/material/slider';
+@import 'material/material/snackbar';
+@import 'material/material/stepper';
+@import 'material/material/tab';
+@import 'material/material/text-field';
+@import 'material/material/text-field-box';
+@import 'material/material/text-field-floating-label';
+@import 'material/material/text-field-input-group';
+@import 'material/material/toolbar';
+@import 'material/material/tooltip';
+
+// Utilities
+
+@import 'material/utilities';
+
+// Very basic print styles
+
+@import 'material/print';
 
 header.results-index {
   @include media-breakpoint-down(sm) {
