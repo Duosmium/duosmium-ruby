@@ -29,7 +29,7 @@ a YAML file in format of [SciolyFF](https://github.com/unosmium/sciolyff) in the
 
 If converting, the files already in the data directory should serve as an
 example. For additional details on converting a file to the SciolyFF, see
-[here](https://github.com/unosmium/sciolyff/tree/master/examples/imports).
+[here](https://github.com/unosmium/sciolyff-conversions).
 
 After the pull request is merged, the website will automatically generate an
 HTML results page that can be viewed by clicking on the appropriate link in the
