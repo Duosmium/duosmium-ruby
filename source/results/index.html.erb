@@ -27,13 +27,16 @@ layout: results_index
   <div class="card">
     <div class="card-header">
       <h2 class="card-title">
+        <%= t.tournament[:year] %>
         <% case t.tournament[:level] %>
         <% when 'Nationals' %>
-          <%= t.tournament[:year] %> Science Olympiad National Tournament
-          <span class="badge division-<%= t.tournament[:division].downcase %>">
-            <small>Division <%= t.tournament[:division] %></small>
-          </span>
+          Science Olympiad National Tournament
+        <% when 'States' %>
+          <%= expand_state_name(t.tournament[:state]) %> State Tournament
         <% end %>
+        <span class="badge division-<%= t.tournament[:division].downcase %>">
+          <small>Division <%= t.tournament[:division] %></small>
+        </span>
       </h2>
       <h3 class="card-subtitle">
         <%= t.tournament[:date].strftime('%A, %B %-d, %Y') %>

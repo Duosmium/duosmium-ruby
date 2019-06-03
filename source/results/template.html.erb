@@ -16,6 +16,7 @@
        style="width: <%= 2*(events.count + 1) + 28 %>em">
     <h1 class="display-4 mb-0">
       <%= t.tournament[:year] %>
+      <%= t.tournament[:state] if t.tournament[:level] == 'States' %>
       <%= t.tournament[:level] %> Div.
       <%= t.tournament[:division] %>
     </h1>

@@ -43,6 +43,58 @@ end
 # https://middlemanapp.com/basics/helper-methods/
 
 helpers do
+  STATES_BY_POSTAL_CODE = {
+    AK: 'Alaska ',
+    AZ: 'Arizona ',
+    AR: 'Arkansas ',
+    CA: 'California ',
+    CO: 'Colorado ',
+    CT: 'Connecticut ',
+    DE: 'Delaware ',
+    DC: 'District of Columbia',
+    FL: 'Florida ',
+    GA: 'Georgia ',
+    HI: 'Hawaii ',
+    ID: 'Idaho ',
+    IL: 'Illinois ',
+    IN: 'Indiana ',
+    IA: 'Iowa ',
+    KS: 'Kansas ',
+    KY: 'Kentucky ',
+    LA: 'Louisiana ',
+    ME: 'Maine ',
+    MD: 'Maryland ',
+    MA: 'Massachusetts ',
+    MI: 'Michigan ',
+    MN: 'Minnesota ',
+    MS: 'Mississippi ',
+    MO: 'Missouri ',
+    MT: 'Montana ',
+    NE: 'Nebraska ',
+    NV: 'Nevada ',
+    NH: 'New Hampshire ',
+    NJ: 'New Jersey ',
+    NM: 'New Mexico ',
+    NY: 'New York ',
+    NC: 'North Carolina ',
+    ND: 'North Dakota ',
+    OH: 'Ohio ',
+    OK: 'Oklahoma ',
+    OR: 'Oregon ',
+    PA: 'Pennsylvania ',
+    RI: 'Rhode Island ',
+    SC: 'South Carolina ',
+    SD: 'South Dakota ',
+    TN: 'Tennessee ',
+    TX: 'Texas ',
+    UT: 'Utah ',
+    VT: 'Vermont ',
+    VA: 'Virginia ',
+    WA: 'Washington ',
+    WV: 'West Virginia ',
+    WI: 'Wisconsin ',
+    WY: 'Wyoming '
+  }
   def find_logo_path(filename)
     image_dir = Dir.new(Pathname.new(__dir__) + 'source' + 'images' + 'logos')
     potential_logos = [
@@ -68,6 +120,10 @@ helpers do
                       find_logo_path(filename).delete_prefix('/')).to_s
     colors = Miro::DominantColors.new(logo_file_path)
     colors.to_hex[3]
+  end
+
+  def expand_state_name(postal_code)
+    STATES_BY_POSTAL_CODE[postal_code.to_sym]
   end
 end
 
