@@ -264,7 +264,7 @@ div.results-classic-header {
 
 table.results-classic {
   table-layout: fixed;
-  width: 80em;
+  width: 1em; // intentionally too small to force a compact table
   margin: -3ex auto 0.75em;
 
   // fixed table widths
@@ -384,7 +384,6 @@ table.results-classic {
 div.results-classic-wrapper.event-focused {
 
   // header widths (slightly wider) handled with JS
-  table.results-classic { width: 84em; }
 
   table.results-classic {
 
