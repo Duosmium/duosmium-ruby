@@ -15,6 +15,8 @@ layout: results_index
 
      compare = rep2[:Tournament][:date] <=> rep1[:Tournament][:date]
      next compare unless compare.zero?
+     compare = rep1[:Tournament][:state] <=> rep2[:Tournament][:state]
+     next compare unless compare.zero?
      compare = rep1[:Tournament][:location] <=> rep2[:Tournament][:location]
      next compare unless compare.zero?
      rep1[:Tournament][:division] <=> rep2[:Tournament][:division]
