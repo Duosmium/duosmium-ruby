@@ -183,6 +183,11 @@ $(document).ready(function(){
       }
   });
 
+  // Enable popovers for further explanation of badge abbrevs
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+
   // Blur logo when showing tournament summary (in results index)
   $("div.card-body div.summary").on("show.bs.collapse", function() {
     $(this).parent().children("img").addClass("blur");

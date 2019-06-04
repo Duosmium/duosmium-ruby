@@ -90,9 +90,22 @@
     <th class="event-points">
       <%= e[:name] %>
     <% if e[:trial] %>
-      <span class="badge badge-info"><small>T</small></span>
+      <a tabindex="0" role="button" href="#"
+         data-toggle="popover" data-trigger="focus"
+         title="Trial Event"
+         data-content="Placings in this event did not count towards total
+                       team score">
+        <span class="badge badge-info"><small>T</small></span>
+      </a>
     <% elsif e[:trialed] %>
-      <span class="badge badge-warning"><small>Td</small></span>
+      <a tabindex="0" role="button" href="#"
+         data-toggle="popover" data-trigger="focus"
+         title="Trialed Event"
+         data-content="Placings in this event did not count towards total
+                       team score because of unforseen circumstances during
+                       the competition">
+        <span class="badge badge-warning"><small>Td</small></span>
+      </a>
     <% end %>
     </th>
   <% end %>
@@ -106,7 +119,12 @@
     <td class="school">
       <%= tm[:school] %> <small><%= tm[:state] %></small>
     <% if tm[:exhibition] %>
-      <span class="badge badge-warning"><small>Ex</small></span>
+      <a tabindex="0" role="button" href="#"
+         data-toggle="popover" data-trigger="focus"
+         title="Exhibition Team"
+         data-content="Placings by this team did not affect the ranks of other
+                       teams (except in Trial Events)">
+        <span class="badge badge-warning"><small>Ex</small></span>
     <% end %>
     </td>
     <td class="event-points-focus" data-points=""><div></div></td>
