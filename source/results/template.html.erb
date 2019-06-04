@@ -90,9 +90,9 @@
     <th class="event-points">
       <%= e[:name] %>
     <% if e[:trial] %>
-      <span class="badge badge-info"><small>Trial</small></span>
+      <span class="badge badge-info"><small>T</small></span>
     <% elsif e[:trialed] %>
-      <span class="badge badge-warning"><small>Trialed</small></span>
+      <span class="badge badge-warning"><small>Td</small></span>
     <% end %>
     </th>
   <% end %>
@@ -106,7 +106,7 @@
     <td class="school">
       <%= tm[:school] %> <small><%= tm[:state] %></small>
     <% if tm[:exhibition] %>
-      <span class="badge badge-warning"><small>Exhibition</small></span>
+      <span class="badge badge-warning"><small>Ex</small></span>
     <% end %>
     </td>
     <td class="event-points-focus" data-points=""><div></div></td>
