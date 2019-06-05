@@ -12,10 +12,11 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-    <%= javascript_include_tag "main" %>
+    <%= javascript_include_tag "essential" %>
     <%= favicon_tag 'images/favicon.png' %>
   </head>
   <body>
     <%= yield %>
+    <%= javascript_include_tag "main" %>
   </body>
 </html>

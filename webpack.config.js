@@ -1,4 +1,8 @@
 module.exports = {
+  entry: {
+    main: './src/index.js',
+    essential: './src/essential.js'
+  },
   mode: "production",
   module: {
     rules: [
