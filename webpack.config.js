@@ -1,15 +1,15 @@
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
-  entry: {
-    main: './src/index.js',
-    essential: './src/essential.js'
-  },
   mode: "production",
+  plugins: [
+    new MiniCssExtractPlugin()
+  ],
   module: {
     rules: [
       {
         test: /\.(scss)$/,
         use: [{
-          loader: 'style-loader', // inject CSS to page
+          loader: MiniCssExtractPlugin.loader,
         }, {
           loader: 'css-loader', // translates CSS into CommonJS modules
         }, {
