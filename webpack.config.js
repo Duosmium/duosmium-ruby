@@ -5,6 +5,9 @@ const path = require ('path');
 
 module.exports = {
   mode: "production",
+  entry: {
+    main: './assets/index.js'
+  },
   output: {
     filename: '[name].js',
     path: path.resolve(__dirname, '.tmp/dist')
