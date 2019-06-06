@@ -1,5 +1,3 @@
-var $ = require("jquery");
-
 $(document).ready(function(){
 
   // First, make sure all default checkboxes are checked initially (browser

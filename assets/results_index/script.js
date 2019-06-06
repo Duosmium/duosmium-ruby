@@ -1,5 +1,3 @@
-var $ = require("jquery");
-
 $(document).ready(function(){
   // Blur logo when showing tournament summary (in results index)
   $("div.card-body div.summary").on("show.bs.collapse", function() {
