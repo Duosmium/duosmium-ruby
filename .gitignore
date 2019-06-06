@@ -4,5 +4,5 @@
 .sass-cache
 .netlify
 build/
-dist/
 node_modules/
+.tmp/
