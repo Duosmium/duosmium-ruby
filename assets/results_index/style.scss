@@ -19,7 +19,25 @@
 @import "~daemonite-material/assets/scss/material/button";
 @import "~daemonite-material/assets/scss/material/button-flat";
 @import "~daemonite-material/assets/scss/material/card";
+@import "~daemonite-material/assets/scss/material/text-field";
+@import "~daemonite-material/assets/scss/material/text-field-floating-label";
 
+
+div.search-wrapper {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 5em;
+  overflow: hidden;
+
+  label {
+    white-space: nowrap;
+  }
+
+  button#see-all, hr {
+    position: absolute;
+    bottom: 0;
+  }
+}
 
 header.results-index {
   @include media-breakpoint-down(sm) {

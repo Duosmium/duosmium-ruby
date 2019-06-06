@@ -2,3 +2,4 @@
 import './style.scss';
 import './script.js';
 import 'bootstrap/js/src/collapse';
+import 'daemonite-material/assets/js/src/floating-label'
