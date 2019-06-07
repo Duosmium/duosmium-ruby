@@ -1,4 +1,6 @@
 @import "../custom";
+$rfs-breakpoint: 1920px;
+@import "~rfs/scss";
 
 // @import "~daemonite-material/assets/scss/material";
 // Below is a partial import of the above to save on asset size
@@ -41,6 +43,10 @@ div.search-wrapper {
   position: relative;
   overflow: hidden;
 
+  label, input {
+    @include responsive-font-size(32px, true);
+  }
+
   label {
     white-space: nowrap;
   }
@@ -70,28 +76,9 @@ div.search-wrapper.searching {
 }
 
 header.results-index {
-  @include media-breakpoint-down(sm) {
-    h1 {
-      @include typography-display-1;
-    }
-  }
-
-  @include media-breakpoint-up(sm) {
-    h1 {
-      @include typography-display-2;
-    }
-  }
-
-  @include media-breakpoint-up(md) {
-    h1 {
-      @include typography-display-3;
-    }
-  }
-
-  @include media-breakpoint-up(xl) {
-    h1 {
-      @include typography-display-4;
-    }
+  h1 {
+    @include typography-display-4;
+    @include responsive-font-size(64px);
   }
 
   h1 i.u-logo {
@@ -99,6 +86,11 @@ header.results-index {
     &:hover {
       animation: fire 3s linear infinite;
     }
+  }
+
+  p.lead {
+    @include typography-display-1;
+    font-size: 20px;
   }
 
   a {

@@ -4,7 +4,8 @@
     "daemonite-material": "^4.1.1",
     "jquery": "^3.4.1",
     "pickadate": "^3.5.6",
-    "popper.js": "^1.14.7"
+    "popper.js": "^1.14.7",
+    "rfs": "^8.0.4"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.0",
