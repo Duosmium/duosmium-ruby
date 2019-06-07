@@ -31,12 +31,13 @@
   </div>
 </div>
 
-<button id="see-all" type="button" class="btn btn-flat-secondary btn-lg btn-block">
+<a href="#all-results" id="see-all"
+   role="button" class="btn btn-flat-secondary btn-lg btn-block">
   See all results<br><i class="material-icons">expand_more</i>
-</button>
+</a>
 </div>
 
-<main class="container-fluid py-5 bg-light shadow" aria-label="Content">
+<main id="all-results" class="container-fluid py-5 bg-light shadow" aria-label="Content">
 <div class="results-index-card-grid">
 <% i = 1 %>
 <% data.to_h.sort do |rep1, rep2|
