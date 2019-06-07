@@ -2,13 +2,27 @@ $(document).ready(function(){
   // Set intial focus on search bar (autofocus HTML5 attr not used because it
   // doesn't activate the floating label JS)
   $("div.search-wrapper input").focus();
-  // Change layout when user starts typing in search bar
+  // Change layout and filter results when user starts typing in search bar
   $("div.search-wrapper input").val(""); // Start with empty search bar
   $("div.search-wrapper input").on("input", function() {
-    if ($(this).val().length === 0) {
+    let search_text = $(this).val().toLowerCase().trim();
+    if (search_text.length === 0) {
       $("div.search-wrapper").removeClass("searching");
+      $("style#search_style").html("");
     } else {
       $("div.search-wrapper").addClass("searching");
+
+      // inspired by
+      // http://www.redotheweb.com/2013/05/15/client-side-full-text-search-in-css.html
+      // may not scale well?
+      let search_html = "";
+      // replace "div c" with "div-c", and like, for the data-search attribute
+      let words = search_text.replace(/(div|division) ([abc])/, "$1-$2");
+      words.split(/\s+/).forEach(function(word) { // split on whitespace
+        search_html += "div.card:not([data-search*=\"" + word + "\"])" +
+                       "{ display: none; }\n";
+      });
+      $("style#search_style").html(search_html);
     }
   });
 

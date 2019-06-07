@@ -125,6 +125,31 @@ helpers do
   def expand_state_name(postal_code)
     STATES_BY_POSTAL_CODE[postal_code.to_sym]
   end
+
+  def search_string(helper)
+    t = helper.tournament
+    words = [
+      'science',
+      'olympiad',
+      'tournament',
+      t[:name],
+      t[:location],
+      t[:level],
+      t[:level] == "Nationals" ? 'nats' : nil,
+      t[:level] == "Nationals" ? 'sont' : nil,
+      t[:state],
+      t[:state] ? expand_state_name(t[:state]) : nil,
+      "div-#{t[:division]}",
+      "division-#{t[:division]}",
+      t[:year],
+      t[:date],
+      t[:date].strftime('%A'),
+      t[:date].strftime('%B'),
+      t[:date].strftime('%-d'),
+      t[:date].strftime('%Y')
+    ]
+    words.compact.map(&:to_s).map(&:downcase).join('|')
+  end
 end
 
 activate :external_pipeline,

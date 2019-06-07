@@ -23,7 +23,7 @@
         <i class="material-icons">search</i>
         <i>Search results</i>
       </label>
-      <input aria-describedby="searchResultsHelp" class="form-control" id="searchResults" type="text" placeholder="To be coded  = )" >
+      <input aria-describedby="searchResultsHelp" class="form-control" id="searchResults" type="text" placeholder="e.g. 2017 nats div c" >
       <span id="searchResultsHelp" class="form-text text-muted">
         Find the overall standings and event scores for dozens of Science Olympiad tournaments!
       </span>
@@ -38,6 +38,7 @@
 </div>
 
 <main id="all-results" class="container-fluid py-4 bg-light shadow" aria-label="Content">
+<style id="search_style"></style>
 <div class="results-index-card-grid">
 <% i = 1 %>
 <% data.to_h.sort do |rep1, rep2|
@@ -57,14 +58,7 @@
   <% t = SciolyFF::Helper.new(rep) %>
   <% teams = t.sort_teams_by_rank %>
 
-  <div class="card"
-       data-name="<%= t.tournament[:name] %>"
-       data-location="<%= t.tournament[:location] %>"
-       data-level="<%= t.tournament[:level] %>"
-       data-state="<%= t.tournament[:state] %>"
-       data-division="<%= t.tournament[:division] %>"
-       data-year="<%= t.tournament[:year] %>"
-       data-date="<%= t.tournament[:date] %>">
+  <div class="card" data-search="<%= search_string(t) %>">
     <div class="card-header">
       <h2 class="card-title">
         <%= t.tournament[:year] %>

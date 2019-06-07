@@ -121,6 +121,10 @@ header.results-index {
   100% { color: crimson; }
 }
 
+main#all-results {
+  min-height: 80vh;
+}
+
 // CSS Grid!
 div.results-index-card-grid {
   display: grid;
