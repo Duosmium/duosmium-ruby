@@ -84,6 +84,7 @@ header.results-index {
   h1 {
     @include typography-display-4;
     @include responsive-font-size(64px);
+    margin-left: -5vw;
   }
 
   h1 i.u-logo {
@@ -96,6 +97,7 @@ header.results-index {
   p.lead {
     @include typography-display-1;
     font-size: 20px;
+    margin-right: -25vw;
   }
 
   a {
