@@ -56,7 +56,14 @@
   <% t = SciolyFF::Helper.new(rep) %>
   <% teams = t.sort_teams_by_rank %>
 
-  <div class="card">
+  <div class="card"
+       data-name="<%= t.tournament[:name] %>"
+       data-location="<%= t.tournament[:location] %>"
+       data-level="<%= t.tournament[:level] %>"
+       data-state="<%= t.tournament[:state] %>"
+       data-division="<%= t.tournament[:division] %>"
+       data-year="<%= t.tournament[:year] %>"
+       data-date="<%= t.tournament[:date] %>">
     <div class="card-header">
       <h2 class="card-title">
         <%= t.tournament[:year] %>
