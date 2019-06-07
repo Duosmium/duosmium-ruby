@@ -1,4 +1,14 @@
 $(document).ready(function(){
+  // Change layout when user starts typing in search bar
+  $("div.search-wrapper input").val(""); // Start with empty search bar
+  $("div.search-wrapper input").on("input", function() {
+    if ($(this).val().length === 0) {
+      $("div.search-wrapper").removeClass("searching");
+    } else {
+      $("div.search-wrapper").addClass("searching");
+    }
+  });
+
   // Blur logo when showing tournament summary (in results index)
   $("div.card-body div.summary").on("show.bs.collapse", function() {
     $(this).parent().children("img").addClass("blur");
