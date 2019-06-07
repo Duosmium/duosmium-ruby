@@ -22,6 +22,9 @@
 @import "~daemonite-material/assets/scss/material/text-field";
 @import "~daemonite-material/assets/scss/material/text-field-floating-label";
 
+a.github-corner svg {
+  z-index: 1;
+}
 
 div.search-wrapper {
   min-height: 100vh;
