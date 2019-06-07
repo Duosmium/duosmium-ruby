@@ -43,6 +43,11 @@ div.search-wrapper {
   position: relative;
   overflow: hidden;
 
+  div.floating-label {
+    max-width: 42em;
+    margin: 0 auto;
+  }
+
   label, input {
     @include responsive-font-size(32px, true);
   }
