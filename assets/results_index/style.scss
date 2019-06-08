@@ -24,16 +24,6 @@ $rfs-breakpoint: 1920px;
 @import "~daemonite-material/assets/scss/material/text-field";
 @import "~daemonite-material/assets/scss/material/text-field-floating-label";
 
-html {
-  scroll-behavior: smooth;
-}
-
-@media screen and (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-}
-
 a.github-corner svg {
   z-index: 1;
 }

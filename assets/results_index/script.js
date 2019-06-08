@@ -1,7 +1,4 @@
 $(document).ready(function(){
-  // Set intial focus on search bar (autofocus HTML5 attr not used because it
-  // doesn't activate the floating label JS)
-  $("div.search-wrapper input").focus();
   // Change layout and filter results when user starts typing in search bar
   $("div.search-wrapper input").val(""); // Start with empty search bar
   $("div.search-wrapper input").on("input", function() {
