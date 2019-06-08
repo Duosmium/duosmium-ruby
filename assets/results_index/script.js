@@ -26,6 +26,12 @@ $(document).ready(function(){
     }
   });
 
+  // Cause input box to lose focus after hitting enter (esp. for mobile devices
+  // where keyboard takes up a lot of the screen)
+  $("input#searchTournaments").change(function(e) {
+    $("input#searchTournaments").blur();
+  });
+
   // Blur logo when showing tournament summary (in results index)
   $("div.card-body div.summary").on("show.bs.collapse", function() {
     $(this).parent().children("img").addClass("blur");
