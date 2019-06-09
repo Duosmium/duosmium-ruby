@@ -29,6 +29,21 @@ $(document).ready(function(){
     $("input#searchTournaments").blur();
   });
 
+  // Smooth scroll to view all events (don't use CSS for this because of weird
+  // inconsistent behavior in Chrome after hitting back button)
+  // https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+  $("a#see-all").on("click", function(e) {
+    e.preventDefault();
+    var hash = this.hash;
+    var animation_time = 500;
+
+    $("html, body").animate({
+      scrollTop: $(hash).offset().top
+    }, animation_time, function() {
+      window.location.hash = hash;
+    });
+  });
+
   // Blur logo when showing tournament summary (in results index)
   $("div.card-body div.summary").on("show.bs.collapse", function() {
     $(this).parent().children("img").addClass("blur");
