@@ -126,6 +126,13 @@ helpers do
     STATES_BY_POSTAL_CODE[postal_code.to_sym]
   end
 
+  def abbr_school(team)
+    team[:school]
+      .sub('Middle School', 'M.S.')
+      .sub('Junior High School', 'J.H.S.')
+      .sub('High School', 'H.S.')
+  end
+
   def search_string(helper)
     t = helper.tournament
     words = [
