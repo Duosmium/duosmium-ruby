@@ -4,7 +4,7 @@
 
 The official website for the Unosmium Scoring System and Unosmium Results.
 
-Visit: [https://unosmium.netlify.com/](https://unosmium.netlify.com/)
+Visit: [https://unosmium.org/](https://unosmium.org/)
 
 ## Unosmium Scoring System
 
@@ -14,7 +14,7 @@ instructions on how to use it.
 
 ## Unosmium Results
 
-An [archive](https://unosmium.netlify.com/results/) of any tournament results
+An [archive](https://unosmium.org/results/) of any tournament results
 that have been output as or converted into the
 [SciolyFF](https://github.com/unosmium/sciolyff) (Science Olympiad File Format). 
 
@@ -33,4 +33,4 @@ example. For additional details on converting a file to the SciolyFF, see
 
 After the pull request is merged, the website will automatically generate an
 HTML results page that can be viewed by clicking on the appropriate link in the
-[site index](https://unosmium.netlify.com/results/).
+[site index](https://unosmium.org/results/).
