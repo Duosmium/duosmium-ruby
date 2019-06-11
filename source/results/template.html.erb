@@ -117,7 +117,7 @@
   <tr data-team-number="<%= tm[:number] %>">
     <td class="number"><%= tm[:number] %></td>
     <td class="school">
-      <%= abbr_school(tm) %> <small><%= tm[:state] %></small>
+      <%= format_school(tm) %> <small><%= tm[:state] %></small>
     <% if tm[:exhibition] %>
       <a tabindex="0" role="button" href="#"
          data-toggle="popover" data-trigger="focus"
@@ -170,7 +170,7 @@
           <input type="checkbox" class="custom-control-input"
                  id="team<%= tm[:number] %>" checked>
           <label class="custom-control-label" for="team<%= tm[:number] %>">
-            <%= tm[:number] %> <%= abbr_school(tm) %>
+            <%= tm[:number] %> <%= format_school(tm) %>
             <small><%= tm[:state] %></small>
           </label>
         </div>

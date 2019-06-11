@@ -126,11 +126,19 @@ helpers do
     STATES_BY_POSTAL_CODE[postal_code.to_sym]
   end
 
-  def abbr_school(team)
-    team[:school]
-      .sub('Middle School', 'M.S.')
-      .sub('Junior High School', 'J.H.S.')
-      .sub('High School', 'H.S.')
+  def format_school(team)
+    if team[:'school abbreviation']
+      abbr = abbr_school(team[:'school abbreviation'])
+      "<abbr title=\"#{team[:school]}\">#{abbr}</abbr>"
+    else
+      abbr_school(team[:school])
+    end
+  end
+
+  def abbr_school(school)
+    school.sub('Middle School', 'M.S.')
+          .sub('Junior High School', 'J.H.S.')
+          .sub('High School', 'H.S.')
   end
 
   def search_string(helper)
