@@ -119,7 +119,12 @@ helpers do
                       'source' +
                       find_logo_path(filename).delete_prefix('/')).to_s
     colors = Miro::DominantColors.new(logo_file_path)
-    colors.to_hex[3]
+    color = colors.to_hex[3].paint # String#paint from the chroma gem
+
+    while color.light?
+      color = color.darken
+    end
+    color
   end
 
   def expand_state_name(postal_code)
