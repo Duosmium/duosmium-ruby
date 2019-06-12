@@ -37,7 +37,7 @@
 </a>
 </div>
 
-<main id="all-results" class="container-fluid py-4 bg-light shadow" aria-label="Content">
+<main id="all-results" class="container-fluid py-4 bg-light-3 shadow" aria-label="Content">
 <style id="search_style"></style>
 <div class="results-index-card-grid">
 <% i = 1 %>
@@ -59,7 +59,7 @@
   <% teams = t.sort_teams_by_rank %>
 
   <div class="card" data-search="<%= search_string(t) %>">
-    <div class="card-header">
+    <div class="card-header bg-dark-2 text-light shadow-sm">
       <h2 class="card-title">
         <%= t.tournament[:year] %>
         <% case t.tournament[:level] %>
@@ -124,7 +124,7 @@
         </dl>
       </div>
     </div>
-    <div class="card-footer card-actions">
+    <div class="card-footer card-actions bg-light">
       <button class="btn btn-outline-primary">Summary</button>
       <a href="/results/<%= filename %>.html" class="btn btn-outline-primary">Full Results</a>
     </div>
