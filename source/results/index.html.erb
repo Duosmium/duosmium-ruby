@@ -59,7 +59,8 @@
   <% teams = t.sort_teams_by_rank %>
 
   <div class="card" data-search="<%= search_string(t) %>">
-    <div class="card-header bg-dark-2 text-light shadow-sm">
+    <div class="card-header text-light shadow-sm"
+         style="background-color: <%= find_bg_color(filename) %>">
       <h2 class="card-title">
         <%= t.tournament[:year] %>
         <% case t.tournament[:level] %>
