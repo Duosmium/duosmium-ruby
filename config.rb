@@ -48,6 +48,8 @@ helpers do
     AZ: 'Arizona ',
     AR: 'Arkansas ',
     CA: 'California ',
+    nCA: 'N. California',
+    sCA: 'S. California',
     CO: 'Colorado ',
     CT: 'Connecticut ',
     DE: 'Delaware ',
