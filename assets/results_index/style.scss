@@ -135,6 +135,10 @@ div.results-index-card-grid {
     }
   }
 
+  h2.card-title {
+    @include responsive-font-size(24px);
+  }
+
   div.card-body {
     height: 200px;
     position: relative;
