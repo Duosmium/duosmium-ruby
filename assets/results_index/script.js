@@ -29,7 +29,7 @@ $(document).ready(function(){
     $("input#searchTournaments").blur();
   });
 
-  // Smooth scroll to view all events (don't use CSS for this because of weird
+  // Smooth scroll to view all results (don't use CSS for this because of weird
   // inconsistent behavior in Chrome after hitting back button)
   // https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
   $("a#see-all").on("click", function(e) {
@@ -40,9 +40,28 @@ $(document).ready(function(){
     $("html, body").animate({
       scrollTop: $(hash).offset().top
     }, animation_time, function() {
-      window.location.hash = hash;
+      // window.location.hash = hash;
     });
   });
+
+  // Hide the scroll to top button if already near top
+  var hide_scroll_button = function() {
+    if ($(this).scrollTop() < $(window).height()) {
+      $("a#scroll-back").fadeOut();
+    } else {
+      $("a#scroll-back").fadeIn();
+    }
+  }
+  // Prevent scroll to top from appending anchor tag to URL (makes the back
+  // button logic more consistent)
+  $("a#scroll-back").on("click", function(e) {
+    e.preventDefault();
+    this.blur(); // remove focus from button
+    window.scrollTo(0, 0);
+  });
+
+  hide_scroll_button(); // call initially
+  $(window).scroll(hide_scroll_button);
 
   // Blur logo when showing tournament summary (in results index)
   $("div.card-body div.summary").on("show.bs.collapse", function() {

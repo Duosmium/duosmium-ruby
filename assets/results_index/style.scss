@@ -20,6 +20,7 @@ $rfs-breakpoint: 1920px;
 
 @import "~daemonite-material/assets/scss/material/button";
 @import "~daemonite-material/assets/scss/material/button-flat";
+@import "~daemonite-material/assets/scss/material/button-float";
 @import "~daemonite-material/assets/scss/material/card";
 @import "~daemonite-material/assets/scss/material/text-field";
 @import "~daemonite-material/assets/scss/material/text-field-floating-label";
@@ -111,7 +112,7 @@ header.results-index {
   100% { color: crimson; }
 }
 
-main#all-results {
+main#all {
   min-height: 80vh;
 }
 
@@ -178,4 +179,10 @@ div.results-index-card-grid {
   div.results-index-card-grid {
     grid-template-columns: 1fr;
   }
+}
+
+a#scroll-back {
+  position: fixed;
+  bottom: 4vh;
+  right: 4vw;
 }
