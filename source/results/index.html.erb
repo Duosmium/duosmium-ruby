@@ -1,3 +1,16 @@
+<% data_by_date = data.to_h.sort do |rep1, rep2|
+     rep1 = rep1.last
+     rep2 = rep2.last
+
+     compare = rep2[:Tournament][:date] <=> rep1[:Tournament][:date]
+     next compare unless compare.zero?
+     compare = rep1[:Tournament][:state] <=> rep2[:Tournament][:state]
+     next compare unless compare.zero?
+     compare = rep1[:Tournament][:location] <=> rep2[:Tournament][:location]
+     next compare unless compare.zero?
+     rep1[:Tournament][:division] <=> rep2[:Tournament][:division]
+
+   end %>
 <!-- The MIT License (MIT)
      Copyright (c) 2016 Tim Holman
      http://tholman.com/github-corners/
@@ -31,6 +44,44 @@
   </div>
 </div>
 
+<div class="container" id="hide-on-search">
+<div class="row mt-3 pb-5 mb-5">
+<div class="col-md-8">
+  <h4>Upcoming</h4>
+  <h5>Saturday, June 1, 2019</h5>
+  <ul>
+    <li><a href="#">Science Olympiad National Tournament @ Cornell University</a></li>
+    <li><a href="#">Science Olympiad National Tournament @ Cornell University</a></li>
+    <li><a href="#">Science Olympiad National Tournament @ Cornell University</a></li>
+  </ul>
+  <h5>Saturday, June 1, 2019</h5>
+  <ul>
+    <li><a href="#">Science Olympiad National Tournament @ Cornell University</a></li>
+    <li><a href="#">Science Olympiad National Tournament @ Cornell University</a></li>
+  </ul>
+  <h4>Recently added</h4>
+  <ul>
+    <li><a href="#">2019 Science Olympiad National Tournament @ Cornell University</a></li>
+    <li><a href="#">2018 Science Olympiad National Tournament @ Colorado State University</a></li>
+    <li><a href="#">2017 Science Olympiad National Tournament @ Wright State University</a></li>
+  </ul>
+</div>
+<div class="col-md-4">
+  <h4>Archive Totals</h4>
+  <dl class="row">
+    <dt class="col-2">0</dt>
+    <dd class="col-10">Nationals</dd>
+    <dt class="col-2">0</dt>
+    <dd class="col-10">States</dd>
+    <dt class="col-2">0</dt>
+    <dd class="col-10">Regionals</dd>
+    <dt class="col-2">0</dt>
+    <dd class="col-10">Invitationals</dd>
+  </dl>
+  <a href="#">Help contribute!</a>
+</div>
+</div>
+</div>
 <a href="#all" id="see-all"
    role="button" class="btn btn-flat-secondary btn-lg btn-block">
   See all tournaments<br><i class="material-icons">expand_more</i>
@@ -41,20 +92,7 @@
 <style id="search_style"></style>
 <div class="results-index-card-grid">
 <% i = 1 %>
-<% data.to_h.sort do |rep1, rep2|
-     rep1 = rep1.last
-     rep2 = rep2.last
-
-     compare = rep2[:Tournament][:date] <=> rep1[:Tournament][:date]
-     next compare unless compare.zero?
-     compare = rep1[:Tournament][:state] <=> rep2[:Tournament][:state]
-     next compare unless compare.zero?
-     compare = rep1[:Tournament][:location] <=> rep2[:Tournament][:location]
-     next compare unless compare.zero?
-     rep1[:Tournament][:division] <=> rep2[:Tournament][:division]
-
-   end.each do |filename, rep| %>
-
+<% data_by_date.each do |filename, rep| %>
   <% t = SciolyFF::Helper.new(rep) %>
   <% teams = t.sort_teams_by_rank %>
 
