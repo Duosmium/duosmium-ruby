@@ -143,12 +143,17 @@ div.results-index-card-grid {
     }
   }
 
-  h2.card-title {
-    @include responsive-font-size(24px);
+  div.card-header {
+    flex-grow: 1;
+
+    h2.card-title {
+      @include responsive-font-size(24px);
+    }
   }
 
   div.card-body {
     height: 200px;
+    max-height: 200px;
     position: relative;
     overflow: hidden;
     cursor: pointer;
