@@ -101,12 +101,7 @@
          style="background-color: <%= find_bg_color(filename) %>">
       <h2 class="card-title">
         <%= t.tournament[:year] %>
-        <% case t.tournament[:level] %>
-        <% when 'Nationals' %>
-          Science Olympiad National Tournament
-        <% when 'States' %>
-          <%= expand_state_name(t.tournament[:state]) %> Science Olympiad State Tournament
-        <% end %>
+        <%= tournament_title(t.tournament) %>
         <span class="badge division-<%= t.tournament[:division].downcase %>">
           <small>Division <%= t.tournament[:division] %></small>
         </span>

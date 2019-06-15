@@ -129,6 +129,19 @@ helpers do
     color
   end
 
+  def tournament_title(t)
+    case t[:level]
+    when 'Nationals'
+      'Science Olympiad National Tournament'
+    when 'States'
+      "#{expand_state_name(t[:state])} Science Olympiad State Tournament"
+    when 'Regionals'
+      "#{expand_state_name(t[:state])} #{t[:name]} Regional Tournament"
+    when 'Invitational'
+      "#{t[:name] ? t[:name] : t[:location]} Invitational"
+    end
+  end
+
   def expand_state_name(postal_code)
     STATES_BY_POSTAL_CODE[postal_code.to_sym]
   end
