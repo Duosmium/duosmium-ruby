@@ -58,6 +58,23 @@ div.search-wrapper {
     bottom: 0;
   }
 
+  dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    @include typography-display-4;
+    @include responsive-font-size(24px);
+
+    dt {
+      text-align: right;
+      padding-left: 40px;
+    }
+
+    dd {
+      padding-left: 0.5em;
+    }
+  }
+
   transition: min-height 0.6s;
 }
 

@@ -68,15 +68,15 @@
 </div>
 <div class="col-md-4">
   <h4>Archive Totals</h4>
-  <dl class="row">
-    <dt class="col-2">0</dt>
-    <dd class="col-10">Nationals</dd>
-    <dt class="col-2">0</dt>
-    <dd class="col-10">States</dd>
-    <dt class="col-2">0</dt>
-    <dd class="col-10">Regionals</dd>
-    <dt class="col-2">0</dt>
-    <dd class="col-10">Invitationals</dd>
+  <dl>
+    <dt><%= data_by_date.count { |_, rep| rep[:Tournament][:level] == 'Nationals' } %></dt>
+    <dd>Nationals</dd>
+    <dt><%= data_by_date.count { |_, rep| rep[:Tournament][:level] == 'States' } %></dt>
+    <dd>States</dd>
+    <dt><%= data_by_date.count { |_, rep| rep[:Tournament][:level] == 'Regionals' } %></dt>
+    <dd>Regionals</dd>
+    <dt><%= data_by_date.count { |_, rep| rep[:Tournament][:level] == 'Invitational' } %></dt>
+    <dd>Invitationals</dd>
   </dl>
   <a href="#">Help contribute!</a>
 </div>
