@@ -21,10 +21,13 @@ page '/*.txt', layout: false
 # Proxy pages
 # https://middlemanapp.com/advanced/dynamic-pages/
 
+puts Dir.new(Pathname.new(__dir__) + 'data').children
+
 Dir.new(Pathname.new(__dir__) + 'data')
   .children
-  .select { |f| f.end_with?(".yaml") }
-  .map { |f| f.delete_suffix(".yaml") }
+  .select { |f| f.end_with?('.yaml') }
+  .reject { |f| f == 'recents.yaml' }
+  .map { |f| f.delete_suffix('.yaml') }
   .each do |t|
   proxy "/results/#{t}.html", "/results/template.html",
     locals: { tournament: t }, ignore: true

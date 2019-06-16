@@ -1,4 +1,7 @@
-<% data_by_date = data.to_h.sort do |rep1, rep2|
+<% data_by_date = data
+  .to_h
+  .reject { |k, _| k == 'recents' }
+  .sort do |rep1, rep2|
      rep1 = rep1.last
      rep2 = rep2.last
 
@@ -61,9 +64,12 @@
   </ul>
   <h4>Recently added</h4>
   <ul>
-    <li><a href="#">2019 Science Olympiad National Tournament @ Cornell University</a></li>
-    <li><a href="#">2018 Science Olympiad National Tournament @ Colorado State University</a></li>
-    <li><a href="#">2017 Science Olympiad National Tournament @ Wright State University</a></li>
+  <% data[:recents].each do |f| %>
+    <% t = data[f.delete_suffix('.yaml').to_sym][:Tournament] %>
+    <li><a href="/results/<%= f.delete_suffix('.yaml') %>.html">
+      <%= "#{t[:year]} #{tournament_title(t)} (Div. #{t[:division]})"%>
+    </a></li>
+  <% end %>
   </ul>
 </div>
 <div class="col-md-4">
