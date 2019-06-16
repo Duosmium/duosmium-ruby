@@ -14,14 +14,15 @@
             background-color: <%= find_bg_color(current_page.path) %>;">
   <div class="results-classic-header"
        style="width: <%= 2*(events.count + 1) + 28 %>em">
-    <h1 class="display-4 mb-0">
-      <%= t.tournament[:year] %>
-      <%= t.tournament[:state] if t.tournament[:level] == 'States' %>
-      <%= t.tournament[:level] %> Div.
-      <%= t.tournament[:division] %>
-    </h1>
-    <p class="lead mb-2">@ <%= t.tournament[:location] %></p>
-    <p><%= t.tournament[:date].strftime('%A, %B %-d, %Y') %></p>
+    <div class="tournament-info">
+      <h1>
+        <%= t.tournament[:year] %>
+        <%= tournament_title(t.tournament) %>
+        (Div. <%= t.tournament[:division] %>)
+      </h1>
+      <p><%= t.tournament[:date].strftime('%A, %B %-d, %Y') %>
+         @ <%= t.tournament[:location] %></p>
+    </div>
     <div class="actions">
       <a href="/results"><i class="material-icons">arrow_back</i></a>
       <a href="#" data-toggle="modal" data-target="#download-info">

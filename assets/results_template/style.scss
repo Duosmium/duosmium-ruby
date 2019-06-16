@@ -43,19 +43,46 @@ div.results-classic-thead-background {
 
 div.results-classic-header {
   @extend .text-light;
-  padding: 1.5em 0.75em;
+  padding: 1em 0;
   margin: 0 auto;
   user-select: none; // make header text unselectable so that CTRL+A only
                      // selects the table for easy CSV for user
 
-  div.actions a {
-    display: inline-block;
-    margin-right: 0.6em;
-    color: inherit;
+  div.tournament-info {
+    width: 350px;
+    height: 7.5em;
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: white 2px solid;
+    border-bottom: white 1px solid;
+    padding-left: 0.75em;
+
+    h1 {
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    p {
+      margin: 0;
+      font-size: 12px;
+    }
+  }
+
+  div.actions {
+    padding-left: 0.75em;
+
+    a {
+      display: inline-block;
+      margin-right: 0.6em;
+      color: inherit;
+    }
   }
 
   p.source {
     display: none; // only needed when printing
+    padding-left: 0.75em;
   }
 
   select.custom-select {
@@ -277,6 +304,11 @@ div#print-instructions {
   }
 
   div.results-classic-header {
+    div.tournament-info {
+      border-top: black 2px solid;
+      border-bottom: black 1px solid;
+    }
+
     div.actions {
       display: none;
     }
