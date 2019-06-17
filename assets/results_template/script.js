@@ -62,6 +62,15 @@ $(document).ready(function(){
       else { return sort_by_number(a, b); }
     }
 
+    var sort_by_state = function(a, b) {
+      let state_a = $(a).find("td.school small").text();
+      let state_b = $(b).find("td.school small").text();
+
+      if (state_a > state_b) { return 1; }
+      else if (state_a < state_b) { return -1; }
+      else { return sort_by_number(a, b); }
+    }
+
     switch(thing) {
       case "number":
         var sort_fun = sort_by_number;
@@ -71,6 +80,9 @@ $(document).ready(function(){
         break;
       case "rank":
         var sort_fun = sort_by_rank;
+        break;
+      case "state":
+        var sort_fun = sort_by_state;
         break;
       default:
         return;
