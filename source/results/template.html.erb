@@ -134,8 +134,13 @@
     <td class="rank" data-points="<%= i + 1 %>"><div><%= i + 1 %></div></td>
     <td class="total-points"><%= t.team_points tm[:number] %></td>
   <% events.each do |e| %>
-    <% ep = t.event_points tm[:number], e[:name] %>
-    <td class="event-points" data-points="<%= ep %>"><div><%= ep %></div></td>
+    <% points = t.event_points tm[:number], e[:name] %>
+    <% place = t.placings_by_team[tm[:number]][e[:name]][:place] %>
+    <td class="event-points"
+        data-points="<%= points %>"
+        data-place="<%= place ? place : 999999 %>">
+      <div><%= points %></div>
+    </td>
   <% end %>
     <% points = t.team_points_from_penalties(tm[:number]) %>
     <td class="team-penalties text-muted" data-points="<%= points %>">

@@ -53,8 +53,8 @@ $(document).ready(function(){
         var rank_a = parseInt($(a).find("td.rank").text());
         var rank_b = parseInt($(b).find("td.rank").text());
       } else {
-        var rank_a = parseInt($(a).find("td.event-points").eq(rank_col).text());
-        var rank_b = parseInt($(b).find("td.event-points").eq(rank_col).text());
+        var rank_a = parseInt($(a).find("td.event-points").eq(rank_col).attr("data-place"));
+        var rank_b = parseInt($(b).find("td.event-points").eq(rank_col).attr("data-place"));
       }
 
       let diff = rank_a - rank_b;
@@ -103,7 +103,7 @@ $(document).ready(function(){
       // copy info from event-points to event-points-focus
       let rows = $("table.results-classic tbody tr").get();
       $.each(rows, function(index, row) {
-        let points = $(row).find("td.event-points").eq(rank_col).text();
+        let points = $(row).find("td.event-points").eq(rank_col).attr("data-points");
         let points_elem = $(row).find("td.event-points-focus");
         points_elem.children("div").text(points);
         points_elem.attr("data-points", points);
