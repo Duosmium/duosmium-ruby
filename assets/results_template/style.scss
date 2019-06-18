@@ -49,7 +49,7 @@ div.results-classic-header {
                      // selects the table for easy CSV for user
 
   div.tournament-info {
-    width: 350px;
+    width: 25em;
     height: 7.5em;
     margin-bottom: 1em;
     display: flex;
@@ -60,13 +60,13 @@ div.results-classic-header {
     padding-left: 0.75em;
 
     h1 {
-      font-size: 20px;
+      font-size: 1.4em;
       font-weight: 500;
     }
 
     p {
       margin: 0;
-      font-size: 12px;
+      font-size: 0.875em;
     }
   }
 
@@ -91,6 +91,7 @@ div.results-classic-header {
     border-color: inherit;
     background-image: url('data:image/svg+xml;charset=utf8,%3Csvg fill="white" fill-opacity="0.54" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M7 10l5 5 5-5z"/%3E%3Cpath d="M0 0h24v24H0z" fill="none"/%3E%3C/svg%3E');
     margin-left: 0.2em;
+    font-size: 0.9em; // make font size relative by using em instead of rem
 
     &:hover {
       -webkit-box-shadow: inset 0 -2px 0 -1px white;
