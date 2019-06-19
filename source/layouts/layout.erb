@@ -14,7 +14,9 @@
           rel="stylesheet">
     <%= stylesheet_link_tag "main" %>
     <%= favicon_tag 'images/favicon.png' %>
-    <link rel="manifest" href="/results/manifest.json">
+  <% if current_page.data.manifest %>
+    <link rel="manifest" href="<%= current_page.data.manifest %>">
+  <% end %>
   </head>
   <body>
     <%= yield %>
