@@ -227,6 +227,15 @@ div.splash {
   top: 0 !important;
   left: 0 !important;
 
+  img {
+    // Adapted from https://css-tricks.com/making-css-animations-feel-natural/
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-name: bounce-7;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+  }
+
   img.blur {
     filter: none !important;
     transition: none !important;
@@ -235,4 +244,13 @@ div.splash {
   div.summary {
     display: none !important;
   }
+}
+
+@keyframes bounce-7 {
+  0%   { transform: scale(1,1)      translateY(0); }
+  15%  { transform: scale(1.1,.9)   translateY(0); }
+  45%  { transform: scale(.9,1.1)   translateY(-100px); }
+  75%  { transform: scale(1.05,.95) translateY(0); }
+  85%  { transform: scale(1,1)      translateY(-7px); }
+  100% { transform: scale(1,1)      translateY(0); }
 }
