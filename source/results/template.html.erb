@@ -1,4 +1,7 @@
 <% t = SciolyFF::Helper.new(data[tournament]) %>
+<% current_page.data.title = "#{t.tournament[:year]} "\
+                             "#{tournament_title(t.tournament)} " \
+                             "(Div. #{t.tournament[:division]}) Results" %>
 <% events = t.events_by_name.values.sort do |a, b|
               if a[:trial] && !b[:trial] then 1
               elsif !a[:trial] && b[:trial] then -1
