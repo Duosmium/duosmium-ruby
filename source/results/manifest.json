@@ -6,12 +6,9 @@
   "start_url" : "https://unosmium.org/results/",
   "short_name" : "Unosmium Results",
   "theme_color" : "transparent",
-  "description" : "Unosmium Results is BTS (better than spreadsheets) and a new way to view Science Olympiad results.",
+  "description" : "A better way to view Science Olympiad results.",
   "orientation" : "any",
   "background_color" : "#1f1b35",
-  "related_applications" : "",
-  "prefer_related_applications" : "false",
-  "generated" : "true",
   "icons" : [
     {
       "src": "https://unosmium.org/images/favicon.png",
