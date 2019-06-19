@@ -226,4 +226,13 @@ div.splash {
   background-color: white !important;
   top: 0 !important;
   left: 0 !important;
+
+  img.blur {
+    filter: none !important;
+    transition: none !important;
+  }
+
+  div.summary {
+    display: none !important;
+  }
 }
