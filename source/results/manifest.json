@@ -7,7 +7,7 @@
   "short_name" : "Unosmium Results",
   "theme_color" : "transparent",
   "description" : "A better way to view Science Olympiad results.",
-  "orientation" : "any",
+  "orientation" : "portrait-primary",
   "background_color" : "#1f1b35",
   "icons" : [
     {
