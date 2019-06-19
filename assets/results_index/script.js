@@ -78,4 +78,9 @@ $(document).ready(function(){
   $("div.card-actions button").on("click", function() {
     $(this).parent().parent().children("div.card-body").click();
   });
+
+  // Make links to full results instantly trigger a splash screen
+  $("a.full-results").on("click", function() {
+    $(this).parent().parent().children("div.card-body").addClass("splash");
+  });
 });
