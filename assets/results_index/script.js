@@ -79,8 +79,10 @@ $(document).ready(function(){
     $(this).parent().parent().children("div.card-body").click();
   });
 
-  // Make links to full results instantly trigger a splash screen
-  $("a.full-results").on("click", function() {
-    $(this).parent().parent().children("div.splash-wrapper").addClass("splash");
-  });
+  // Disabled for now (may try to find a way to enable for PWAs only?) because
+  // of issues with back button
+  // // Make links to full results instantly trigger a splash screen
+  // $("a.full-results").on("click", function() {
+  //  $(this).parent().parent().children("div.splash-wrapper").addClass("splash");
+  // });
 });
