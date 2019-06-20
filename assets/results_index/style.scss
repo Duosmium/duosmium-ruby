@@ -99,8 +99,6 @@ div.search-wrapper.searching {
   div#hide-on-search {
     height: 0; // weird hack to make transition smooth
   }
-
-  transition: min-height 0.6s;
 }
 
 header.results-index {

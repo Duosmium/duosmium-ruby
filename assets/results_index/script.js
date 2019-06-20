@@ -40,19 +40,11 @@ $(document).ready(function(){
     $("input#searchTournaments").blur();
   });
 
-  // Smooth scroll to view all results (don't use CSS for this because of weird
-  // inconsistent behavior in Chrome after hitting back button)
-  // https://www.w3schools.com/howto/howto_css_smooth_scroll.asp
+  // Prevent see all from appending anchor tag to URL (makes the back button
+  // logic more consistent)
   $("a#see-all").on("click", function(e) {
     e.preventDefault();
-    var hash = this.hash;
-    var animation_time = 500;
-
-    $("html, body").animate({
-      scrollTop: $(hash).offset().top
-    }, animation_time, function() {
-      // window.location.hash = hash;
-    });
+    $(document).scrollTop($(this.hash).offset().top);
   });
 
   // Hide the scroll to top button if already near top
