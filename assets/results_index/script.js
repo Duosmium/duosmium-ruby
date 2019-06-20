@@ -1,6 +1,5 @@
 $(document).ready(function(){
   // Change layout and filter results when user starts typing in search bar
-  $("div.search-wrapper input").val(""); // Start with empty search bar
   $("div.search-wrapper input").on("input", function() {
     let search_text = $(this).val().toLowerCase().trim();
     if (search_text.length === 0) {
@@ -12,7 +11,7 @@ $(document).ready(function(){
       // inspired by
       // http://www.redotheweb.com/2013/05/15/client-side-full-text-search-in-css.html
       // may not scale well?
-      let search_html = "";
+      var search_html = "";
       // replace "div c" with "div-c", and like, for the data-search attribute
       let words = search_text.replace(/(div|division) ([abc])/, "$1-$2");
       words.split(/\s+/).forEach(function(word) { // split on whitespace
@@ -21,7 +20,19 @@ $(document).ready(function(){
       });
       $("style#search_style").html(search_html);
     }
+
+    // Save state of search bar between page loads
+    localStorage.setItem('searchstring', $(this).val());
+    localStorage.setItem('searchstyle', search_html);
   });
+
+  // Restore search bar status if exists
+  if(localStorage.getItem('searchstring')) {
+    $("div.search-wrapper input").val(localStorage.getItem('searchstring'));
+    $("style#search_style").html(localStorage.getItem('searchstyle'));
+    $("div.search-wrapper div.floating-label").addClass("has-value");
+    $("div.search-wrapper").addClass("searching");
+  }
 
   // Cause input box to lose focus after hitting enter (esp. for mobile devices
   // where keyboard takes up a lot of the screen)
