@@ -81,6 +81,6 @@ $(document).ready(function(){
 
   // Make links to full results instantly trigger a splash screen
   $("a.full-results").on("click", function() {
-    $(this).parent().parent().children("div.card-body").addClass("splash");
+    $(this).parent().parent().children("div.splash-wrapper").addClass("splash");
   });
 });

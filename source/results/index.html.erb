@@ -68,12 +68,15 @@ manifest: /results/manifest.json
     </a></li>
   </ul>
   <h4>Recently added</h4>
-  <ul>
+  <ul class="recently-added">
   <% data[:recents].each do |f| %>
     <% t = data[f.delete_suffix('.yaml').to_sym][:Tournament] %>
-    <li><a href="/results/<%= f.delete_suffix('.yaml') %>.html">
-      <%= "#{t[:year]} #{tournament_title(t)} (Div. #{t[:division]})"%>
-    </a></li>
+    <li>
+      <div><a href="/results/<%= f.delete_suffix('.yaml') %>.html" class="full-results">
+        <%= "#{t[:year]} #{tournament_title(t)} (Div. #{t[:division]})"%>
+        </a></div>
+      <div class="splash-wrapper"><img src="<%= find_logo_path(f) %>"/></div>
+    </li>
   <% end %>
   </ul>
 </div>
@@ -122,7 +125,7 @@ manifest: /results/manifest.json
         @ <%= t.tournament[:location] %>
       </h3>
     </div>
-    <div class="card-body"
+    <div class="card-body splash-wrapper"
          data-toggle="collapse"
          data-target="#summary-<%= i %>"
          aria-expanded="false"
