@@ -1,4 +1,13 @@
 $(document).ready(function(){
+  // Make link to /results/ work as a back button if appropriate
+  $("a.js-back-button").on("click", function(e) {
+    e.preventDefault();
+    if (document.referrer === this.href) {
+      window.history.back();
+    } else {
+      window.location = this.href;
+    }
+  });
 
   // First, make sure all default checkboxes are checked initially (browser
   // might tend to remember previous state and it's not apparent to the user
