@@ -12,8 +12,7 @@ $(document).ready(function(){
   // First, make sure all default checkboxes are checked initially (browser
   // might tend to remember previous state and it's not apparent to the user
   // that the boxes would be unchecked without going into the menu)
-  $("div#team-filter input").prop("checked", true);
-  $("div#settings input").prop("checked", true);
+  $("div#filters input").prop("checked", true);
 
   // Correct minimum width of header based on number of events
   var fix_width = function(extra) {
@@ -191,7 +190,7 @@ $(document).ready(function(){
   });
 
   // Toggle medal highlighting based on checkboxes
-  $("div#settings input").change(function() {
+  $("div#medal-filter input").change(function() {
       let medal_number = $(this).attr("id").slice("medal".length);
       let medals = $("td[data-points='" + medal_number + "'] div")
       

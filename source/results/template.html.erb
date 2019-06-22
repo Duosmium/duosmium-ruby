@@ -36,8 +36,8 @@
       <a href="#" data-toggle="modal" data-target="#print-instructions">
         <i class="material-icons">print</i>
       </a>
-      <a href="#" data-toggle="modal" data-target="#team-filter">
-        <i class="material-icons">filter_list</i>
+      <a href="#" id="share-button">
+        <i class="material-icons">share</i>
       </a>
       <select id="event-select" class="custom-select custom-select-sm"
               aria-label="Select Event Filter">
@@ -60,8 +60,8 @@
         <option value="state">by State</option>
         <option value="rank" selected>by Rank</option>
       </select>
-      <a href="#" data-toggle="modal" data-target="#settings" class="settings">
-        <i class="material-icons">settings</i>
+      <a href="#" data-toggle="modal" data-target="#filters" class="settings">
+        <i class="material-icons">filter_list</i>
       </a>
     </div>
     <p class="source">
@@ -157,13 +157,13 @@
 </tbody>
 </table>
 </div>
-<div class="modal" id="team-filter" tabindex="-1" role="dialog"
-     aria-labelledby="team-filter-label" aria-hidden="true">
+<div class="modal" id="filters" tabindex="-1" role="dialog"
+     aria-labelledby="filters-label" aria-hidden="true">
   <div class="modal-dialog" role="form">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="team-filter-label">
-          Select teams to show
+        <h5 class="modal-title" id="filters-label">
+          Filters
         </h5>
         <button type="button" class="close" data-dismiss="modal"
                 aria-label="Close">
@@ -171,24 +171,43 @@
         </button>
       </div>
       <div class="modal-body">
-        <div class="custom-control custom-checkbox">
+        <h6>Select which medals to highlight</h6>
+      <% (1..6).each do |x| %>
+        <div class="custom-control custom-checkbox" id="medal-filter">
           <input type="checkbox" class="custom-control-input"
-                 id="allTeams" checked>
-          <label class="custom-control-label" for="allTeams">
-            All Teams
-          </label>
-        </div>
-        <hr>
-      <% teams_by_number.each do |tm| %>
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input"
-                 id="team<%= tm[:number] %>" checked>
-          <label class="custom-control-label" for="team<%= tm[:number] %>">
-            <%= tm[:number] %> <%= format_school(tm) %>
-            <small><%= tm[:state] %></small>
+                 id="medal<%= x %>" checked>
+          <label class="custom-control-label" for="medal<%= x %>">
+            <% suffix =  case x
+                         when 1 then 'st'
+                         when 2 then 'nd'
+                         when 3 then 'rd'
+                         when 4..6 then 'th'
+                         end %>
+            <%= x %><sup><%= suffix %></sup> place medals
           </label>
         </div>
       <% end %>
+        <h6 class="mt-4">Select which teams to show</h6>
+        <div id="team-filter">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input"
+                   id="allTeams" checked>
+            <label class="custom-control-label" for="allTeams">
+              All Teams
+            </label>
+          </div>
+          <hr>
+        <% teams_by_number.each do |tm| %>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input"
+                   id="team<%= tm[:number] %>" checked>
+            <label class="custom-control-label" for="team<%= tm[:number] %>">
+              <%= tm[:number] %> <%= format_school(tm) %>
+              <small><%= tm[:state] %></small>
+            </label>
+          </div>
+        <% end %>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">
@@ -277,45 +296,6 @@
            href="/data/<%= File.basename(current_page.path, '.html') + '.yaml' %>">
           Download
         </a>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="modal" id="settings" tabindex="-1" role="dialog"
-     aria-labelledby="settings-label" aria-hidden="true">
-  <div class="modal-dialog" role="form">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="settings-label">
-          Settings
-        </h5>
-        <button type="button" class="close" data-dismiss="modal"
-                aria-label="Close">
-          <span aria-hidden="true" style="vertical-align: super">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <h6>Select which medals to highlight</h6>
-      <% (1..6).each do |x| %>
-        <div class="custom-control custom-checkbox">
-          <input type="checkbox" class="custom-control-input"
-                 id="medal<%= x %>" checked>
-          <label class="custom-control-label" for="medal<%= x %>">
-            <% suffix =  case x
-                         when 1 then 'st'
-                         when 2 then 'nd'
-                         when 3 then 'rd'
-                         when 4..6 then 'th'
-                         end %>
-            <%= x %><sup><%= suffix %></sup> place medals
-          </label>
-        </div>
-      <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">
-          Close
-        </button>
       </div>
     </div>
   </div>
