@@ -18,28 +18,30 @@ $(document).ready(function(){
       navigator.share({
         url: share_url
       });
-    }
-    // copy to clipboard
-    let dummy = document.createElement('input');
-    document.body.append(dummy);
-    dummy.value = share_url;
-    dummy.select();
-    document.execCommand('copy');
-    document.body.removeChild(dummy);
-
-    // show snack
-    window.clearTimeout(timeout);
-    var display_snack = function() {
-      $("div#share-snack").addClass("show");
-      timeout = window.setTimeout(function() {
-        $("div#share-snack").removeClass("show");
-      }, 2000);
-    };
-    if ($("div#share-snack").hasClass("show")) {
-      $("div#share-snack").removeClass("show");
-      window.setTimeout(display_snack, 200);
     } else {
-      display_snack();
+      // otherwise copy to clipboard
+      let dummy = document.createElement('input');
+      document.body.append(dummy);
+      dummy.value = share_url;
+      dummy.select();
+      document.execCommand('copy');
+      document.body.removeChild(dummy);
+
+      // show snack
+      window.clearTimeout(timeout);
+      var display_snack = function() {
+        $("div#share-snack div.snackbar-body").html("Link copied! " + share_url);
+        $("div#share-snack").addClass("show");
+        timeout = window.setTimeout(function() {
+          $("div#share-snack").removeClass("show");
+        }, 2000);
+      };
+      if ($("div#share-snack").hasClass("show")) {
+        $("div#share-snack").removeClass("show");
+        window.setTimeout(display_snack, 200);
+      } else {
+        display_snack();
+      }
     }
   });
 
