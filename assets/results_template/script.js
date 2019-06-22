@@ -9,6 +9,40 @@ $(document).ready(function(){
     }
   });
 
+  // Share button functionality
+  var timeout;
+  $("a#share-button").on("click", function() {
+    var share_url = window.location.href;
+    if (navigator.share) {
+      // use Web Share API if available
+      navigator.share({
+        url: share_url
+      });
+    }
+    // copy to clipboard
+    let dummy = document.createElement('input');
+    document.body.append(dummy);
+    dummy.value = share_url;
+    dummy.select();
+    document.execCommand('copy');
+    document.body.removeChild(dummy);
+
+    // show snack
+    window.clearTimeout(timeout);
+    var display_snack = function() {
+      $("div#share-snack").addClass("show");
+      timeout = window.setTimeout(function() {
+        $("div#share-snack").removeClass("show");
+      }, 2000);
+    };
+    if ($("div#share-snack").hasClass("show")) {
+      $("div#share-snack").removeClass("show");
+      window.setTimeout(display_snack, 200);
+    } else {
+      display_snack();
+    }
+  });
+
   // First, make sure all default checkboxes are checked initially (browser
   // might tend to remember previous state and it's not apparent to the user
   // that the boxes would be unchecked without going into the menu)
