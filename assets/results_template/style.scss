@@ -81,10 +81,14 @@ div.results-classic-header {
   div.actions {
     padding-left: 0.75em;
 
-    a {
+    a, button {
       display: inline-block;
       margin-right: 0.6em;
       color: inherit;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0;
     }
   }
 

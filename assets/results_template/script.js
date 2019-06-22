@@ -11,7 +11,7 @@ $(document).ready(function(){
 
   // Share button functionality
   var timeout;
-  $("a#share-button").on("click", function() {
+  $("button#share-button").on("click", function() {
     var share_url = window.location.href;
     if (navigator.share) {
       // use Web Share API if available
