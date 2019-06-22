@@ -9,3 +9,8 @@ $secondary: (
   dark:  darken(#5b8294, 10%),
   light: lighten(#5b8294, 10%)
 );
+
+html {
+  // disable double-tap to zoom
+  touch-action: manipulation;
+}
