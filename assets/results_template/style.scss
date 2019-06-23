@@ -223,10 +223,9 @@ table.results-classic {
     padding: 0;
   }
 
-  th {
+  th, thead {
     position: sticky;
     top: 12.5em;
-    zoom: 1.0001; // hack to fix blurry headers on Chrome
   }
 
   tr {
