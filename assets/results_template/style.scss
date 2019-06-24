@@ -333,16 +333,16 @@ div#print-instructions {
     tr {
       height: auto;
 
-      th {
-        color: rgba(0, 0, 0, 0.87);
-        position: static;
-      }
-
       td div {
         line-height: normal !important;
         height: auto !important;
         background-color: transparent !important;
       }
+    }
+
+    th, thead {
+      color: rgba(0, 0, 0, 0.87);
+      position: static;
     }
 
     colgroup.event-columns col.hover {
