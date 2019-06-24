@@ -126,6 +126,7 @@
     <td class="school">
       <%= format_school(tm) %>
       <%= tm[:suffix] %>
+      <%= "(#{tm[:city]})" if tm[:city] %>
       <small><%= tm[:state] %></small>
     <% if tm[:exhibition] %>
       <a tabindex="0" role="button"
