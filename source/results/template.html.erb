@@ -97,7 +97,7 @@
     <th class="event-points">
       <%= e[:name] %>
     <% if e[:trial] %>
-      <a tabindex="0" role="button" href="#"
+      <a tabindex="0" role="button"
          data-toggle="popover" data-trigger="focus"
          title="Trial Event"
          data-content="Placings in this event did not count towards total
@@ -105,7 +105,7 @@
         <span class="badge badge-info"><small>T</small></span>
       </a>
     <% elsif e[:trialed] %>
-      <a tabindex="0" role="button" href="#"
+      <a tabindex="0" role="button"
          data-toggle="popover" data-trigger="focus"
          title="Trialed Event"
          data-content="Placings in this event did not count towards total
@@ -128,7 +128,7 @@
       <%= tm[:suffix] %>
       <small><%= tm[:state] %></small>
     <% if tm[:exhibition] %>
-      <a tabindex="0" role="button" href="#"
+      <a tabindex="0" role="button"
          data-toggle="popover" data-trigger="focus"
          title="Exhibition Team"
          data-content="Placings by this team did not affect the ranks of other
