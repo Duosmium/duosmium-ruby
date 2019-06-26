@@ -173,8 +173,9 @@
       </div>
       <div class="modal-body">
         <h6>Select which medals to highlight</h6>
+        <div id="medal-filter">
       <% (1..6).each do |x| %>
-        <div class="custom-control custom-checkbox" id="medal-filter">
+        <div class="custom-control custom-checkbox">
           <input type="checkbox" class="custom-control-input"
                  id="medal<%= x %>" checked>
           <label class="custom-control-label" for="medal<%= x %>">
@@ -188,6 +189,7 @@
           </label>
         </div>
       <% end %>
+        </div>
         <hr>
         <h6>Select which teams to show</h6>
         <div id="team-filter">
