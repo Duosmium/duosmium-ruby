@@ -153,12 +153,15 @@ helpers do
       "#{t[:state]} #{t[:name]} Regionals"
     when 'Invitational'
       name = t[:name] ? t[:name] : t[:location]
-      abbreviation = name.split(' ')
-                         .select { |w| /^[[:upper:]]/.match(w) }
-                         .map { |w| w[0] }
-                         .join
-      "#{abbreviation} Invitational"
+      "#{acronymize(name)} Invitational"
     end
+  end
+
+  def acronymize(phrase)
+    phrase.split(' ')
+          .select { |w| /^[[:upper:]]/.match(w) }
+          .map { |w| w[0] }
+          .join
   end
 
   def expand_state_name(postal_code)
@@ -188,6 +191,8 @@ helpers do
       'tournament',
       t[:name],
       t[:location],
+      t[:name] ? acronymize(t[:name]) : nil,
+      t[:location] ? acronymize(t[:location]) : nil,
       t[:level],
       t[:level] == "Nationals" ? 'nats' : nil,
       t[:level] == "Nationals" ? 'sont' : nil,
