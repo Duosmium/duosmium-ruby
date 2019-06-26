@@ -143,6 +143,24 @@ helpers do
     end
   end
 
+  def tournament_title_short(t)
+    case t[:level]
+    when 'Nationals'
+      'SONT'
+    when 'States'
+      "#{t[:state]} States"
+    when 'Regionals'
+      "#{t[:state]} #{t[:name]} Regionals"
+    when 'Invitational'
+      name = t[:name] ? t[:name] : t[:location]
+      abbreviation = name.split(' ')
+                         .select { |w| /^[[:upper:]]/.match(w) }
+                         .map { |w| w[0] }
+                         .join
+      "#{abbreviation} Invitational"
+    end
+  end
+
   def expand_state_name(postal_code)
     STATES_BY_POSTAL_CODE[postal_code.to_sym]
   end
