@@ -345,6 +345,10 @@ div#print-instructions {
       position: static;
     }
 
+    thead {
+      display: table-row-group;
+    }
+
     colgroup.event-columns col.hover {
       background-color: transparent;
     }
