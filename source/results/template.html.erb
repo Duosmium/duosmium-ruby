@@ -1,7 +1,4 @@
 <% t = SciolyFF::Helper.new(data[tournament]) %>
-<% current_page.data.title = "#{t.tournament[:year]} "\
-                             "#{tournament_title_short(t.tournament)} " \
-                             "(Div. #{t.tournament[:division]}) | Unosmium Results" %>
 <% events = t.events_by_name.values.sort do |a, b|
               if a[:trial] && !b[:trial] then 1
               elsif !a[:trial] && b[:trial] then -1
@@ -10,6 +7,23 @@
             end %>
 <% teams_by_rank = t.sort_teams_by_rank %>
 <% teams_by_number = t.teams_by_number.sort.map(&:last) %>
+
+<% current_page.data.title =
+  "#{t.tournament[:year]} "\
+  "#{tournament_title_short(t.tournament)} " \
+  "(Div. #{t.tournament[:division]}) | Unosmium Results" %>
+
+<% current_page.data.description =
+  "Full results for the #{t.tournament[:year]} "\
+  "#{tournament_title(t.tournament)} "\
+  "(Division #{t.tournament[:division]}), "\
+  "Champion: #{teams_by_rank[0][:school]} "\
+  "#{teams_by_rank[0][:suffix] ? teams_by_rank[0][:suffix] + " " : nil}"\
+  "(#{t.team_points(teams_by_rank[0][:number])} pts), "\
+  "Runner-up: #{teams_by_rank[1][:school]} "\
+  "#{teams_by_rank[1][:suffix] ? teams_by_rank[1][:suffix] + " " : nil}"\
+  "(#{t.team_points(teams_by_rank[1][:number])} pts), "\
+  "Total teams: #{t.nonexhibition_teams.count}" %>
 
 <div class="results-classic-wrapper">
 <div class="results-classic-thead-background shadow-sm"
