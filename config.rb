@@ -153,7 +153,8 @@ helpers do
       "#{t[:state]} #{t[:name]} Regionals"
     when 'Invitational'
       name = t[:name] ? t[:name] : t[:location]
-      "#{acronymize(name)} Invitational"
+      title = name.split(' ').count >= 3 ? acronymize(name) : name
+      "#{title} Invitational"
     end
   end
 
