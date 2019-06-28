@@ -198,6 +198,7 @@ helpers do
       t[:level],
       t[:level] == "Nationals" ? 'nats' : nil,
       t[:level] == "Nationals" ? 'sont' : nil,
+      t[:level] == "Invitational" ? 'invite' : nil,
       t[:state],
       t[:state] ? expand_state_name(t[:state]) : nil,
       "div-#{t[:division]}",
