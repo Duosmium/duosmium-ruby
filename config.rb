@@ -103,9 +103,11 @@ helpers do
     potential_logos = [
       filename + '.png',
       filename + '.jpg',
+      filename.split('_')[0..-2].join('_') + '.svg', # remove _b or _c suffix
       filename.split('_')[0..-2].join('_') + '.png', # remove _b or _c suffix
       filename.split('_')[0..-2].join('_') + '.jpg', # remove _b or _c suffix
       filename.split('_')[0..-2].join('_') + '.gif', # remove _b or _c suffix
+      filename.split('_')[1..-2].join('_') + '.svg', # remove date as well
       filename.split('_')[1..-2].join('_') + '.png', # remove date as well
       filename.split('_')[1..-2].join('_') + '.jpg', # remove date as well
       filename.split('_')[1..-2].join('_') + '.gif'  # remove date as well
