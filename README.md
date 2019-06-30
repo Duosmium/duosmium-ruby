@@ -27,9 +27,14 @@ Request](https://help.github.com/en/articles/creating-a-pull-request) that adds
 a YAML file in format of [SciolyFF](https://github.com/unosmium/sciolyff) in the
 [data directory](/data).
 
-If converting, the files already in the data directory should serve as an
-example. For additional details on converting a file to the SciolyFF, see
-[here](https://github.com/unosmium/sciolyff-conversions).
+A Google Sheets [input
+template](https://docs.google.com/spreadsheets/d/1bkDCZD1NYYsS8L8m_e_cZ2kn9dZm2vufC4U9hNum6Hg)
+can be used to generate a CSV file that then can be converted into a SciolyFF
+file using the script in [this
+repository](https://github.com/unosmium/sciolyff-conversions).  The files
+already in the data directory should serve as an example of expected output.
+Additionally, the `sciolyff` command line utility should be used to verify the
+data files.
 
 After the pull request is merged, the website will automatically generate an
 HTML results page that can be viewed by clicking on the appropriate link in the
