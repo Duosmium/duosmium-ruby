@@ -69,6 +69,7 @@ div.search-wrapper {
   }
 
   dl {
+    /* autoprefixer grid: off */
     display: grid;
     grid-template-columns: auto 1fr;
 
@@ -148,6 +149,7 @@ main#all {
 
 // CSS Grid!
 div.results-index-card-grid {
+  /* autoprefixer grid: off */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30em, 1fr));
   grid-gap: 1.5em;
