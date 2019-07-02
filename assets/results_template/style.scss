@@ -223,7 +223,15 @@ table.results-classic {
     padding: 0;
   }
 
-  th, thead {
+  // for Firefox/Safari
+  thead {
+    position: sticky;
+    top: 12.5em;
+  }
+
+  // for Chrome/Edge
+  th {
+    /* autoprefixer: ignore next */
     position: sticky;
     top: 12.5em;
   }
