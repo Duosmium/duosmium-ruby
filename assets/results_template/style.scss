@@ -38,6 +38,9 @@ div.results-classic-wrapper {
   @media (max-width: 26.1875rem) { // ensure smooth transition
     font-size: 3.58vw;
   }
+  // smooth/lazy scrolling on iOS
+  -webkit-overflow-scrolling: touch;
+
   // also used to change table layout when focusing on one event
 }
 
