@@ -47,6 +47,7 @@ div.results-classic-wrapper {
 div.results-classic-thead-background {
   background-color: theme-color-dark(secondary);
   position: sticky;
+  isolation: isolate; /* ensure div is in front of col highlight for webkit */
   top: 0;
   height: calc(12.5em + 3ex);
 }
