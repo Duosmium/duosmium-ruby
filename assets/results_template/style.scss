@@ -302,6 +302,11 @@ div#print-instructions {
   }
 }
 
+.modal {
+  // smooth/lazy scrolling on iOS
+  -webkit-overflow-scrolling: touch;
+}
+
 @media print {
 
   html {
