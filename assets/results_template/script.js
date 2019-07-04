@@ -4,6 +4,8 @@ $(document).ready(function(){
   window.onresize = function() {
     if ($(window).height() < wrapper.height()) {
       wrapper.height($(window).height());
+    } else {
+      wrapper.css("height", "");
     }
   };
   window.onresize();
