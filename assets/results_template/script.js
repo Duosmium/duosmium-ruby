@@ -1,4 +1,13 @@
 $(document).ready(function(){
+  // "Fix" 100vh problem on iOS and mobile Chrome
+  var wrapper = $("div.results-classic-wrapper");
+  window.onresize = function() {
+    if ($(window).height() < wrapper.height()) {
+      wrapper.height($(window).height());
+    }
+  };
+  window.onresize();
+
   // Make link to /results/ work as a back button if appropriate
   $("a.js-back-button").on("click", function(e) {
     e.preventDefault();
