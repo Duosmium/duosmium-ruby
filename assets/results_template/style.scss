@@ -128,9 +128,6 @@ div.results-classic-header {
       // for the select boxes on Windows, which inherit the white text color
       color: #424242 !important;
       background-color: white;
-      @include media-breakpoint-down(xs) {
-        font-size: 1rem; // prevent iOS from zooming on select
-      }
     }
   }
 }
