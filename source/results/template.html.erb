@@ -157,10 +157,11 @@
   <% events.each do |e| %>
     <% points = t.event_points tm[:number], e[:name] %>
     <% place = t.placings_by_team[tm[:number]][e[:name]][:place] %>
+    <% unknown = t.placings_by_team[tm[:number]][e[:name]][:unknown] %>
     <td class="event-points"
-        data-points="<%= points %>"
+        data-points="<%= unknown ? '?' : points %>"
         data-place="<%= place ? place : 999000 + points %>">
-      <div><%= points %></div>
+      <div><%= unknown ? '?' : points %></div>
     </td>
   <% end %>
     <% points = t.team_points_from_penalties(tm[:number]) %>
