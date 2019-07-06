@@ -9,12 +9,12 @@
 <% teams_by_number = t.teams_by_number.sort.map(&:last) %>
 
 <% current_page.data.title =
-  "#{t.tournament[:year]} "\
+  "#{t.tournament[:date].year} "\
   "#{tournament_title_short(t.tournament)} " \
   "(Div. #{t.tournament[:division]}) | Unosmium Results" %>
 
 <% current_page.data.description =
-  "Full results for the #{t.tournament[:year]} "\
+  "Full results for the #{t.tournament[:date].year} "\
   "#{tournament_title(t.tournament)} "\
   "(Division #{t.tournament[:division]}), "\
   "Champion: #{teams_by_rank[0][:school]} "\
@@ -33,7 +33,7 @@
        style="width: <%= 2*(events.count + 1) + 28 %>em">
     <div class="tournament-info">
       <h1>
-        <%= t.tournament[:year] %>
+        <%= t.tournament[:date].year %>
         <%= tournament_title(t.tournament) %>
         (Div. <%= t.tournament[:division] %>)
       </h1>
