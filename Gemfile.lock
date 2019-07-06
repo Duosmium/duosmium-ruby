@@ -104,7 +104,7 @@ GEM
     sassc (2.0.1)
       ffi (~> 1.9)
       rake
-    sciolyff (0.4.1)
+    sciolyff (0.5.1)
       minitest (~> 5.11)
       optimist (~> 3.0)
     servolux (0.13.0)
@@ -127,7 +127,7 @@ DEPENDENCIES
   middleman (~> 4.2)
   middleman-autoprefixer (~> 2.7)
   miro!
-  sciolyff (= 0.4.1)
+  sciolyff (= 0.5.1)
   tzinfo-data
   wdm (~> 0.1)
 
