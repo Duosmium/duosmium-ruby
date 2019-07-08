@@ -155,7 +155,7 @@ helpers do
       "#{t[:state]} #{t[:name]} Regionals"
     when 'Invitational'
       name = t[:name] ? t[:name] : t[:location]
-      title = name.split(' ').count >= 3 ? acronymize(name) : name
+      title = name.split(' ').count >= 4 ? acronymize(name) : name
       "#{title} Invitational"
     end
   end
