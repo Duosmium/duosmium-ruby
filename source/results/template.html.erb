@@ -159,9 +159,9 @@
     <% place = t.placings_by_team[tm[:number]][e[:name]][:place] %>
     <% unknown = t.placings_by_team[tm[:number]][e[:name]][:unknown] %>
     <td class="event-points"
-        data-points="<%= unknown ? '?' : points %>"
+        data-points="<%= unknown ? '??' : points %>"
         data-place="<%= place ? place : 999000 + points %>">
-      <div><%= unknown ? '?' : points %></div>
+      <div><%= unknown ? '??' : points %></div>
     </td>
   <% end %>
     <% points = t.team_points_from_penalties(tm[:number]) %>
