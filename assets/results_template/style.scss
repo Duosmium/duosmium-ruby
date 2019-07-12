@@ -47,6 +47,7 @@ div.results-classic-wrapper {
 div.results-classic-thead-background {
   background-color: theme-color-dark(secondary);
   position: sticky;
+  z-index: 1;
   isolation: isolate; /* ensure div is in front of col highlight for webkit */
   top: 0;
   height: calc(12.5em + 3ex);
@@ -230,6 +231,7 @@ table.results-classic {
   // for Firefox/Safari
   thead {
     position: sticky;
+    z-index: 1;
     top: 12.5em;
   }
 
@@ -237,6 +239,7 @@ table.results-classic {
   th {
     /*! autoprefixer: ignore next */
     position: sticky;
+    z-index: 1;
     top: 12.5em;
   }
 
@@ -248,6 +251,18 @@ table.results-classic {
     div {
       margin-right: 0.4em;
       text-align: right;
+    }
+  }
+
+  // keep text centering consistent after adding superscript
+  // https://stackoverflow.com/questions/53746389/center-text-ignoring-superscript
+  td.event-points, td.event-points-focus {
+    div {
+      position: relative;
+      sup {
+        position: absolute;
+        top: 0.75em;
+      }
     }
   }
 

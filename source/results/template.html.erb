@@ -158,10 +158,11 @@
     <% points = t.event_points tm[:number], e[:name] %>
     <% place = t.placings_by_team[tm[:number]][e[:name]][:place] %>
     <% unknown = t.placings_by_team[tm[:number]][e[:name]][:unknown] %>
+    <% exempt = t.placings_by_team[tm[:number]][e[:name]][:exempt] %>
     <td class="event-points"
         data-points="<%= unknown ? '??' : points %>"
         data-place="<%= place ? place : 999000 + points %>">
-      <div><%= unknown ? '??' : points %></div>
+      <div><%= unknown ? '??' : points %><%= '<sup>⬨</sup>' if exempt %></div>
     </td>
   <% end %>
     <% points = t.team_points_from_penalties(tm[:number]) %>
