@@ -170,9 +170,11 @@ $(document).ready(function(){
       // copy info from event-points to event-points-focus
       let rows = $("table.results-classic tbody tr").get();
       $.each(rows, function(index, row) {
-        let points = $(row).find("td.event-points").eq(rank_col).attr("data-points");
+        let source_elem = $(row).find("td.event-points").eq(rank_col);
+        let source_html = source_elem.html();
+        let points = source_elem.attr("data-points");
         let points_elem = $(row).find("td.event-points-focus");
-        points_elem.children("div").text(points);
+        points_elem.children("div").html(source_html);
         points_elem.attr("data-points", points);
       });
 
