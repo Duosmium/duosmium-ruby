@@ -173,6 +173,16 @@
 <% end %>
 </tbody>
 </table>
+<div class="results-classic-footnotes"
+     style="width: <%= 2*(events.count + 1) + 28 %>em">
+<% if data[tournament]['Placings'].find { |p| p[:exempt] }%>
+  <div class="wrapper">
+    <p class="footnote">
+    <sup>⬨</sup>Result was not counted as part of total score
+    </p>
+  </div>
+<% end %>
+</div>
 </div>
 <div class="modal" id="filters" tabindex="-1" role="dialog"
      aria-labelledby="filters-label" aria-hidden="true">

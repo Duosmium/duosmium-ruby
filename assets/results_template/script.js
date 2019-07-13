@@ -61,12 +61,13 @@ $(document).ready(function(){
   // that the boxes would be unchecked without going into the menu)
   $("div#filters input").prop("checked", true);
 
-  // Correct minimum width of header based on number of events
+  // Correct minimum width of header and footnotes based on number of events
   var fix_width = function(extra) {
     let width = $("colgroup.event-columns col").length * 2 + 28 + extra;
     let min_width = width + 0.5;
     $("div.results-classic-thead-background").css("min-width", min_width + "em");
     $("div.results-classic-header").css("width", width + "em");
+    $("div.results-classic-footnotes").css("width", width + "em");
   };
   // called later by sort_and_toggle_event_rank(), and intial values set by
   // inline CSS anyways (to prevent jump when JS loads)
