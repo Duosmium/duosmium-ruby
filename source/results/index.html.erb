@@ -132,7 +132,10 @@ manifest: /results/manifest.json
          data-target="#summary-<%= i %>"
          aria-expanded="false"
          aria-controls="summary-<%= i %>">
-      <img src="<%= find_logo_path(filename) %>" alt="tournament logo"/>
+      <img class="lazy"
+           src="/images/logos/default.jpg"
+           data-src="<%= find_logo_path(filename) %>"
+           alt="Tournament logo"/>
       <div class="summary collapse" id="summary-<%= i %>">
         <dl class="list-unstyled row">
           <dt class="col-sm-3">Champion</dt>

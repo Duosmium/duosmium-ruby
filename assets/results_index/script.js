@@ -82,6 +82,25 @@ $(document).ready(function(){
     $(this).parent().parent().children("div.card-body").click();
   });
 
+  // load tournament logos lazily
+  // https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/
+  var lazy_images = $("img.lazy");
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          let lazy_image = entry.target;
+          lazy_image.src = lazy_image.dataset.src;
+          lazy_image.classList.remove("lazy");
+          observer.unobserve(lazy_image);
+        }
+      });
+    });
+    lazy_images.each(function() {
+      lazyImageObserver.observe(this);
+    });
+  }
+
   // Disabled for now (may try to find a way to enable for PWAs only?) because
   // of issues with back button
   // // Make links to full results instantly trigger a splash screen
