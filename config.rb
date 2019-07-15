@@ -155,6 +155,7 @@ helpers do
       "#{t[:state]} #{t[:name]} Regionals"
     when 'Invitational'
       name = t[:name] ? t[:name] : t[:location]
+      name = special_short_title_cases(name)
       title = name.split(' ').count >= 4 ? acronymize(name) : name
       "#{title} Invitational"
     end
@@ -165,6 +166,15 @@ helpers do
           .select { |w| /^[[:upper:]]/.match(w) }
           .map { |w| w[0] }
           .join
+  end
+
+  def special_short_title_cases(name)
+    case name
+    when 'University of Texas at Austin'
+      'UT Austin' # UTA refers to University of Texas at Arlington
+    else
+      name
+    end
   end
 
   def expand_state_name(postal_code)
