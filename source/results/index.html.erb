@@ -77,7 +77,9 @@ manifest: /results/manifest.json
       <div><a href="/results/<%= f.delete_suffix('.yaml') %>.html" class="full-results">
         <%= "#{t[:date].year} #{tournament_title(t)} (Div. #{t[:division]})"%>
         </a></div>
+    <% if false %><%# remove this surrounding if statement if transition splash screens are enabled again %>
       <div class="splash-wrapper"><img src="<%= find_logo_path(f) %>"/></div>
+    <% end %>
     </li>
   <% end %>
   </ul>
