@@ -88,9 +88,9 @@ manifest: /results/manifest.json
   <h4>Archive Totals</h4>
   <dl>
     <dt><%= data_by_date.count { |_, rep| rep[:Tournament][:level] == 'Nationals' } %></dt>
-    <dd>Nationals</dd>
+    <dd>National Tournaments</dd>
     <dt><%= data_by_date.count { |_, rep| rep[:Tournament][:level] == 'States' } %></dt>
-    <dd>States</dd>
+    <dd>State Tournaments</dd>
     <dt><%= data_by_date.count { |_, rep| rep[:Tournament][:level] == 'Regionals' } %></dt>
     <dd>Regionals</dd>
     <dt><%= data_by_date.count { |_, rep| rep[:Tournament][:level] == 'Invitational' } %></dt>

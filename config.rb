@@ -138,10 +138,8 @@ helpers do
       'Science Olympiad National Tournament'
     when 'States'
       "#{expand_state_name(t[:state])} Science Olympiad State Tournament"
-    when 'Regionals'
-      "#{expand_state_name(t[:state])} #{t[:name]} Regional Tournament"
-    when 'Invitational'
-      "#{t[:name] ? t[:name] : t[:location]} Invitational"
+    when 'Regionals', 'Invitational'
+      t[:name]
     end
   end
 
@@ -151,13 +149,8 @@ helpers do
       'SONT'
     when 'States'
       "#{t[:state]} States"
-    when 'Regionals'
-      "#{t[:state]} #{t[:name]} Regionals"
-    when 'Invitational'
-      name = t[:name] ? t[:name] : t[:location]
-      name = special_short_title_cases(name)
-      title = name.split(' ').count >= 4 ? acronymize(name) : name
-      "#{title} Invitational"
+    when 'Regionals', 'Invitational'
+      t[:'short name']
     end
   end
 
@@ -166,15 +159,6 @@ helpers do
           .select { |w| /^[[:upper:]]/.match(w) }
           .map { |w| w[0] }
           .join
-  end
-
-  def special_short_title_cases(name)
-    case name
-    when 'University of Texas at Austin'
-      'UT Austin' # UTA refers to University of Texas at Arlington
-    else
-      name
-    end
   end
 
   def expand_state_name(postal_code)
@@ -204,6 +188,7 @@ helpers do
       'olympiad',
       'tournament',
       t[:name],
+      t[:'short name'],
       t[:location],
       t[:name] ? acronymize(t[:name]) : nil,
       t[:location] ? acronymize(t[:location]) : nil,
