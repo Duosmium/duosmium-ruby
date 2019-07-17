@@ -145,10 +145,18 @@
     <% if tm[:exhibition] %>
       <a tabindex="0" role="button"
          data-toggle="popover" data-trigger="focus"
+      <% if team_attended?(t, tm[:number]) %>
          title="Exhibition Team"
          data-content="Placings by this team did not affect the ranks of other
                        teams (except in Trial Events)">
         <span class="badge badge-warning"><small>Ex</small></span>
+      <% else %>
+         title="Absent Team"
+         data-content="This team registered but did not compete, and so was
+                       treated as an Exhibition Team">
+        <span class="badge badge-light"><small>Ab</small></span>
+      <% end %>
+      </a>
     <% end %>
     </td>
     <td class="event-points-focus" data-points=""><div></div></td>

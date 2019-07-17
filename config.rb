@@ -209,6 +209,14 @@ helpers do
     ]
     words.compact.map(&:to_s).map(&:downcase).join('|')
   end
+
+  def team_attended?(tournament, team_number)
+    tournament
+      .placings_by_team[team_number]
+      .values
+      .map { |p| p[:place] || p[:participated] || p[:disqualified] }
+      .any?
+  end
 end
 
 activate :external_pipeline,
