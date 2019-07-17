@@ -103,7 +103,7 @@
 <thead>
   <tr>
     <th class="number">#</th>
-    <th class="school">School</th>
+    <th class="team">Team</th>
     <th class="event-points-focus"><div></div></th>
     <th class="rank"><div>Overall</div></th>
     <th class="total-points">Total</th>
@@ -137,7 +137,7 @@
 <% teams_by_rank.each.with_index do |tm, i| %>
   <tr data-team-number="<%= tm[:number] %>">
     <td class="number"><%= tm[:number] %></td>
-    <td class="school">
+    <td class="team">
       <%= format_school(tm) %>
       <%= tm[:suffix] %>
       <%= "(#{tm[:city]})" if tm[:city] %>

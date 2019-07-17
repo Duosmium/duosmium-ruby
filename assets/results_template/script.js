@@ -94,8 +94,8 @@ $(document).ready(function(){
     }
 
     var sort_by_school = function(a, b) {
-      let school_a = $(a).find("td.school").text();
-      let school_b = $(b).find("td.school").text();
+      let school_a = $(a).find("td.team").text();
+      let school_b = $(b).find("td.team").text();
 
       if (school_a > school_b) { return 1; }
       else if (school_a < school_b) { return -1; }
@@ -119,8 +119,8 @@ $(document).ready(function(){
     }
 
     var sort_by_state = function(a, b) {
-      let state_a = $(a).find("td.school small").text();
-      let state_b = $(b).find("td.school small").text();
+      let state_a = $(a).find("td.team small").text();
+      let state_b = $(b).find("td.team small").text();
 
       if (state_a > state_b) { return 1; }
       else if (state_a < state_b) { return -1; }
