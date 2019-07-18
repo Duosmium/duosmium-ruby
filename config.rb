@@ -3,10 +3,6 @@
 
 require 'miro'
 
-activate :autoprefixer do |prefix|
-  prefix.browsers = "last 2 versions"
-end
-
 # Layouts
 # https://middlemanapp.com/basics/layouts/
 
@@ -98,6 +94,16 @@ helpers do
     WI: 'Wisconsin ',
     WY: 'Wyoming '
   }
+
+  def all_tournaments(data)
+    Dir.new(Pathname.new(__dir__) + 'data')
+       .children
+       .select { |f| f.end_with?('.yaml') }
+       .reject { |f| f == 'recents.yaml' }
+       .map { |f| [f, data.send(f.delete_suffix('.yaml'))] }
+       .to_h
+  end
+
   def find_logo_path(filename)
     image_dir = Dir.new(Pathname.new(__dir__) + 'source' + 'images' + 'logos')
     potential_logos = [

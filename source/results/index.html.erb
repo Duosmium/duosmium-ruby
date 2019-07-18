@@ -4,9 +4,7 @@ description: Find the overall standings and event scores for dozens of Science O
 
 manifest: /results/manifest.json
 ---
-<% data_by_date = data
-  .to_h
-  .reject { |k, _| k == 'recents' }
+<% data_by_date = all_tournaments(data)
   .sort do |rep1, rep2|
      rep1 = rep1.last
      rep2 = rep2.last
@@ -71,8 +69,8 @@ manifest: /results/manifest.json
   </ul>
   <h4>Recently added</h4>
   <ul class="recently-added">
-  <% data[:recents].each do |f| %>
-    <% t = data[f.delete_suffix('.yaml').to_sym][:Tournament] %>
+  <% data.recents.each do |f| %>
+    <% t = data.send(f.delete_suffix('.yaml').to_sym)[:Tournament] %>
     <li>
       <div><a href="/results/<%= f.delete_suffix('.yaml') %>.html" class="full-results">
         <%= "#{t[:date].year} #{tournament_title(t)} (Div. #{t[:division]})"%>
