@@ -185,7 +185,7 @@ manifest: /results/manifest.json
     </div>
     <div class="card-footer card-actions bg-light">
       <button class="btn btn-outline-primary">Summary</button>
-      <a href="/results/<%= filename %>.html" class="btn btn-outline-primary full-results">Full Results</a>
+      <a href="/results/<%= filename.delete_suffix('.yaml') %>.html" class="btn btn-outline-primary full-results">Full Results</a>
     </div>
   </div>
 
