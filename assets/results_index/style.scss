@@ -195,10 +195,16 @@ div.results-index-card-grid {
       height: 100%;
       object-fit: scale-down;
       filter: none;
-      transition: filter 0.6s;
+      opacity: 1;
+      transition-property: filter, opacity;
+      transition-duration: 0.6s;
 
       &.blur {
         filter: blur(120px);
+      }
+
+      &.lazy {
+        opacity: 0;
       }
     }
 
