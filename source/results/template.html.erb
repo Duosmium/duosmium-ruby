@@ -240,6 +240,8 @@
                    id="team<%= tm[:number] %>" checked>
             <label class="custom-control-label" for="team<%= tm[:number] %>">
               <%= tm[:number] %> <%= format_school(tm) %>
+              <%= tm[:suffix] %>
+              <%= "(#{tm[:city]})" if tm[:city] %>
               <small><%= tm[:state] %></small>
             </label>
           </div>
