@@ -152,9 +152,9 @@ helpers do
   def tournament_title_short(t)
     case t[:level]
     when 'Nationals'
-      'SONT'
+      'National Tournament'
     when 'States'
-      "#{t[:state]} States"
+      "#{t[:state]} State Tournament"
     when 'Regionals', 'Invitational'
       t[:'short name']
     end
