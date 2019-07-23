@@ -266,7 +266,7 @@ table.results-classic {
       position: relative;
       sup {
         position: absolute;
-        top: 0.75em;
+        top: 0.9em;
       }
     }
   }
@@ -410,6 +410,18 @@ div#print-instructions {
     tbody tr {
       @include hover {
         background-color: inherit;
+      }
+    }
+
+    // keep text centering consistent after adding superscript
+    // https://stackoverflow.com/questions/53746389/center-text-ignoring-superscript
+    td.event-points, td.event-points-focus {
+      div {
+        position: relative;
+        sup {
+          position: absolute;
+          top: 0.4em;
+        }
       }
     }
   }
