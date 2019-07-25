@@ -160,14 +160,6 @@ helpers do
     end
   end
 
-  # inserts a non-breaking space between last two words of location
-  def tournament_location(t)
-    return t[:location] if t[:location].split(' ').count <= 1
-
-    words = t[:location].split(' ')
-    (words[0..-3] + [(words[-2] + '&nbsp;' + words[-1])]).join(' ')
-  end
-
   def acronymize(phrase)
     phrase.split(' ')
           .select { |w| /^[[:upper:]]/.match(w) }

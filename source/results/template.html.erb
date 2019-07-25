@@ -37,7 +37,7 @@
         <%= tournament_title(t.tournament) %>&nbsp;(Div. <%= t.tournament[:division] %>)
       </h1>
       <p><%= t.tournament[:date].strftime('%A, %B %-d, %Y') %>
-         @ <%= tournament_location(t.tournament) %></p>
+         @ <span style="white-space: nowrap;"><%= t.tournament[:location] %></span></p>
     </div>
     <div class="actions">
       <a href="/results/" class="js-back-button">
