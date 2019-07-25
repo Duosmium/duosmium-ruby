@@ -34,11 +34,10 @@
     <div class="tournament-info">
       <h1>
         <%= t.tournament[:date].year %>
-        <%= tournament_title(t.tournament) %>
-        (Div. <%= t.tournament[:division] %>)
+        <%= tournament_title(t.tournament) %>&nbsp;(Div. <%= t.tournament[:division] %>)
       </h1>
       <p><%= t.tournament[:date].strftime('%A, %B %-d, %Y') %>
-         @ <%= t.tournament[:location] %></p>
+         @ <%= tournament_location(t.tournament) %></p>
     </div>
     <div class="actions">
       <a href="/results/" class="js-back-button">
