@@ -183,9 +183,11 @@ div.results-index-card-grid {
     }
 
     h3.card-subtitle {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      @include media-breakpoint-up(sm) {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
     }
   }
 
