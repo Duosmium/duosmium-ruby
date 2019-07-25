@@ -181,6 +181,12 @@ div.results-index-card-grid {
     h2.card-title {
       @include responsive-font-size(22px);
     }
+
+    h3.card-subtitle {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 
   div.card-body {
