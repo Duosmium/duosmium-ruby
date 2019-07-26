@@ -139,13 +139,17 @@ helpers do
   end
 
   def tournament_title(t)
+    return t[:name] if t[:name]
+
     case t[:level]
     when 'Nationals'
       'Science Olympiad National Tournament'
     when 'States'
       "#{expand_state_name(t[:state])} Science Olympiad State Tournament"
-    when 'Regionals', 'Invitational'
-      t[:name]
+    when 'Regionals'
+      "#{t[:location]} Regional Tournament"
+    when 'Invitational'
+      "#{t[:location]} Invitational"
     end
   end
 
