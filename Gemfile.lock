@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/middleman/middleman
-  revision: 9a21a4ddef8f4078008b0c2382a2eef02fb0b458
+  revision: 3d359378b34b00215f636094db34e03da46421bf
   glob: middleman/*.gemspec
   specs:
     middleman (5.0.0.rc.1)
@@ -43,12 +43,12 @@ GEM
     color (1.8)
     concurrent-ruby (1.1.5)
     contracts (0.16.0)
-    dotenv (2.7.4)
+    dotenv (2.7.5)
     erubis (2.7.0)
     execjs (2.7.0)
     fastimage (2.1.5)
     ffi (1.11.1)
-    haml (5.1.1)
+    haml (5.1.2)
       temple (>= 0.8.0)
       tilt
     hamster (3.0.0)
@@ -95,7 +95,7 @@ GEM
     minitest (5.11.3)
     oily_png (1.2.1)
       chunky_png (~> 1.3.7)
-    oj (3.7.12)
+    oj (3.8.1)
     optimist (3.0.0)
     padrino-helpers (0.14.4)
       i18n (~> 0.6, >= 0.6.7)
@@ -105,7 +105,7 @@ GEM
     parallel (1.17.0)
     public_suffix (3.1.1)
     rack (2.0.7)
-    rake (12.3.2)
+    rake (12.3.3)
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
