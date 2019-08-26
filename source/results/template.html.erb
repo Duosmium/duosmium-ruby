@@ -1,43 +1,37 @@
-<% t = SciolyFF::Helper.new(data.send(tournament)) %>
-<% events = t.events_by_name.values.sort do |a, b|
-              if a[:trial] && !b[:trial] then 1
-              elsif !a[:trial] && b[:trial] then -1
-              else a[:name] <=> b[:name]
-              end
-            end %>
-<% teams_by_rank = t.sort_teams_by_rank %>
-<% teams_by_number = t.teams_by_number.sort.map(&:last) %>
+<% i = SciolyFF::Interpreter.new(data.send(tournament)) %>
 
 <% current_page.data.title =
-  "#{t.tournament[:date].year} "\
-  "#{tournament_title_short(t.tournament)} " \
-  "(Div. #{t.tournament[:division]}) | Unosmium Results" %>
+  "#{i.tournament.date.year} "\
+  "#{tournament_title_short(i.tournament)} " \
+  "(Div. #{i.tournament.division}) | Unosmium Results" %>
 
+<% champion = i.tournament.teams[0] %>
+<% runnerup = i.tournament.teams[1] %>
 <% current_page.data.description =
-  "Full results for the #{t.tournament[:date].year} "\
-  "#{tournament_title(t.tournament)} "\
-  "(Division #{t.tournament[:division]}), "\
-  "Champion: #{teams_by_rank[0][:school]} "\
-  "#{teams_by_rank[0][:suffix] ? teams_by_rank[0][:suffix] + " " : nil}"\
-  "(#{t.team_points(teams_by_rank[0][:number])} pts), "\
-  "Runner-up: #{teams_by_rank[1][:school]} "\
-  "#{teams_by_rank[1][:suffix] ? teams_by_rank[1][:suffix] + " " : nil}"\
-  "(#{t.team_points(teams_by_rank[1][:number])} pts), "\
-  "Total teams: #{t.nonexhibition_teams.count}" %>
+  "Full results for the #{i.tournament.date.year} "\
+  "#{tournament_title(i.tournament)} "\
+  "(Division #{i.tournament.division}), "\
+  "Champion: #{champion.school} "\
+  "#{champion.suffix ? champion.suffix + " " : ""}"\
+  "(#{champion.points} pts), "\
+  "Runner-up: #{runnerup.school} "\
+  "#{runnerup.suffix ? runnerup.suffix + " " : ""}"\
+  "(#{runnerup.points} pts), "\
+  "Total teams: #{i.teams.count { |t| !t.exhibition? }}" %>
 
 <div class="results-classic-wrapper">
 <div class="results-classic-thead-background shadow-sm"
-     style="min-width: <%= 2*(events.count + 1) + 28.5 %>em;
+     style="min-width: <%= 2*(i.events.count + 1) + 28.5 %>em;
             background-color: <%= find_bg_color(current_page.path) %>;">
   <div class="results-classic-header"
-       style="width: <%= 2*(events.count + 1) + 28 %>em">
+       style="width: <%= 2*(i.events.count + 1) + 28 %>em">
     <div class="tournament-info">
       <h1>
-        <%= t.tournament[:date].year %>
-        <%= tournament_title(t.tournament) %>&nbsp;(Div. <%= t.tournament[:division] %>)
+        <%= i.tournament.date.year %>
+        <%= tournament_title(i.tournament) %>&nbsp;(Div. <%= i.tournament.division %>)
       </h1>
-      <p><%= t.tournament[:date].strftime('%A, %B %-d, %Y') %>
-         @ <span style="white-space: nowrap;"><%= t.tournament[:location] %></span></p>
+      <p><%= i.tournament.date.strftime('%A, %B %-d, %Y') %>
+         @ <span style="white-space: nowrap;"><%= i.tournament.location %></span></p>
     </div>
     <div class="actions">
       <a href="/results/" class="js-back-button">
@@ -55,12 +49,12 @@
       <select id="event-select" class="custom-select custom-select-sm"
               aria-label="Select Event Filter">
         <option value="all" selected>All Events</option>
-      <% events.each.with_index do |e, i| %>
+      <% i.events.each.with_index do |e, i| %>
         <option value="<%= i %>">
-          <%= e[:name] %>
-          <% if e[:trial] %>
+          <%= e.name %>
+          <% if e.trial? %>
             (Trial)
-          <% elsif e[:trialed] %>
+          <% elsif e.trialed? %>
             (Trialed)
           <% end %>
         </option>
@@ -94,7 +88,7 @@
   <col>
 </colgroup>
 <colgroup class="event-columns">
-<% events.count.times do %>
+<% i.events.count.times do %>
   <col>
 <% end %>
   <col> <%# for team penalties, which kinda act like an additional event %>
@@ -106,10 +100,10 @@
     <th class="event-points-focus"><div></div></th>
     <th class="rank"><div>Overall</div></th>
     <th class="total-points">Total</th>
-  <% events.each do |e| %>
+  <% i.events.each do |e| %>
     <th class="event-points">
-      <%= e[:name] %>
-    <% if e[:trial] %>
+      <%= e.name %>
+    <% if e.trial? %>
       <a tabindex="0" role="button"
          data-toggle="popover" data-trigger="focus"
          title="Trial Event"
@@ -117,7 +111,7 @@
                        team score">
         <span class="badge badge-info"><small>T</small></span>
       </a>
-    <% elsif e[:trialed] %>
+    <% elsif e.trialed? %>
       <a tabindex="0" role="button"
          data-toggle="popover" data-trigger="focus"
          title="Trialed Event"
@@ -133,18 +127,18 @@
   </tr>
 </thead>
 <tbody>
-<% teams_by_rank.each.with_index do |tm, i| %>
-  <tr data-team-number="<%= tm[:number] %>">
-    <td class="number"><%= tm[:number] %></td>
+<% i.teams.each do |tm| %>
+  <tr data-team-number="<%= tm.number %>">
+    <td class="number"><%= tm.number %></td>
     <td class="team">
       <%= format_school(tm) %>
-      <%= tm[:suffix] %>
-      <%= "(#{tm[:city]})" if tm[:city] %>
-      <small><%= tm[:state] %></small>
-    <% if tm[:exhibition] %>
+      <%= tm.suffix %>
+      <%= "(#{tm.city})" if tm.city %>
+      <small><%= tm.state %></small>
+    <% if tm.exhibition? %>
       <a tabindex="0" role="button"
          data-toggle="popover" data-trigger="focus"
-      <% if team_attended?(t, tm[:number]) %>
+      <% if team_attended?(tm) %>
          title="Exhibition Team"
          data-content="Placings by this team did not affect the ranks of other
                        teams (except in Trial Events)">
@@ -159,29 +153,30 @@
     <% end %>
     </td>
     <td class="event-points-focus" data-points=""><div></div></td>
-    <td class="rank" data-points="<%= i + 1 %>"><div><%= i + 1 %></div></td>
-    <td class="total-points"><%= t.team_points tm[:number] %></td>
-  <% events.each do |e| %>
-    <% points = t.event_points tm[:number], e[:name] %>
-    <% place = t.placings_by_team[tm[:number]][e[:name]][:place] %>
-    <% unknown = t.placings_by_team[tm[:number]][e[:name]][:unknown] %>
-    <% exempt = t.placings_by_team[tm[:number]][e[:name]][:exempt] %>
+    <td class="rank" data-points="<%= tm.rank %>"><div><%= tm.rank %></div></td>
+    <td class="total-points"><%= tm.points %></td>
+  <% i.events.each do |e| %>
+    <% placing = e.placing_for(tm) %>
+    <% points = placing.points %>
+    <% place = placing.place %>
+    <% unknown = placing.unknown? %>
+    <% exempt = placing.exempt? %>
     <td class="event-points"
         data-points="<%= unknown ? '??' : points %>"
         data-place="<%= place ? place : 999000 + points %>">
       <div><%= unknown ? '??' : points %><%= '<sup>⬨</sup>' if exempt %></div>
     </td>
   <% end %>
-    <% points = t.team_points_from_penalties(tm[:number]) %>
-    <td class="team-penalties text-muted" data-points="<%= points %>">
-      <%= points.zero? ? "00" : "+#{points}" %>
+    <% pen_points = tm.penalties.sum(&:points) %>
+    <td class="team-penalties text-muted" data-points="<%= pen_points %>">
+      <%= pen_points.zero? ? "00" : "+#{pen_points}" %>
     </td>
   </tr>
 <% end %>
 </tbody>
 </table>
 <div class="results-classic-footnotes"
-     style="width: <%= 2*(events.count + 1) + 28 %>em">
+     style="width: <%= 2*(i.events.count + 1) + 28 %>em">
 <% if data.send(tournament)['Placings'].find { |p| p[:exempt] }%>
   <div class="wrapper">
     <p class="footnote">
@@ -233,15 +228,15 @@
               All Teams
             </label>
           </div>
-        <% teams_by_number.each do |tm| %>
+        <% i.teams.sort_by(&:number).each do |tm| %>
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input"
-                   id="team<%= tm[:number] %>" checked>
-            <label class="custom-control-label" for="team<%= tm[:number] %>">
-              <%= tm[:number] %> <%= format_school(tm) %>
-              <%= tm[:suffix] %>
-              <%= "(#{tm[:city]})" if tm[:city] %>
-              <small><%= tm[:state] %></small>
+                   id="team<%= tm.number %>" checked>
+            <label class="custom-control-label" for="team<%= tm.number %>">
+              <%= tm.number %> <%= format_school(tm) %>
+              <%= tm.suffix %>
+              <%= "(#{tm.city})" if tm.city %>
+              <small><%= tm.state %></small>
             </label>
           </div>
         <% end %>

@@ -107,77 +107,77 @@ manifest: /results/manifest.json
 <main id="all" class="container-fluid py-4 bg-light-3 shadow" aria-label="Content">
 <style id="search_style"></style>
 <div class="results-index-card-grid">
-<% i = 1 %>
+<% index = 1 %>
 <% data_by_date.each do |filename, rep| %>
-  <% t = SciolyFF::Helper.new(rep) %>
-  <% teams = t.sort_teams_by_rank %>
+  <% i = SciolyFF::Interpreter.new(rep) %>
+  <% teams = i.teams %>
 
-  <div class="card" data-search="<%= search_string(t) %>">
+  <div class="card" data-search="<%= search_string(i) %>">
     <div class="card-header text-light shadow-sm"
          style="background-color: <%= find_bg_color(filename) %>">
       <h2 class="card-title">
-        <%= t.tournament[:date].year %>
-        <%= tournament_title(t.tournament) %>
-        <span class="badge division-<%= t.tournament[:division].downcase %>">
-          <small>Division <%= t.tournament[:division] %></small>
+        <%= i.tournament.date.year %>
+        <%= tournament_title(i.tournament) %>
+        <span class="badge division-<%= i.tournament.division.downcase %>">
+          <small>Division <%= i.tournament.division %></small>
         </span>
       </h2>
       <h3 class="card-subtitle">
-        <%= t.tournament[:date].strftime('%A, %B %-d, %Y') %>
-        @ <%= t.tournament[:location] %>
+        <%= i.tournament.date.strftime('%A, %B %-d, %Y') %>
+        @ <%= i.tournament.location %>
       </h3>
     </div>
     <div class="card-body splash-wrapper"
          data-toggle="collapse"
-         data-target="#summary-<%= i %>"
+         data-target="#summary-<%= index %>"
          aria-expanded="false"
-         aria-controls="summary-<%= i %>">
+         aria-controls="summary-<%= index %>">
       <img class="lazy"
            data-src="<%= find_logo_path(filename) %>"
            alt="Tournament logo"/>
-      <div class="summary collapse" id="summary-<%= i %>">
+      <div class="summary collapse" id="summary-<%= index %>">
         <dl class="list-unstyled row">
           <dt class="col-sm-3">Champion</dt>
           <dd class="col-sm-9">
             <%= format_school(teams[0]) %>
-            <%= teams[0][:suffix] %>
-            <small><%= teams[0][:state] %></small>
-            (<%= t.team_points(teams[0][:number]) %> pts)
+            <%= teams[0].suffix %>
+            <small><%= teams[0].state %></small>
+            (<%= teams[0].points %> pts)
           </dd>
           <dt class="col-sm-3">Runner-up</dt>
           <dd class="col-sm-9">
             <%= format_school(teams[1]) %>
-            <%= teams[1][:suffix] %>
-            <small><%= teams[1][:state] %></small>
-            (<%= t.team_points(teams[1][:number]) %> pts)
+            <%= teams[1].suffix %>
+            <small><%= teams[1].state %></small>
+            (<%= teams[1].points %> pts)
           </dd>
           <dt class="col-sm-3">Third-place</dt>
           <dd class="col-sm-9">
             <%= format_school(teams[2]) %>
-            <%= teams[2][:suffix] %>
-            <small><%= teams[2][:state] %></small>
-            (<%= t.team_points(teams[2][:number]) %> pts)
+            <%= teams[2].suffix %>
+            <small><%= teams[2].state %></small>
+            (<%= teams[2].points %> pts)
           </dd>
           <dt class="col-sm-3 d-none d-sm-block">Fourth-place</dt>
           <dd class="col-sm-9 d-none d-sm-block">
             <%= format_school(teams[3]) %>
-            <%= teams[3][:suffix] %>
-            <small><%= teams[3][:state] %></small>
-            (<%= t.team_points(teams[3][:number]) %> pts)
+            <%= teams[3].suffix %>
+            <small><%= teams[3].state %></small>
+            (<%= teams[3].points %> pts)
           </dd>
           <dt class="col-sm-3 d-none d-sm-block">Fifth-place</dt>
           <dd class="col-sm-9 d-none d-sm-block">
             <%= format_school(teams[4]) %>
-            <%= teams[4][:suffix] %>
-            <small><%= teams[4][:state] %></small>
-            (<%= t.team_points(teams[4][:number]) %> pts)
+            <%= teams[4].suffix %>
+            <small><%= teams[4].state %></small>
+            (<%= teams[4].points %> pts)
           </dd>
           <dt class="col-sm-3 d-none d-sm-block">Sixth-place</dt>
           <dd class="col-sm-9 d-none d-sm-block">
             <%= format_school(teams[5]) %>
-            <%= teams[5][:suffix] %>
-            <small><%= teams[5][:state] %></small>
-            (<%= t.team_points(teams[5][:number]) %> pts)
+            <%= teams[5].suffix %>
+            <small><%= teams[5].state %></small>
+            (<%= teams[5].points %> pts)
           </dd>
         </dl>
       </div>
@@ -188,7 +188,7 @@ manifest: /results/manifest.json
     </div>
   </div>
 
-  <% i += 1 %>
+  <% index += 1 %>
 <% end %>
 </div>
 <a href="#top" class="btn btn-float btn-light" id="scroll-back" role="button"><i class="material-icons">expand_less</i></a>

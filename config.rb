@@ -139,28 +139,28 @@ helpers do
   end
 
   def tournament_title(t)
-    return t[:name] if t[:name]
+    return t.name if t.name
 
-    case t[:level]
+    case t.level
     when 'Nationals'
       'Science Olympiad National Tournament'
     when 'States'
-      "#{expand_state_name(t[:state])} Science Olympiad State Tournament"
+      "#{expand_state_name(t.state)} Science Olympiad State Tournament"
     when 'Regionals'
-      "#{t[:location]} Regional Tournament"
+      "#{t.location} Regional Tournament"
     when 'Invitational'
-      "#{t[:location]} Invitational"
+      "#{t.location} Invitational"
     end
   end
 
   def tournament_title_short(t)
-    case t[:level]
+    case t.level
     when 'Nationals'
       'National Tournament'
     when 'States'
-      "#{t[:state]} State Tournament"
+      "#{t.state} State Tournament"
     when 'Regionals', 'Invitational'
-      t[:'short name']
+      t.short_name
     end
   end
 
@@ -176,11 +176,11 @@ helpers do
   end
 
   def format_school(team)
-    if team[:'school abbreviation']
-      abbr = abbr_school(team[:'school abbreviation'])
-      "<abbr title=\"#{team[:school]}\">#{abbr}</abbr>"
+    if team.school_abbreviation
+      abbr = abbr_school(team.school_abbreviation)
+      "<abbr title=\"#{team.school}\">#{abbr}</abbr>"
     else
-      abbr_school(team[:school])
+      abbr_school(team.school)
     end
   end
 
@@ -191,40 +191,39 @@ helpers do
           .sub('High School', 'H.S.')
   end
 
-  def search_string(helper)
-    t = helper.tournament
+  def search_string(interpreter)
+    t = interpreter.tournament
     words = [
       'science',
       'olympiad',
       'tournament',
-      t[:name],
-      t[:'short name'],
-      t[:location],
-      t[:name] ? acronymize(t[:name]) : nil,
-      t[:location] ? acronymize(t[:location]) : nil,
-      t[:level],
-      t[:level] == "Nationals" ? 'nats' : nil,
-      t[:level] == "Nationals" ? 'sont' : nil,
-      t[:level] == "Invitational" ? 'invite' : nil,
-      t[:state],
-      t[:state] ? expand_state_name(t[:state]) : nil,
-      "div-#{t[:division]}",
-      "division-#{t[:division]}",
-      t[:year],
-      t[:date],
-      t[:date].strftime('%A'),
-      t[:date].strftime('%B'),
-      t[:date].strftime('%-d'),
-      t[:date].strftime('%Y')
+      t.name,
+      t.short_name,
+      t.location,
+      t.name ? acronymize(t.name) : nil,
+      t.location ? acronymize(t.location) : nil,
+      t.level,
+      t.level == "Nationals" ? 'nats' : nil,
+      t.level == "Nationals" ? 'sont' : nil,
+      t.level == "Invitational" ? 'invite' : nil,
+      t.state,
+      t.state ? expand_state_name(t.state) : nil,
+      "div-#{t.division}",
+      "division-#{t.division}",
+      t.year,
+      t.date,
+      t.date.strftime('%A'),
+      t.date.strftime('%B'),
+      t.date.strftime('%-d'),
+      t.date.strftime('%Y')
     ]
     words.compact.map(&:to_s).map(&:downcase).join('|')
   end
 
-  def team_attended?(tournament, team_number)
-    tournament
-      .placings_by_team[team_number]
-      .values
-      .map { |p| p[:place] || p[:participated] || p[:disqualified] }
+  def team_attended?(team)
+    team
+      .placings
+      .map(&:participated?)
       .any?
   end
 end
