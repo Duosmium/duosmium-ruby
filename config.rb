@@ -121,7 +121,7 @@ helpers do
     potential_logos.concat(%w[
       default.jpg
     ].shuffle)
-    '/images/logos/' + potential_logos.find { |l| image_dir.children.include? l }
+    'images/logos/' + potential_logos.find { |l| image_dir.children.include? l }
   end
 
   def find_bg_color(path)
