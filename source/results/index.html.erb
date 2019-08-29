@@ -29,7 +29,7 @@ base_url: ../
 <div class="search-wrapper" id="top">
 <header class="jumbotron jumbotron-fluid results-index bg-primary">
   <div class="container">
-    <h1 class="text-light text-center"><a href="./"><i class="material-icons u-logo">whatshot</i>nosmium</a> Results</h1>
+    <h1 class="text-light text-center"><a href="../"><i class="material-icons u-logo">whatshot</i>nosmium</a> Results</h1>
   <p class="lead text-light text-center">Powered by
   <a href="https://github.com/unosmium/sciolyff">SciolyFF
     <img src="/images/github.svg" alt="on GitHub" class="sciolyff-github">
@@ -73,7 +73,7 @@ base_url: ../
   <% data.recents.each do |f| %>
     <% t = data.send(f.delete_suffix('.yaml').to_sym)[:Tournament] %>
     <li>
-      <div><a href="results/<%= f.delete_suffix('.yaml') %>.html" class="full-results">
+      <div><a href="../results/<%= f.delete_suffix('.yaml') %>.html" class="full-results">
         <%= "#{t[:date].year} #{tournament_title(t)} (Div. #{t[:division]})"%>
         </a></div>
     <% if false %><%# remove this surrounding if statement if transition splash screens are enabled again %>
@@ -99,7 +99,7 @@ base_url: ../
 </div>
 </div>
 </div>
-<a href="results/index.html#all" id="see-all"
+<a href="#all" id="see-all"
    role="button" class="btn btn-flat-secondary btn-lg btn-block">
   See all tournaments<br><i class="material-icons">expand_more</i>
 </a>
@@ -185,14 +185,14 @@ base_url: ../
     </div>
     <div class="card-footer card-actions bg-light">
       <button class="btn btn-outline-primary">Summary</button>
-      <a href="results/<%= filename.delete_suffix('.yaml') %>.html" class="btn btn-outline-primary full-results">Full Results</a>
+      <a href="../results/<%= filename.delete_suffix('.yaml') %>.html" class="btn btn-outline-primary full-results">Full Results</a>
     </div>
   </div>
 
   <% index += 1 %>
 <% end %>
 </div>
-<a href="results/index.html#top" class="btn btn-float btn-light" id="scroll-back" role="button"><i class="material-icons">expand_less</i></a>
+<a href="#top" class="btn btn-float btn-light" id="scroll-back" role="button"><i class="material-icons">expand_less</i></a>
 </main>
 <script>
 // This is the service worker with the combined offline experience (Offline page + Offline copy of pages)

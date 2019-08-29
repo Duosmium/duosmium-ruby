@@ -15,17 +15,14 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
           rel="stylesheet">
-  <% if current_page.data.base_url %>
-    <base href="<%= current_page.data.base_url %>">
-  <% end %>
-    <link href="main.css" rel="stylesheet" />
-    <link href="images/favicon.png" rel="icon" type="image/png" />
+    <link href="<%= current_page.data.base_url %>main.css" rel="stylesheet" />
+    <link href="<%= current_page.data.base_url %>images/favicon.png" rel="icon" type="image/png" />
   <% if current_page.data.manifest %>
     <link rel="manifest" href="<%= current_page.data.manifest %>">
   <% end %>
   </head>
   <body>
     <%= yield %>
-    <script src="main.js"></script>
+    <script src="<%= current_page.data.base_url %>main.js"></script>
   </body>
 </html>

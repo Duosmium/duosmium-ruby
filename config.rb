@@ -121,13 +121,13 @@ helpers do
     potential_logos.concat(%w[
       default.jpg
     ].shuffle)
-    'images/logos/' + potential_logos.find { |l| image_dir.children.include? l }
+    '../images/logos/' + potential_logos.find { |l| image_dir.children.include? l }
   end
 
   def find_bg_color(path)
     filename = path.delete_prefix('results/').delete_suffix('.html')
     logo_file_path = (Pathname.new(__dir__) +
-                      'source' +
+                      'source/images' +
                       find_logo_path(filename).delete_prefix('/')).to_s
     colors = Miro::DominantColors.new(logo_file_path)
     color = colors.to_hex[3].paint # String#paint from the chroma gem

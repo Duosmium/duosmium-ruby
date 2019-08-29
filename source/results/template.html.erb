@@ -37,7 +37,7 @@ base_url: ../
          @ <span style="white-space: nowrap;"><%= i.tournament.location %></span></p>
     </div>
     <div class="actions">
-      <a href="results/index.html" class="js-back-button">
+      <a href="../results/index.html" class="js-back-button">
         <i class="material-icons">arrow_back</i>
       </a>
       <button type="button" data-toggle="modal" data-target="#download-info">
@@ -329,7 +329,7 @@ base_url: ../
           Cancel
         </button>
         <a role="button" class="btn btn-secondary"
-           href="data/<%= File.basename(current_page.path, '.html') + '.yaml' %>">
+           href="../data/<%= File.basename(current_page.path, '.html') + '.yaml' %>">
           Download
         </a>
       </div>
