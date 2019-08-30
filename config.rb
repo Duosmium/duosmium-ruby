@@ -226,6 +226,12 @@ helpers do
       .map(&:participated?)
       .any?
   end
+
+  def rel_link_prefix(current_page_path)
+    return './' unless current_page_path.include? '/'
+
+    current_page_path.count('/').times.map { |_| '../' }.join
+  end
 end
 
 activate :external_pipeline,
