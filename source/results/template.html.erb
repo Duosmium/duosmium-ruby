@@ -1,3 +1,6 @@
+---
+custom_colors: true
+---
 <% i = SciolyFF::Interpreter.new(data.send(tournament)) %>
 
 <% current_page.data.title =
@@ -21,8 +24,7 @@
 
 <div class="results-classic-wrapper">
 <div class="results-classic-thead-background shadow-sm"
-     style="min-width: <%= 2*(i.events.count + 1) + 28.5 %>em;
-            background-color: <%= find_bg_color(current_page.path) %>;">
+     style="min-width: <%= 2*(i.events.count + 1) + 28.5 %>em;">
   <div class="results-classic-header"
        style="width: <%= 2*(i.events.count + 1) + 28 %>em">
     <div class="tournament-info">

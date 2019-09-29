@@ -17,6 +17,17 @@
           rel="stylesheet">
     <link href="<%= rel_link_prefix(current_page.path) %>main.css" rel="stylesheet" />
     <link href="<%= rel_link_prefix(current_page.path) %>images/favicon.png" rel="icon" type="image/png" />
+  <% if current_page.data.custom_colors %>
+    <style type="text/css">
+      <% color = find_bg_color(current_page.path) %>
+      .results-classic-thead-background {
+        background-color: <%= color %> !important;
+      }
+      .btn, .custom-control-label::after {
+        color: <%= color %> !important;
+      }
+    </style>
+  <% end %>
   <% if current_page.data.manifest %>
     <link rel="manifest" href="<%= current_page.data.manifest %>">
   <% end %>
