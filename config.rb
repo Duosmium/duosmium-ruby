@@ -186,6 +186,7 @@ helpers do
 
   def abbr_school(school)
     school.sub('Elementary School', 'Elementary')
+          .sub('Elementary/Middle School', 'E.M.S.')
           .sub('Middle School', 'M.S.')
           .sub('Junior High School', 'J.H.S.')
           .sub('High School', 'H.S.')
