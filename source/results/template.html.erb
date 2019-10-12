@@ -159,7 +159,7 @@ custom_colors: true
     <td class="total-points"><%= tm.points %></td>
   <% i.events.each do |e| %>
     <% placing = e.placing_for(tm) %>
-    <% points = placing.points %>
+    <% points = placing.isolated_points %>
     <% place = placing.place %>
     <% unknown = placing.unknown? %>
     <% exempt = placing.exempt? %>
