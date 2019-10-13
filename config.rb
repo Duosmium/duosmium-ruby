@@ -190,6 +190,7 @@ helpers do
           .sub('Middle School', 'M.S.')
           .sub('Junior High School', 'J.H.S.')
           .sub('High School', 'H.S.')
+          .sub('Secondary School', 'Secondary')
   end
 
   def search_string(interpreter)
