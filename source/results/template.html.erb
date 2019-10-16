@@ -169,7 +169,7 @@ custom_colors: true
     <% points = placing.isolated_points %>
     <% place = placing.place %>
     <% unknown = placing.unknown? %>
-    <% exempt = placing.exempt? %>
+    <% exempt = placing.exempt? || placing.dropped_as_part_of_worst_placings? %>
     <td class="event-points"
         data-true-points="<%= placing.points %>"
         data-notes="<%=
@@ -188,6 +188,8 @@ custom_colors: true
             ('placed behind exhibition teams'\
              if placing.considered_for_team_points? && placing.place &&
                 placing.place - placing.points > 1),
+            ('dropped'\
+             if placing.dropped_as_part_of_worst_placings?),
           ].compact.join(', ').capitalize
         %>"
         data-points="<%= unknown ? '??' : points %>"
@@ -205,7 +207,7 @@ custom_colors: true
 </table>
 <div class="results-classic-footnotes"
      style="width: <%= 2*(i.events.count + 1) + 28 %>em">
-<% if data.send(tournament)['Placings'].find { |p| p[:exempt] }%>
+  <% if i.placings.any? { |p| p.exempt? || p.dropped_as_part_of_worst_placings? } %>
   <div class="wrapper">
     <p class="footnote">
     <sup>⬨</sup>Result was not counted as part of total score
