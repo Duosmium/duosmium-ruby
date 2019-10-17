@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/middleman/middleman
-  revision: 42a074cad9260507e47541ce13d04654e4f3c0f5
+  revision: ba2098ec63db991739f4970a26eb76e2ed3fee54
   glob: middleman/*.gemspec
   specs:
     middleman (5.0.0.rc.1)
@@ -30,7 +30,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
-    autoprefixer-rails (9.6.4)
+    autoprefixer-rails (9.6.5)
       execjs
     backports (3.15.0)
     chroma (0.2.0)
