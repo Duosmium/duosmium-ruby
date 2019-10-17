@@ -282,7 +282,7 @@ $(document).ready(function(){
   });
 
   // Click team team detail link when clicking team name or number table cells
-  $("td.number, td.team").on("click", function(e) {
+  $("td.number, td.team, td.team > small").on("click", function(e) {
     if(e.target === this){ // if clicked on directly
       $(this).closest("tr").find("td.number a").click();
     }
