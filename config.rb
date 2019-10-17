@@ -1,19 +1,34 @@
 # frozen_string_literal: true
 
 require 'miro'
+require 'sciolyff'
 
 # Proxy pages
 # https://middlemanapp.com/advanced/dynamic-pages/
 
-Dir.new(Pathname.new(__dir__) + 'data')
-   .children
-   .select { |f| f.end_with?('.yaml') }
-   .reject { |f| f == 'recents.yaml' }
-   .map { |f| f.delete_suffix('.yaml') }
-   .each do |t|
-  proxy "/results/#{t}.html", '/results/template.html',
-        locals: { tournament: t }, ignore: true
+interpreters = {}
+
+@app.data.to_h.each do |filename, tournament|
+  next if filename == :recents
+
+  interpreters[filename.to_s] = SciolyFF::Interpreter.new(tournament)
 end
+
+interpreters.each do |filename, interpreter|
+  proxy "/results/#{filename}.html",
+        '/results/template.html',
+        locals: { i: interpreter },
+        ignore: true
+end
+
+interpreters = interpreters.sort_by do |_, i|
+  [Date.new(2019, 10, 17) - i.tournament.date,
+   i.tournament.state,
+   i.tournament.location,
+   i.tournament.division]
+end
+
+page '/results/index.html', locals: { interpreters: interpreters }
 
 # Helpers
 # Methods defined in the helpers block are available in templates

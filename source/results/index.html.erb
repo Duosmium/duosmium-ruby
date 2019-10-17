@@ -4,20 +4,6 @@ description: Find the overall standings and event scores for dozens of Science O
 
 manifest: /results/manifest.json
 ---
-<% data_by_date = all_tournaments(data)
-  .sort do |rep1, rep2|
-     rep1 = rep1.last
-     rep2 = rep2.last
-
-     compare = rep2[:Tournament][:date] <=> rep1[:Tournament][:date]
-     next compare unless compare.zero?
-     compare = rep1[:Tournament][:state] <=> rep2[:Tournament][:state]
-     next compare unless compare.zero?
-     compare = rep1[:Tournament][:location] <=> rep2[:Tournament][:location]
-     next compare unless compare.zero?
-     rep1[:Tournament][:division] <=> rep2[:Tournament][:division]
-
-   end %>
 <!-- The MIT License (MIT)
      Copyright (c) 2016 Tim Holman
      http://tholman.com/github-corners/
@@ -91,13 +77,13 @@ manifest: /results/manifest.json
 <div class="col-md-4">
   <h4>Archive Totals</h4>
   <dl>
-    <dt><%= data_by_date.count { |_, rep| rep[:Tournament][:level] == 'Nationals' } %></dt>
+    <dt><%= interpreters.count { |_,i| i.tournament.level == 'Nationals'} %></dt>
     <dd>National Tournaments</dd>
-    <dt><%= data_by_date.count { |_, rep| rep[:Tournament][:level] == 'States' } %></dt>
+    <dt><%= interpreters.count { |_,i| i.tournament.level == 'States'} %></dt>
     <dd>State Tournaments</dd>
-    <dt><%= data_by_date.count { |_, rep| rep[:Tournament][:level] == 'Regionals' } %></dt>
+    <dt><%= interpreters.count { |_,i| i.tournament.level == 'Regionals'} %></dt>
     <dd>Regionals</dd>
-    <dt><%= data_by_date.count { |_, rep| rep[:Tournament][:level] == 'Invitational' } %></dt>
+    <dt><%= interpreters.count { |_,i| i.tournament.level == 'Invitational'} %></dt>
     <dd>Invitationals</dd>
   </dl>
   <a href="https://docs.google.com/spreadsheets/d/1bkDCZD1NYYsS8L8m_e_cZ2kn9dZm2vufC4U9hNum6Hg/">Help contribute!</a>
@@ -114,10 +100,8 @@ manifest: /results/manifest.json
 <style id="search_style"></style>
 <div class="results-index-card-grid">
 <% index = 1 %>
-<% data_by_date.each do |filename, rep| %>
-  <% i = SciolyFF::Interpreter.new(rep) %>
+<% interpreters.each do |filename, i| %>
   <% teams = i.teams %>
-
   <div class="card" data-search="<%= search_string(i) %>">
     <div class="card-header text-light shadow-sm"
          style="background-color: <%= find_bg_color(filename) %>">
@@ -190,7 +174,7 @@ manifest: /results/manifest.json
     </div>
     <div class="card-footer card-actions bg-light">
       <button class="btn btn-outline-primary">Summary</button>
-      <a href="../results/<%= filename.delete_suffix('.yaml') %>.html" class="btn btn-outline-primary full-results">Full Results</a>
+      <a href="../results/<%= filename %>.html" class="btn btn-outline-primary full-results">Full Results</a>
     </div>
   </div>
 
