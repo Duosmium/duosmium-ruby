@@ -281,6 +281,13 @@ $(document).ready(function(){
     });
   });
 
+  // Click team team detail link when clicking team name or number table cells
+  $("td.number, td.team").on("click", function(e) {
+    if(e.target === this){ // if clicked on directly
+      $(this).closest("tr").find("td.number a").click();
+    }
+  });
+
   // Give small message about other results not yet being implemented
   $("#other-results").on("click", function(e) {
     e.preventDefault();

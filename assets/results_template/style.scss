@@ -175,6 +175,10 @@ table.results-classic {
     background-color: #ffe3bf;
   }
 
+  td.number, td.team {
+    cursor: pointer;
+  }
+
   td.event-points[data-points='1'] div,
   td.event-points-focus[data-points='1'] div,
   td.rank[data-points='1'] div {
