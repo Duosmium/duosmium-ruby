@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 require 'miro'
 
 # Proxy pages
 # https://middlemanapp.com/advanced/dynamic-pages/
 
 Dir.new(Pathname.new(__dir__) + 'data')
-  .children
-  .select { |f| f.end_with?('.yaml') }
-  .reject { |f| f == 'recents.yaml' }
-  .map { |f| f.delete_suffix('.yaml') }
-  .each do |t|
-  proxy "/results/#{t}.html", "/results/template.html",
-    locals: { tournament: t }, ignore: true
+   .children
+   .select { |f| f.end_with?('.yaml') }
+   .reject { |f| f == 'recents.yaml' }
+   .map { |f| f.delete_suffix('.yaml') }
+   .each do |t|
+  proxy "/results/#{t}.html", '/results/template.html',
+        locals: { tournament: t }, ignore: true
 end
 
 # Helpers
@@ -71,7 +73,7 @@ helpers do
     WV: 'West Virginia ',
     WI: 'Wisconsin ',
     WY: 'Wyoming '
-  }
+  }.freeze
 
   def all_tournaments(data)
     Dir.new(Pathname.new(__dir__) + 'data')
@@ -99,7 +101,8 @@ helpers do
     potential_logos.concat(%w[
       default.jpg
     ].shuffle)
-    '../images/logos/' + potential_logos.find { |l| image_dir.children.include? l }
+    '../images/logos/' +
+      potential_logos.find { |l| image_dir.children.include? l }
   end
 
   def find_bg_color(path)
@@ -110,35 +113,33 @@ helpers do
     colors = Miro::DominantColors.new(logo_file_path)
     color = colors.to_hex[3].paint # String#paint from the chroma gem
 
-    while color.light?
-      color = color.darken
-    end
+    color = color.darken while color.light?
     color
   end
 
-  def tournament_title(t)
-    return t.name if t.name
+  def tournament_title(t_info)
+    return t_info.name if t_info.name
 
-    case t.level
+    case t_info.level
     when 'Nationals'
       'Science Olympiad National Tournament'
     when 'States'
-      "#{expand_state_name(t.state)} Science Olympiad State Tournament"
+      "#{expand_state_name(t_info.state)} Science Olympiad State Tournament"
     when 'Regionals'
-      "#{t.location} Regional Tournament"
+      "#{t_info.location} Regional Tournament"
     when 'Invitational'
-      "#{t.location} Invitational"
+      "#{t_info.location} Invitational"
     end
   end
 
-  def tournament_title_short(t)
-    case t.level
+  def tournament_title_short(t_info)
+    case t_info.level
     when 'Nationals'
       'National Tournament'
     when 'States'
-      "#{t.state} State Tournament"
+      "#{t_info.state} State Tournament"
     when 'Regionals', 'Invitational'
-      t.short_name
+      t_info.short_name
     end
   end
 
@@ -198,9 +199,9 @@ helpers do
       t.name ? acronymize(t.name) : nil,
       t.location ? acronymize(t.location) : nil,
       t.level,
-      t.level == "Nationals" ? 'nats' : nil,
-      t.level == "Nationals" ? 'sont' : nil,
-      t.level == "Invitational" ? 'invite' : nil,
+      t.level == 'Nationals' ? 'nats' : nil,
+      t.level == 'Nationals' ? 'sont' : nil,
+      t.level == 'Invitational' ? 'invite' : nil,
       t.state,
       t.state ? expand_state_name(t.state) : nil,
       "div-#{t.division}",
@@ -233,7 +234,11 @@ end
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
 activate :external_pipeline,
-  name: :webpack,
-  command: build? ? './node_modules/webpack/bin/webpack.js --bail' : './node_modules/webpack/bin/webpack.js --watch -d',
-  source: ".tmp/dist",
-  latency: 1
+         name: :webpack,
+         command: if build?
+                    './node_modules/webpack/bin/webpack.js --bail'
+                  else
+                    './node_modules/webpack/bin/webpack.js --watch -d'
+                  end,
+         source: '.tmp/dist',
+         latency: 1
