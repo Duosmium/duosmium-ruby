@@ -191,7 +191,7 @@ custom_colors: true
           ].compact.join(', ').capitalize
         %>"
         data-points="<%= unknown ? '??' : points %>"
-        data-place="<%= place ? place : 999000 + points %>">
+        data-place="<%= place ? place : (unknown ? 998000 + points : 999000 + points) %>">
       <div><%= unknown ? '??' : points %><%= '<sup>⬨</sup>' if exempt %></div>
     </td>
   <% end %>

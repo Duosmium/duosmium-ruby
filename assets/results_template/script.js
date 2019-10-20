@@ -275,7 +275,7 @@ $(document).ready(function(){
       let dest_row = table_rows.eq(index);
       dest_row.children().eq(1).html($(td).attr("data-true-points"));
       let data_place = $(td).attr("data-place");
-      let place = data_place > 999000 ? "n/a" : getOrdinal(data_place);
+      let place = data_place > 998000 ? "n/a" : getOrdinal(data_place);
       dest_row.children().eq(2).html(place);
       dest_row.children().eq(3).html($(td).attr("data-notes"));
     });
