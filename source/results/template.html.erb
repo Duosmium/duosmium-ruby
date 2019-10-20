@@ -179,20 +179,20 @@ custom_colors: true
             ('participation points only' if placing.participation_only?),
             ('tie' if placing.tie?),
             ('exempt' if placing.exempt?),
+            ('points limited' if placing.points_limited_by_maximum_place?),
             ('unknown place' if placing.unknown?),
             ('placed behind exhibition team'\
-             if placing.considered_for_team_points? && placing.place &&
-                placing.place - placing.points == 1),
+             if placing.points_affected_by_exhibition? && place - points == 1),
             ('placed behind exhibition teams'\
-             if placing.considered_for_team_points? && placing.place &&
-                placing.place - placing.points > 1),
+             if placing.points_affected_by_exhibition? && place - points > 1),
             ('dropped'\
              if placing.dropped_as_part_of_worst_placings?),
           ].compact.join(', ').capitalize
         %>"
         data-points="<%= unknown ? '??' : points %>"
-        data-place="<%= place ? place : (unknown ? 998000 + points : 999000 + points) %>">
-      <div><%= unknown ? '??' : points %><%= '<sup>⬨</sup>' if exempt %></div>
+        data-place="<%= unknown && placing.points_limited_by_maximum_place? ? "≥#{i.tournament.maximum_place}" : place %>"
+        data-sortable-place="<%= place ? place : (unknown ? 998000 + points : 999000 + points) %>">
+      <div><%= unknown && !placing.points_limited_by_maximum_place? ? '??' : points %><%= '<sup>⬨</sup>' if exempt %></div>
     </td>
   <% end %>
     <% pen_points = tm.penalties.sum(&:points) %>

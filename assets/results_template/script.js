@@ -109,8 +109,10 @@ $(document).ready(function(){
         var rank_a = parseInt($(a).find("td.rank").text());
         var rank_b = parseInt($(b).find("td.rank").text());
       } else {
-        var rank_a = parseInt($(a).find("td.event-points").eq(rank_col).attr("data-place"));
-        var rank_b = parseInt($(b).find("td.event-points").eq(rank_col).attr("data-place"));
+        var rank_a = parseInt($(a).find("td.event-points")
+                                  .eq(rank_col).attr("data-sortable-place"));
+        var rank_b = parseInt($(b).find("td.event-points")
+                                  .eq(rank_col).attr("data-sortable-place"));
       }
 
       let diff = rank_a - rank_b;
@@ -254,7 +256,7 @@ $(document).ready(function(){
   // Cribbed from https://git.io/Je8kk
   function getOrdinal(n) {
     let s = ["th", "st", "nd", "rd"],
-    v = n%100;
+    v = parseInt(n.match(/\d+/))%100;
     return n+(s[(v-20)%10]||s[v]||s[0]);
   }
 
@@ -275,7 +277,7 @@ $(document).ready(function(){
       let dest_row = table_rows.eq(index);
       dest_row.children().eq(1).html($(td).attr("data-true-points"));
       let data_place = $(td).attr("data-place");
-      let place = data_place > 998000 ? "n/a" : getOrdinal(data_place);
+      let place = data_place === "" ? "n/a" : getOrdinal(data_place);
       dest_row.children().eq(2).html(place);
       dest_row.children().eq(3).html($(td).attr("data-notes"));
     });
