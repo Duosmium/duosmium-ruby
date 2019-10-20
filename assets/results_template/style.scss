@@ -254,18 +254,6 @@ table.results-classic {
     }
   }
 
-  // keep text centering consistent after adding superscript
-  // https://stackoverflow.com/questions/53746389/center-text-ignoring-superscript
-  td.event-points, td.event-points-focus {
-    div {
-      position: relative;
-      sup {
-        position: absolute;
-        top: 0.9em;
-      }
-    }
-  }
-
   // hacky hotfix for Chrome and related browsers
   th { z-index: 1; }
 }
@@ -435,18 +423,6 @@ div#print-instructions {
     tbody tr {
       @include hover {
         background-color: inherit;
-      }
-    }
-
-    // keep text centering consistent after adding superscript
-    // https://stackoverflow.com/questions/53746389/center-text-ignoring-superscript
-    td.event-points, td.event-points-focus {
-      div {
-        position: relative;
-        sup {
-          position: absolute;
-          top: 0.4em;
-        }
       }
     }
   }
