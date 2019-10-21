@@ -44,7 +44,7 @@ manifest: /results/manifest.json
 <% data.upcoming.group_by(&:date).sort.each do |date, tournaments| %>
   <h5><%= date.strftime('%A, %B %-d, %Y') %></h5>
   <ul>
-  <% tournaments.sort.each do |t| %>
+  <% tournaments.sort_by(&:name).each do |t| %>
     <li><a href="<%= t.link %>"><%= t.name %></a></li>
   <% end %>
   </ul>
