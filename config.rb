@@ -9,7 +9,7 @@ require 'sciolyff'
 interpreters = {}
 
 @app.data.to_h.each do |filename, tournament|
-  next if filename == :recents
+  next if filename == :recents || filename == :upcoming
 
   interpreters[filename.to_s] = SciolyFF::Interpreter.new(tournament)
 end
