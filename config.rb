@@ -26,7 +26,7 @@ interpreters = interpreters.sort_by do |_, i|
    i.tournament.state,
    i.tournament.location,
    i.tournament.division]
-end
+end.to_h
 
 page '/results/index.html', locals: { interpreters: interpreters }
 
