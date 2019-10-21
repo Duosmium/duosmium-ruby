@@ -61,7 +61,7 @@ manifest: /results/manifest.json
   </ul>
   <h4>Recently added</h4>
   <ul class="recently-added">
-  <% data.recents.each do |f| %>
+  <% data.recents.first(5).each do |f| %>
     <% t = data.send(f.delete_suffix('.yaml').to_sym)[:Tournament] %>
     <li>
       <div><a href="../results/<%= f.delete_suffix('.yaml') %>.html" class="full-results">
