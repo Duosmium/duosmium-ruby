@@ -41,10 +41,10 @@ manifest: /results/manifest.json
 <div class="row mt-3 pb-5 mb-5">
 <div class="col-md-8">
   <h4>Upcoming</h4>
-<% data.upcoming.group_by(&:date).each do |date, tournaments| %>
+<% data.upcoming.group_by(&:date).sort.each do |date, tournaments| %>
   <h5><%= date.strftime('%A, %B %-d, %Y') %></h5>
   <ul>
-  <% tournaments.each do |t| %>
+  <% tournaments.sort.each do |t| %>
     <li><a href="<%= t.link %>"><%= t.name %></a></li>
   <% end %>
   </ul>
