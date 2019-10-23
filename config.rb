@@ -98,10 +98,11 @@ helpers do
 
     Dir.new(Pathname.new(__dir__) + 'source' + 'images' + 'logos')
        .children
-       .select { |image| image.split('.').first.ends_with? tournament_name }
+       .select { |image| image.include? tournament_name }
+       .select { |i| filename.ends_with? i.split('.').first[/_[abc]$/].to_s }
        .append('default.jpg')
        .select { |image| get_year.call(image) <= tournament_year }
-       .max_by { |image| get_year.call(image) }
+       .max_by { |image| get_year.call(image) + image.length / 100.0 }
        .dup  # string may be frozen
        .prepend '../images/logos/'
   end
