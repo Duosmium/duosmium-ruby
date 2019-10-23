@@ -16,7 +16,18 @@ instructions on how to use it.
 
 An [archive](https://unosmium.org/results/) of any tournament results
 that have been output as or converted into the
-[SciolyFF](https://github.com/unosmium/sciolyff) (Science Olympiad File Format). 
+[SciolyFF](https://github.com/unosmium/sciolyff) (Science Olympiad File Format).
+
+### How to view locally
+
+Minimal instructions that will likely need to be modified depending on your
+development setup:
+```sh
+git clone https://github.com/unosmium/unosmium.org.git
+bundle install
+middleman build
+firefox build/results/index.html
+```
 
 ### Contributing
 
