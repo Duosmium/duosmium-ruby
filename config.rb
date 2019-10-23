@@ -9,7 +9,7 @@ require 'sciolyff'
 interpreters = {}
 
 @app.data.to_h.each do |filename, tournament|
-  next if filename == :recents || filename == :upcoming
+  next unless filename.to_s.start_with?(/[0-9]/)
 
   interpreters[filename.to_s] = SciolyFF::Interpreter.new(tournament)
 end
@@ -94,7 +94,7 @@ helpers do
   def find_logo_path(filename)
     tournament_year = filename[0...4].to_i
     tournament_name = filename[11..-3]
-    get_year = lambda { |image| image[/^[0-9]+/].to_i }
+    get_year = ->(image) { image[/^[0-9]+/].to_i }
 
     Dir.new(Pathname.new(__dir__) + 'source' + 'images' + 'logos')
        .children
@@ -103,18 +103,15 @@ helpers do
        .append('default.jpg')
        .select { |image| get_year.call(image) <= tournament_year }
        .max_by { |image| get_year.call(image) + image.length / 100.0 }
-       .dup  # string may be frozen
+       .dup # string may be frozen
        .prepend '../images/logos/'
   end
 
-  def find_bg_color(path)
-    filename = path.delete_prefix('results/').delete_suffix('.html')
-    logo_file_path = (Pathname.new(__dir__) +
-                      'source/images' +
-                      find_logo_path(filename).delete_prefix('/')).to_s
-    colors = Miro::DominantColors.new(logo_file_path)
-    color = colors.to_hex[3].paint # String#paint from the chroma gem
-
+  def find_bg_color(filename)
+    color = Miro::DominantColors
+            .new('source/images/' + find_logo_path(filename))
+            .to_hex[3]
+            .paint # String#paint from the chroma gem
     color = color.darken while color.light?
     color
   end

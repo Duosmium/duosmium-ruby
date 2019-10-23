@@ -19,7 +19,7 @@
     <link href="<%= rel_link_prefix(current_page.path) %>images/favicon.png" rel="icon" type="image/png" />
   <% if current_page.data.custom_colors %>
     <style type="text/css">
-      <% color = find_bg_color(current_page.path) %>
+      <% color = find_bg_color(File.basename(current_page.path, '.html')) %>
       .results-classic-thead-background {
         background-color: <%= color %> !important;
       }
