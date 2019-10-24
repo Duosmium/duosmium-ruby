@@ -155,8 +155,7 @@ helpers do
 
   def format_school(team)
     if team.school_abbreviation
-      abbr = abbr_school(team.school_abbreviation)
-      "<abbr title=\"#{team.school}\">#{abbr}</abbr>"
+      abbr_school(team.school_abbreviation)
     else
       abbr_school(team.school)
     end
