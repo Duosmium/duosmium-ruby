@@ -59,10 +59,7 @@ manifest: /results/manifest.json
     <li>
       <div><a href="../results/<%= filename %>.html" class="full-results">
         <%= "#{t.date.year} #{tournament_title_short(t)} (Div. #{t.division})"%>
-        </a></div>
-    <% if false %><%# remove this surrounding if statement if transition splash screens are enabled again %>
-      <div class="splash-wrapper"><img src="<%= find_logo_path(filename) %>"/></div>
-    <% end %>
+      </a></div>
     </li>
   <% end %>
   </ul>
