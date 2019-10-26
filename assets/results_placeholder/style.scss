@@ -1,0 +1,29 @@
+div.splash {
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  background-color: #eff0f1;
+
+  img {
+    // Adapted from https://css-tricks.com/making-css-animations-feel-natural/
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+    animation-name: bounce-7;
+    animation-timing-function: cubic-bezier(0.280, 0.840, 0.420, 1);
+    max-width: 250px;
+    object-fit: scale-down;
+    margin-bottom: 1em;
+  }
+}
+
+@keyframes bounce-7 {
+  0%   { transform: scale(1,1)      translateY(0); }
+  15%  { transform: scale(1.1,.9)   translateY(0); }
+  45%  { transform: scale(.9,1.1)   translateY(-42px); }
+  75%  { transform: scale(1.05,.95) translateY(0); }
+  85%  { transform: scale(1,1)      translateY(-7px); }
+  100% { transform: scale(1,1)      translateY(0); }
+}

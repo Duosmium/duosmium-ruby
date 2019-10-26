@@ -30,6 +30,15 @@ end.to_h
 
 page '/results/index.html', locals: { interpreters: interpreters }
 
+data.upcoming.each do |info|
+  next unless info.key?(:file) && !interpreters.key?(info[:file])
+
+  proxy "/results/#{info[:file]}.html",
+        '/results/placeholder.html',
+        locals: { t: info },
+        ignore: true
+end
+
 # Helpers
 # Methods defined in the helpers block are available in templates
 # https://middlemanapp.com/basics/helper-methods/
