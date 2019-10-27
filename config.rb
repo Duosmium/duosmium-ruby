@@ -39,6 +39,8 @@ data.upcoming.each do |info|
         ignore: true
 end
 
+ignore "/results/placeholder.html"
+
 # Helpers
 # Methods defined in the helpers block are available in templates
 # https://middlemanapp.com/basics/helper-methods/
