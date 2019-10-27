@@ -177,7 +177,7 @@ helpers do
           .sub('Elementary/Middle School', 'E.M.S.')
           .sub('Middle School', 'M.S.')
           .sub('Junior High School', 'J.H.S.')
-          .sub('Middle/High School', 'M.H.S')
+          .sub(/Middle[\/-]High School/, 'M.H.S')
           .sub('Junior/Senior High School', 'Jr./Sr. H.S.')
           .sub('High School', 'H.S.')
           .sub('Secondary School', 'Secondary')
