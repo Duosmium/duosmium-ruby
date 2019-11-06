@@ -116,48 +116,18 @@ manifest: /results/manifest.json
            alt="Tournament logo"/>
       <div class="summary collapse" id="summary-<%= index %>">
         <dl class="list-unstyled row">
-          <dt class="col-sm-3">Champion</dt>
-          <dd class="col-sm-9">
-            <%= format_school(teams[0]) %>
-            <%= teams[0].suffix %>
-            <small><%= teams[0].state %></small>
-            (<%= teams[0].points %> pts)
+        <% summary_titles.each_with_index do |title, i| %>
+          <% next unless teams[i] %>
+          <dt class="col-sm-3 <%= 'd-none d-sm-block' if i >= 3 %>">
+            <%= title %>
+          </dt>
+          <dd class="col-sm-9 <%= 'd-none d-sm-block' if i >= 3 %>">
+            <%= format_school(teams[i]) %>
+            <%= teams[i].suffix %>
+            <small><%= teams[i].state %></small>
+            (<%= teams[i].points %> pts)
           </dd>
-          <dt class="col-sm-3">Runner-up</dt>
-          <dd class="col-sm-9">
-            <%= format_school(teams[1]) %>
-            <%= teams[1].suffix %>
-            <small><%= teams[1].state %></small>
-            (<%= teams[1].points %> pts)
-          </dd>
-          <dt class="col-sm-3">Third-place</dt>
-          <dd class="col-sm-9">
-            <%= format_school(teams[2]) %>
-            <%= teams[2].suffix %>
-            <small><%= teams[2].state %></small>
-            (<%= teams[2].points %> pts)
-          </dd>
-          <dt class="col-sm-3 d-none d-sm-block">Fourth-place</dt>
-          <dd class="col-sm-9 d-none d-sm-block">
-            <%= format_school(teams[3]) %>
-            <%= teams[3].suffix %>
-            <small><%= teams[3].state %></small>
-            (<%= teams[3].points %> pts)
-          </dd>
-          <dt class="col-sm-3 d-none d-sm-block">Fifth-place</dt>
-          <dd class="col-sm-9 d-none d-sm-block">
-            <%= format_school(teams[4]) %>
-            <%= teams[4].suffix %>
-            <small><%= teams[4].state %></small>
-            (<%= teams[4].points %> pts)
-          </dd>
-          <dt class="col-sm-3 d-none d-sm-block">Sixth-place</dt>
-          <dd class="col-sm-9 d-none d-sm-block">
-            <%= format_school(teams[5]) %>
-            <%= teams[5].suffix %>
-            <small><%= teams[5].state %></small>
-            (<%= teams[5].points %> pts)
-          </dd>
+        <% end %>
         </dl>
       </div>
     </div>

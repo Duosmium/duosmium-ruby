@@ -238,6 +238,17 @@ helpers do
 
     current_page_path.count('/').times.map { |_| '../' }.join
   end
+
+  def summary_titles
+    %w[
+      Champion
+      Runner-up
+      Third-place
+      Fourth-place
+      Fifth-place
+      Sixth-place
+    ]
+  end
 end
 
 # Activate and configure extensions
