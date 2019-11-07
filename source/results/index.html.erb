@@ -46,7 +46,7 @@ manifest: /results/manifest.json
   <h5><%= date.strftime('%A, %B %-d, %Y') %></h5>
   <ul>
   <% tournaments.sort_by(&:name).each do |t| %>
-    <li><a href="<%= t.link %>"><%= t.name %></a></li>
+    <li><a href="<%= t.link %>"><%= t.name.gsub('(Div. ', '(Div.&nbsp') %></a></li>
   <% end %>
   </ul>
 <% end %>
@@ -59,7 +59,7 @@ manifest: /results/manifest.json
     <% t = interpreters[filename].tournament %>
     <li>
       <div><a href="../results/<%= filename %>.html" class="full-results">
-        <%= "#{t.date.year} #{tournament_title_short(t)} (Div. #{t.division})"%>
+        <%= "#{t.date.year} #{tournament_title_short(t)} (Div.&nbsp;#{t.division})"%>
       </a></div>
     </li>
   <% end %>
