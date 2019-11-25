@@ -5,7 +5,7 @@ require 'miro'
 # Methods used in templates
 # https://middlemanapp.com/basics/helper-methods/
 module CustomHelpers
-  STATES_BY_POSTAL_CODE = {
+  STATES_BY_POSTAL_CODE ||= {
     AK: 'Alaska ',
     AZ: 'Arizona ',
     AR: 'Arkansas ',
@@ -60,7 +60,7 @@ module CustomHelpers
     WY: 'Wyoming '
   }.freeze
 
-  IMAGES_PATH = Pathname.new(__dir__) + '..' + 'source' + 'images'
+  IMAGES_PATH ||= Pathname.new(__dir__) + '..' + 'source' + 'images'
 
   # gets the newest matching logo with year less than tournament year
   def find_logo_path(filename)
