@@ -2,6 +2,21 @@
 
 require 'sciolyff/interpreter'
 
+ignore '/results/placeholder.html'
+ignore '/results/template.html'
+
+if (num = ENV['MIN_BUILD'])
+  ignore '/results/index.html'
+  num = num.empty? ? 1 : num.to_i
+  @app.data.recents[0...num].each do |recent|
+    filename = recent.delete_suffix('.yaml').to_sym
+    proxy "/results/#{filename}.html",
+          '/results/template.html',
+          locals: { i: SciolyFF::Interpreter.new(@app.data.to_h[filename]) }
+  end
+  return
+end
+
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
 
@@ -29,8 +44,7 @@ end
 interpreters.each do |filename, interpreter|
   proxy "/results/#{filename}.html",
         '/results/template.html',
-        locals: { i: interpreter },
-        ignore: true
+        locals: { i: interpreter }
 end
 
 interpreters = interpreters.sort_by do |_, i|
@@ -47,8 +61,5 @@ data.upcoming.each do |info|
 
   proxy "/results/#{info[:file]}.html",
         '/results/placeholder.html',
-        locals: { t: info },
-        ignore: true
+        locals: { t: info }
 end
-
-ignore "/results/placeholder.html"
