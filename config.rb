@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'sciolyff'
+require 'sciolyff/interpreter'
 
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions
