@@ -50,7 +50,7 @@ $(document).ready(function(){
   // Hide the scroll to top button if already near top or at bottom of page
   var hide_scroll_button = function() {
     if ($(this).scrollTop() < $(window).height() ||
-        $(this).scrollTop() + $(window).height() == $(document).height()) {
+        $(this).scrollTop() + $(window).height() > $(document).height() - 10) {
       $("a#scroll-back").fadeOut();
     } else {
       $("a#scroll-back").fadeIn();
