@@ -230,6 +230,23 @@ div.results-index-card-grid {
       }
     }
   }
+
+  div.card-footer {
+    button.summary {
+      @media (max-width: 380px) {
+        display: none;
+      }
+    }
+
+    span.teams-count {
+      align-self: stretch;
+      margin-left: auto;
+      text-transform: uppercase;
+      padding: 0 1em;
+      cursor: pointer;
+      margin-bottom: 0.25em; // match with .btn margin
+    }
+  }
 }
 
 // allow for arbitrary narrow cards on small screens
