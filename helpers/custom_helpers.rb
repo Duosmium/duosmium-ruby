@@ -71,7 +71,7 @@ module CustomHelpers
     Dir.new(IMAGES_PATH + 'logos')
        .children
        .select { |image| image.include? tournament_name }
-       .select { |i| filename.ends_with? i.split('.').first[/_[abc]$/].to_s }
+       .select { |i| filename.end_with? i.split('.').first[/_[abc]$/].to_s }
        .append('default.jpg')
        .select { |image| get_year.call(image) <= tournament_year }
        .max_by { |image| get_year.call(image) + image.length / 100.0 }
