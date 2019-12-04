@@ -1,3 +1,8 @@
+// change U in logo to Material Icon when fonts are loaded
+document.fonts.ready.then(function() {
+  document.getElementById("u-logo").innerHTML = "whatshot";
+});
+
 $(document).ready(function(){
   // Change layout and filter results when user starts typing in search bar
   $("div.search-wrapper input").on("input", function() {
