@@ -1,6 +1,9 @@
 // change U in logo to Material Icon when fonts are loaded
 document.fonts.ready.then(function() {
-  document.getElementById("u-logo").innerHTML = "whatshot";
+  let elem = document.getElementById("u-logo")
+  if (elem !== null) {
+    elem.innerHTML = "whatshot";
+  }
 });
 
 $(document).ready(function(){
