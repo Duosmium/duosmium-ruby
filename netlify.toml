@@ -2,3 +2,8 @@
 base = "./"
 command = "NO_CONTRACTS=true middleman build"
 publish = "./build"
+
+[[redirects]]
+from = "/"
+to = "/results/"
+status = 302
