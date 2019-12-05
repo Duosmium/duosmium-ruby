@@ -1,0 +1,4 @@
+[build]
+base = "./"
+command = "NO_CONTRACTS=true middleman build"
+publish = "./build"
