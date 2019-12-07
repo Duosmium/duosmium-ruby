@@ -113,11 +113,8 @@ header.results-index {
     margin-left: -5vw;
   }
 
-  h1 i#u-logo {
-    margin: 0 -0.14em;
-    &:hover {
-      animation: fire 3s linear infinite;
-    }
+  h1 svg#u-logo path:hover {
+    animation: fire 3s linear infinite;
   }
 
   p.lead {
@@ -130,21 +127,17 @@ header.results-index {
     text-decoration: none;
     color: #f5f5f5 !important;
   }
-
-  img.sciolyff-github {
-    vertical-align: top;
-  }
 }
 
 @keyframes fire {
-  0% { color: crimson; }
-  14% { color: darkorange; }
-  28% { color: gold; }
-  42% { color: yellowgreen; }
-  57% { color: royalblue; }
-  71% { color: indigo; }
-  86% { color: darkviolet; }
-  100% { color: crimson; }
+  0% { fill: crimson; }
+  14% { fill: darkorange; }
+  28% { fill: gold; }
+  42% { fill: yellowgreen; }
+  57% { fill: royalblue; }
+  71% { fill: indigo; }
+  86% { fill: darkviolet; }
+  100% { fill: crimson; }
 }
 
 main#all {
