@@ -40,7 +40,7 @@ div.search-wrapper {
   }
 
   label, input {
-    @include responsive-font-size(32px, true);
+    @include font-size(32px !important);
   }
 
   label {
@@ -78,7 +78,7 @@ div.search-wrapper {
     grid-template-columns: auto 1fr;
 
     @include typography-display-4;
-    @include responsive-font-size(24px);
+    @include font-size(24px);
 
     dt {
       text-align: right;
@@ -109,7 +109,7 @@ div.search-wrapper.searching {
 header.results-index {
   h1 {
     @include typography-display-4;
-    @include responsive-font-size(64px);
+    @include font-size(64px);
     margin-left: -5vw;
   }
 
@@ -172,7 +172,7 @@ div.results-index-card-grid {
     justify-content: center;
 
     h2.card-title {
-      @include responsive-font-size(21px);
+      @include font-size(21px);
     }
 
     h3.card-subtitle {
