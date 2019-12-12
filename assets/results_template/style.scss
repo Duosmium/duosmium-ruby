@@ -375,6 +375,16 @@ div#download-info {
   -webkit-overflow-scrolling: touch;
 }
 
+div#filters div.modal-body {
+  div {
+    margin: 0.75em 0;
+  }
+  input {
+    vertical-align: middle;
+    margin-right: 0.25em;
+  }
+}
+
 @media print {
 
   html {
