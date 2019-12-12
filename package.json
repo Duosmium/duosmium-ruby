@@ -5,8 +5,7 @@
     "jquery": "^3.4.1",
     "material-design-icons": "^3.0.1",
     "popper.js": "^1.14.7",
-    "rfs": "^9.0.2",
-    "typeface-roboto": "^0.0.75"
+    "rfs": "^9.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.0",
