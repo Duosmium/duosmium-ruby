@@ -253,4 +253,5 @@ a#scroll-back {
   position: fixed;
   bottom: 4vh;
   right: 4vw;
+  display: none; // hidden initially, revealed by JS
 }
