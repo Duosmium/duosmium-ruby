@@ -39,7 +39,7 @@ manifest: /results/manifest.json
   <div class="form-group">
     <div class="floating-label floating-label-lg">
       <label for="searchTournaments">
-        <i class="material-icons">search</i>
+        <svg role="img" style="vertical-align: middle;" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
         <i>Search tournaments</i>
       </label>
       <input aria-describedby="searchTournamentsHelp" class="form-control" id="searchTournaments" type="text" placeholder="e.g. nats div c 2017" autocomplete="off">
@@ -94,7 +94,8 @@ manifest: /results/manifest.json
 </div>
 <a href="#all" id="see-all"
    role="button" class="btn btn-flat-secondary btn-lg btn-block">
-  See recent tournaments<br><i class="material-icons">expand_more</i>
+  See recent tournaments<br>
+  <svg role="img" style="margin: -4px 0 -6px;" width="24" height="24" viewBox="0 0 24 24"><path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
 </a>
 </div>
 
@@ -156,7 +157,9 @@ manifest: /results/manifest.json
   <% index += 1 %>
 <% end %>
 </div>
-<a href="#top" class="btn btn-float btn-light" id="scroll-back" role="button"><i class="material-icons">expand_less</i></a>
+<a href="#top" class="btn btn-float btn-light" id="scroll-back" role="button">
+  <svg role="img" style="vertical-align: middle" width="24" height="24" viewBox="0 0 24 24"><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+</a>
 </main>
 <script>
 // This is the service worker with the combined offline experience (Offline page + Offline copy of pages)
