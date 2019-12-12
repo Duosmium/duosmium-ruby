@@ -473,8 +473,7 @@ div#filters div.modal-body {
         background-color: #e0e0e0;
 
         td.rank {
-          color: white;
-          background-color: black;
+          background-color: #aaaaaa;
         }
 
         td.team-penalties {
@@ -491,7 +490,7 @@ div#filters div.modal-body {
           background-color: #ffff8d;
 
           &[data-points='0'] {
-            color: #ffff8d !important; // hide text if no penalty
+            color: transparent !important; // hide text if no penalty
           }
         }
       }
