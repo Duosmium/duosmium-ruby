@@ -44,19 +44,6 @@ module.exports = {
         }, {
           loader: 'sass-loader' // compiles Sass to CSS
         }]
-      },
-      {
-        test: /\.(woff(2)?|ttf|eot)$/,
-        use: [
-          {
-            loader: 'file-loader', // loads fonts
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/',
-              esModule: false // https://stackoverflow.com/questions/59070216/webpack-file-loader-outputs-object-module
-            }
-          }
-        ]
       }
     ]
   },

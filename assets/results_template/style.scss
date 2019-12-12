@@ -95,6 +95,15 @@ div.results-classic-header {
       border: none;
       cursor: pointer;
       padding: 0;
+      width: 1.6em;
+
+      svg {
+        vertical-align: middle;
+
+        path {
+          fill: white;
+        }
+      }
     }
   }
 
@@ -351,6 +360,13 @@ div#print-instructions {
 
   p.small {
     padding-left: 0.75em;
+  }
+}
+
+div#download-info {
+  svg {
+    height: 24px;
+    vertical-align: middle;
   }
 }
 
