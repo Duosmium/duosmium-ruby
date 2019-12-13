@@ -142,7 +142,14 @@ custom_colors: true
       <%= tm.suffix %>
       <%= "(#{tm.city})" if tm.city %>
       <small><%= tm.state %></small>
-    <% if tm.exhibition? %>
+    <% if tm.disqualified? %>
+      <a tabindex="0" role="button"
+         data-toggle="popover" data-trigger="focus"
+         title="Disqualified Team"
+         data-content="This team is ranked behind all other teams that were not
+                       disqualified">
+        <span class="badge badge-danger"><small>Dq</small></span>
+    <% elsif tm.exhibition? %>
       <a tabindex="0" role="button"
          data-toggle="popover" data-trigger="focus"
       <% if team_attended?(tm) %>
