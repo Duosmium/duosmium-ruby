@@ -8,6 +8,14 @@ GIT
       oily_png
       terrapin
 
+GIT
+  remote: https://github.com/unosmium/sciolyff.git
+  revision: 59718bc019327a37abd1291d6a8a0e9d270cb87b
+  specs:
+    sciolyff (0.8.0)
+      minitest (~> 5.11)
+      optimist (~> 3.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -97,9 +105,6 @@ GEM
       ffi (~> 1.0)
     sassc (2.2.1)
       ffi (~> 1.9)
-    sciolyff (0.8.0)
-      minitest (~> 5.11)
-      optimist (~> 3.0)
     servolux (0.13.0)
     temple (0.8.2)
     terrapin (0.6.0)
@@ -119,7 +124,7 @@ DEPENDENCIES
   chroma (~> 0.2.0)
   middleman (~> 4.0)
   miro!
-  sciolyff (= 0.8.0)
+  sciolyff!
 
 BUNDLED WITH
    2.0.1
