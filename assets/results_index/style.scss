@@ -181,6 +181,7 @@ div.results-index-card-grid {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    cursor: pointer;
 
     h2.card-title {
       @include font-size(21px);

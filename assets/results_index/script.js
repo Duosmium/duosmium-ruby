@@ -83,10 +83,13 @@ $(document).ready(function(){
     $(this).parent().parent().children("div.card-body").click();
   });
 
-  // Make team badge function as second link to full results (doing this in JS
-  // to prevent duplication of link element for accessibility)
+  // Make team badge and card header function as second link to full results
+  // (doing this in JS to prevent duplication of link element for accessibility)
   $("div.card-actions span.teams-count").on("click", function() {
     $(this).parent().children("a.full-results")[0].click();
+  });
+  $("div.card-header").on("click", function() {
+    $(this).parent().find("div.card-footer a.full-results")[0].click();
   });
 
   // load tournament logos lazily
