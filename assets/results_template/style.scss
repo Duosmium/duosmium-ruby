@@ -311,7 +311,7 @@ div.results-classic-footnotes {
   margin: 0 auto;
 
   div.wrapper {
-    margin-left: 0.5em;
+    margin: 0 0 1em 0.5em;
     border-top: 1px solid black;
     width: 10em;
     white-space: nowrap;
@@ -319,6 +319,7 @@ div.results-classic-footnotes {
     p {
       font-size: 0.9em;
       padding: 0.5em 0 0 0.5em;
+      margin: 0;
     }
   }
 }
