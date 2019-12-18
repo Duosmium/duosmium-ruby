@@ -211,4 +211,12 @@ module CustomHelpers
       Sixth-place
     ]
   end
+
+  def sup_tag(placing)
+    exempt = placing.exempt? || placing.dropped_as_part_of_worst_placings?
+    tie = placing.tie?
+    return '' unless tie || exempt
+
+    "<sup>#{'◊' if exempt}#{'*' if tie}</sup>"
+  end
 end

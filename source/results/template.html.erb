@@ -174,8 +174,6 @@ custom_colors: true
     <% points = placing.isolated_points %>
     <% place = placing.place %>
     <% unknown = placing.unknown? %>
-    <% exempt = placing.exempt? || placing.dropped_as_part_of_worst_placings? %>
-    <% tie = placing.tie? %>
     <td class="event-points"
         data-true-points="<%= placing.points %>"
         data-notes="<%=
@@ -200,7 +198,7 @@ custom_colors: true
         data-points="<%= unknown ? '??' : points %>"
         data-place="<%= unknown && placing.points_limited_by_maximum_place? ? "≥#{i.tournament.maximum_place}" : place %>"
         data-sortable-place="<%= place ? place : (unknown ? 998000 + points : 999000 + points) %>">
-      <div><%= unknown && !placing.points_limited_by_maximum_place? ? '??' : points %><%= '<sup>◊</sup>' if exempt %><%= '<sup>*</sup>' if tie %></div>
+      <div><%= unknown && !placing.points_limited_by_maximum_place? ? '??' : points %><%= sup_tag(placing) %></div>
     </td>
   <% end %>
     <% pen_points = tm.penalties.sum(&:points) %>
