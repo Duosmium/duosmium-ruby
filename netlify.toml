@@ -1,6 +1,6 @@
 [build]
 base = "./"
-command = "NO_CONTRACTS=true middleman build"
+command = "bundle exec middleman build"
 publish = "./build"
 
 [[redirects]]
