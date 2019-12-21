@@ -68,8 +68,7 @@ module CustomHelpers
     tournament_name = filename[11..-3]
     get_year = ->(image) { image[/^[0-9]+/].to_i }
 
-    Dir.new(IMAGES_PATH + 'logos')
-       .children
+    Dir.children(IMAGES_PATH + 'logos')
        .select { |image| image.include? tournament_name }
        .select { |i| filename.end_with? i.split('.').first[/_[abc]$/].to_s }
        .append('default.jpg')
