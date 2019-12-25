@@ -211,14 +211,14 @@ custom_colors: true
 </table>
 <div class="results-classic-footnotes"
      style="width: <%= 2*(i.events.count + 1) + 28 %>em">
-<% if i.tournament.has_ties? || i.tournament.exempt_placings? || i.tournament.worst_placings_dropped? %>
+<% if i.tournament.ties? || i.tournament.exempt_placings? || i.tournament.worst_placings_dropped? %>
   <div class="wrapper">
   <% if i.tournament.exempt_placings? || i.tournament.worst_placings_dropped? %>
     <p class="footnote">
     <sup>◊</sup>Result was not counted as part of total score
     </p>
   <% end %>
-  <% if i.tournament.has_ties? %>
+  <% if i.tournament.ties? %>
     <p class="footnote">
     <sup>*</sup>Tied with another team
     </p>

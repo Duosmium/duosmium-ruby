@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/unosmium/sciolyff.git
-  revision: 1c36e9b2aa556afec1c34d7b7f4f73f7aff73c02
+  revision: 6470a561561665b294723b653f8aff841b833a25
   specs:
     sciolyff (0.8.0)
       minitest (~> 5.11)
@@ -103,7 +103,7 @@ GEM
     public_suffix (4.0.1)
     rack (2.0.8)
     rb-fsevent (0.10.3)
-    rb-inotify (0.10.0)
+    rb-inotify (0.10.1)
       ffi (~> 1.0)
     sassc (2.2.1)
       ffi (~> 1.9)
@@ -114,7 +114,7 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
-    tzinfo (1.2.5)
+    tzinfo (1.2.6)
       thread_safe (~> 0.1)
     uglifier (3.2.0)
       execjs (>= 0.3.0, < 3)
