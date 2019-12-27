@@ -218,7 +218,7 @@ custom_colors: true
     <sup>◊</sup>Result was not counted as part of total score
     </p>
   <% end %>
-  <% if i.tournament.ties? %>
+  <% if i.tournament.ties_outside_of_maximum_places? %>
     <p class="footnote">
     <sup>*</sup>Tied with another team
     </p>

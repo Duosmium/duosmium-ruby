@@ -213,7 +213,7 @@ module CustomHelpers
 
   def sup_tag(placing)
     exempt = placing.exempt? || placing.dropped_as_part_of_worst_placings?
-    tie = placing.tie?
+    tie = placing.tie? && !placing.points_limited_by_maximum_place?
     return '' unless tie || exempt
 
     "<sup>#{'◊' if exempt}#{'*' if tie}</sup>"
