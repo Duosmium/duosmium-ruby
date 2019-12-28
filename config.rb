@@ -36,6 +36,7 @@ interpreters = interpreters.sort_by do |_, i|
 end.to_h
 
 page '/results/index.html', locals: { interpreters: interpreters }
+page '/results/schools.html', locals: { interpreters: interpreters }
 
 return if ENV['INDEX_ONLY']
 

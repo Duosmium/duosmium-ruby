@@ -218,4 +218,20 @@ module CustomHelpers
 
     "<sup>#{'◊' if exempt}#{'*' if tie}</sup>"
   end
+
+  def group_by_schools(interpreters)
+    interpreters
+      .values
+      .flat_map { |i| i.teams.map {|t| full_school_name(t) } }
+      .uniq
+      .sort_by { |t| t.downcase.tr('^A-Za-z0-9', '') }
+      .map do |t|
+      [
+        t,
+        interpreters.keys.select do |k|
+          interpreters[k].teams.map {|t| full_school_name(t) }.include? t
+        end
+      ]
+    end.to_h
+  end
 end

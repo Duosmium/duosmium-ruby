@@ -1,0 +1,26 @@
+---
+title: By School | Unosmium Results
+description: Science Olympiad tournament results grouped by schools!
+---
+<header class="schools-index jumbotron jumbotron-fluid bg-primary mb-5">
+  <div class="container">
+    <h1 class="text-light">All Results by School</h1>
+  </div>
+</header>
+
+<main class="schools-index container">
+<% group_by_schools(interpreters).each do |team, filenames| %>
+<h2><%= team %></h2>
+<hr>
+<ul>
+<% filenames.each do |f| %>
+  <li><a href="<%= f %>.html">
+    <% tournament = interpreters[f].tournament %>
+    <%= tournament.date.year %>
+    <%= tournament_title(tournament) %> (Div. <%= tournament.division %>)
+  </a></li>
+<% end %>
+</ul>
+<% end %>
+
+</main>
