@@ -271,6 +271,8 @@ $(document).ready(function(){
     $("div#team-detail span#place").html(getOrdinal(place));
     $("div#team-detail span#team").html(source_row.attr("data-team-name"));
     $("div#team-detail span#school").html(source_row.attr("data-school"));
+    let h = "schools.html#" + source_row.attr("data-school").replace(/ /g, "_");
+    $("a#other-results").attr("href", h);
 
     let table_rows = $("div#team-detail table tbody").children();
     $.each(source_row.children("td.event-points"), function (index, td) {
@@ -288,12 +290,6 @@ $(document).ready(function(){
     if(e.target === this){ // if clicked on directly
       $(this).closest("tr").find("td.number a").click();
     }
-  });
-
-  // Give small message about other results not yet being implemented
-  $("#other-results").on("click", function(e) {
-    e.preventDefault();
-    alert("Not yet implemented, coming soon™ 🎉")
   });
 
   // Enable popovers for further explanation of badge abbrevs

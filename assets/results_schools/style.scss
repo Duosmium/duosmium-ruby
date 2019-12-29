@@ -26,5 +26,6 @@ header.schools-index {
 main.schools-index {
   h2 {
     @include font-size(24px);
+    padding-top: 1em;
   }
 }

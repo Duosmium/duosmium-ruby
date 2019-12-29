@@ -9,8 +9,10 @@ description: Science Olympiad tournament results grouped by schools!
 </header>
 
 <main class="schools-index container">
-<% group_by_schools(interpreters).each do |team, filenames| %>
-<h2><%= team %></h2>
+<% group_by_schools(interpreters).each do |school, filenames| %>
+<h2 id="<%= school.tr(' ', '_') %>">
+  <a href="#<%= school.tr(' ', '_') %>"><%= school %></a>
+</h2>
 <hr>
 <ul>
 <% filenames.each do |f| %>
