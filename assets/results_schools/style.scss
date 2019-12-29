@@ -19,7 +19,8 @@ $rfs-breakpoint: 1920px;
 header.schools-index {
   h1 {
     @include typography-display-4;
-    @include font-size(64px);
+    @include font-size(48px);
+    text-align: center;
 
     a {
       color: inherit;
@@ -30,7 +31,7 @@ header.schools-index {
 
 main.schools-index {
   h2 {
-    @include font-size(24px);
+    @include font-size(20px);
     padding-top: 0.5em;
 
     a {

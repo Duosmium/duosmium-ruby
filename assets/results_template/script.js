@@ -13,8 +13,7 @@ $(document).ready(function(){
   // Make link to /results/ work as a back button if appropriate
   $("a.js-back-button").on("click", function(e) {
     e.preventDefault();
-    if (document.referrer.startsWith(location.origin)
-        && window.history.length > 1) {
+    if (document.referrer === this.href && window.history.length > 1) {
       window.history.back();
     } else {
       window.location = this.href;
