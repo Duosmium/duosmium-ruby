@@ -225,12 +225,15 @@ module CustomHelpers
       .flat_map { |i| i.teams.map {|t| full_school_name(t) } }
       .uniq
       .sort_by { |t| t.downcase.tr('^A-Za-z0-9', '') }
-      .map do |t|
+      .map do |s|
       [
-        t,
-        interpreters.keys.select do |k|
-          interpreters[k].teams.map {|t| full_school_name(t) }.include? t
-        end
+        s,
+        interpreters.keys.map do |k|
+          teams = interpreters[k].teams.select {|t| full_school_name(t) == s }
+          next if teams.empty?
+
+          [k, teams.map(&:rank).sort.map(&:ordinalize)]
+        end.compact.to_h
       ]
     end.to_h
   end
