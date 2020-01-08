@@ -7,6 +7,7 @@ ignore '/results/template.html'
 
 if (num = ENV['MIN_BUILD'])
   ignore '/results/index.html'
+  ignore '/results/schools.html'
   num = num.empty? ? 1 : num.to_i
   @app.data.recents[0...num].each do |recent|
     filename = recent.delete_suffix('.yaml')
