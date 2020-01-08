@@ -11,6 +11,12 @@ publish = "./build"
   compress = true
 
 [[redirects]]
+from = "https://unosmium.netlify.com/*"
+to = "https://unosmium.org/:splat"
+status = 301
+force = true
+
+[[redirects]]
 from = "/"
 to = "/results/"
 status = 302
