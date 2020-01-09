@@ -237,4 +237,15 @@ module CustomHelpers
       ]
     end.to_h
   end
+
+  def csv_schools(interpreters)
+    CSV.generate do |csv|
+      interpreters
+        .values
+        .flat_map { |i| i.teams.map {|t| [t.school, t.city, t.state] }}
+        .uniq
+        .sort_by { |t| t.first }
+        .each { |row| csv << row }
+    end
+  end
 end
