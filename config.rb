@@ -9,6 +9,7 @@ if (num = ENV['MIN_BUILD'])
   ignore '/results/index.html'
   ignore '/results/schools.html'
   ignore '/results/schools.csv'
+  ignore '/results/events.csv'
   num = num.empty? ? 1 : num.to_i
   @app.data.recents[0...num].each do |recent|
     filename = recent.delete_suffix('.yaml')
@@ -40,6 +41,7 @@ end.to_h
 page '/results/index.html', locals: { interpreters: interpreters }
 page '/results/schools.html', locals: { interpreters: interpreters }
 page '/results/schools.csv', locals: { interpreters: interpreters }
+page '/results/events.csv', locals: { interpreters: interpreters }
 
 return if ENV['INDEX_ONLY']
 

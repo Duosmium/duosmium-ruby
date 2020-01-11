@@ -248,4 +248,15 @@ module CustomHelpers
         .each { |row| csv << row }
     end
   end
+
+  def csv_events(interpreters)
+    CSV.generate do |csv|
+      interpreters
+        .values
+        .flat_map { |i| i.events.map {|e| [e.name] }}
+        .uniq
+        .sort
+        .each { |row| csv << row }
+    end
+  end
 end
