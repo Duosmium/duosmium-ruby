@@ -252,6 +252,10 @@ table.results-classic {
     padding: 0;
   }
 
+  th:not(.team-penalties) {
+    cursor: pointer;
+  }
+
   th {
     position: sticky;
     z-index: 1;

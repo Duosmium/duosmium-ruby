@@ -204,6 +204,32 @@ $(document).ready(function(){
   sort_and_toggle_event_rank();
   $("#event-select").change(sort_and_toggle_event_rank);
 
+  // Sort when clicking on table headers
+  $("th.event-points").on("click", function(e) {
+    if (e.target !== this) { return; }
+    let index = Array.prototype.indexOf.call(this.parentNode.children, this);
+    $("#event-select").val(index - 5);
+    $("#event-select").change();
+  });
+  $("th.rank, th.total-points").on("click", function() {
+    $("#event-select").val("all");
+    $("#event-select").change();
+    $("#sort-select").val("rank");
+    $("#sort-select").change();
+  });
+  $("th.number").on("click", function() {
+    $("#sort-select").val("number");
+    $("#sort-select").change();
+  });
+  $("th.team").on("click", function() {
+    $("#sort-select").val("school");
+    $("#sort-select").change();
+  });
+  $("th.event-points-focus").on("click", function() {
+    $("#sort-select").val("rank");
+    $("#sort-select").change();
+  });
+
   // Toggle rows based on checkboxes
   $("div#team-filter input").change(function() {
     let id = $(this).attr("id");
