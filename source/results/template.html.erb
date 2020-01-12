@@ -2,14 +2,14 @@
 custom_colors: true
 ---
 <% current_page.data.title =
-  "#{i.tournament.date.year} "\
+  "#{i.tournament.year} "\
   "#{tournament_title_short(i.tournament)} " \
   "(Div. #{i.tournament.division}) | Unosmium Results" %>
 
 <% champion = i.tournament.teams[0] %>
 <% runnerup = i.tournament.teams[1] %>
 <% current_page.data.description =
-  "Full results for the #{i.tournament.date.year} "\
+  "Full results for the #{i.tournament.year} "\
   "#{tournament_title(i.tournament)} "\
   "(Division #{i.tournament.division}), "\
   "Champion: #{champion.school} "\
@@ -27,7 +27,7 @@ custom_colors: true
        style="width: <%= 2*(i.events.count + 1) + 28 %>em">
     <div class="tournament-info">
       <h1>
-        <%= i.tournament.date.year %>
+        <%= i.tournament.year %>
         <%= tournament_title(i.tournament) %>&nbsp;(Div. <%= i.tournament.division %>)
       </h1>
       <p><%= i.tournament.date.strftime('%A, %B %-d, %Y') %>
