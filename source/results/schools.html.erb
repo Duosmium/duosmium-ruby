@@ -21,7 +21,7 @@ description: Science Olympiad tournament results grouped by schools!
   <li>
     <a href="<%= f %>.html">
     <% tournament = interpreters[f].tournament %>
-    <%= tournament.date.year %>
+    <%= tournament.year %>
     <%= tournament_title(tournament) %> (Div. <%= tournament.division %>)
     </a>
     — <%= ranks.join ', ' %>
