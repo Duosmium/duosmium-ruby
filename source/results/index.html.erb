@@ -53,7 +53,9 @@ manifest: /results/manifest.json
   <h5><%= date.strftime('%A, %B %-d, %Y') %></h5>
   <ul>
   <% tournaments.sort_by(&:name).each do |t| %>
+    <%= "<s>" if t.cancelled %>
     <li><a href="<%= t.link %>"><%= t.name.gsub('(Div. ', '(Div.&nbsp') %></a></li>
+    <%= "</s>" if t.cancelled %>
   <% end %>
   </ul>
 <% end %>
