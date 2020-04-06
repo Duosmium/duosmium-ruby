@@ -243,7 +243,8 @@ $(document).ready(function(){
         $(cell).attr("data-true-points", $(cell).attr("data-o-true-points"));
         $(cell).attr("data-notes", $(cell).attr("data-o-notes"));
         $(cell).attr("data-place", $(cell).attr("data-o-place"));
-        let cell_html = $(cell).attr("data-points") + $(cell).attr("data-o-sup-tag");
+        let sup_tag = $(cell).attr("data-o-sup-tag") || "";
+        let cell_html = $(cell).attr("data-points") + sup_tag;
         $(cell).children("div").html(cell_html);
       });
       $.each($("td.rank"), function(index, cell) {
@@ -269,7 +270,8 @@ $(document).ready(function(){
         $(cell).attr("data-true-points", $(cell).attr("data-sub-true-points"));
         $(cell).attr("data-notes", $(cell).attr("data-sub-notes"));
         $(cell).attr("data-place", $(cell).attr("data-sub-place"));
-        let cell_html = $(cell).attr("data-points") + $(cell).attr("data-sub-sup-tag");
+        let sup_tag = $(cell).attr("data-sub-sup-tag") || "";
+        let cell_html = $(cell).attr("data-points") + sup_tag;
         $(cell).children("div").html(cell_html);
       });
       $.each($("td.rank"), function(index, cell) {
