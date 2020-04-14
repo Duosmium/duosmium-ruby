@@ -46,10 +46,12 @@ GIT
 
 GIT
   remote: https://github.com/unosmium/sciolyff.git
-  revision: dfad025958f62a9ce3b2b5ae9ec1d2a5dfcec4c7
+  revision: 1c0ef3c43d809b21bd6af4f20e009651df56c9a9
   specs:
-    sciolyff (0.9.0)
+    sciolyff (0.10.0)
+      erubi (~> 1.9)
       optimist (~> 3.0)
+      psych (~> 3.1)
 
 GEM
   remote: https://rubygems.org/
@@ -72,6 +74,7 @@ GEM
     concurrent-ruby (1.1.6)
     contracts (0.16.0)
     dotenv (2.7.5)
+    erubi (1.9.0)
     erubis (2.7.0)
     execjs (2.7.0)
     fastimage (2.1.7)
@@ -101,6 +104,7 @@ GEM
       tilt (>= 1.4.1, < 3)
     padrino-support (0.14.4)
     parallel (1.19.1)
+    psych (3.1.0)
     public_suffix (4.0.4)
     rack (2.2.2)
     rb-fsevent (0.10.3)
