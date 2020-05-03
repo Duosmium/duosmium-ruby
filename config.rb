@@ -12,7 +12,7 @@ if (num = ENV['MIN_BUILD'])
   ignore '/results/events.csv'
   num = num.empty? ? 1 : num.to_i
   @app.data.recents[0...num].each do |recent|
-    filename = recent.delete_suffix('.yaml')
+    filename = recent.delete_suffix('.yaml').to_sym
     proxy "/results/#{filename}.html",
           '/results/template.html',
           locals: { i: SciolyFF::Interpreter.new(@app.data.to_h[filename]) }
