@@ -244,7 +244,7 @@ module CustomHelpers
         .values
         .flat_map { |i| i.teams.map {|t| [t.school, t.city, t.state] }}
         .uniq
-        .sort_by { |t| t.first }
+        .sort_by { |t| [t[0], t[1].nil? ? '' : t[1], t[2]] }
         .each { |row| csv << row }
     end
   end
