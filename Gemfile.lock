@@ -46,7 +46,7 @@ GIT
 
 GIT
   remote: https://github.com/unosmium/sciolyff.git
-  revision: 1c0ef3c43d809b21bd6af4f20e009651df56c9a9
+  revision: 967a2c4b1424cbea9e1f6930f4933deb1b7c17b7
   specs:
     sciolyff (0.10.0)
       erubi (~> 1.9)
@@ -97,7 +97,7 @@ GEM
     oily_png (1.2.1)
       chunky_png (~> 1.3.7)
     oj (3.10.6)
-    optimist (3.0.0)
+    optimist (3.0.1)
     padrino-helpers (0.14.4)
       i18n (~> 0.6, >= 0.6.7)
       padrino-support (= 0.14.4)
@@ -107,13 +107,13 @@ GEM
     psych (3.1.0)
     public_suffix (4.0.4)
     rack (2.2.2)
-    rb-fsevent (0.10.3)
+    rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rgl (0.5.6)
       lazy_priority_queue (~> 0.1.0)
       stream (~> 0.5.2)
-    sassc (2.2.1)
+    sassc (2.3.0)
       ffi (~> 1.9)
     servolux (0.13.0)
     stream (0.5.2)
