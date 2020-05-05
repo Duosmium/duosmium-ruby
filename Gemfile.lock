@@ -46,7 +46,7 @@ GIT
 
 GIT
   remote: https://github.com/unosmium/sciolyff.git
-  revision: 967a2c4b1424cbea9e1f6930f4933deb1b7c17b7
+  revision: 6e6339b13c186babd89bfbd081924daf82f51755
   specs:
     sciolyff (0.10.0)
       erubi (~> 1.9)
