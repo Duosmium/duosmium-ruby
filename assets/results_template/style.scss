@@ -195,43 +195,6 @@ table.results-classic {
     overflow: hidden;
   }
 
-  td.event-points[data-points='1'] div,
-  td.event-points-focus[data-points='1'] div,
-  td.rank[data-points='1'] div {
-    background-color: $material-color-yellow-400;
-    border-radius: 1em;
-  }
-  td.event-points[data-points='2'] div,
-  td.event-points-focus[data-points='2'] div,
-  td.rank[data-points='2'] div {
-    background-color: $material-color-blue-grey-100;
-    border-radius: 1em;
-  }
-  td.event-points[data-points='3'] div,
-  td.event-points-focus[data-points='3'] div,
-  td.rank[data-points='3'] div {
-    background-color: #d8bf99;
-    border-radius: 1em;
-  }
-  td.event-points[data-points='4'] div,
-  td.event-points-focus[data-points='4'] div,
-  td.rank[data-points='4'] div {
-    background-color: #ffefc0;
-    border-radius: 1em;
-  }
-  td.event-points[data-points='5'] div,
-  td.event-points-focus[data-points='5'] div,
-  td.rank[data-points='5'] div {
-    background-color: $material-color-light-green-100;
-    border-radius: 1em;
-  }
-  td.event-points[data-points='6'] div,
-  td.event-points-focus[data-points='6'] div,
-  td.rank[data-points='6'] div {
-    background-color: $material-color-pink-100;
-    border-radius: 1em;
-  }
-
   // make medals circular (replicate the behavior before div wrapping needed for
   // Chrome, gosh darn it Chrome)
   td.rank, td.event-points {

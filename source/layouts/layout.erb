@@ -20,6 +20,7 @@
       .btn, .custom-control-label::after {
         color: <%= color %> !important;
       }
+      <%= trophy_and_medal_css(i.tournament.trophies, i.tournament.medals) %>
     </style>
   <% end %>
   <% if current_page.data.manifest %>

@@ -88,6 +88,31 @@ module CustomHelpers
     color
   end
 
+  def trophy_and_medal_colors
+    %w[
+      #ffee58
+      #cfd8dc
+      #d8bf99
+      #ffefc0
+      #dcedc8
+      #f8bbd0
+      #eeccff
+      #fdd5b4
+      #ebedd8
+      #d4f0f1
+    ]
+  end
+
+  def trophy_and_medal_css(trophies, medals)
+    trophy_and_medal_colors.map.with_index do |color, i|
+      [
+        ("td.event-points[data-points='#{i+1}'] div" if i < medals),
+        ("td.event-points-focus[data-points='#{i+1}'] div" if i < medals),
+        ("td.rank[data-points='#{i+1}'] div" if i < trophies)
+      ].compact.join(',') + "{background-color: #{color};border-radius: 1em;}"
+    end.join
+  end
+
   def tournament_title(t_info)
     return t_info.name if t_info.name
 

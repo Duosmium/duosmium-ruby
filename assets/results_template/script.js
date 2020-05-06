@@ -181,17 +181,6 @@ $(document).ready(function(){
         points_elem.attr("data-points", points);
       });
 
-      // update medal highlighting based on checkboxes
-      $("div#settings input").each(function(index) {
-        let medal_number = $(this).attr("id").slice("medal".length);
-        let medals = $("td.event-points-focus[data-points='" + medal_number + "'] div")
-
-        if ($(this).prop("checked")) {
-          medals.removeAttr("style"); // default state is 'highlighted'
-        } else {
-          medals.css("background-color", "transparent");
-        }
-      });
       fix_width(4);
 
     } else {
@@ -324,18 +313,6 @@ $(document).ready(function(){
         all_box.prop("indeterminate", true);
       }
     }
-  });
-
-  // Toggle medal highlighting based on checkboxes
-  $("div#medal-filter input").change(function() {
-      let medal_number = $(this).attr("id").slice("medal".length);
-      let medals = $("td[data-points='" + medal_number + "'] div")
-
-      if ($(this).prop("checked")) {
-        medals.removeAttr("style"); // default state is 'highlighted'
-      } else {
-        medals.css("background-color", "transparent");
-      }
   });
 
   // Cribbed from https://git.io/Je8kk

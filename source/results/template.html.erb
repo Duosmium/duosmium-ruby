@@ -254,25 +254,6 @@ custom_colors: true
       <% end %>
         <hr>
       <% end %>
-        <h6>Select which medals to highlight</h6>
-        <div id="medal-filter">
-      <% (1..6).each do |x| %>
-        <div>
-          <input type="checkbox"
-                 id="medal<%= x %>" checked>
-          <label class="custom-control-label" for="medal<%= x %>">
-            <% suffix =  case x
-                         when 1 then 'st'
-                         when 2 then 'nd'
-                         when 3 then 'rd'
-                         when 4..6 then 'th'
-                         end %>
-            <%= x %><sup><%= suffix %></sup> place medals
-          </label>
-        </div>
-      <% end %>
-        </div>
-        <hr>
         <h6>Select which teams to show</h6>
         <div id="team-filter">
           <div>
