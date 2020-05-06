@@ -145,7 +145,7 @@ manifest: /results/manifest.json
       <button class="btn btn-outline-primary summary">Summary</button>
       <a href="../results/<%= filename %>.html" class="btn btn-outline-primary full-results">Full Results</a>
       <span class="badge badge-dark teams-count">
-        <%= teams.count { |t| !t.exhibition? } %> Teams
+        <%= i.tournament.nonexhibition_teams_count %> Teams
       </span>
     </div>
   </div>

@@ -18,7 +18,7 @@ custom_colors: true
   "Runner-up: #{runnerup.school} "\
   "#{runnerup.suffix ? runnerup.suffix + " " : ""}"\
   "(#{runnerup.points} pts), "\
-  "Total non-exhibition teams: #{i.teams.count { |t| !t.exhibition? }}" %>
+  "Total non-exhibition teams: #{i.tournament.nonexhibition_teams_count}" %>
 
 <div class="results-classic-wrapper">
 <div class="results-classic-thead-background shadow-sm"
