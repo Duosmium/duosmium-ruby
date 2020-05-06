@@ -328,45 +328,6 @@ div#team-detail {
       height: 2em;
       white-space: nowrap;
     }
-
-    tr td:first-child {
-      border-bottom-left-radius: 0.8em;
-    }
-
-    tbody tr td:last-child {
-      border-top-right-radius: 0.8em;
-    }
-
-    tr[data-points='1'],
-    tr[data-points='2'],
-    tr[data-points='3'],
-    tr[data-points='4'],
-    tr[data-points='5'],
-    tr[data-points='6']
-    {
-      td:first-child {
-        padding-left: 0.5em;
-      }
-    }
-
-    tr[data-points='1'] td {
-      background-color: $material-color-yellow-400;
-    }
-    tr[data-points='2'] td {
-      background-color: $material-color-blue-grey-100;
-    }
-    tr[data-points='3'] td {
-      background-color: #d8bf99;
-    }
-    tr[data-points='4'] td {
-      background-color: #ffefc0;
-    }
-    tr[data-points='5'] td {
-      background-color: $material-color-light-green-100;
-    }
-    tr[data-points='6'] td {
-      background-color: $material-color-pink-100;
-    }
   }
 }
 

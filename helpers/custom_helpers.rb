@@ -108,9 +108,13 @@ module CustomHelpers
       [
         ("td.event-points[data-points='#{i+1}'] div" if i < medals),
         ("td.event-points-focus[data-points='#{i+1}'] div" if i < medals),
+        ("div#team-detail tr[data-points='#{i+1}']" if i < medals),
         ("td.rank[data-points='#{i+1}'] div" if i < trophies)
       ].compact.join(',') + "{background-color: #{color};border-radius: 1em;}"
-    end.join
+    end.join +
+    trophy_and_medal_colors.map.with_index do |color, i|
+      "div#team-detail tr[data-points='#{i+1}'] td:first-child" if i < medals
+    end.compact.join(',') + "{padding-left: 0.5em;}"
   end
 
   def tournament_title(t_info)
