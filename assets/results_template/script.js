@@ -272,6 +272,10 @@ $(document).ready(function(){
       });
       $("#subdivision").html(sub);
     }
+
+    let style = document.querySelector("#subdivision-style");
+    style.innerHTML = document.querySelector(`#sub-${sub}-style`).innerHTML;
+
     sort_and_toggle_event_rank(); // sort again after filtering b/c bad coupling
   };
   $("input[type=radio][name=subdivision]").change(filter_subdivision);

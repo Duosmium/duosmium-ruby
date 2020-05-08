@@ -25,6 +25,10 @@
 @import "~daemonite-material/assets/scss/material/text-field";
 @import "~daemonite-material/assets/scss/material/snackbar";
 
+// per-subdivision medal/trophy styles
+x-st {
+  display: none;
+}
 
 div.results-classic-wrapper {
   // make sticky stuff work

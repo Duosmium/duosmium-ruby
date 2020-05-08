@@ -20,6 +20,10 @@
       .btn, .custom-control-label::after {
         color: <%= color %> !important;
       }
+  <% if i.tournament.subdivisions? %>
+    </style>
+    <style id="subdivision-style">
+  <% end %>
       <%= trophy_and_medal_css(i.tournament.trophies, i.tournament.medals) %>
     </style>
   <% end %>
@@ -30,5 +34,15 @@
   <body>
     <%= yield %>
     <script src="<%= rel_link_prefix(current_page.path) %>main.js"></script>
+<% if current_page.data.custom_colors && i.tournament.subdivisions? %>
+    <x-st id="sub-combined-style">
+      <%= trophy_and_medal_css(i.tournament.trophies, i.tournament.medals) %>
+    </x-st>
+  <% i.subdivisions.each do |sub, sub_i| %>
+    <x-st id="sub-<%= sub %>-style">
+      <%= trophy_and_medal_css(sub_i.tournament.trophies, sub_i.tournament.medals) %>
+    </x-st>
+  <% end %>
+<% end %>
   </body>
 </html>
