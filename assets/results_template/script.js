@@ -238,7 +238,8 @@ $(document).ready(function(){
       });
       $.each($("td.rank"), function(index, cell) {
         $(cell).attr("data-points", $(cell).attr("data-o-points"));
-        $(cell).children("div").html($(cell).attr("data-points"));
+        let sup_tag = $(cell).attr("data-o-sup-tag") || "";
+        $(cell).children("div").html($(cell).attr("data-points") + sup_tag);
       });
       $.each($("td.total-points"), function(index, cell) {
         $(cell).html($(cell).attr("data-o-points"));
