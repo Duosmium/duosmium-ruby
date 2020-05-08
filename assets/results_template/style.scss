@@ -245,7 +245,7 @@ table.results-classic {
   th { z-index: 1; }
 
   // allow centering of placing text ignoring superscript
-  td.event-points sup, td.event-points-focus sup {
+  td.event-points sup, td.event-points-focus sup, td.rank sup {
     display: inline-block;
     width: 0px;
   }

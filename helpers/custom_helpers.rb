@@ -248,6 +248,21 @@ module CustomHelpers
     "<sup>#{'◊' if exempt}#{'*' if tie}</sup>"
   end
 
+  def qualifying_sup_tag(team)
+    return '' unless team.qualified?
+
+    "<sup>✧</sup>"
+  end
+
+  def qualifying_sup_tag_note(tournament)
+    next_tournament = if tournament.level == 'Regionals'
+                        "#{tournament.state} State Tournament"
+                      else
+                        "National Tournament"
+                      end
+    "Qualified school for the #{next_tournament}"
+  end
+
   def group_by_schools(interpreters)
     interpreters
       .values
