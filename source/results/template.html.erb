@@ -167,7 +167,7 @@ custom_colors: true
     <% end %>
     </td>
     <td class="event-points-focus" data-points=""><div></div></td>
-    <td class="rank" data-points="<%= tm.rank %>"<%= " data-o-points=\"#{tm.rank}\" data-sub-points=\"#{tm.subdivision_team.rank}\"" if tm.subdivision %>><div><%= tm.rank %><%= bids_sup_tag(tm) %></div></td>
+    <td class="rank" data-points="<%= tm.rank %>"<%= " data-o-points=\"#{tm.rank}#{bids_sup_tag(tm)}\" data-sub-points=\"#{tm.subdivision_team.rank}\"" if tm.subdivision %>><div><%= tm.rank %><%= bids_sup_tag(tm) %></div></td>
     <td class="total-points"<%= " data-o-points=\"#{tm.points}\" data-sub-points=\"#{tm.subdivision_team.points}\"" if tm.subdivision %>><%= tm.points %></td>
   <% i.events.each do |e| %>
     <% placing = e.placing_for(tm) %>
