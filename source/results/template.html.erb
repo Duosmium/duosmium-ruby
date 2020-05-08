@@ -167,7 +167,7 @@ custom_colors: true
     <% end %>
     </td>
     <td class="event-points-focus" data-points=""><div></div></td>
-    <td class="rank" data-points="<%= tm.rank %>"<%= " data-o-points=\"#{tm.rank}\" data-sub-points=\"#{tm.subdivision_team.rank}\"" if tm.subdivision %>><div><%= tm.rank %><%= qualifying_sup_tag(tm) %></div></td>
+    <td class="rank" data-points="<%= tm.rank %>"<%= " data-o-points=\"#{tm.rank}\" data-sub-points=\"#{tm.subdivision_team.rank}\"" if tm.subdivision %>><div><%= tm.rank %><%= bids_sup_tag(tm) %></div></td>
     <td class="total-points"<%= " data-o-points=\"#{tm.points}\" data-sub-points=\"#{tm.subdivision_team.points}\"" if tm.subdivision %>><%= tm.points %></td>
   <% i.events.each do |e| %>
     <% placing = e.placing_for(tm) %>
@@ -206,11 +206,11 @@ custom_colors: true
 </table>
 <div class="results-classic-footnotes"
      style="width: <%= 2*(i.events.count + 1) + 28 %>em">
-     <% if i.tournament.ties? || i.tournament.exempt_placings? || i.tournament.worst_placings_dropped? || i.tournament.qualifying_schools.nonzero? %>
+     <% if i.tournament.ties? || i.tournament.exempt_placings? || i.tournament.worst_placings_dropped? || i.tournament.bids.nonzero? %>
   <div class="wrapper">
-  <% if i.tournament.qualifying_schools.nonzero? %>
+  <% if i.tournament.bids.nonzero? %>
     <p class="footnote">
-    <sup>✧</sup><%= qualifying_sup_tag_note(i.tournament) %>
+    <sup>✧</sup><%= bids_sup_tag_note(i.tournament) %>
     </p>
   <% end %>
   <% if i.tournament.exempt_placings? || i.tournament.worst_placings_dropped? %>

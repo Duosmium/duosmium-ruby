@@ -248,13 +248,13 @@ module CustomHelpers
     "<sup>#{'◊' if exempt}#{'*' if tie}</sup>"
   end
 
-  def qualifying_sup_tag(team)
-    return '' unless team.qualified?
+  def bids_sup_tag(team)
+    return '' unless team.earned_bid?
 
     "<sup>✧</sup>"
   end
 
-  def qualifying_sup_tag_note(tournament)
+  def bids_sup_tag_note(tournament)
     next_tournament = if tournament.level == 'Regionals'
                         "#{tournament.state} State Tournament"
                       else
