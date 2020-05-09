@@ -6,5 +6,5 @@ then
 else
   export MIN_BUILD=1
 fi
-bundle exec middleman build --no-clean
+bundle exec middleman build --no-clean "$2"
 unset MIN_BUILD
