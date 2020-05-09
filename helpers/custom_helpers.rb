@@ -260,7 +260,7 @@ module CustomHelpers
                       else
                         "National Tournament"
                       end
-    qualifiee = tournament.per_team_bids? ? 'team' : 'school'
+    qualifiee = tournament.bids_per_school > 1 ? 'team' : 'school'
     "Qualified #{qualifiee} for the #{tournament.year} #{next_tournament}"
   end
 
