@@ -260,7 +260,8 @@ module CustomHelpers
                       else
                         "National Tournament"
                       end
-    "Qualified school for the #{tournament.year} #{next_tournament}"
+    qualifiee = tournament.per_team_bids? ? 'team' : 'school'
+    "Qualified #{qualifiee} for the #{tournament.year} #{next_tournament}"
   end
 
   def group_by_schools(interpreters)
