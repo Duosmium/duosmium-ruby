@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/middleman/middleman.git
-  revision: 5fd6a1efcb7a5f1cb6b3dbe3c930fddc91b3e626
+  revision: 3f82882301a5e23309deb17ba889a466aca418b2
   specs:
     middleman (5.0.0.rc.1)
       coffee-script (~> 2.2)
@@ -46,7 +46,7 @@ GIT
 
 GIT
   remote: https://github.com/unosmium/sciolyff.git
-  revision: ad1cb40925222c4cc28299ab4c1f9568f9b42230
+  revision: 8067342cdcb77c7aef2a7ac43daaf0e0101bec68
   specs:
     sciolyff (0.10.0)
       erubi (~> 1.9)
@@ -105,7 +105,7 @@ GEM
     padrino-support (0.14.4)
     parallel (1.19.1)
     psych (3.1.0)
-    public_suffix (4.0.4)
+    public_suffix (4.0.5)
     rack (2.2.2)
     rb-fsevent (0.10.4)
     rb-inotify (0.10.1)
