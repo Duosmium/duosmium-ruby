@@ -10,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/middleman/middleman.git
-  revision: 3f82882301a5e23309deb17ba889a466aca418b2
+  revision: 1bea29f8bdd1cde329850dfbfe71c9f4d6af8f63
   specs:
     middleman (5.0.0.rc.1)
       coffee-script (~> 2.2)
@@ -46,7 +46,7 @@ GIT
 
 GIT
   remote: https://github.com/unosmium/sciolyff.git
-  revision: c45ba3985e77d91e1f5a207c393f89044696bd72
+  revision: c140e906b98bc4a257ef3265a75a03eaa3f2cd39
   specs:
     sciolyff (0.11.0)
       erubi (~> 1.9)
