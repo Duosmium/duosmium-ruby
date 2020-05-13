@@ -72,9 +72,9 @@ end
 activate :external_pipeline,
          name: :webpack,
          command: if build?
-                    './node_modules/webpack/bin/webpack.js --bail'
+                    'yarn run webpack --bail'
                   else
-                    './node_modules/webpack/bin/webpack.js --watch -d'
+                    'yarn run webpack --watch -d'
                   end,
          source: '.tmp/dist',
          latency: 1
