@@ -9,7 +9,8 @@
 ```
 git clone https://github.com/unosmium/unosmium.org.git
 cd unosmium.org
-bundle install
+yarn
+bundle
 ```
 
 ## Build site locally
