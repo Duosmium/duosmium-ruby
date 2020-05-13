@@ -46,9 +46,9 @@ GIT
 
 GIT
   remote: https://github.com/unosmium/sciolyff.git
-  revision: c140e906b98bc4a257ef3265a75a03eaa3f2cd39
+  revision: f505f1b6d8b2bdb093f2d3d9496f00b9bef57d1a
   specs:
-    sciolyff (0.11.0)
+    sciolyff (0.12.0)
       erubi (~> 1.9)
       optimist (~> 3.0)
       psych (~> 3.1)
