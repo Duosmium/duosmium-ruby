@@ -68,6 +68,7 @@ module CustomHelpers
     tournament_name = filename[11..-3]
     get_year = ->(image) { image[/^[0-9]+/].to_i }
 
+    Pathname.new('../images/logos/') +
     Dir.children(IMAGES_PATH + 'logos')
        .select { |image| image.include? tournament_name }
        .select { |i| filename.end_with? i.split('.').first[/_[abc]$/].to_s }
@@ -75,7 +76,6 @@ module CustomHelpers
        .select { |image| get_year.call(image) <= tournament_year }
        .max_by { |image| get_year.call(image) + image.length / 100.0 }
        .dup # string may be frozen
-       .prepend '../images/logos/'
   end
 
   def find_bg_color(filename)
