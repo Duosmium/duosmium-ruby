@@ -1,14 +1,4 @@
 GIT
-  remote: https://github.com/jonbuda/miro.git
-  revision: fb1318018d708ccac7e598245a0ac574b30b09de
-  specs:
-    miro (0.4.0)
-      chunky_png
-      color
-      oily_png
-      terrapin
-
-GIT
   remote: https://github.com/middleman/middleman.git
   revision: 1bea29f8bdd1cde329850dfbfe71c9f4d6af8f63
   specs:
@@ -52,6 +42,17 @@ GIT
       erubi (~> 1.9)
       optimist (~> 3.0)
       psych (~> 3.1)
+
+GIT
+  remote: https://github.com/zqianem/miro.git
+  revision: 1fe806ad905067e93933e6234d1c613da255bcfb
+  specs:
+    miro (0.4.0)
+      chunky_png
+      color
+      oily_png
+      terrapin
+      tty-which
 
 GEM
   remote: https://rubygems.org/
@@ -123,6 +124,7 @@ GEM
     thor (1.0.1)
     thread_safe (0.3.6)
     tilt (2.0.10)
+    tty-which (0.4.2)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     uglifier (4.2.0)
