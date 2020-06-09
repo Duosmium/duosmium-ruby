@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/middleman/middleman.git
-  revision: 1bea29f8bdd1cde329850dfbfe71c9f4d6af8f63
+  revision: 08168ca181746e44454c7294e969dbb49284afbd
   specs:
     middleman (5.0.0.rc.1)
       coffee-script (~> 2.2)
@@ -11,7 +11,7 @@ GIT
     middleman-cli (5.0.0.rc.1)
       thor (>= 0.17.0, < 2.0)
     middleman-core (5.0.0.rc.1)
-      activesupport (~> 5.2)
+      activesupport (>= 5.0.0)
       addressable (~> 2.3)
       bundler
       contracts (~> 0.16.0)
@@ -36,7 +36,7 @@ GIT
 
 GIT
   remote: https://github.com/unosmium/sciolyff.git
-  revision: 830b407fbe41cf6cfcccef1231ca8bd5211ea4a5
+  revision: 703c235a23ff48d023f8d0e7451144c9c98a21e3
   specs:
     sciolyff (0.12.0)
       erubi (~> 1.9)
@@ -56,11 +56,12 @@ GIT
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (5.2.4.2)
+    activesupport (6.0.3.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+      zeitwerk (~> 2.2, >= 2.2.2)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     chroma (0.2.0)
@@ -78,7 +79,7 @@ GEM
     erubis (2.7.0)
     execjs (2.7.0)
     fastimage (2.1.7)
-    ffi (1.12.2)
+    ffi (1.13.0)
     haml (5.1.2)
       temple (>= 0.8.0)
       tilt
@@ -113,7 +114,7 @@ GEM
     rgl (0.5.6)
       lazy_priority_queue (~> 0.1.0)
       stream (~> 0.5.2)
-    sassc (2.3.0)
+    sassc (2.4.0)
       ffi (~> 1.9)
     servolux (0.13.0)
     stream (0.5.2)
@@ -127,6 +128,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
+    zeitwerk (2.3.0)
 
 PLATFORMS
   ruby
