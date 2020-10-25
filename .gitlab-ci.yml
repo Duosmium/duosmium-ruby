@@ -1,6 +1,8 @@
 default:
   image: ruby:2.7
-  before_script: bundle install
+  before_script:
+    - apt -y install nodejs yarnpkg
+    - bundle install
 
 pages:
   stage: deploy
