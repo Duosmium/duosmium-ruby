@@ -1,5 +1,5 @@
 default:
-  image: ruby:1.7
+  image: ruby:2.7
   before_script: bundle install
 
 pages:
