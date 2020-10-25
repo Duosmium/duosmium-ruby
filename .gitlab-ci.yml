@@ -1,0 +1,11 @@
+pages:
+  stage: deploy
+  script:
+    - bundle install --path vendor/bundle
+    - bundle exec middleman build
+    - mv build public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
