@@ -30,7 +30,7 @@ custom_colors: true
         <%= i.tournament.year %>
         <%= tournament_title(i.tournament) %>&nbsp;(Div. <%= i.tournament.division %><%= ' <span id="subdivision">Combined</span>' if i.tournament.subdivisions? %>)
       </h1>
-      <p><%= i.tournament.start_date.strftime('%A, %B %-d, %Y') %> - <%= i.tournament.end_date.strftime('%A, %B %-d, %Y') %>
+      <p><%= i.tournament.start_date.strftime('%A, %B %-d, %Y') %> - <%= i.tournament.end_date.strftime('%A, %B %-d, %Y') %><br>
          @ <span style="white-space: nowrap;"><%= i.tournament.location %></span></p>
     </div>
     <div class="actions">
