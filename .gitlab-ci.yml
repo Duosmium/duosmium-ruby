@@ -12,7 +12,8 @@ pages:
   script:
     - yarn
     - bundle exec middleman build --verbose
-    - cp -av build/ public
+    - mv build/ public
+    - mv _redirects public
   artifacts:
     paths:
       - public
