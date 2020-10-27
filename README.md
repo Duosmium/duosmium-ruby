@@ -1,10 +1,10 @@
 # Unosmium Website
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/ff03ce31-0235-4742-b95e-389ec3ebb96a/deploy-status)](https://app.netlify.com/sites/unosmium/deploys)
+[![Gitlab CI/CD Status](https://gitlab.com/smayya337/unosmium.org/badges/master/pipeline.svg)](https://gitlab.com/smayya337/unosmium.org/-/pipelines)
 
-The official website for the Unosmium Scoring System and Unosmium Results.
+A new instance of the Unosmium Scoring System and Unosmium Results, because the results on the original haven't been updated in a while.
 
-Visit: [https://unosmium.org/](https://unosmium.org/)
+Visit: [https://unosmium.smayya.me/](https://unosmium.smayya.me/)
 
 ## Unosmium Scoring System
 
@@ -14,7 +14,7 @@ instructions on how to use it.
 
 ## Unosmium Results
 
-An [archive](https://unosmium.org/results/) of any tournament results
+An [archive](https://unosmium.smayya.me/results/) of any tournament results
 that have been output as or converted into the
 [SciolyFF](https://github.com/unosmium/sciolyff) (Science Olympiad File Format).
 
@@ -28,6 +28,8 @@ bundle install
 middleman build
 firefox build/results/index.html
 ```
+
+Check out [the Gitlab CI file](https://github.com/smayya337/unosmium.org/blob/master/.gitlab-ci.yml) to see how the production instance is built.
 
 ### Contributing
 
@@ -49,4 +51,4 @@ data files.
 
 After the pull request is merged, the website will automatically generate an
 HTML results page that can be viewed by clicking on the appropriate link in the
-[site index](https://unosmium.org/results/).
+[site index](https://unosmium.smayya.me/results/). Keep in mind that this will take a while; as of right now, the process takes about eight minutes.
