@@ -32,7 +32,7 @@ interpreters = {}
 end
 
 interpreters = interpreters.sort_by do |_, i|
-  [Date.new(2019, 10, 17) - i.tournament.date,
+  [Date.new(2019, 10, 17) - i.tournament.start_date,
    i.tournament.state,
    i.tournament.location,
    i.tournament.division]
