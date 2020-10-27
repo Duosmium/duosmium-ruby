@@ -111,13 +111,17 @@ manifest: /results/manifest.json
           <small>Division <%= i.tournament.division %></small>
         </span>
       </h2>
-      <h3 class="card-subtitle">
-        <% if i.tournament.start_date.strftime('%A, %B %-d, %Y') == i.tournament.end_date.strftime('%A, %B %-d, %Y')%>
+      <% if i.tournament.start_date.strftime('%A, %B %-d, %Y') == i.tournament.end_date.strftime('%A, %B %-d, %Y')%>
+        <h3 class="card-subtitle">
           <%= i.tournament.date.strftime('%A, %B %-d, %Y') %>
-        <% else %>
+        </h3>
+      <% else %>
+        <h3 class="card-subtitle">
           <%= i.tournament.start_date.strftime('%A, %B %-d, %Y') %> - <%= i.tournament.end_date.strftime('%A, %B %-d, %Y') %>
-        <% end %>
-        <br>@ <%= i.tournament.location %>
+        </h3>
+      <% end %>
+      <h3 class="card-subtitle">
+        @ <%= i.tournament.location %>
       </h3>
     </div>
     <div class="card-body splash-wrapper"
