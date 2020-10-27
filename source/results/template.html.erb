@@ -30,8 +30,12 @@ custom_colors: true
         <%= i.tournament.year %>
         <%= tournament_title(i.tournament) %>&nbsp;(Div. <%= i.tournament.division %><%= ' <span id="subdivision">Combined</span>' if i.tournament.subdivisions? %>)
       </h1>
-      <p><%= i.tournament.start_date.strftime('%A, %B %-d, %Y') %> - <%= i.tournament.end_date.strftime('%A, %B %-d, %Y') %><br>
-         @ <span style="white-space: nowrap;"><%= i.tournament.location %></span></p>
+      <% if i.tournament.start_date.strftime('%A, %B %-d, %Y') == i.tournament.end_date.strftime('%A, %B %-d, %Y')%>
+        <p><%= i.tournament.date.strftime('%A, %B %-d, %Y') %></p>
+      <% else %>
+        <p><%= i.tournament.start_date.strftime('%A, %B %-d, %Y') %> - <%= i.tournament.end_date.strftime('%A, %B %-d, %Y') %></p>
+      <% end %>
+      <br><p>@ <span style="white-space: nowrap;"><%= i.tournament.location %></span></p>
     </div>
     <div class="actions">
       <a href="../results/index.html" class="js-back-button">
