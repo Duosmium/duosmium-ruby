@@ -90,8 +90,8 @@ module CustomHelpers
 
   def trophy_and_medal_colors
     %w[
-      #fff386
-      #d6e6ed
+      #fff06b
+      #d8e8ef
       #c9a977
       #fff5ca
       #c9ffbf
@@ -99,7 +99,7 @@ module CustomHelpers
       #ffdeb7
       #ccf6ff
       #ffc9dd
-      #ea9bb3
+      #dab9d1
       #e5e5e5
       #e5e5e5
       #e5e5e5
