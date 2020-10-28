@@ -211,7 +211,17 @@ module CustomHelpers
       t.date.strftime('%A'),
       t.date.strftime('%B'),
       t.date.strftime('%-d'),
-      t.date.strftime('%Y')
+      t.date.strftime('%Y'),
+      t.start_date,
+      t.start_date.strftime('%A'),
+      t.start_date.strftime('%B'),
+      t.start_date.strftime('%-d'),
+      t.start_date.strftime('%Y'),
+      t.end_date,
+      t.end_date.strftime('%A'),
+      t.end_date.strftime('%B'),
+      t.end_date.strftime('%-d'),
+      t.end_date.strftime('%Y')
     ]
     words.compact.map(&:to_s).map(&:downcase).join('|')
   end
