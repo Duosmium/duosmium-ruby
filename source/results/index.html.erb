@@ -83,6 +83,8 @@ manifest: /results/manifest.json
     <dd>Regionals</dd>
     <dt><%= interpreters.count { |_,i| i.tournament.level == 'Invitational'} %></dt>
     <dd>Invitationals</dd>
+    <dt><%= interpreters.count { |_,i| i} %></dt>
+    <dd>Total</dd>
   </dl>
   <a href="https://docs.google.com/spreadsheets/d/1BfylaUMblW1cb3YWrSxEMAr_pmIjNphqlLkAKYE0xBs">Help contribute!</a>
 </div>
