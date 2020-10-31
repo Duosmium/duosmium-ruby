@@ -46,9 +46,9 @@ GIT
 
 GIT
   remote: https://github.com/smayya337/sciolyff.git
-  revision: 47968804df84e295c530ac1094a2b553ecee135e
+  revision: 16fcea2d9f5b8b301733ae772e1bc31718291d05
   specs:
-    sciolyff (0.12.0)
+    sciolyff (0.13.0)
       erubi (~> 1.9)
       optimist (~> 3.0)
       psych (~> 3.1)
@@ -130,7 +130,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
-    zeitwerk (2.4.0)
+    zeitwerk (2.4.1)
 
 PLATFORMS
   ruby
