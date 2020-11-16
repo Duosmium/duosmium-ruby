@@ -1,6 +1,6 @@
 # Unosmium Website
 
-[![Gitlab CI/CD Status](https://gitlab.com/smayya337/unosmium.org/badges/master/pipeline.svg)](https://gitlab.com/smayya337/unosmium.org/-/pipelines)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f2bad39e-665a-4733-84da-7ca982e88676/deploy-status)](https://app.netlify.com/sites/wonderful-babbage-2c3793/deploys)
 
 A new instance of the Unosmium Scoring System and Unosmium Results, because the results on the original haven't been updated in a while.
 
