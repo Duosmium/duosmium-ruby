@@ -16,14 +16,14 @@ instructions on how to use it.
 
 An [archive](https://unosmium.smayya.me/results/) of any tournament results
 that have been output as or converted into the
-[SciolyFF](https://github.com/unosmium/sciolyff) (Science Olympiad File Format).
+[SciolyFF](https://github.com/smayya337/sciolyff) (Science Olympiad File Format).
 
 ### How to view locally
 
 Minimal instructions that will likely need to be modified depending on your
 development setup:
 ```sh
-git clone https://github.com/unosmium/unosmium.org.git
+git clone https://github.com/smayya337/unosmium.org.git
 bundle install
 middleman build
 firefox build/results/index.html
@@ -37,7 +37,7 @@ Contributions of code and tournament results are welcome.
 
 To add new tournament results, make a [Pull
 Request](https://help.github.com/en/articles/creating-a-pull-request) that adds
-a YAML file in format of [SciolyFF](https://github.com/unosmium/sciolyff) in the
+a YAML file in format of [SciolyFF](https://github.com/smayya337/sciolyff) in the
 [data directory](/data).
 
 A Google Sheets [input
@@ -51,4 +51,4 @@ data files.
 
 After the pull request is merged, the website will automatically generate an
 HTML results page that can be viewed by clicking on the appropriate link in the
-[site index](https://unosmium.smayya.me/results/). Keep in mind that this will take a while; as of right now, the process takes about eight minutes.
+[site index](https://unosmium.smayya.me/results/). Keep in mind that this will take a while; as of right now, the process takes about 6-7 minutes.
