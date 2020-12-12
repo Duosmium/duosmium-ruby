@@ -16,9 +16,5 @@ to = "/results/"
 status = 302
 
 [[redirects]]
-from = "http://unosmium.smayya.me/*"
-to = "http://duosmium.smayya.me/:splat"
-
-[[redirects]]
-from = "https://unosmium.smayya.me/*"
-to = "https://duosmium.smayya.me/:splat"
+from = "/input-template"
+to = "https://docs.google.com/spreadsheets/d/1BfylaUMblW1cb3YWrSxEMAr_pmIjNphqlLkAKYE0xBs/edit"

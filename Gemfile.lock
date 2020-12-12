@@ -1,13 +1,4 @@
 GIT
-  remote: https://github.com/duosmium/sciolyff.git
-  revision: 16fcea2d9f5b8b301733ae772e1bc31718291d05
-  specs:
-    sciolyff (0.13.0)
-      erubi (~> 1.9)
-      optimist (~> 3.0)
-      psych (~> 3.1)
-
-GIT
   remote: https://github.com/jonbuda/miro.git
   revision: fb1318018d708ccac7e598245a0ac574b30b09de
   specs:
@@ -19,7 +10,7 @@ GIT
 
 GIT
   remote: https://github.com/middleman/middleman.git
-  revision: cfb62bcf315259aeffac76d4ab54f1c300776c11
+  revision: 1a8e3460d855c757425a1462a971dfad6cf01bd4
   specs:
     middleman (5.0.0.rc.2)
       coffee-script (~> 2.2)
@@ -120,6 +111,10 @@ GEM
       stream (~> 0.5.2)
     sassc (2.4.0)
       ffi (~> 1.9)
+    sciolyff-duosmium (0.13.0)
+      erubi (~> 1.9)
+      optimist (~> 3.0)
+      psych (~> 3.1)
     servolux (0.13.0)
     stream (0.5.2)
     temple (0.8.2)
@@ -143,7 +138,7 @@ DEPENDENCIES
   chroma (~> 0.2.0)
   middleman!
   miro!
-  sciolyff!
+  sciolyff-duosmium (~> 0.13.0)
   thor (~> 0.19.4)
 
 BUNDLED WITH
