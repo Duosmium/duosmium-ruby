@@ -3,7 +3,7 @@
   "name" : "Duosmium Results",
   "scope" : "/results/",
   "display" : "standalone",
-  "start_url" : "https://duosmium.smayya.me/results/",
+  "start_url" : "https://duosmium.org/results/",
   "short_name" : "Duosmium",
   "theme_color" : "transparent",
   "description" : "A better way to view Science Olympiad results.",
@@ -11,15 +11,15 @@
   "background_color" : "#1f1b35",
   "icons" : [
     {
-      "src": "https://duosmium.smayya.me/images/favicon.png",
+      "src": "https://duosmium.org/images/favicon.png",
       "sizes": "48x48"
     },
     {
-      "src": "https://duosmium.smayya.me/images/icon-192.png",
+      "src": "https://duosmium.org/images/icon-192.png",
       "sizes": "192x192"
     },
     {
-      "src": "https://duosmium.smayya.me/images/icon-512.png",
+      "src": "https://duosmium.org/images/icon-512.png",
       "sizes": "512x512"
     }
   ]}
