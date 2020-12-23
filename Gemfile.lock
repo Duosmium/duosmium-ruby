@@ -133,6 +133,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86_64-linux
 
 DEPENDENCIES
   chroma (~> 0.2.0)
@@ -142,4 +143,4 @@ DEPENDENCIES
   thor (~> 0.19.4)
 
 BUNDLED WITH
-   2.1.4
+   2.2.2
