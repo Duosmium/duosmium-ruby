@@ -1,7 +1,7 @@
 [build]
 base = "./"
-command = "sh ./scripts/check-identity.sh"
-publish = "./build"
+command = "bundle exec middleman build"
+publish = "build"
 
 [build.processing]
   skip_processing = false
