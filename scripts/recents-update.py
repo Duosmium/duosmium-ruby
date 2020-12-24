@@ -21,6 +21,7 @@ for fil in os.listdir(directory):
         else:
             fil_list.append((fil, datetime.strptime(first_commit, '%Y-%m-%d %H:%M:%S %z')))
 uncommit_list.sort(key=lambda x: x[0], reverse=True)
+fil_list.sort(key=lambda x: x[0], reverse=True)
 fil_list.sort(key=lambda x: x[1], reverse=True)
 full_list = uncommit_list + fil_list
 
