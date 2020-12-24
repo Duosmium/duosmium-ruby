@@ -27,7 +27,7 @@ jobs:
       - name: Check identity and push
         env:
           JASON_MD5: ${{ secrets.JASON_MD5 }}
-          NETLIFY_DEPLLOY_URL: ${{ secrets.NETLIFY_DEPLOY_URL }}
+          NETLIFY_DEPLOY_URL: ${{ secrets.NETLIFY_DEPLOY_URL }}
         run: |
           cd $GITHUB_WORKSPACE
-          if [[ $(git log --name-status HEAD^..HEAD | grep Author | cut -d'<' -f 2- | cut -d'>' -f -1 | md5sum | cut -d' ' -f -1) == $JASON_MD5 ]]; then; curl -X POST $NETLIFY_DEPLOY_URL; fi
+          if [ "$(git log --name-status HEAD^..HEAD | grep Author | cut -d'<' -f 2- | cut -d'>' -f -1 | md5sum | cut -d' ' -f -1)" = $JASON_MD5 ]; then curl -X POST $NETLIFY_DEPLOY_URL; fi
