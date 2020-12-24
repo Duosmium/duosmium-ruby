@@ -18,7 +18,3 @@ status = 302
 [[redirects]]
 from = "/input-template"
 to = "https://docs.google.com/spreadsheets/d/1BfylaUMblW1cb3YWrSxEMAr_pmIjNphqlLkAKYE0xBs/edit"
-
-[[redirects]]
-from = "/lb2020"
-to = "/results/2020-12-12_lake_braddock_invitational_b"
