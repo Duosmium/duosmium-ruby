@@ -1,11 +1,10 @@
-import yaml, sys, re, os, git
+import yaml, sys, os, git
 from datetime import datetime
 
 fil_list = []
-
 uncommit_list = []
 
-repo_root = os.path.dirname(os.path.dirname(sys.argv[0]))
+repo_root = os.path.dirname(os.path.dirname(os.path.abspath(sys.argv[0])))
 
 directory = repo_root + '/data'
 
@@ -20,8 +19,8 @@ for fil in os.listdir(directory):
             uncommit_list.append((fil, 0))
         else:
             fil_list.append((fil, datetime.strptime(first_commit, '%Y-%m-%d %H:%M:%S %z')))
-uncommit_list.sort(key=lambda x: x[0], reverse=True)
-fil_list.sort(key=lambda x: x[0], reverse=True)
+uncommit_list.sort(key=lambda x: x[0], reverse=False)
+fil_list.sort(key=lambda x: x[0], reverse=False)
 fil_list.sort(key=lambda x: x[1], reverse=True)
 full_list = uncommit_list + fil_list
 
