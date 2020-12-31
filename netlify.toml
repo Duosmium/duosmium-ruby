@@ -1,6 +1,6 @@
 [build]
 base = "./"
-command = "bundle exec middleman build"
+command = "python3 scripts/recents-update.py && bundle exec middleman build --verbose"
 publish = "build"
 
 [build.processing]
