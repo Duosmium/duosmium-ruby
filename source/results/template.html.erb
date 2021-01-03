@@ -35,7 +35,7 @@ custom_colors: true
       <% else %>
         <p><%= i.tournament.start_date.strftime('%A, %B %-d, %Y') %> - <%= i.tournament.end_date.strftime('%A, %B %-d, %Y') %></p>
       <% end %>
-      <br><p>@ <span style="white-space: nowrap;"><%= i.tournament.location %></span></p>
+      <p>@ <span style="white-space: nowrap;"><%= i.tournament.location %></span></p>
     </div>
     <div class="actions">
       <a href="../results/index.html" class="js-back-button">
