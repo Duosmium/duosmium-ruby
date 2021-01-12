@@ -50,7 +50,7 @@ manifest: /results/manifest.json
 <div class="col-md-8">
   <h4>Upcoming</h4>
 <% data.upcoming.group_by(&:date).sort.each do |date, tournaments| %>
-  <% next if Date.today >= date %>
+  <% next if Date.today >= Date.strptime(date, '%Y-%m-%d') %>
   <h5><%= date.strftime('%A, %B %-d, %Y') %></h5>
   <ul>
   <% tournaments.sort_by(&:name).each do |t| %>
@@ -65,7 +65,7 @@ manifest: /results/manifest.json
   <h4>Recently added</h4>
   <ul class="recently-added">
   <% data.recents.first(5).each do |filename| %>
-    <% filename = filename.delete_suffix('.yaml') %>
+    <% filename = filename.delete_suffix('.json') %>
     <% t = interpreters[filename].tournament %>
     <li>
       <div><a href="../results/<%= filename %>.html" class="full-results">
