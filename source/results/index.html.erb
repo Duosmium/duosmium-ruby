@@ -102,7 +102,7 @@ manifest: /results/manifest.json
 <style id="search_style"></style>
 <div class="results-index-card-grid">
 <% index = 1 %>
-<% interpreters.first(60).each do |filename, i| %>
+<% interpreters.each do |filename, i| %>
   <% teams = i.teams %>
   <div class="card" data-search="<%= search_string(i) %>">
     <div class="card-header text-light shadow-sm"
