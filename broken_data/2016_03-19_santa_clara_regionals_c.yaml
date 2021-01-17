@@ -8,6 +8,7 @@ Tournament:
   division: C
   year: 2016
   date: 2016-03-19
+  bids: 4
 Events:
 - name: Air Trajectory
 - name: Anatomy and Physiology

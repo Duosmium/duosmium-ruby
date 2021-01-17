@@ -10,7 +10,7 @@ while True:
         fil.write("\n")
         fil.write(f"- name: {name} (Div. {div})")
         fil.write("\n")
-        fil.write(f"  link: {link}")
+        fil.write(f"  link: \"{link}\"")
         fil.write("\n")
         fil.write(f"  date: {date}")
         fil.write("\n")
