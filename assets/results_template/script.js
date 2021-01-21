@@ -219,11 +219,11 @@ $(document).ready(function(){
     $("#sort-select").change();
   });
 
-  // Filter and toggle displayed data based on subdivision radio buttons
-  if (document.getElementById("subdivision") !== null) {
-  let filter_subdivision = function() {
-    let sub = $("input[type=radio][name=subdivision]:checked").attr("id").substring(4);
-    let rows = $("tr[data-subdivision]");
+  // Filter and toggle displayed data based on track radio buttons
+  if (document.getElementById("track") !== null) {
+  let filter_track = function() {
+    let sub = $("input[type=radio][name=track]:checked").attr("id").substring(4);
+    let rows = $("tr[data-track]");
     if (sub === "combined") {
       rows.show();
 
@@ -244,11 +244,11 @@ $(document).ready(function(){
       $.each($("td.total-points"), function(index, cell) {
         $(cell).html($(cell).attr("data-o-points"));
       });
-      $("#subdivision").html("Combined");
+      $("#track").html("Combined");
 
     } else {
       $.each(rows, function(index, row) {
-        if ($(row).attr("data-subdivision") === sub) {
+        if ($(row).attr("data-track") === sub) {
           $(row).show();
         } else {
           $(row).hide();
@@ -271,17 +271,17 @@ $(document).ready(function(){
       $.each($("td.total-points"), function(index, cell) {
         $(cell).html($(cell).attr("data-sub-points"));
       });
-      $("#subdivision").html(sub);
+      $("#track").html(sub);
     }
 
-    let style = document.querySelector("#subdivision-style");
+    let style = document.querySelector("#track-style");
     let source = document.querySelector(`#sub-${CSS.escape(sub)}-style`);
     style.innerHTML = source.innerHTML;
 
     sort_and_toggle_event_rank(); // sort again after filtering b/c bad coupling
   };
-  $("input[type=radio][name=subdivision]").change(filter_subdivision);
-  filter_subdivision();
+  $("input[type=radio][name=track]").change(filter_track);
+  filter_track();
   }
 
   // Toggle rows based on checkboxes

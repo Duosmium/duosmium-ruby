@@ -28,7 +28,7 @@ custom_colors: true
     <div class="tournament-info">
       <h1>
         <%= i.tournament.year %>
-        <%= tournament_title(i.tournament) %>&nbsp;(Div. <%= i.tournament.division %><%= ' <span id="subdivision">Combined</span>' if i.tournament.subdivisions? %>)
+        <%= tournament_title(i.tournament) %>&nbsp;(Div. <%= i.tournament.division %><%= ' <span id="track">Combined</span>' if i.tournament.tracks? %>)
       </h1>
       <% if i.tournament.start_date.strftime('%A, %B %-d, %Y') == i.tournament.end_date.strftime('%A, %B %-d, %Y')%>
         <p><%= i.tournament.date.strftime('%A, %B %-d, %Y') %></p>
@@ -134,7 +134,7 @@ custom_colors: true
 <% i.teams.each do |tm| %>
   <tr data-team-number="<%= tm.number %>"
       data-school="<%= full_school_name(tm) %>"
-      data-team-name="<%= full_team_name(tm) %>"<%= " data-subdivision=\"#{tm.subdivision}\"" if i.tournament.subdivisions? %>>
+      data-team-name="<%= full_team_name(tm) %>"<%= " data-track=\"#{tm.track}\"" if i.tournament.tracks? %>>
     <td class="number">
       <a href="?team=<%= tm.number %>"
          data-toggle="modal" data-target="#team-detail">
@@ -171,8 +171,8 @@ custom_colors: true
     <% end %>
     </td>
     <td class="event-points-focus" data-points=""><div></div></td>
-    <td class="rank" data-points="<%= tm.rank %>"<%= " data-o-points=\"#{tm.rank}\" data-o-sup-tag=\"#{bids_sup_tag(tm)}\" data-sub-points=\"#{tm.subdivision_team.rank}\"" if tm.subdivision %>><div><%= tm.rank %><%= bids_sup_tag(tm) %></div></td>
-    <td class="total-points"<%= " data-o-points=\"#{tm.points}\" data-sub-points=\"#{tm.subdivision_team.points}\"" if tm.subdivision %>><%= tm.points %></td>
+    <td class="rank" data-points="<%= tm.rank %>"<%= " data-o-points=\"#{tm.rank}\" data-o-sup-tag=\"#{bids_sup_tag(tm)}\" data-sub-points=\"#{tm.track_team.rank}\"" if tm.track %>><div><%= tm.rank %><%= bids_sup_tag(tm) %></div></td>
+    <td class="total-points"<%= " data-o-points=\"#{tm.points}\" data-sub-points=\"#{tm.track_team.points}\"" if tm.track %>><%= tm.points %></td>
   <% i.events.each do |e| %>
     <% placing = e.placing_for(tm) %>
     <% points = placing.isolated_points %>
@@ -183,13 +183,13 @@ custom_colors: true
         data-notes="<%= placing_notes(placing) %>"
         data-points="<%= unknown ? '??' : points %>"
         data-place="<%= unknown && placing.points_limited_by_maximum_place? ? "≥#{i.tournament.maximum_place}" : place %>"
-      <% if tm.subdivision %>
+      <% if tm.track %>
         data-o-true-points="<%= placing.points %>"
         data-o-notes="<%= placing_notes(placing) %>"
         data-o-points="<%= unknown ? '??' : points %>"
         data-o-place="<%= unknown && placing.points_limited_by_maximum_place? ? "≥#{i.tournament.maximum_place}" : place %>"
         data-o-sup-tag="<%= sup_tag(placing) %>"
-        <% sp = placing.subdivision_placing %>
+        <% sp = placing.track_placing %>
         data-sub-true-points="<%= sp.points %>"
         data-sub-notes="<%= placing_notes(sp) %>"
         data-sub-points="<%= sp.unknown? ? '??' : sp.isolated_points %>"
@@ -245,17 +245,17 @@ custom_colors: true
         </button>
       </div>
       <div class="modal-body">
-      <% if i.tournament.subdivisions? %>
-        <h6>Select which subdivision to show</h6>
+      <% if i.tournament.tracks? %>
+        <h6>Select which track to show</h6>
         <div>
-          <input type="radio" id="sub-combined" name="subdivision" checked>
+          <input type="radio" id="sub-combined" name="track" checked>
           <label class="custom-control-label" for="sub-combined">
             Combined (all teams)
           </label>
         </div>
-      <% i.tournament.subdivisions.each do |s, _| %>
+      <% i.tournament.tracks.each do |s, _| %>
         <div>
-          <input type="radio" id="sub-<%= s %>" name="subdivision">
+          <input type="radio" id="sub-<%= s %>" name="track">
           <label class="custom-control-label" for="sub-<%= s %>">
             <%= s %>
           </label>
@@ -358,7 +358,7 @@ custom_colors: true
           The results will be downloaded as a YAML file, specifically in the
           SciolyFF, and can be opened with any text editor or parsed with your
           favorite programming language. For more info about SciolyFF, see its
-          <a href="https://github.com/smayya337/sciolyff">GitHub repository</a>.
+          <a href="https://github.com/Duosmium/sciolyff">GitHub repository</a>.
         </p>
         <p>
           If you really want a CSV file, select CANCEL, copy the whole table

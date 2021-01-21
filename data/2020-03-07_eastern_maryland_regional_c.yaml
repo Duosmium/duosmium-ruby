@@ -10,7 +10,7 @@ Tournament:
   date: 2020-03-07
   medals: 6
   trophies: 6
-Subdivisions:
+Tracks:
 - name: A
 - name: AA
 Events:
@@ -44,211 +44,211 @@ Teams:
   school: Atholton High School
   suffix: A
   state: MD
-  subdivision: AA
+  track: AA
 - number: 2
   school: Atholton High School
   suffix: B
   state: MD
-  subdivision: AA
+  track: AA
 - number: 3
   school: Atholton High School
   suffix: C
   state: MD
-  subdivision: AA
+  track: AA
 - number: 4
   school: Baltimore City College High School
   state: MD
-  subdivision: A
+  track: A
 - number: 5
   school: Baltimore Polytech High School
   suffix: A
   state: MD
-  subdivision: AA
+  track: AA
 - number: 6
   school: Baltimore Polytech High School
   suffix: B
   state: MD
-  subdivision: AA
+  track: AA
 - number: 7
   school: Cambridge South Dorchester High School
   state: MD
-  subdivision: A
+  track: A
 - number: 8
   school: Centennial High School
   suffix: A
   state: MD
-  subdivision: AA
+  track: AA
 - number: 9
   school: Centennial High School
   suffix: B
   state: MD
-  subdivision: AA
+  track: AA
 - number: 10
   school: ConneXions Community Arts School
   state: MD
-  subdivision: A
+  track: A
 - number: 11
   school: CURE Connections
   state: MD
-  subdivision: A
+  track: A
 - number: 12
   school: Dulaney High School
   suffix: A
   state: MD
-  subdivision: AA
+  track: AA
 - number: 13
   school: Dulaney High School
   suffix: B
   state: MD
-  subdivision: AA
+  track: AA
 - number: 14
   school: Franklin High School
   state: MD
-  subdivision: A
+  track: A
 - number: 15
   school: Green Street Academy
   state: MD
-  subdivision: A
+  track: A
 - number: 16
   school: Hereford High School
   state: MD
-  subdivision: AA
+  track: AA
 - number: 17
   school: James M. Bennett High School
   suffix: A
   state: MD
-  subdivision: AA
+  track: AA
 - number: 18
   school: James M. Bennett High School
   suffix: B
   state: MD
-  subdivision: AA
+  track: AA
 - number: 19
   school: John Carroll High School
   state: MD
-  subdivision: A
+  track: A
 - number: 20
   school: Kent County High School
   state: MD
-  subdivision: A
+  track: A
 - number: 21
   school: Kent Island High School
   state: MD
-  subdivision: A
+  track: A
 - number: 22
   school: Long Reach High School
   suffix: A
   state: MD
-  subdivision: AA
+  track: AA
 - number: 23
   school: Long Reach High School
   suffix: B
   state: MD
-  subdivision: AA
+  track: AA
 - number: 24
   school: Long Reach High School
   suffix: C
   state: MD
-  subdivision: AA
+  track: AA
 - number: 25
   school: Marriotts Ridge High School
   suffix: A
   state: MD
-  subdivision: AA
+  track: AA
 - number: 26
   school: Marriotts Ridge High School
   suffix: B
   state: MD
-  subdivision: AA
+  track: AA
 - number: 27
   school: Marriotts Ridge High School
   suffix: C
   state: MD
-  subdivision: AA
+  track: AA
 - number: 28
   school: Mt. Hebron High School
   suffix: A
   state: MD
-  subdivision: AA
+  track: AA
 - number: 29
   school: Mt. Hebron High School
   suffix: B
   state: MD
-  subdivision: AA
+  track: AA
 - number: 30
   school: Mt. Hebron High School
   suffix: C
   state: MD
-  subdivision: AA
+  track: AA
 - number: 31
   school: New Era Academy
   state: MD
-  subdivision: A
+  track: A
 - number: 32
   school: Oakland Mills High School
   state: MD
-  subdivision: AA
+  track: AA
 - number: 33
   school: Patterson High School
   state: MD
-  subdivision: A
+  track: A
 - number: 34
   school: Reginald F. Lewis High School
   state: MD
-  subdivision: A
+  track: A
 - number: 35
   school: Reservoir High School
   suffix: A
   state: MD
-  subdivision: AA
+  track: AA
 - number: 36
   school: River Hill High School
   suffix: A
   state: MD
-  subdivision: AA
+  track: AA
 - number: 37
   school: River Hill High School
   suffix: B
   state: MD
-  subdivision: AA
+  track: AA
 - number: 38
   school: River Hill High School
   suffix: C
   state: MD
-  subdivision: AA
+  track: AA
 - number: 39
   school: Western High School
   state: MD
-  subdivision: A
+  track: A
 - number: 40
   school: Worcester Technical High School
   suffix: A
   state: MD
-  subdivision: A
+  track: A
 - number: 41
   school: Worcester Technical High School
   suffix: B
   state: MD
-  subdivision: A
+  track: A
 - number: 42
   school: Wye River Upper School
   state: MD
-  subdivision: A
+  track: A
 - number: 43
   school: National Cathedral School
   suffix: A
   state: DC
-  subdivision: AA
+  track: AA
 - number: 44
   school: National Cathedral School
   suffix: B
   state: DC
-  subdivision: AA
+  track: AA
 - number: 45
   school: Reservoir High School
   suffix: B
   state: MD
-  subdivision: AA
+  track: AA
 Placings:
 - team: 1
   event: Anatomy and Physiology

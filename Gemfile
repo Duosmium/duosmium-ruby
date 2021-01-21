@@ -7,6 +7,6 @@ gem 'middleman'
 gem 'chroma', '~> 0.2.0'
 gem 'miro'
 
-gem 'sciolyff-duosmium', '~> 0.13.0'
+gem 'sciolyff-duosmium', '~> 0.13.1'
 
 gem 'thor', '~> 0.19.4'
