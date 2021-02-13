@@ -276,3 +276,7 @@ svg#search, svg#expand_less {
 svg#expand_more {
   margin: -4px 0 -6px;
 }
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: searchfield-cancel-button;
+}
