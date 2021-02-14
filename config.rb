@@ -58,13 +58,13 @@ interpreters.each do |filename, interpreter|
         locals: { i: interpreter }
 end
 
-data.upcoming.each do |info|
-  next unless info.key?(:file) && !interpreters.key?(info[:file])
-
-  proxy "/results/#{info[:file]}.html",
-        '/results/placeholder.html',
-        locals: { t: info }
-end
+# data.upcoming.each do |info|
+#   next unless info.key?(:file) && !interpreters.key?(info[:file])
+#
+#   proxy "/results/#{info[:file]}.html",
+#         '/results/placeholder.html',
+#         locals: { t: info }
+# end
 
 # Activate and configure extensions
 # https://middlemanapp.com/advanced/configuration/#configuring-extensions

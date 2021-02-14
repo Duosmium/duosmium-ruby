@@ -9,7 +9,7 @@ Visit: [https://duosmium.org/](https://duosmium.org/)
 ## Duosmium Scoring System
 
 Homepage is a work in progress (aka has not yet been started on). Will be used
-to advertise the features of the Unosmium Scoring System and provide
+to advertise the features of the Duosmium Scoring System and provide
 instructions on how to use it.
 
 ## Duosmium Results
@@ -30,7 +30,7 @@ bundle exec middleman build
 firefox build/results/index.html
 ```
 
-Check out [the Gitlab CI file](https://github.com/duosmium/duosmium/blob/master/.gitlab-ci.yml) to see how the production instance is built.
+Check out [the Gitlab CI file](https://github.com/duosmium/duosmium/blob/master/.gitlab-ci.yml) if you're interested in setting up your own instance.
 
 ### Contributing
 
