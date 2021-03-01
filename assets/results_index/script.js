@@ -26,6 +26,13 @@ $(document).ready(function(){
     localStorage.setItem('searchstyle', search_html);
   });
 
+  // Clear search bar
+  $(".searchTournamentsClear").click(function() {
+    $(".searchTournamentsClear").click(function () {
+      $('#searchTournaments').val('');
+    })
+  });
+
   // Restore search bar status if exists
   if(localStorage.getItem('searchstring')) {
     $("div.search-wrapper input").val(localStorage.getItem('searchstring'));
