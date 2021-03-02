@@ -352,6 +352,6 @@ module CustomHelpers
     interpreter.teams.each do |t|
       states.append(t.state)
     end
-    states
+    states.uniq
   end
 end
