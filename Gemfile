@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-gem 'middleman'
+gem 'middleman', git: 'https://github.com/middleman/middleman.git'
 
 gem 'chroma', '~> 0.2.0'
 gem 'miro'

@@ -346,4 +346,12 @@ module CustomHelpers
        if placing.dropped_as_part_of_worst_placings?),
     ].compact.join(', ').capitalize
   end
+
+  def teams_to_states(interpreter)
+    states = []
+    interpreter.teams.each do |t|
+      states.append(t.state)
+    end
+    states
+  end
 end
