@@ -134,7 +134,8 @@ custom_colors: true
 <% i.teams.each do |tm| %>
   <tr data-team-number="<%= tm.number %>"
       data-school="<%= full_school_name(tm) %>"
-      data-team-name="<%= full_team_name(tm) %>"<%= " data-track=\"#{tm.track}\"" if i.tournament.tracks? %>>
+      data-team-name="<%= full_team_name(tm) %>"
+      data-state="<%= tm.state %>"<%= " data-track=\"#{tm.track}\"" if i.tournament.tracks? %>>
     <td class="number">
       <a href="?team=<%= tm.number %>"
          data-toggle="modal" data-target="#team-detail">
@@ -246,24 +247,55 @@ custom_colors: true
       </div>
       <div class="modal-body">
       <% if i.tournament.tracks? %>
-        <h6>Select which track to show</h6>
-        <div>
-          <input type="radio" id="sub-combined" name="track" checked>
-          <label class="custom-control-label" for="sub-combined">
-            Combined (all teams)
-          </label>
-        </div>
-      <% i.tournament.tracks.each do |s, _| %>
-        <div>
-          <input type="radio" id="sub-<%= s %>" name="track">
-          <label class="custom-control-label" for="sub-<%= s %>">
-            <%= s %>
-          </label>
-        </div>
-      <% end %>
+        <details>
+          <summary>
+            <h6>Select which track to show:</h6>
+          </summary>
+          <div>
+            <input type="radio" id="sub-combined" name="track" checked>
+            <label class="custom-control-label" for="sub-combined">
+              Combined (all teams)
+            </label>
+          </div>
+          <% i.tournament.tracks.each do |s, _| %>
+            <div>
+              <input type="radio" id="sub-<%= s %>" name="track">
+              <label class="custom-control-label" for="sub-<%= s %>">
+                <%= s %>
+              </label>
+            </div>
+          <% end %>
+        </details>
         <hr>
       <% end %>
-        <h6>Select which teams to show</h6>
+      <details>
+        <summary>
+          <h6>Select which states to show:</h6>
+        </summary>
+        <div id="state-filter">
+          <div>
+            <input type="checkbox"
+                   id="allStates" checked>
+            <label class="custom-control-label" for="allStates">
+              All States
+            </label>
+          </div>
+          <% teams_to_states(i).sort().each do |state| %>
+            <div>
+              <input type="checkbox"
+                    id="state<%= state %>" checked>
+              <label class="custom-control-label" for="state<%= state %>">
+                <%= state %>
+              </label>
+            </div>
+          <% end %>
+        </div>
+      </details>
+      <hr>
+      <details>
+        <summary>
+          <h6>Select which teams to show:</h6>
+        </summary>
         <div id="team-filter">
           <div>
             <input type="checkbox"
@@ -272,19 +304,20 @@ custom_colors: true
               All Teams
             </label>
           </div>
-        <% i.teams.sort_by(&:number).each do |tm| %>
-          <div>
-            <input type="checkbox"
-                   id="team<%= tm.number %>" checked>
-            <label class="custom-control-label" for="team<%= tm.number %>">
-              <%= tm.number %> <%= format_school(tm) %>
-              <%= tm.suffix %>
-              <%= "(#{tm.city})" if tm.city %>
-              <small><%= tm.state %></small>
-            </label>
-          </div>
-        <% end %>
+          <% i.teams.sort_by(&:number).each do |tm| %>
+            <div>
+              <input type="checkbox"
+                    id="team<%= tm.number %>" checked>
+              <label class="custom-control-label" for="team<%= tm.number %>">
+                <%= tm.number %> <%= format_school(tm) %>
+                <%= tm.suffix %>
+                <%= "(#{tm.city})" if tm.city %>
+                <small><%= tm.state %></small>
+              </label>
+            </div>
+          <% end %>
         </div>
+      </details>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">

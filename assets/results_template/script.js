@@ -61,6 +61,9 @@ $(document).ready(function(){
   // that the boxes would be unchecked without going into the menu)
   $("div#filters input:checkbox").prop("checked", true);
 
+  // Open details in filter modal
+  $("div#filters details").attr("open", "open");
+
   // Correct minimum width of header and footnotes based on number of events
   var fix_width = function(extra) {
     let width = $("colgroup.event-columns col").length * 2 + 28 + extra;
@@ -312,6 +315,41 @@ $(document).ready(function(){
         all_box.prop("checked", true);
 
       } else if (team_boxes.filter(":checked").length === 0) {
+        all_box.prop("indeterminate", false);
+        all_box.prop("checked", false);
+
+      } else {
+        all_box.prop("indeterminate", true);
+      }
+    }
+  });
+  $("div#state-filter input").change(function() {
+    let id = $(this).attr("id");
+    let all_box = $("div#state-filter input#allStates");
+    let state_boxes = $("div#state-filter input").not("#allStates");
+
+    if (id === "allStates") {
+      if ($(this).prop("checked")) {
+        state_boxes.not(":checked").trigger("click");
+      } else {
+        state_boxes.filter(":checked").trigger("click");
+      }
+      all_box.prop("indeterminate", false);
+
+    } else {
+      let state = id.slice("state".length);
+      let r = "table.results-classic tr[data-state='" + state + "']";
+
+      if ($(this).prop("checked")) {
+        $(r).show();
+      } else {
+        $(r).hide();
+      }
+      if (state_boxes.not(":checked").length === 0) {
+        all_box.prop("indeterminate", false);
+        all_box.prop("checked", true);
+
+      } else if (state_boxes.filter(":checked").length === 0) {
         all_box.prop("indeterminate", false);
         all_box.prop("checked", false);
 
