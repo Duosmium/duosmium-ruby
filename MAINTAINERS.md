@@ -4,6 +4,7 @@
 - Node.js
 - Ruby
 - Git
+- ImageMagick
 - Netlify CLI
 
 If you are on Windows, I highly recommend using WSL. It *will* work on Windows,
@@ -14,7 +15,7 @@ but it is not fun.
 git clone https://github.com/Duosmium/duosmium.git
 cd duosmium
 yarn
-bundle update
+bundle install
 ```
 
 ## Build site locally

@@ -280,7 +280,7 @@ custom_colors: true
               All States
             </label>
           </div>
-          <% teams_to_states(i).sort().each do |state| %>
+          <% teams_to_states(i).sort.each do |state| %>
             <div>
               <input type="checkbox"
                     id="state<%= state %>" checked>
