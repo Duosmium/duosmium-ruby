@@ -237,9 +237,9 @@ custom_colors: true
   <div class="modal-dialog" role="form">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="filters-label">
+        <h2 class="modal-title h5" id="filters-label">
           Filters
-        </h5>
+        </h2>
         <button type="button" class="close" data-dismiss="modal"
                 aria-label="Close">
           <span aria-hidden="true" style="vertical-align: super">&times;</span>
@@ -249,7 +249,7 @@ custom_colors: true
       <% if i.tournament.tracks? %>
         <details>
           <summary>
-            <h6>Select which track to show:</h6>
+            <h3 class="h6">Select which track to show:</h3>
           </summary>
           <div>
             <input type="radio" id="sub-combined" name="track" checked>
@@ -270,7 +270,7 @@ custom_colors: true
       <% end %>
       <details>
         <summary>
-          <h6>Select which states to show:</h6>
+          <h3 class="h6">Select which states to show:</h3>
         </summary>
         <div id="state-filter">
           <div>
@@ -294,7 +294,7 @@ custom_colors: true
       <hr>
       <details>
         <summary>
-          <h6>Select which teams to show:</h6>
+          <h3 class="h6">Select which teams to show:</h3>
         </summary>
         <div id="team-filter">
           <div>
@@ -332,9 +332,9 @@ custom_colors: true
   <div class="modal-dialog" role="form">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="print-instructions-label">
+        <h2 class="modal-title h5" id="print-instructions-label">
           Instructions for printing
-        </h5>
+        </h2>
         <button type="button" class="close" data-dismiss="modal"
                 aria-label="Close">
           <span aria-hidden="true" style="vertical-align: super">&times;</span>
@@ -372,9 +372,9 @@ custom_colors: true
   <div class="modal-dialog" role="form">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="download-info-label">
+        <h2 class="modal-title h5" id="download-info-label">
           About downloading
-        </h5>
+        </h2>
         <button type="button" class="close" data-dismiss="modal"
                 aria-label="Close">
           <span aria-hidden="true" style="vertical-align: super">&times;</span>
@@ -417,16 +417,16 @@ custom_colors: true
   <div class="modal-dialog" role="form">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="team-detail-label">
+        <h2 class="modal-title h5" id="team-detail-label">
           Details for Team <span id="number">[number]</span>
-        </h5>
+        </h2>
         <button type="button" class="close" data-dismiss="modal"
                 aria-label="Close">
           <span aria-hidden="true" style="vertical-align: super">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <h6>Summary</h6>
+        <h3 class="h6">Summary</h3>
         <p><span id="team">[team]</span> placed <span id="place">[place]</span>
         overall with a total score of <span id="points">[points]</span> points.
         <hr>
@@ -455,7 +455,7 @@ custom_colors: true
         </table>
         </div>
         <hr>
-        <h6>Other Results</h6>
+        <h3 class="h6">Other Results</h3>
         <p><a href="#" id="other-results">
           View results for <span id="school">[school]</span> in other tournaments
         </a></p>
