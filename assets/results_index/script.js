@@ -26,11 +26,14 @@ $(document).ready(function(){
     localStorage.setItem('searchstyle', search_html);
   });
 
-  // Clear search bar
-  $(".searchTournamentsClear").click(function() {
-    $(".searchTournamentsClear").click(function () {
-      $('#searchTournaments').val('');
-    })
+  // Clear search bar with x button
+  $("#searchTournamentsClear").click(function() {
+    $('#searchTournaments').val("");
+    $("style#search_style").html("");
+    localStorage.setItem('searchstyle', "");
+    localStorage.setItem('searchstring', "");
+    $("div.search-wrapper").removeClass("searching");
+    $("div.search-wrapper div.floating-label").removeClass("has-value");
   });
 
   // Restore search bar status if exists

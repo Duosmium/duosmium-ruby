@@ -141,6 +141,17 @@ header.results-index {
   }
 }
 
+div.search-wrapper.searching div#searchTournamentsContainer button#searchTournamentsClear {
+  display: block;
+}
+
+button#searchTournamentsClear {
+  transform: translateX(5px);
+  margin-left: -2rem;
+  font-size: 2rem;
+  display: none;
+}
+
 @keyframes fire {
   0% { fill: crimson; }
   14% { fill: darkorange; }
@@ -275,8 +286,4 @@ svg#search, svg#expand_less {
 
 svg#expand_more {
   margin: -4px 0 -6px;
-}
-
-input[type="search"]::-webkit-search-cancel-button {
-  -webkit-appearance: searchfield-cancel-button;
 }
