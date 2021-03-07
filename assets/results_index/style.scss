@@ -117,12 +117,12 @@ header.results-index {
     fill: white;
     height: calc(1.7 * (1.525rem + 2.0625vw));
     width: calc(1.7 * (1.525rem + 2.0625vw));
-    margin: -1em -0.26em;
+    margin: -1em -0.4em;
     vertical-align: middle;
+  }
 
-    path:hover {
-      animation: fire 3s linear infinite;
-    }
+  h1:hover svg#d-logo path {
+    animation: fire 3s linear infinite;
   }
 
   p.lead {
