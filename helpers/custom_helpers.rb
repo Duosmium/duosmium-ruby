@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require 'color_contrast_calc'
 require 'miro'
 
 # Methods used in templates
@@ -84,7 +85,9 @@ module CustomHelpers
               .to_hex
     # String#paint from the chroma gem
     color = colors[3] ? colors[3].paint : colors.first.paint
-    color = color.darken while color.light?
+    # Select a color based on accessible color contrast
+    color = ColorContrastCalc.color_from("#f5f5f5").find_lightness_threshold(ColorContrastCalc.color_from(color.to_hex), "AA")
+    # color = color.darken while ColorContrastCalc.contrast_ratio("#f5f5f5", color.to_hex) <= 4.5
     color
   end
 

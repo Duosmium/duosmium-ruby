@@ -10,3 +10,5 @@ gem 'miro'
 gem 'sciolyff-duosmium', '~> 0.13.1'
 
 gem 'thor', '~> 0.19.4'
+
+gem "color_contrast_calc", "~> 0.9.0"
