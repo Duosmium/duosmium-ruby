@@ -247,30 +247,32 @@ custom_colors: true
       </div>
       <div class="modal-body">
       <% if i.tournament.tracks? %>
-        <details>
+        <details open="">
           <summary>
-            <h3 class="h6">Select which track to show:</h3>
+            <h3 class="h6 mb-0">Select which track to show:</h3>
           </summary>
           <div>
-            <input type="radio" id="sub-combined" name="track" checked>
-            <label class="custom-control-label" for="sub-combined">
-              Combined (all teams)
-            </label>
-          </div>
-          <% i.tournament.tracks.each do |s, _| %>
             <div>
-              <input type="radio" id="sub-<%= s %>" name="track">
-              <label class="custom-control-label" for="sub-<%= s %>">
-                <%= s %>
+              <input type="radio" id="sub-combined" name="track" checked>
+              <label class="custom-control-label" for="sub-combined">
+                Combined (all teams)
               </label>
             </div>
-          <% end %>
+            <% i.tournament.tracks.each do |s, _| %>
+              <div>
+                <input type="radio" id="sub-<%= s %>" name="track">
+                <label class="custom-control-label" for="sub-<%= s %>">
+                  <%= s %>
+                </label>
+              </div>
+            <% end %>
+          </div>
         </details>
         <hr>
       <% end %>
-      <details>
+      <details open="">
         <summary>
-          <h3 class="h6">Select which states to show:</h3>
+          <h3 class="h6 mb-0">Select which states to show:</h3>
         </summary>
         <div id="state-filter">
           <div>
@@ -292,9 +294,9 @@ custom_colors: true
         </div>
       </details>
       <hr>
-      <details>
+      <details open="">
         <summary>
-          <h3 class="h6">Select which teams to show:</h3>
+          <h3 class="h6 mb-0">Select which teams to show:</h3>
         </summary>
         <div id="team-filter">
           <div>
@@ -430,30 +432,33 @@ custom_colors: true
         <p><span id="team">[team]</span> placed <span id="place">[place]</span>
         overall with a total score of <span id="points">[points]</span> points.
         <hr>
-        <div class="table-responsive-md">
-        <table class="table-striped">
-        <thead>
-          <tr>
-            <th class="event">Event</th>
-            <th class="points">Points</th>
-            <th class="place">Place</th>
-            <th class="notes">Notes</th>
-          </tr>
-        </thead>
-        <tbody>
-        <% i.events.each do |e| %>
-          <tr>
-            <td class="event">
-              <%= e.name %>
-            </td>
-            <td class="points"></td>
-            <td class="place"></td>
-            <td class="notes"></td>
-          </tr>
-        <% end %>
-        </tbody>
-        </table>
-        </div>
+        <details open="">
+          <summary><h3 class="h6 mb-0">Event Details</h3></summary>
+          <div class="table-responsive-md mt-3">
+            <table class="table-striped">
+            <thead>
+              <tr>
+                <th class="event">Event</th>
+                <th class="points">Points</th>
+                <th class="place">Place</th>
+                <th class="notes">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+            <% i.events.each do |e| %>
+              <tr>
+                <td class="event">
+                  <%= e.name %>
+                </td>
+                <td class="points"></td>
+                <td class="place"></td>
+                <td class="notes"></td>
+              </tr>
+            <% end %>
+            </tbody>
+            </table>
+          </div>
+        </details>
         <hr>
         <h3 class="h6">Other Results</h3>
         <p><a href="#" id="other-results">

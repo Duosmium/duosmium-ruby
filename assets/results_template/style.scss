@@ -302,11 +302,17 @@ div.results-classic-footnotes {
   }
 }
 
-#filters summary h3 {
+summary > * {
   display: inline-block;
 }
 
 div#team-detail {
+  #team-detail-label {
+    font-weight: 500;
+    margin-bottom: 0;
+    letter-spacing: normal;
+  }
+
   div.modal-dialog {
     max-width: 42rem;
     width: calc(100% - 1rem * 2);
@@ -321,6 +327,10 @@ div#team-detail {
 
     @include media-breakpoint-down(xs) {
       font-size: 0.8em;
+    }
+
+    .event {
+      padding-left: 0.5em;
     }
 
     th.event { width: 16.5em; }
@@ -362,8 +372,12 @@ div#download-info {
 }
 
 div#filters div.modal-body {
+  details > div {
+    margin-top: 1rem;
+  }
+
   div {
-    margin: 0.75em 0;
+    margin: 1rem 0;
 
     label {
       display: inline;

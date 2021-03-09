@@ -61,9 +61,6 @@ $(document).ready(function(){
   // that the boxes would be unchecked without going into the menu)
   $("div#filters input:checkbox").prop("checked", true);
 
-  // Open details in filter modal
-  $("div#filters details").attr("open", "open");
-
   // Correct minimum width of header and footnotes based on number of events
   var fix_width = function(extra) {
     let width = $("colgroup.event-columns col").length * 2 + 28 + extra;
