@@ -1,9 +1,9 @@
 ---
 data_depth: .inf
 global:
-  Gemfile.lock: 52728292c74fe83b82a62e2e7e7f24cb2fefe9c4
-  config.rb: cb7d952cff69396ccd2c45621067bdf327563afc
-  helpers/custom_helpers.rb: 89749364b79b0e0545ba0e6001382da3d82fbb11
+  Gemfile.lock: 3e2bf0dcae789c719ea6f5a432dbff33e23dd4fc
+  config.rb: 538f50ef95aa139f7bf47bc55e95fb36cdb2ec95
+  helpers/custom_helpers.rb: 56fcee124a42af468e1ad674f9a099c7b425b8b2
 edges:
   source/results/index.html.erb:
   - recents.__full_access__
@@ -11,105 +11,108 @@ edges:
   - upcoming.__full_access__
   source/results/offline.html.erb:
   - source/layouts/layout.erb
-  source/results/placeholder.html.erb:
-  - source/layouts/layout.erb
   source/results/schools.html.erb:
   - source/layouts/layout.erb
   source/results/template.html.erb:
   - source/layouts/layout.erb
 vertices:
   data_path:
-    recents.__full_access__: 71f9b7a8bb7920aa13de6f3cf47deeb3a9d68948
-    upcoming.__full_access__: afb8d5eed805cf60b354eb034cee6c1646dbcbe2
+    recents.__full_access__: 03eebe55c4aef7dddb7f39542be62acef0310055
+    upcoming.__full_access__: a7d5cbd01bfc14e50c8dd5cd3443b35699d6a196
   file:
-    ".tmp/dist/main.css": 4a55891b5957ee5a885becd3e20d1eacd85b4929
-    ".tmp/dist/main.js": edbd9c7b70f542fc71b9fae5f5043702e0cae3c4
+    ".tmp/dist/main.css": fb6d5b877f2d599dae1c3047065b441f452a0265
+    ".tmp/dist/main.js": b8566735134183ead8c95edcc632d73c9f7bb029
     source/data/2010-05-22_nationals_b.yaml: 4596235ed82a49c8c1cc9a94474adb4df0624525
-    source/data/2010-05-22_nationals_c.yaml: 905e991e7b761a2a391bbb23d6688a720c521582
+    source/data/2010-05-22_nationals_c.yaml: 7924136bfaf830dc46758cde92dc7cb59a6ae864
     source/data/2011-04-02_WI_states_c.yaml: 0d4ce03b844bed9ebfb7ed71f33212d7decc13a4
     source/data/2011-04-30_WI_states_b.yaml: 9fb0b0f824b392a2637e7031c0df7b005cd8430b
     source/data/2011-05-21_nationals_b.yaml: d7bce0e11cba792b9321fee4034ae65b8b031c3b
-    source/data/2011-05-21_nationals_c.yaml: 4d91c6e7c82f197e4d289719ddabb9bfedcccf73
+    source/data/2011-05-21_nationals_c.yaml: 33b58f74827e5776ac72d4f703d163d67112d924
     source/data/2012-03-17_WI_states_b.yaml: 020e25e13ffd4a71b2d90e9ab100da2045a0eeb4
     source/data/2012-03-31_WI_states_c.yaml: d59d2a238f7e0a25a0e996ba130b58aa0d6a496f
-    source/data/2012-05-19_nationals_b.yaml: 6dcbca9365918469a3188d97cbd55a9704161821
-    source/data/2012-05-19_nationals_c.yaml: 3eb9dee458ae03acc897ad4e2e913d2e1e678d50
+    source/data/2012-05-19_nationals_b.yaml: 431d03b5e613647a70dbe555280373d34caba635
+    source/data/2012-05-19_nationals_c.yaml: 8f26ebc2bdfa688675ba3df53f25adb06ebc3c42
     source/data/2013-03-16_WI_states_b.yaml: 4e3871a22968857530a0dedb1ae2efa6b6018b9f
     source/data/2013-03-16_WI_states_c.yaml: 466679643b0e67447f2b21222617637a861ee046
     source/data/2013-05-18_nationals_b.yaml: d1f93fdd92e3d6f24f433b835ca288ed9a24e4fa
     source/data/2013-05-18_nationals_c.yaml: f69216b8944d7166f265550a267d58058378f75f
+    source/data/2014-03-15_bay_area_regional_c.yaml: 17cfc25b2aac1625a58f73de0adf79d029fef3b8
     source/data/2014-03-29_WI_states_b.yaml: 26f5b0bad7261746c880afceb598ee22cad19a60
     source/data/2014-03-29_WI_states_c.yaml: ed454ab0ba5a48bdac84d275e6d076449328eb89
-    source/data/2014-05-17_nationals_b.yaml: 82a61c575679cc97e0eba9afa1888bc9a3ea94a9
-    source/data/2014-05-17_nationals_c.yaml: e42ef9fb298f278b232c066f3785598031cd5319
+    source/data/2014-05-17_nationals_b.yaml: 355722a30baa7423f7ac8f80fe710a7b82c0c8d7
+    source/data/2014-05-17_nationals_c.yaml: 2daabf05686f1fae36c288022f65d21aff5c571d
+    source/data/2015-03-14_santa_clara_regional_c.yaml: 7321c4e2daa452ea9bc98e2000b32f9805403804
     source/data/2015-03-24_WI_states_b.yaml: 4e60b0fe53bf481907c4d44789184675bd153453
     source/data/2015-04-11_WI_states_c.yaml: 304b7361123f51932220a7add4d134d2ae9225c7
     source/data/2015-05-16_nationals_b.yaml: ded72e76bf096f1b8b527e458d5787391eada5b9
-    source/data/2015-05-16_nationals_c.yaml: 85d338e5ff36e506c698859b69ca953875f5a8eb
+    source/data/2015-05-16_nationals_c.yaml: 2d71776827a691ad484c59948d387110d87ea9d2
+    source/data/2016-03-19_santa_clara_regionals_c.yaml: 5c3a8605510e7208ce8aa229cbf7db7fba051e2b
     source/data/2016-04-02_ID_states_b.yaml: 5d38f0d1ab28ee06837c6d94c3b6c5cc21ce6856
     source/data/2016-04-02_ID_states_c.yaml: d21a582ff485aca7b8578859682ad4775840d30b
     source/data/2016-04-02_WI_states_b.yaml: 041ea9ae68d7bb42375e68770db2a00eba37660a
     source/data/2016-04-02_WI_states_c.yaml: 2f62a21db118bdcc571cd40dbb847a0b7e8369c7
     source/data/2016-05-22_nationals_b.yaml: 6f3bf8e2388578fd802f075d5dc77e613aafaf62
-    source/data/2016-05-22_nationals_c.yaml: 4a7be7679193f094d5d0a8147d83f2a7dd83f0d9
-    source/data/2017-03-25_VA_states_c.yaml: 4b551e0b061e8f48c6dda4a4cdd8af7d5625c521
+    source/data/2016-05-22_nationals_c.yaml: eef6e9a44e9f033e7b4c1cbe3bdbcf5be9b795a3
+    source/data/2017-03-18_santa_clara_regionals_c.yaml: ea3207461271e69faf1d88593b49d2f2542bb3c7
+    source/data/2017-03-25_VA_states_c.yaml: f30cb5bde65e99c5203226d29f91d04e9311d8fe
     source/data/2017-04-08_ID_states_b.yaml: 4f89b81c81a9864bddd13df7f50c3609e9b30e90
     source/data/2017-04-08_ID_states_c.yaml: fc8df266b71cd07466f84e76b260bc2c240a9640
     source/data/2017-04-08_WI_states_b.yaml: 27865d9eada9a877e3c0ba0614aff2007e6cf3b0
     source/data/2017-04-08_WI_states_c.yaml: f8a5cf0c3261d9051567808e86ee07c9877cdaf9
     source/data/2017-05-20_nationals_b.yaml: bfa579856622bb513d37a86e47e9984cf3540dcb
-    source/data/2017-05-20_nationals_c.yaml: 0f66825628b3e467faa5078bc8bab5a381650d06
+    source/data/2017-05-20_nationals_c.yaml: 5e53a4e34611610e24a16fa3e7a74f43f51a9254
     source/data/2018-01-13_medford_invitational_b.yaml: 9e30ea5f18400304333cafd3a67201ca13f730be
     source/data/2018-01-13_medford_invitational_c.yaml: 2e1869d84511d5f665dd9baa88190cebb3b61857
     source/data/2018-02-17_cornell_invitational_b.yaml: 01b2cb4db89b0e242ea89f47a647663454776c45
     source/data/2018-02-17_cornell_invitational_c.yaml: c4bbeeb9fffc85bfcde5c3871a4d9103b8325fb5
-    source/data/2018-02-17_penn_invitational_c.yaml: 89ff32e996a98e91fb0a4b08512c2bf3967f2983
+    source/data/2018-02-17_penn_invitational_c.yaml: 356ec1e67b706458274b5323a25b3d0de15f542f
     source/data/2018-03-09_NY_states_c.yaml: 927c9d5f6fca7a04191c25e55e4330ee6bc1792f
+    source/data/2018-03-17_santa_clara_regional_c.yaml: 97015afe25341b1e14da4857fd3de2764c078b3e
     source/data/2018-04-07_ID_states_b.yaml: f6e2140c1c1534a94e15bc3722c3b402c00b4572
     source/data/2018-04-07_ID_states_c.yaml: 4203b9ec4538488746582a7bf4e51c793d1f1ad0
     source/data/2018-04-07_WI_states_b.yaml: 890184e6029b9c105f1d553c88c020cc3076edb1
     source/data/2018-04-07_WI_states_c.yaml: 93726d24e94226d632fcbf703ebd273e230ea9e9
     source/data/2018-04-13_NY_states_b.yaml: 8a4108efb8198ca0ab0aeb1f6a681b5b9fc25da0
-    source/data/2018-04-14_VA_states_c.yaml: 8dc94144226acf849153b8c22f1ac3bd18a85665
+    source/data/2018-04-14_VA_states_c.yaml: 65c6206c73d1cb34a0f66cfaca156433a4abb9ad
     source/data/2018-04-28_MI_states_b.yaml: 4371230e6276cf627f3c8b3e4fc07a5e6ec003ac
     source/data/2018-04-28_MI_states_c.yaml: 2f32619af1dfa90cae39285a36b3e6336714c18d
-    source/data/2018-05-19_nationals_b.yaml: 5c70270ef7168c3d44e7b573a81f171f20fb1b54
-    source/data/2018-05-19_nationals_c.yaml: a04ce913287e4c3c628792aef7deb0a987977d67
+    source/data/2018-05-19_nationals_b.yaml: e07df841384940c671e992102d5efdb0928ebbdf
+    source/data/2018-05-19_nationals_c.yaml: 4eea7a3e704088ae98480c19d1f4ad17b3704b4c
     source/data/2018-10-27_ut_austin_invitational_b.yaml: 4b8c8dd7a1e9ea26d47ea7923ee61ed611feda57
-    source/data/2018-10-27_ut_austin_invitational_c.yaml: f6e6cea5b8bca0fcfe1ebdb5eb7f313370fb2180
+    source/data/2018-10-27_ut_austin_invitational_c.yaml: c05b98dade938dc4707dcaeaf6b7ef444d274ca5
     source/data/2018-11-20_MT_states_b.yaml: 25650cd62b7d1e4b749d141dea491dbb79ea3154
     source/data/2018-11-20_MT_states_c.yaml: fa4a0bc87b4d0bde40aaa7eab44f38ee7160f176
-    source/data/2018-12-01_boyceville_invitational_b.yaml: c0b832f1cab4acc2e096e50e2f457b1741dbc8ab
-    source/data/2018-12-01_boyceville_invitational_c.yaml: f4d8d073e54e744ed24383d8d6f75051fae7738f
+    source/data/2018-12-01_boyceville_invitational_b.yaml: a4b91075b00ede4d31f90aadb840eba70ff160b6
+    source/data/2018-12-01_boyceville_invitational_c.yaml: 0ad0a83a8cb198f22601c8de16aa9817e8633f07
     source/data/2018-12-08_liso_invitational_b.yaml: 3dc997c1351b494d9a92e69212a1a83e98dfd848
     source/data/2018-12-08_liso_invitational_c.yaml: d404d59badabf797f37800386006204981f19460
     source/data/2019-01-05_columbia_invitational_c.yaml: 0e90be767cd4846792a6f868345fe4941cacd111
-    source/data/2019-01-05_rustin_invitational_b.yaml: 2f29ed268a0c0384438c8655aee978ece37e8aff
+    source/data/2019-01-05_rustin_invitational_b.yaml: 86f2b4b0e76e81ba55ce154e87557e30c8876a4a
     source/data/2019-01-08_NJ_njit_regional_b.yaml: 4a221f1d392bca5e17a81d0ef8a225d7fb076756
     source/data/2019-01-08_NJ_njit_regional_c.yaml: d2f57471fcacc6a5e1b4a33caa9092eeef12fade
     source/data/2019-01-10_NJ_ccc_regional_b.yaml: b12c6ea295952fa25d2e58011b40a0e209830ac9
     source/data/2019-01-10_NJ_ccc_regional_c.yaml: f164a72cb390b703de868c625b5c4c054f46b883
     source/data/2019-01-12_bavf_invitational_c.yaml: c5486ad0c14f10a3a08aba7aecc823ca374b60a2
     source/data/2019-01-12_centerville_invitational_b.yaml: db96aead899f60ff632a18638918f45d7e66d401
-    source/data/2019-01-12_fairfax_invitational_c.yaml: a1bc6b3123ddf1039f83a414b95fd86e72c2485f
+    source/data/2019-01-12_fairfax_invitational_c.yaml: bf10ee01107594ef41768d8e7f163b333b26ac44
     source/data/2019-01-12_medford_invitational_b.yaml: ed04dc8d840989b72c03c0fef1e04a460c97f0c1
     source/data/2019-01-12_medford_invitational_c.yaml: 1ad2898af8d3305504d23ceb51055f5db04ec285
     source/data/2019-01-12_mira_loma_invitational_c.yaml: fd00c7b5acc68f793341129f29f30fb44ad7ae3b
-    source/data/2019-01-12_mit_invitational_c.yaml: d1a7e0c1624bee55ca4e4b90b06f4a47494e428a
+    source/data/2019-01-12_mit_invitational_c.yaml: cacfdfb96961ca81881051dafcdf89df53b2949e
     source/data/2019-01-15_NJ_ucc_regional_b.yaml: 6e8a90937788c777a5d02ff6b57f53f687703822
-    source/data/2019-01-15_NJ_ucc_regional_c.yaml: 13a68a64099c15638adb19c9a42f4bb14db88a47
+    source/data/2019-01-15_NJ_ucc_regional_c.yaml: f5a247f7052d45f0ea4007389c46bb0bae631226
     source/data/2019-01-19_duke_invitational_c.yaml: ca78e28843edb010615b797e76e965ef8183c630
-    source/data/2019-01-26_VA_charlottesville_regional_b.yaml: d2c4bc00e9ea84f9480c0c8a033d7c1811d94bbd
-    source/data/2019-01-26_VA_charlottesville_regional_c.yaml: 03d9ef270da297dd8b85f6d802f35a2a58af9821
+    source/data/2019-01-26_VA_charlottesville_regional_b.yaml: 0af11c977e3f471bf983dbd72f89499acf5ae4fe
+    source/data/2019-01-26_VA_charlottesville_regional_c.yaml: 23ac770b1f2f03c91af1c0e28b78b38283233947
     source/data/2019-01-26_WA_south_central_regional_b.yaml: 4aea2c9933e7008a3533f323907f3419bbccd31f
     source/data/2019-01-26_garnet_valley_invitational_b.yaml: 781728851c143044f0c03dfb21917ba3c07973f1
-    source/data/2019-02-02_VA_virginia_tech_regional_c.yaml: df92864caff44fbf32ff9a94b2f1f7f940fb7525
-    source/data/2019-02-02_solon_invitational_c.yaml: 477be0a63a15bc899d844fc68fba6377e90ee512
-    source/data/2019-02-09_VA_fairfax_regional_b.yaml: 80e4e84638a34738198c447b08fc5fcd21c945e8
-    source/data/2019-02-09_VA_fairfax_regional_c.yaml: a9a8e76faef5f916cc2c98bd1cafdc4a14b42c62
+    source/data/2019-02-02_VA_virginia_tech_regional_c.yaml: dea2698595c8e9a953e39507f898166d9cdb3b18
+    source/data/2019-02-02_solon_invitational_c.yaml: 248df09f85ee4c82f9f2212af73dfff7768ffda3
+    source/data/2019-02-09_VA_fairfax_regional_b.yaml: aeefc75dbade80ed7de095464f7f06a4110797a0
+    source/data/2019-02-09_VA_fairfax_regional_c.yaml: f3c1cbe05396beefcf54ab02a6a8f132bd83848e
     source/data/2019-02-09_eagle_invitational_b.yaml: bd10ebea952711773658d57c05ff7a20734f3433
-    source/data/2019-02-09_golden_gate_invitational_c.yaml: 3a6a8b9b2a33a32180f62bd0ab6072c73dc17fd9
-    source/data/2019-02-09_princeton_invitational_c.yaml: 17b2ca8cfa347c0d8f1de0d47c8c3ac4fc5fb8cd
+    source/data/2019-02-09_golden_gate_invitational_c.yaml: a63cf91603759f6a02fb925186080dda8d53392f
+    source/data/2019-02-09_princeton_invitational_c.yaml: 80b661841ef444ec0dd0f8175ebae61abbff3bf2
     source/data/2019-02-09_sCA_orange_regional_b.yaml: 1c0c3861a06d0e9302774220a3fce2c25ed7d770
     source/data/2019-02-09_sCA_orange_regional_c.yaml: 16eaf7f3dce2219641f7d505403debf13fbc5712
     source/data/2019-02-10_harvard_invitational_b.yaml: 315f07aa80fdf4caccf7e9fb432ea63cbb2ba12b
@@ -119,14 +122,15 @@ vertices:
     source/data/2019-02-16_MS_southwest_regional_c.yaml: ae1acbc541b5b8a55a7391defb359e2e7a58ba47
     source/data/2019-02-16_cornell_invitational_b.yaml: 2e4ea3b0511afc12cba0f0bda7cdbc39ebb4903d
     source/data/2019-02-16_cornell_invitational_c.yaml: 6195fa8abe1a04c2a5a96465561519b2062b54e3
-    source/data/2019-02-16_penn_invitational_c.yaml: 34989584671feb149cf3dc7870026c9a59a603ac
+    source/data/2019-02-16_penn_invitational_c.yaml: 93e9ded798af22c549d8eeb79afefa358a97a34c
     source/data/2019-02-23_OH_northeastern_regional_b.yaml: 25211b4e79c9fae707bbeb52a44037569d6aabc4
     source/data/2019-02-23_OH_northeastern_regional_c.yaml: 5c9c43613314ae4ccbec9866767ede9ec9724415
     source/data/2019-02-23_SC_newberry_regional_b.yaml: 79bcfb9ad514c64c1b53aee29ae658c0e51b3810
     source/data/2019-02-23_SC_newberry_regional_c.yaml: 66fd7fa8954c59f7e8b53b9c94121b2abc7dc0f7
     source/data/2019-02-23_TX_ut_austin_regional_c.yaml: 2b282d47b5b2286000f0f9066f89a0b5ffb7881a
-    source/data/2019-02-23_VA_lb_woodson_regional_b.yaml: a197a58e006d6a6585347a175b03a37b881faf0f
-    source/data/2019-02-23_VA_lb_woodson_regional_c.yaml: '08232aab550afc07f6e0775a3de0b802d41ec4c8'
+    source/data/2019-02-23_VA_lb_woodson_regional_b.yaml: dcdf3de4c18db329245d2251ea806dc11d1e0b02
+    source/data/2019-02-23_VA_lb_woodson_regional_c.yaml: e0d524c4d2b8d77348c1d2897040ee23e398b18c
+    source/data/2019-02-23_ukiah_invitational_c.yaml: a96cb92d4fc43d2a8edd157852bccbcef7a9e677
     source/data/2019-03-02_DE_states_b.yaml: 4be33384b2ad8c8ed9ecc50bf015c4bb851a9b01
     source/data/2019-03-02_MS_north_regional_b.yaml: 82db8c4ec1dc8ee3294a589c20a400422e50dc78
     source/data/2019-03-02_MS_north_regional_c.yaml: cd56d25e10929d8d88eede7869033bc2b4564e8e
@@ -137,7 +141,7 @@ vertices:
     source/data/2019-03-09_WA_eastern_regional_c.yaml: db4445d95e30a4c82c0b6ad421ee42926e745bc4
     source/data/2019-03-09_WA_northwest_regional_c.yaml: f226e3c430175573a287e817f8cfdd72a8f107e7
     source/data/2019-03-12_NJ_states_b.yaml: d96fce84b279f76f907482099981672be5c92f8c
-    source/data/2019-03-12_NJ_states_c.yaml: 5c0faa5371bec5789abee24caf991663cbec627e
+    source/data/2019-03-12_NJ_states_c.yaml: ae64f7e084f2b7ddc80f673ae4a386d77337eafd
     source/data/2019-03-15_NY_states_c.yaml: 8ea0751149dd181e98d5f25e95d531a4e5cd9a13
     source/data/2019-03-16_CT_states_b.yaml: 243295d08fc9fdd7e04cac6360abf4d7bc8dfd84
     source/data/2019-03-16_DE_states_c.yaml: a00781d8d5091f497e35596f64c0451ff386f5f1
@@ -154,11 +158,12 @@ vertices:
     source/data/2019-03-23_GA_states_c.yaml: cfbf1302d7ff2a67896cf6aaed2adea532f2ecf9
     source/data/2019-03-23_NH_states_b.yaml: 31723d0ba4894b7ab4ed1ba6ef5022e4f6c2eda5
     source/data/2019-03-23_NH_states_c.yaml: 86b910257aebf74af2b4826d40461de4cbfec768
-    source/data/2019-03-23_VA_states_b.yaml: 3c3ce359b114dc4db24b6222a0a58af11f75f150
-    source/data/2019-03-23_VA_states_c.yaml: bad478c678b42c6158a7fd28f7aeee7e2e1a6c8a
+    source/data/2019-03-23_VA_states_b.yaml: 204bd6f53e812829dbdb43bc0dde3dd39a9d3068
+    source/data/2019-03-23_VA_states_c.yaml: 4ae9c4881f77eedf97e88adfc27e5bba9ed3159f
     source/data/2019-03-30_CT_states_c.yaml: 49436dffe68b6de4ce0c189199cacd7def280ee1
     source/data/2019-03-30_FL_states_c.yaml: 39ce225b8d6ec71becba313b0d3d10b695eeb528
     source/data/2019-03-30_MD_states_b.yaml: fb2c38ea373be5a2199f56ca2d218cae4cb81e08
+    source/data/2019-03-30_MD_states_c.yaml: eb064bf8e66191e5a866eb4075af0674a2552e87
     source/data/2019-03-30_ME_states_b.yaml: 5b3036c0f981e04d78eaf258fd11e0048d075d89
     source/data/2019-03-30_ME_states_c.yaml: f6b6a891a759c653d2da1eb40e88c3842d255fd1
     source/data/2019-03-30_RI_states_b.yaml: 8cd82360bc2337b52d6bee4d2cbe61c2387d2f8a
@@ -168,49 +173,49 @@ vertices:
     source/data/2019-04-06_TN_states_c.yaml: f2668369c9deb78452c6fb4f886e01947ebd72cc
     source/data/2019-04-06_nCA_states_b.yaml: e2c48a17c5d88f496efb6d7f2bf3650daade08f9
     source/data/2019-04-06_nCA_states_c.yaml: d7548f8d3fb1938372711f1464893a3318352732
-    source/data/2019-04-06_sCA_states_b.yaml: 50eec8832c636286be5281b9c362741ff8968583
+    source/data/2019-04-06_sCA_states_b.yaml: '081f598b43f05b64a7ab66575498dd554d846188'
     source/data/2019-04-06_sCA_states_c.yaml: b60400f623d3ef4e928f7381cefca28081b5d1d8
     source/data/2019-04-13_ID_states_b.yaml: c406ddefb6ffc27e59a5abf7df2a681811ac32b2
     source/data/2019-04-13_ID_states_c.yaml: 47cf087e56717fa5c11e66cd561bbf94b3fc162f
     source/data/2019-04-13_WA_states_b.yaml: 27bf0f7a12ab87acd3e817b8724f82459483711a
     source/data/2019-04-13_WA_states_c.yaml: fe22633eea44d500daf77a5196ce6b837439747c
     source/data/2019-04-27_MI_states_b.yaml: 5e03fbc632195ab4b857466591704c011b278cc5
-    source/data/2019-04-27_MI_states_c.yaml: 7b074a7a7b3c5434a22c62739b331e65b306e25b
+    source/data/2019-04-27_MI_states_c.yaml: 6e866429f40e0a84fd374e1c7488ea08eef9dbd2
     source/data/2019-04-27_OH_states_b.yaml: 940765f471cdf253295b908dc406ba0f5214fe6d
     source/data/2019-04-27_OH_states_c.yaml: 430ab2b64823e4a4fb273b411ec360384003713b
     source/data/2019-04-27_PA_states_b.yaml: dfa95ea0a378bba9b484e6dd83c5331cdee926c4
-    source/data/2019-04-27_PA_states_c.yaml: ae2c3bc9fd493ae272710cdc8832d502ff25a9af
+    source/data/2019-04-27_PA_states_c.yaml: 00b1aba4d5e52a865635d4e72dd6260b9bff8ea1
     source/data/2019-06-01_nationals_b.yaml: eb1987afd72af2615a18b75d90ecb605dde0f1aa
     source/data/2019-06-01_nationals_c.yaml: 5220b6747c0c025b8958459a44c5d16a9faa4320
     source/data/2019-10-19_oss_invitational_b.yaml: e1bbd2259e4df1cb913277066b69a79aa6cb401a
     source/data/2019-10-26_uga_invitational_c.yaml: 5039cca80803c0a6e711f470cb1e558a4393ed35
     source/data/2019-10-26_ut_austin_invitational_b.yaml: 9ba7e20efad891d961c575e2d307938d7a09de31
-    source/data/2019-10-26_ut_austin_invitational_c.yaml: b34ada35eabe3db068059f9c6bba572ca5632762
+    source/data/2019-10-26_ut_austin_invitational_c.yaml: 7fd3d3f1951e8d6aaf0ef7ff653df2315fe781e6
     source/data/2019-11-09_lambert_invitational_c.yaml: a37a210b69a58c0a7f0bd0ba851b4faf58f1f132
     source/data/2019-11-23_cornell_invitational_c.yaml: f40ae59c6b80fbe7f6545a91558673d57422d77c
-    source/data/2019-11-23_palatine_invitational_c.yaml: 2e8b51d00ac605c1e55dcd7bdd83257ed181c8e9
+    source/data/2019-11-23_palatine_invitational_c.yaml: b979d805f79424d323c39e70fadfe6fba3a75d9b
     source/data/2019-11-26_MT_states_b.yaml: 37536baedc3c2bda691201353edcdfbf12890ae2
     source/data/2019-11-26_MT_states_c.yaml: e55fc40729d8db4a99f15558704f2113d902c3ed
-    source/data/2019-12-07_boyceville_invitational_b.yaml: c114e2bd8081364e14cd7e04363f82e901f8bcaa
-    source/data/2019-12-07_boyceville_invitational_c.yaml: df9802b6aac0219876077945fe4d3272b62c1849
+    source/data/2019-12-07_boyceville_invitational_b.yaml: 2abafd1b53635349dae2a62c3fa9dd1f39f6a370
+    source/data/2019-12-07_boyceville_invitational_c.yaml: 16dce00aa0b94bb135b4f3c972cbe6cf07558f3d
     source/data/2019-12-07_camas_invitational_c.yaml: f256b064f85ddda8659a9b17705b1888fae76378
     source/data/2019-12-07_chattahoochee_invitational_b.yaml: 07c0ea6b1977a970f038260a0205338c072de19b
     source/data/2019-12-07_liso_invitational_b.yaml: 39bbe1834394671f8d8ec5a077ca7e4ee7dcd83a
-    source/data/2019-12-07_liso_invitational_c.yaml: 4213ad5388169713f12bf02410a69e6e2b421d89
+    source/data/2019-12-07_liso_invitational_c.yaml: 44b62215eb89359450f7998bb5b04701f262418c
     source/data/2019-12-07_national_cathedral_invitational_c.yaml: 7b62f1e1ed70c48c23a2c8362ca17c3278b8d863
     source/data/2019-12-07_northview_invitational_c.yaml: c2db2e910e999848c98f6ef83b1133d7799a7ff7
     source/data/2019-12-14_camas_invitational_b.yaml: 95c86ae4d0dad084844f9df5ef74b010d0172f3d
     source/data/2019-12-14_csra_invitational_c.yaml: 6dee21e06226ccc8dd73f660d13be6f316fe518a
     source/data/2019-12-14_lake_braddock_invitational_b.yaml: 35308041208196fa69f828dd592d14550b25115e
     source/data/2020-01-04_columbia_invitational_c.yaml: 34b7778d97db376d9d85cd714598be652d8acf11
-    source/data/2020-01-04_solv_invitational_c.yaml: 0500dc8c4f3f3ce989554eb6a74e10b78314f143
+    source/data/2020-01-04_las_vegas_invitational_c.yaml: b4b0fbb8ecf904b1282d4e31c3c0c2d8861f0144
     source/data/2020-01-06_NJ_njit_regional_b.yaml: 388cc10c32cc9cdf617880e45af4902e3567cc86
-    source/data/2020-01-06_NJ_njit_regional_c.yaml: b8a22035c02d5daaa7dfec3c4f8ce78ce98dcd2d
+    source/data/2020-01-06_NJ_njit_regional_c.yaml: 6b6027a468e62e07c2805b2b83190dc83aaf98f9
     source/data/2020-01-07_NJ_ucc_regional_b.yaml: d03aab2e26584524c1f0a4d82a4604a8f942ad1a
-    source/data/2020-01-07_NJ_ucc_regional_c.yaml: 542acfb7c21692f32d00fd36ddd4f489a44bd624
+    source/data/2020-01-07_NJ_ucc_regional_c.yaml: bdf20d5f978da7c3a75e9dcc12cccdadd732c7c8
     source/data/2020-01-11_bavf_invitational_c.yaml: e57e6faadf989f6799cca5a7db15ce186a8aeb53
     source/data/2020-01-11_carnegie_mellon_invitational_c.yaml: 6cb64ccccc4ee289e0ea8f8722ab0d8b2e1e3adf
-    source/data/2020-01-11_fairfax_invitational_c.yaml: d4dbfa0cfe4f711d20d0143f68081084910a62db
+    source/data/2020-01-11_fairfax_invitational_c.yaml: 422ef1493bb241216a03c595b590ae3c57456879
     source/data/2020-01-11_medford_invitational_b.yaml: 7abafed15f61f9585944a14849b8a5a6e7f4da8b
     source/data/2020-01-11_medford_invitational_c.yaml: a6a27dd1d8af8ec67f202b22eca3b7370a159c80
     source/data/2020-01-11_mira_loma_invitational_b.yaml: eb8563b3cc6d9b616e773bc49d90dc1c64a7008e
@@ -219,49 +224,84 @@ vertices:
     source/data/2020-01-16_NJ_ccc_regional_c.yaml: fe68dd105bebf633152f4fe37adc376120117063
     source/data/2020-01-18_duke_invitational_c.yaml: ddea32b5a4308782fc6a5a696ab41e5b6cb9b777
     source/data/2020-01-25_NY_midstate_regional_c.yaml: 2309b5d3e27b5db2aee8a8eac214eddf2a203bc0
-    source/data/2020-01-25_VA_virginia_tech_regional_b.yaml: b58149ff2d0572d5fd7ece888ae2141d23181718
-    source/data/2020-01-25_VA_virginia_tech_regional_c.yaml: a0d4ccbe045d46543972cfe1fe26240a33e12f5e
+    source/data/2020-01-25_VA_virginia_tech_regional_b.yaml: b3d507c118b50e5b93f30d70b145c61ae17f9576
+    source/data/2020-01-25_VA_virginia_tech_regional_c.yaml: 3509e49e2b64cf445bfde9034d47dc13f97620f0
     source/data/2020-01-25_aggie_invitational_c.yaml: 13f509fda0f7ae298b1300a19b0bf7b0850ec334
-    source/data/2020-01-25_mit_invitational_c.yaml: 2dc2a6fc3d3c140b0305fdd05b7158a6e3c7ddf0
+    source/data/2020-01-25_mit_invitational_c.yaml: 8513dfdcb53bf0dbf7a96b86dca75f9310adc371
+    source/data/2020-01-25_north_pocono_invitational_c.yaml: 3375e85636518c44aa251245be2a11dd3fa1d9b9
     source/data/2020-02-01_NY_eli_regional_c.yaml: 190d16eabb0714c8d7fd1914082a660c59610b25
     source/data/2020-02-01_NY_nassau_west_regional_c.yaml: 7212dfa1a5113905cd2ffd597551f50702173b1e
     source/data/2020-02-01_christensen_invitational_b.yaml: 2052e967473f268be3f6592003d082df039ef0c7
-    source/data/2020-02-01_solon_invitational_c.yaml: 4a106bfe9a4c8c07767d69a506607d728b1a85b0
-    source/data/2020-02-01_yale_invitational_c.yaml: 51c2536e915c4d8c2b7c5f751cc545a0200d313b
+    source/data/2020-02-01_solon_invitational_c.yaml: 61fa46a2f8803d3409c78511e744acf8a530faf7
+    source/data/2020-02-01_university_of_maryland_invitational_c.yaml: 8ad06ca4e90059ff5da87ebdd735a74078137e2d
+    source/data/2020-02-01_yale_invitational_c.yaml: 577ddaebe63dc8de5675ed413810681a0561dda0
     source/data/2020-02-08_centerville_invitational_c.yaml: 775c8e52240cf6375b3bfba588f276e6a8391ef1
-    source/data/2020-02-08_princeton_invitational_c.yaml: 8cfe68a61041e1941ecc71a763e946c70feb47c8
+    source/data/2020-02-08_princeton_invitational_c.yaml: fe86971dd616cd83d5d3211a8871a1dab5fa5f6e
+    source/data/2020-02-08_ukiah_invitational_c.yaml: '0185b529f8d8456e4c8e077d2e96480dffa6f8f5'
     source/data/2020-02-15_WI_west_regional_b.yaml: b2a0c5a0c412ff5359c00b535667e5a3960e97db
     source/data/2020-02-15_cornell_invitational_b.yaml: 15db706ebaf330b00b52df20c664537d83c76c4d
-    source/data/2020-02-22_golden_gate_invitational_c.yaml: 4580e233c486a083b89eb593809e1d506be0667d
-    source/data/2020-02-22_penn_invitational_c.yaml: 6d6bbc14d726d4d710d7fcc815169bfbbebe2425
+    source/data/2020-02-15_loyola_invitational_c.yaml: 96ecf4f6adf25df766d78b1e9512a6d8d6a39650
+    source/data/2020-02-22_golden_gate_invitational_c.yaml: 2c0e5ab60df932e9ebdddc43d1383bfdea1dcaa0
+    source/data/2020-02-22_penn_invitational_c.yaml: 269c21abcc014a3c6104758bb0ccc8dc8d0c2558
     source/data/2020-02-29_nCA_bay_area_regional_b.yaml: d1b42fed2c745d765173c7175caaf849f4e2ba23
     source/data/2020-02-29_nCA_bay_area_regional_c.yaml: 49f1b7a82a4b24b5eb67c8c4f2a406b3188a6855
     source/data/2020-03-07_DE_states_c.yaml: 8f8069a203387cbc93108d85da0363b7e92d97e4
     source/data/2020-03-07_WI_west_regional_c.yaml: 2b9ae9f97a35a71d95fa7f76fbca525d86ee122c
+    source/data/2020-03-07_eastern_maryland_regional_c.yaml: 7257097832ae1212d11282ea59f788f95b6ab928
     source/data/2020-03-10_NJ_states_b.yaml: 13589aedace8cb95b4ff875761c865cc85acad6e
-    source/data/2020-03-10_NJ_states_c.yaml: d31a5d294bccdcb4bd84a877c1393443b7c33519
-    source/data/2020-10-10_bearso_invitational_b.yaml: b3d32760a61b6c81d95696d402582abda7e64442
-    source/data/2020-10-10_bearso_invitational_c.yaml: 687167dd77435314c75f9bf155bb08e48a4f9291
-    source/data/2020-10-23_ut_austin_invitational_b.yaml: 56486133bb87ed1b73b22fdef0690e8138d24ea8
-    source/data/2020-10-23_ut_austin_invitational_c.yaml: caca2ef702440c9a552b1c24eca733719744fec6
-    source/data/2020-10-24_sofo_invitational_c.yaml: c45e2347ccf03a2fc5e2a6947402277177c3411c
-    source/data/2020-11-14_boyceville_mini_so_invitational_b.yaml: 629af42864f2f546852f632b5f1a5c6cca3b3c4a
-    source/data/2020-11-14_boyceville_mini_so_invitational_c.yaml: ddb88baa2e4858a0c7c46b33a6681f1e8edc5b2b
-    source/data/2020-11-14_uga_invitational_c.yaml: 1c397a1f9250ca79d4823bb4446a9fd71b42eb20
+    source/data/2020-03-10_NJ_states_c.yaml: 80a04aebd774cb6f6199ba98bbcd5e0cc1abf050
+    source/data/2020-10-10_bearso_invitational_b.yaml: af62b73919c026195ebdfe7368957a8c93a0e16e
+    source/data/2020-10-10_bearso_invitational_c.yaml: 47016d958d0a73155e630c1e70fb2eb6e6b974c5
+    source/data/2020-10-23_ut_austin_invitational_b.yaml: d5ce6942184708d985868480b208ef706c36284b
+    source/data/2020-10-23_ut_austin_invitational_c.yaml: cf4fdbf9355b3754585b3182a945944e83df2200
+    source/data/2020-10-24_sofo_invitational_c.yaml: 671f9bd5723c9d2912786ecc7d93c74382b8059c
+    source/data/2020-11-14_belleville_satellite_invitational_b.yaml: 023b97688c2b5205a735b9c2c3a8c008d72a2019
+    source/data/2020-11-14_belleville_satellite_invitational_c.yaml: 6d42fa816cd6fc09986596d5ee44f02339ada9a9
+    source/data/2020-11-14_boyceville_mini_so_invitational_b.yaml: 1e9922d62d143ffb889a648325232faeceb031fe
+    source/data/2020-11-14_boyceville_mini_so_invitational_c.yaml: 1a7aed1445a3230c1a638c213107b53e492602a4
+    source/data/2020-11-14_uga_invitational_c.yaml: 5323052d4ed2fa327c0e9c0d30370f75af044f6f
+    source/data/2020-11-21_palatine_invitational_c.yaml: 869fb37fa89e382d3eeaeb20c01b8751655299f4
+    source/data/2020-11-21_transcontinental_invitational_c.yaml: fd164c84c643a8a166940f0454a8220806ab59b9
+    source/data/2020-12-05_boyceville_satellite_invitational_b.yaml: f14473881c0e7d83e8e9e54d7c75bdec20d88726
+    source/data/2020-12-05_boyceville_satellite_invitational_c.yaml: aa10b232df16f5b75dfce0ffcf9094fc0b130387
     source/data/2020-12-12_camas_invitational_b.yaml: 7555e057c230635d570a6c035587845c56739bce
     source/data/2020-12-12_camas_invitational_c.yaml: f19f01e977132a8b2ebe43f20e87ab1987df8347
     source/data/2020-12-12_lake_braddock_invitational_b.yaml: cc16e501ddb3eddd291bba915680ca964227df8c
     source/data/2020-12-12_national_cathedral_invitational_b.yaml: f5d33e32c3b4904c279c3c0b3d1f72eaadb7c817
     source/data/2020-12-12_national_cathedral_invitational_c.yaml: 86662c24c28cf8d05935b6c57b7319e91f714a67
+    source/data/2020-12-12_north_pocono_invitational_c.yaml: fe0b1014d6f78d6906d9012eaac0ef90b49f48ec
     source/data/2020-12-12_pearl_city_invitational_b.yaml: 18f09082aa218fdd0b25550015d9cdcffcd286e5
-    source/data/2020-12-12_pearl_city_invitational_c.yaml: b32a4191a5e1fde95a835f0947eec02e8b588a3a
-    source/data/2020-12-19_solv_invitational_c.yaml: ef9ffcccbdc515b3dbf645e3a8dc10096b90207a
-    source/layouts/layout.erb: dcc7928208b30dd9a92823552d68b9587c8a3b41
+    source/data/2020-12-12_pearl_city_invitational_c.yaml: 2ce16829ac66ba37a28dcbaa831d74b33331309a
+    source/data/2020-12-19_las_vegas_invitational_c.yaml: 0073a1eb4a09850e0a5a5505ac9e4e981d05c9b0
+    source/data/2020-12-19_yosemite_invitational_c.yaml: d316910bbbd3c5ecc3985cd016d62d8af6126ec1
+    source/data/2021-01-09_carnegie_mellon_invitational_c.yaml: 1f4ab2a3058ac1fe9ee3efaaf7800ebfbd1d442b
+    source/data/2021-01-09_fairfax_invitational_c.yaml: 12478db1e10413c2ddcb3bae103306781004de4a
+    source/data/2021-01-09_mira_loma_invitational_c.yaml: ea810219d3ac85feabe43bd53bbe3e0651881e00
+    source/data/2021-01-16_aggie_invitational_c.yaml: 72fdbef944cb3b61d4880d2f393252d0cad3ebed
+    source/data/2021-01-16_rice_invitational_c.yaml: 5d2e5001e6cf7f7df81668e3b8731b452d76689f
+    source/data/2021-01-16_uchicago_invitational_c.yaml: 30389bf53e6b795ce1492ab1e2c770af75ea4293
+    source/data/2021-01-22_mit_invitational_c.yaml: 4dcc521475f63848572e3b87a24f261c0656908f
+    source/data/2021-01-23_uchicago_invitational_b.yaml: f6ffcd135adfb183e9f9fceaf88184d441831682
+    source/data/2021-01-30_VA_newton_regional_c.yaml: fc97481a6f5ef5ff9cfd21ca9295e67f40e5f0c6
+    source/data/2021-01-30_harvard_brown_invitational_c.yaml: 3172c12776484f6a7292ec05bdb0577a173af9d3
+    source/data/2021-01-30_scc_invitational_c.yaml: 5666a78c1043aafd337520dad1e9b5b453889598
+    source/data/2021-01-31_harvard_brown_invitational_b.yaml: db61f99b92cb40d6053b7ad54c6fc704795ac5e3
+    source/data/2021-02-06_case_western_reserve_invitational_c.yaml: b767e228468d50f9ce21536d39fd8d60cf42fbf5
+    source/data/2021-02-06_sierra_vista_invitational_b.yaml: '09d68f81b00d61d1838be780200c4ac14af624f3'
+    source/data/2021-02-06_soaps_invitational_c.yaml: fafff0fc189af9ed00069ae8ce9ab82ee9b5097d
+    source/data/2021-02-06_troy_athens_invitational_c.yaml: d40168b795a6f521ecd27e88a84f256f5d626797
+    source/data/2021-02-06_yale_invitational_c.yaml: cd55539e047b8d1d5a0f99817ce340ba358cf03c
+    source/data/2021-02-13_golden_gate_invitational_c.yaml: b22e53f295e48d02301071281d033d6d4cb1196e
+    source/data/2021-02-13_ucincinnati_invitational_c.yaml: b38be3da823d740800d1664ef708fee54d0ebe09
+    source/data/2021-02-20_umich_invitational_b.yaml: cecb6134b1f3d1c30cc90cc3f8fa1f9a176419d3
+    source/data/2021-02-20_umich_invitational_c.yaml: fd6a6b87b6b63bc70105a1c7200249407e036a71
+    source/data/2021-02-27_penn_invitational_c.yaml: f58eeb0f050a1b73413378b817a2c135b078f9da
+    source/data/2021-02-28_river_hill_invitational_c.yaml: a7b725c8b5d937eab2d97667e5c078781e366ab5
+    source/layouts/layout.erb: 57aab2807b935104210a70a59ec077da8529fe46
     source/results/events.csv.erb: 6d9fcffb36211752eea6f2cc61336c652f6215eb
-    source/results/index.html.erb: c1cc21e8a5966e24407ce395ce474823d54c481d
+    source/results/index.html.erb: f55731bd1269ed39ce959e5b131461067e01bd38
     source/results/offline.html.erb: 4d67ad52a7e2d52823c0a1a31b5330bdfce427ac
-    source/results/placeholder.html.erb: b2adea7f7e06a63d164b4207c9a414ba79ef4f1b
     source/results/pwabuilder-sw.js: 75d337b22156404c98fd321dccaa49b8a57570de
     source/results/schools.csv.erb: 1609e2772d82734be5c7f081d3457243ff4f69c7
     source/results/schools.html.erb: 89870b4aff39d1d1b13499e884063f5c3d2f35bc
-    source/results/template.html.erb: 0eb94e7f5249b61d869adffded9cb02e98e38998
+    source/results/template.html.erb: 393d22e65e9496eb3b3ba36215c347580661ff55
