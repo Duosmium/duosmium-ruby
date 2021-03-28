@@ -85,8 +85,6 @@ module CustomHelpers
               .to_hex
     # String#paint from the chroma gem
     color = colors[3] ? colors[3].paint : colors.first.paint
-    # Select a color based on accessible color contrast
-    color = ColorContrastCalc.color_from("#f5f5f5").find_lightness_threshold(ColorContrastCalc.color_from(color.to_hex), "AA").hex.paint
     color = color.darken while color.light?
     color
   end
@@ -149,6 +147,11 @@ module CustomHelpers
     when 'States'
       "#{t_info.state} State Tournament"
     when 'Regionals', 'Invitational'
+      if t_info.short_name.nil?
+        cut = t_info.level[0..-1] if t_info.level == "Regionals" else t_info.level
+        splits = t_info.name.split(cut, 2)[0]
+        "#{splits} #{cut}#{' Tournament' if cut == 'Regional'}"
+      end
       t_info.short_name
     end
   end
