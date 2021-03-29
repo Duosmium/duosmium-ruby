@@ -458,12 +458,15 @@ $(document).ready(function(){
     let track = $(".set-modal-track") ? $(".set-modal-track").first().text() : false;
     currentTeam.rank = Number(place);
     currentTeam.track = track;
-    $('#team-detail .modal-body details#graphs').attr("open", "open");
+  });
+
+  $('#team-detail .modal-body details#graphs').on('toggle', function () {
+    updateOverallChart();
   });
 
   $('#team-detail').on('shown.bs.modal', function () {
     updateOverallChart();
-  })
+  });
 
   // button toggle for graph switching
   $("#team-detail .chart-toggle button").on("click", function (e) {
