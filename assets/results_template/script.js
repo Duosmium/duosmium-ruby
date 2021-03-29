@@ -1,3 +1,8 @@
+const Chartist = require("chartist");
+
+let overallChart;
+let currentTeam = {};
+
 $(document).ready(function(){
   // "Fix" 100vh problem on iOS and mobile Chrome
   var wrapper = $("div.results-classic-wrapper");
@@ -374,6 +379,53 @@ $(document).ready(function(){
     v = parseInt(n.match(/\d+/))%100;
     return n+(s[(v-20)%10]||s[v]||s[0]);
   }
+  
+    // charting functions based off unosmium/sciolyff-rust
+    function filterClosest(data, value, center) {
+      data.sort((d1, d2) => {
+        let diff1 = Math.abs(d1[value] - center);
+        let diff2 = Math.abs(d2[value] - center);
+        return diff1 - diff2;
+      });
+      return data.slice(0, 15);
+    }
+  
+    function updateOverallChart(closest) {
+      let {rank, track} = currentTeam
+      console.log({rank, track, closest})
+      track = track === "combined" ? false : track
+      let allPoints = track ? teamPointsByTrack[track] : teamPoints;
+      let points = allPoints.map((score, index) => {
+        return { x: index + 1, y: score }
+      });
+    
+      if (closest) {
+        points = filterClosest(points, 'x', rank);
+      }
+    
+      let data = {
+        series: [
+          [{ x: rank, y: allPoints[rank-1] }],
+          points
+        ]
+      };
+      if (overallChart) {
+        overallChart.update(data);
+      } else {
+        let options = {
+          low: 0,
+          showLine: false,
+          axisX: {
+            type: Chartist.AutoScaleAxis,
+            onlyInteger: true
+          },
+          axisY: {
+            onlyInteger: true
+          }
+        };
+        overallChart = new Chartist.Line('#team-detail .ct-chart', data, options);
+      }
+    }
 
   // Populate Team Detail table and rest of modal
   $("td.number a").on("click", function() {
@@ -387,7 +439,7 @@ $(document).ready(function(){
     $("div#team-detail span#team").html(source_row.attr("data-team-name"));
     $("div#team-detail span#school").html(source_row.attr("data-school"));
     let h = "schools.html#" + source_row.attr("data-school").replace(/ /g, "_");
-    if (window.location.href.startsWith("https://unosmium.org")) {
+    if (window.location.href.startsWith("https://duosmium.org")) {
       h = h.replace(".html", "");
     }
     $("a#other-results").attr("href", h);
@@ -402,6 +454,26 @@ $(document).ready(function(){
       dest_row.children().eq(2).html(place);
       dest_row.children().eq(3).html($(td).attr("data-notes"));
     });
+
+    // show graphs (inspired from unosmium/sciolyff-rust)
+    $(".selected").removeClass("selected");
+    $("#show-all").addClass("selected");
+    let track = $(".set-modal-track") ? $(".set-modal-track").first().text() : false;
+    currentTeam = {rank: Number(place), track}
+    $('#team-detail .modal-body details#graphs').removeAttr("open")
+  });
+  
+  $('#team-detail .modal-body details#graphs').on('toggle', function () {
+    updateOverallChart(false);
+  })
+
+  // button toggle for graph switching
+  $("#team-detail .chart-toggle button").on("click", function (e) {
+    if (this.classList.contains("selected")) { e.preventDefault(); return; }
+    let closest = this.id === "show-closest";
+    this.classList.add("selected");
+    $(closest ? "#show-all": "#show-closest").removeClass("selected");
+    updateOverallChart(closest)
   });
 
   // Click team team detail link when clicking team name or number table cells

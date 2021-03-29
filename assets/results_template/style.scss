@@ -25,6 +25,8 @@
 @import "~daemonite-material/assets/scss/material/text-field";
 @import "~daemonite-material/assets/scss/material/snackbar";
 
+@import "~chartist/dist/scss/chartist";
+
 // per-track medal/trophy styles
 x-st {
   display: none;
@@ -318,6 +320,26 @@ div#team-detail {
     width: calc(100% - 1rem * 2);
   }
 
+  .chart-toggle {
+    font-size: 0.857em;
+
+    button {
+      border: none;
+      padding: 0;
+      margin: 0;
+      background: transparent;
+      cursor: pointer;
+      color: inherit;
+    }
+    button.selected {
+      font-weight: bold;
+      cursor: default;
+    }
+    button:not(.selected) {
+      text-decoration: underline;
+    }
+  }
+
   table {
     table-layout: fixed;
     width: 1em;
@@ -399,6 +421,18 @@ div#filters div.modal-body {
     }
   }
 }
+
+// Chartist styles copied from unosmium/sciolyff-rust
+.ct-series-a .ct-point, .ct-series-b .ct-point {
+  stroke: black;
+}
+.ct-series-a .ct-point {
+  stroke-width: 2em;
+  opacity: 0.25;
+}
+.ct-label {
+  color: inherit;
+  font-size: 0.75em;
 }
 
 @media print {
