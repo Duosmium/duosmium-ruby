@@ -430,7 +430,7 @@ custom_colors: true
       <div class="modal-body">
         <h3 class="h6">Summary</h3>
         <p><span id="team">[team]</span> placed <span id="place">[place]</span>
-        overall with a total score of <span id="points">[points]</span> points.
+        overall <%= "in the <span class=\"set-modal-track\">[track]</span> track" if i.tournament.tracks? %> with a total score of <span id="points">[points]</span> points.
         <hr>
         <details open="">
           <summary><h3 class="h6 mb-0">Event Details</h3></summary>
