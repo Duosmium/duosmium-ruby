@@ -85,7 +85,7 @@ module CustomHelpers
               .to_hex
     # String#paint from the chroma gem
     color = colors[3] ? colors[3].paint : colors.first.paint
-    color = color.darken while color.light?
+    color = color.darken while ColorContrastCalc.contrast_ratio("#f5f5f5", color.to_hex) <= 4.5
     color
   end
 
