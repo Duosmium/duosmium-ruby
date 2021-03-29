@@ -1,7 +1,7 @@
 const Chartist = require("chartist");
 
 let overallChart;
-let currentTeam = {};
+let currentTeam = {rank: null, track: null, closest: null};
 
 $(document).ready(function(){
   // "Fix" 100vh problem on iOS and mobile Chrome
@@ -390,9 +390,8 @@ $(document).ready(function(){
       return data.slice(0, 15);
     }
   
-    function updateOverallChart(closest) {
-      let {rank, track} = currentTeam
-      console.log({rank, track, closest})
+    function updateOverallChart() {
+      let {rank, track, closest} = currentTeam
       track = track === "combined" ? false : track
       let allPoints = track ? teamPointsByTrack[track] : teamPoints;
       let points = allPoints.map((score, index) => {
@@ -456,15 +455,14 @@ $(document).ready(function(){
     });
 
     // show graphs (inspired from unosmium/sciolyff-rust)
-    $(".selected").removeClass("selected");
-    $("#show-all").addClass("selected");
     let track = $(".set-modal-track") ? $(".set-modal-track").first().text() : false;
-    currentTeam = {rank: Number(place), track}
-    $('#team-detail .modal-body details#graphs').removeAttr("open")
+    currentTeam.rank = Number(place);
+    currentTeam.track = track;
+    $('#team-detail .modal-body details#graphs').attr("open", "open");
   });
-  
-  $('#team-detail .modal-body details#graphs').on('toggle', function () {
-    updateOverallChart(false);
+
+  $('#team-detail').on('shown.bs.modal', function () {
+    updateOverallChart();
   })
 
   // button toggle for graph switching
@@ -473,7 +471,8 @@ $(document).ready(function(){
     let closest = this.id === "show-closest";
     this.classList.add("selected");
     $(closest ? "#show-all": "#show-closest").removeClass("selected");
-    updateOverallChart(closest)
+    currentTeam.closest = closest;
+    updateOverallChart();
   });
 
   // Click team team detail link when clicking team name or number table cells
