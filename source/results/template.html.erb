@@ -251,7 +251,7 @@ custom_colors: true
           <summary>
             <h3 class="h6 mb-0">Select which track to show:</h3>
           </summary>
-          <div>
+          <div id="track-filter">
             <div>
               <input type="radio" id="sub-combined" name="track" checked>
               <label class="custom-control-label" for="sub-combined">
@@ -307,11 +307,11 @@ custom_colors: true
             </label>
           </div>
           <% i.teams.sort_by(&:number).each do |tm| %>
-            <div>
+            <div <%= "data-track=\"#{tm.track}\"" if i.tournament.tracks? %>>
               <input type="checkbox"
                     id="team<%= tm.number %>" checked>
               <label class="custom-control-label" for="team<%= tm.number %>">
-                <%= tm.number %> <%= format_school(tm) %>
+                <%= tm.number %> - <%= format_school(tm) %>
                 <%= tm.suffix %>
                 <%= "(#{tm.city})" if tm.city %>
                 <small><%= tm.state %></small>

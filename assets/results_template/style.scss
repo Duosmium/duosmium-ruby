@@ -388,6 +388,17 @@ div#filters div.modal-body {
       margin-right: 0.25em;
     }
   }
+
+  #state-filter, #team-filter, #track-filter {
+    div:first-child {
+      margin-bottom: 1rem;
+    }
+
+    div {
+      margin: 0.6rem 0;
+    }
+  }
+}
 }
 
 @media print {

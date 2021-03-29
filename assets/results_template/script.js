@@ -224,8 +224,10 @@ $(document).ready(function(){
   let filter_track = function() {
     let sub = $("input[type=radio][name=track]:checked").attr("id").substring(4);
     let rows = $("tr[data-track]");
+    let filterRows = $("#filters #team-filter div[data-track]");
     if (sub === "combined") {
       rows.show();
+      filterRows.show();
 
       $.each($("td.event-points"), function(index, cell) {
         $(cell).attr("data-points", $(cell).attr("data-o-points"));
@@ -245,9 +247,18 @@ $(document).ready(function(){
         $(cell).html($(cell).attr("data-o-points"));
       });
       $("#track").html("Combined");
+      $(".set-modal-track").html("combined");
 
     } else {
       $.each(rows, function(index, row) {
+        if ($(row).attr("data-track") === sub) {
+          $(row).show();
+        } else {
+          $(row).hide();
+        }
+      });
+
+      $.each(filterRows, function(index, row) {
         if ($(row).attr("data-track") === sub) {
           $(row).show();
         } else {
@@ -272,6 +283,7 @@ $(document).ready(function(){
         $(cell).html($(cell).attr("data-sub-points"));
       });
       $("#track").html(sub);
+      $(".set-modal-track").html(sub);
     }
 
     let style = document.querySelector("#track-style");
