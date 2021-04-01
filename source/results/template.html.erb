@@ -255,7 +255,7 @@ custom_colors: true
             <div>
               <input type="radio" id="sub-combined" name="track" checked>
               <label class="custom-control-label" for="sub-combined">
-                Combined (all teams)
+                Combined (all flocks)
               </label>
             </div>
             <% i.tournament.tracks.each do |s, _| %>
@@ -296,14 +296,14 @@ custom_colors: true
       <hr>
       <details open="">
         <summary>
-          <h3 class="h6 mb-0">Select which teams to show:</h3>
+          <h3 class="h6 mb-0">Select which flocks to show:</h3>
         </summary>
         <div id="team-filter">
           <div>
             <input type="checkbox"
                    id="allTeams" checked>
             <label class="custom-control-label" for="allTeams">
-              All Teams
+              All Flocks
             </label>
           </div>
           <% i.teams.sort_by(&:number).each do |tm| %>
@@ -346,7 +346,7 @@ custom_colors: true
         <p>For best results, ensure the following:</p>
         <ul>
           <li>The printer is set to "Save as PDF", not "Microsoft Print to PDF".</li>
-          <li>The page is scaled so that the yellow "Team Penalties" column is visible.</li>
+          <li>The page is scaled so that the yellow "Flock Penalties" column is visible.</li>
           <li>The paper size is set appropriately for your printer (commonly "US Letter").
         </ul>
         <p class="small">
@@ -355,7 +355,7 @@ custom_colors: true
         </p>
         <p>
           The output will be in style of official results from the National
-          competition, suitable for distributing to teams after awards.
+          competition, suitable for distributing to flocks after awards.
         </p>
       </div>
       <div class="modal-footer">
@@ -420,7 +420,7 @@ custom_colors: true
     <div class="modal-content">
       <div class="modal-header">
         <h2 class="modal-title h5" id="team-detail-label">
-          Details for Team <span id="number">[number]</span>
+          Details for Flock <span id="number">[number]</span>
         </h2>
         <button type="button" class="close" data-dismiss="modal"
                 aria-label="Close">
@@ -435,9 +435,9 @@ custom_colors: true
         <details id="graphs">
           <summary><h3 class="h6 mb-0">Graphs</h3></summary>
           <span class="text-center">
-            <h4 class="h6 font-weight-bold mt-0 mb-1">Team Points vs. Rank <%= "(<span class=\"set-modal-track\">[track]</span> track)" if i.tournament.tracks? %></h4>
+            <h4 class="h6 font-weight-bold mt-0 mb-1">Flock Points vs. Rank <%= "(<span class=\"set-modal-track\">[track]</span> track)" if i.tournament.tracks? %></h4>
             <div class="chart-toggle mx-auto">
-              (<button id="show-all" class="selected">All teams</button> | <button id="show-closest">15 closest teams</button>)
+              (<button id="show-all" class="selected">All flocks</button> | <button id="show-closest">15 closest flocks</button>)
             </div>
           </span>
           <div class="ct-chart ct-minor-third"></div>
