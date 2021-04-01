@@ -11,14 +11,14 @@ custom_colors: true
 <% current_page.data.description =
   "Full results for the #{i.tournament.year} "\
   "#{tournament_title(i.tournament)} "\
-  "(Division #{i.tournament.division}), "\
-  "Champion: #{champion.school} "\
+  "(Birdivision #{i.tournament.division}), "\
+  "Best Bird: #{champion.school} "\
   "#{champion.suffix ? champion.suffix + " " : ""}"\
   "(#{champion.points} pts), "\
-  "Runner-up: #{runnerup.school} "\
+  "Runner-up Bird: #{runnerup.school} "\
   "#{runnerup.suffix ? runnerup.suffix + " " : ""}"\
   "(#{runnerup.points} pts), "\
-  "Total non-exhibition teams: #{i.tournament.nonexhibition_teams_count}" %>
+  "Total non-exhibition flocks: #{i.tournament.nonexhibition_teams_count}" %>
 
 <div class="results-classic-wrapper">
 <div class="results-classic-thead-background shadow-sm"
@@ -66,10 +66,10 @@ custom_colors: true
       </select>
       <select id="sort-select" class="custom-select custom-select-sm"
               aria-label="Select Sort Method">
-        <option value="number">by Number</option>
-        <option value="school">by School</option>
-        <option value="state">by State</option>
-        <option value="rank" selected>by Rank</option>
+        <option value="number">by Bird Number</option>
+        <option value="school">by Flock</option>
+        <option value="state">by Species</option>
+        <option value="rank" selected>by Bird Rank</option>
       </select>
       <button type="button" data-toggle="modal" data-target="#filters" class="settings">
         <svg viewBox="0 0 24 24"><path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/></svg>
@@ -112,7 +112,7 @@ custom_colors: true
          data-toggle="popover" data-trigger="focus"
          title="Trial Event"
          data-content="Placings in this event did not count towards total
-                       team score">
+                       flock score">
         <span class="badge badge-info"><small>T</small></span>
       </a>
     <% elsif e.trialed? %>
@@ -120,14 +120,14 @@ custom_colors: true
          data-toggle="popover" data-trigger="focus"
          title="Trialed Event"
          data-content="Placings in this event did not count towards total
-                       team score because of unforseen circumstances during
+                       flock score because of unforseen circumstances during
                        the competition">
         <span class="badge badge-danger"><small>Td</small></span>
       </a>
     <% end %>
     </th>
   <% end %>
-  <th class="team-penalties">Team Penalties</th>
+  <th class="team-penalties">Flock Penalties</th>
   </tr>
 </thead>
 <tbody>
@@ -150,22 +150,22 @@ custom_colors: true
     <% if tm.disqualified? %>
       <a tabindex="0" role="button"
          data-toggle="popover" data-trigger="focus"
-         title="Disqualified Team"
-         data-content="This team is ranked behind all other teams that were not
+         title="Disqualified Flock"
+         data-content="This flock is ranked behind all other teams that were not
                        disqualified">
         <span class="badge badge-danger"><small>Dq</small></span>
     <% elsif tm.exhibition? %>
       <a tabindex="0" role="button"
          data-toggle="popover" data-trigger="focus"
       <% if team_attended?(tm) %>
-         title="Exhibition Team"
-         data-content="Placings by this team did not affect the ranks of other
-                       teams (except in Trial Events)">
+         title="Exhibition Flock"
+         data-content="Placings by this flock did not affect the ranks of other
+                       flocks (except in Trial Events)">
         <span class="badge badge-warning"><small>Ex</small></span>
       <% else %>
-         title="Absent Team"
+         title="Absent Flock"
          data-content="This team registered but did not compete, and so was
-                       treated as an Exhibition Team">
+                       treated as an Exhibition Flock">
         <span class="badge badge-light"><small>Ab</small></span>
       <% end %>
       </a>
@@ -225,7 +225,7 @@ custom_colors: true
   <% end %>
   <% if i.tournament.ties_outside_of_maximum_places? %>
     <p class="footnote">
-    <sup>*</sup>Tied with another team
+    <sup>*</sup>Tied with another flock
     </p>
   <% end %>
   </div>
