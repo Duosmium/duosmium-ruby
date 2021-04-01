@@ -73,13 +73,13 @@ manifest: /results/manifest.json
               <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
               <path d="M0 0h24v24H0z" fill="none"/>
             </svg>
-            <i>Search tournaments</i>
+               <i><a href="https://www.youtube.com/watch?v=JAZI5GcPm8c">Search birds</a></i>
           </label>
           <input aria-describedby="searchTournamentsHelp" class="form-control" id="searchTournaments" type="text" placeholder="e.g. nats div c 2017" autocomplete="off">
           <button id="searchTournamentsClear" class="close" type="button" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
         <span id="searchTournamentsHelp" class="form-text text-muted">
-        Find the overall standings and event scores for dozens of Science Olympiad tournaments!
+        Find the best birds and bird competitions for dozens of Science Olympiad tournaments!
         </span>
       </div>
     </div>
@@ -88,7 +88,7 @@ manifest: /results/manifest.json
   <div class="container" id="hide-on-search">
     <div class="row mt-3 pb-5 mb-5">
       <div class="col-md-8">
-        <h2 class="h4">Upcoming</h2>
+        <h2 class="h4">Past Tournaments</h2>
         <% data.upcoming.group_by(&:date).sort.each do |date, tournaments| %>
           <% next if Date.today >= date %>
           <h3 class="h5"><%= date.strftime('%A, %B %-d, %Y') %></h3>
@@ -102,7 +102,7 @@ manifest: /results/manifest.json
         <% end %>
       </div>
       <div class="col-md-4">
-        <h2 class="h4">Recently added</h2>
+        <h2 class="h4">Upcoming</h2>
         <ul class="recently-added">
           <% data.recents.first(5).each do |filename| %>
             <% filename = filename.delete_suffix('.yaml') %>
@@ -114,26 +114,26 @@ manifest: /results/manifest.json
             </li>
           <% end %>
         </ul>
-        <h2 class=h4>Archive Totals</h2>
+        <h2 class=h4>Total Bird Identified</h2>
         <dl>
           <dt><%= interpreters.count { |_, i| i.tournament.level == 'Nationals' } %></dt>
-          <dd>National Tournaments</dd>
+          <dd>Birds in the FBI</dd>
           <dt><%= interpreters.count { |_, i| i.tournament.level == 'States' } %></dt>
-          <dd>State Tournaments</dd>
+          <dd>Birds in the CIA</dd>
           <dt><%= interpreters.count { |_, i| i.tournament.level == 'Regionals' } %></dt>
-          <dd>Regionals</dd>
+          <dd>Birds in the NSA</dd>
           <dt><%= interpreters.count { |_, i| i.tournament.level == 'Invitational' } %></dt>
-          <dd>Invitationals</dd>
+          <dd>Birds in the DoD</dd>
           <dt><%= interpreters.count { |_, i| i } %></dt>
-          <dd>Total</dd>
+          <dd>Total Birds</dd>
         </dl>
-        <a href="/input-template">Help contribute!</a>
+        <a href="/input-template">Contribute your bird!</a>
       </div>
     </div>
   </div>
   <a href="#all" id="see-all"
      role="button" class="btn btn-flat-secondary btn-lg btn-block">
-    See recent tournaments<br>
+    See recent birds<br>
     <svg id="expand_more" role="img" width="24" height="24" viewBox="0 0 24 24">
       <path d="M16.59 8.59L12 13.17 7.41 8.59 6 10l6 6 6-6z"/>
       <path d="M0 0h24v24H0z" fill="none"/>
@@ -154,7 +154,7 @@ manifest: /results/manifest.json
             <%= i.tournament.year %>
             <%= tournament_title(i.tournament) %>
             <span class="badge division-<%= i.tournament.division.downcase %>">
-          <small>Division <%= i.tournament.division %></small>
+          <small>Bird Division <%= i.tournament.division %></small>
         </span>
           </h2>
           <h3 class="card-subtitle">
@@ -174,7 +174,7 @@ manifest: /results/manifest.json
              aria-controls="summary-<%= index %>">
           <img class="lazy"
                data-src="<%= find_logo_path(filename) %>"
-               alt="Tournament logo"/>
+               alt="birds!"/>
           <div class="summary collapse" id="summary-<%= index %>">
             <dl class="list-unstyled row">
               <% summary_titles.each_with_index do |title, i| %>
@@ -193,10 +193,10 @@ manifest: /results/manifest.json
           </div>
         </div>
         <div class="card-footer card-actions bg-light">
-          <button class="btn btn-outline-primary summary">Summary</button>
-          <a href="../results/<%= filename %>.html" class="btn btn-outline-primary full-results">Full Results</a>
+          <button class="btn btn-outline-primary summary">Bird Summary</button>
+          <a href="../results/<%= filename %>.html" class="btn btn-outline-primary full-results">Full Birds</a>
           <span class="badge badge-dark teams-count">
-        <%= i.tournament.nonexhibition_teams_count %> Teams
+        <%= i.tournament.nonexhibition_teams_count %> Flocks
       </span>
         </div>
       </div>
