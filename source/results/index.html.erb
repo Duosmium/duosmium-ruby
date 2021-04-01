@@ -117,13 +117,13 @@ manifest: /results/manifest.json
         <h2 class=h4>Total Birds Identified</h2>
         <dl>
           <dt><%= interpreters.count { |_, i| i.tournament.level == 'Nationals' } %></dt>
-          <dd>Birds in the FBI</dd>
+          <dd>Birds in the Federal Bird Intelligence</dd>
           <dt><%= interpreters.count { |_, i| i.tournament.level == 'States' } %></dt>
-          <dd>Birds in the CIA</dd>
+          <dd>Birds in the Cult of Intelligent Avians</dd>
           <dt><%= interpreters.count { |_, i| i.tournament.level == 'Regionals' } %></dt>
-          <dd>Birds in the NSA</dd>
+          <dd>Birds in the National Scientific Avians</dd>
           <dt><%= interpreters.count { |_, i| i.tournament.level == 'Invitational' } %></dt>
-          <dd>Birds in the DoD</dd>
+          <dd>Birds in the Department of Ducks</dd>
           <dt><%= interpreters.count { |_, i| i } %></dt>
           <dd>Total Birds</dd>
         </dl>
