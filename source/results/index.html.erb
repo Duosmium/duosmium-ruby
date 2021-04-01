@@ -75,7 +75,7 @@ manifest: /results/manifest.json
             </svg>
                <i><a href="https://www.youtube.com/watch?v=JAZI5GcPm8c">Search birds</a></i>
           </label>
-          <input aria-describedby="searchTournamentsHelp" class="form-control" id="searchTournaments" type="text" placeholder="e.g. nats div c 2017" autocomplete="off">
+          <input aria-describedby="searchTournamentsHelp" class="form-control" id="searchTournaments" type="text" placeholder="e.g. ruby-crowned kinglet" autocomplete="off">
           <button id="searchTournamentsClear" class="close" type="button" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         </div>
         <span id="searchTournamentsHelp" class="form-text text-muted">
@@ -88,7 +88,7 @@ manifest: /results/manifest.json
   <div class="container" id="hide-on-search">
     <div class="row mt-3 pb-5 mb-5">
       <div class="col-md-8">
-        <h2 class="h4">Past Tournaments</h2>
+        <h2 class="h4">Past Birdwatching contests</h2>
         <% data.upcoming.group_by(&:date).sort.each do |date, tournaments| %>
           <% next if Date.today >= date %>
           <h3 class="h5"><%= date.strftime('%A, %B %-d, %Y') %></h3>
@@ -102,7 +102,7 @@ manifest: /results/manifest.json
         <% end %>
       </div>
       <div class="col-md-4">
-        <h2 class="h4">Upcoming</h2>
+        <h2 class="h4">Upcoming Birds</h2>
         <ul class="recently-added">
           <% data.recents.first(5).each do |filename| %>
             <% filename = filename.delete_suffix('.yaml') %>
