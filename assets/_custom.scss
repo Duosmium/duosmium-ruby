@@ -5,10 +5,13 @@ $primary: (
 );
 
 $secondary: (
-  color: #5b8294,
-  dark:  darken(#5b8294, 10%),
-  light: lighten(#5b8294, 10%)
+  color: #15658C,
+  dark:  darken(#15658C, 10%),
+  light: lighten(#15658C, 10%)
 );
+
+$letter-spacing-display-4: -0.02em;
+$text-muted: #0000008a;
 
 html {
   // disable double-tap to zoom
