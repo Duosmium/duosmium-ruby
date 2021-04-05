@@ -58,6 +58,11 @@ div.search-wrapper {
     bottom: 0;
   }
 
+  div#hide-on-search a {
+    padding: 0.2em 0;
+    font-size: 1rem;
+  }
+
   ul.recently-added {
     div.splash-wrapper {
       display: none;
@@ -69,7 +74,7 @@ div.search-wrapper {
   }
 
   li {
-    margin-bottom: 0.25em;
+    margin-bottom: 0.6em;
   }
 
   dl {
@@ -117,7 +122,7 @@ header.results-index {
     fill: white;
     height: calc(1.7 * (1.525rem + 2.0625vw));
     width: calc(1.7 * (1.525rem + 2.0625vw));
-    margin: -1em -0.4em;
+    margin: -1em -0.5em;
     vertical-align: middle;
   }
 

@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require ('path');
+const purgecss = require('@fullhuman/postcss-purgecss');
 
 module.exports = {
   mode: "production",
@@ -37,6 +38,12 @@ module.exports = {
           options: {
             plugins: function () { // postcss plugins, can be exported to postcss.config.js
               return [
+                purgecss({
+                  content: [, './source/results/**/*.erb', './assets/**/*.js'],
+                  safelist: {
+                    greedy: [/^ct-/, /modal/, /^division-/, /collapsing/, /is-focused/]
+                  }
+                }),
                 require('autoprefixer')
               ];
             }
