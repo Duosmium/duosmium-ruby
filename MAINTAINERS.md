@@ -2,10 +2,11 @@
 
 ## Prerequisites
 - Node.js
+- Yarn
 - Ruby
 - Git
 - ImageMagick
-- Netlify CLI
+- Netlify CLI (only needed if deploying to production instance)
 
 If you are on Windows, I highly recommend using WSL. It *will* work on Windows,
 but it is not fun.
