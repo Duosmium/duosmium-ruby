@@ -28,8 +28,7 @@ custom_colors: true
       <div class="tournament-info">
         <h1>
           <%= i.tournament.year %>
-          <%= tournament_title(i.tournament) %>&nbsp;(Div. <%= i.tournament.division %><%= ' <span id="track">Combined</span>' if i.tournament.tracks? %>
-          )
+          <%= tournament_title(i.tournament) %>&nbsp;(Div. <%= i.tournament.division %><%= ' <span id="track">Combined</span>' if i.tournament.tracks? %>)
         </h1>
         <% if i.tournament.start_date.strftime('%A, %B %-d, %Y') == i.tournament.end_date.strftime('%A, %B %-d, %Y') %>
           <p><%= i.tournament.date.strftime('%A, %B %-d, %Y') %></p>
