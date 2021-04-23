@@ -18,6 +18,14 @@ $(document).ready(function(){
         search_html += "div.card:not([data-search*=\"" + word + "\"])" +
                        "{ display: none; }\n";
       });
+      // const options = {
+      //   keys: ['words']
+      // };
+
+      // fuse.js implementation - need to figure out what to do with the html
+      // const fuse = new Fuse(JSON.parse(File.read('./results/tournaments.json')), options);
+      // const output = fuse.search(search_text);
+
       $("style#search_style").html(search_html);
     }
 

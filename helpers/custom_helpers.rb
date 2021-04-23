@@ -145,7 +145,7 @@ module CustomHelpers
     when 'Nationals'
       'National Tournament'
     when 'States'
-      "#{t_info.state} State Tournament"
+      "#{t_info.state.gsub('sCA', 'SoCal').gsub('nCA', 'NorCal')} State Tournament"
     when 'Regionals', 'Invitational'
       if t_info.short_name.nil?
         cut = t_info.level[0..-1] if t_info.level == "Regionals" else t_info.level
@@ -220,23 +220,67 @@ module CustomHelpers
       "div-#{t.division}",
       "division-#{t.division}",
       t.year,
-      (t.date if t.date.is_a?(Date)),
+      (t.date.strftime if t.date.is_a?(Date)),
       (t.date.strftime('%A') if t.date.is_a?(Date)),
       (t.date.strftime('%B') if t.date.is_a?(Date)),
       (t.date.strftime('%-d') if t.date.is_a?(Date)),
       (t.date.strftime('%Y') if t.date.is_a?(Date)),
-      (t.start_date if t.start_date.is_a?(Date)),
+      (t.start_date.strftime if t.start_date.is_a?(Date)),
       (t.start_date.strftime('%A') if t.start_date.is_a?(Date)),
       (t.start_date.strftime('%B') if t.start_date.is_a?(Date)),
       (t.start_date.strftime('%-d') if t.start_date.is_a?(Date)),
       (t.start_date.strftime('%Y') if t.start_date.is_a?(Date)),
-      (t.end_date if t.end_date.is_a?(Date)),
+      (t.end_date.strftime if t.end_date.is_a?(Date)),
       (t.end_date.strftime('%A') if t.end_date.is_a?(Date)),
       (t.end_date.strftime('%B') if t.end_date.is_a?(Date)),
       (t.end_date.strftime('%-d') if t.end_date.is_a?(Date)),
       (t.end_date.strftime('%Y') if t.end_date.is_a?(Date))
     ]
     words.compact.map(&:to_s).map(&:downcase).join('|')
+  end
+
+  def json_tournaments(interpreters)
+    out = {}
+    interpreters.each do |filename, interpreter|
+      t = interpreter.tournament
+      words = [
+        'science',
+        'olympiad',
+        'tournament',
+        t.name,
+        t.short_name,
+        t.location,
+        t.name ? acronymize(t.name) : nil,
+        t.location ? acronymize(t.location) : nil,
+        t.level,
+        t.level == 'Nationals' ? 'nats' : nil,
+        t.level == 'Nationals' ? 'sont' : nil,
+        t.level == 'Invitational' ? 'invite' : nil,
+        t.state,
+        t.state ? expand_state_name(t.state) : nil,
+        "div-#{t.division}",
+        "division-#{t.division}",
+        t.year,
+        (t.date.strftime if t.date.is_a?(Date)),
+        (t.date.strftime('%A') if t.date.is_a?(Date)),
+        (t.date.strftime('%B') if t.date.is_a?(Date)),
+        (t.date.strftime('%-d') if t.date.is_a?(Date)),
+        (t.date.strftime('%Y') if t.date.is_a?(Date)),
+        (t.start_date.strftime if t.start_date.is_a?(Date)),
+        (t.start_date.strftime('%A') if t.start_date.is_a?(Date)),
+        (t.start_date.strftime('%B') if t.start_date.is_a?(Date)),
+        (t.start_date.strftime('%-d') if t.start_date.is_a?(Date)),
+        (t.start_date.strftime('%Y') if t.start_date.is_a?(Date)),
+        (t.end_date.strftime if t.end_date.is_a?(Date)),
+        (t.end_date.strftime('%A') if t.end_date.is_a?(Date)),
+        (t.end_date.strftime('%B') if t.end_date.is_a?(Date)),
+        (t.end_date.strftime('%-d') if t.end_date.is_a?(Date)),
+        (t.end_date.strftime('%Y') if t.end_date.is_a?(Date))
+      ]
+      out[filename] = {}
+      out[filename]["items"] = words
+    end
+    JSON.generate(out)
   end
 
   def team_attended?(team)

@@ -145,7 +145,6 @@ manifest: /results/manifest.json
 <main id="all" class="container-fluid py-4 bg-light-3 shadow" aria-label="Content">
   <style id="search_style"></style>
   <div class="results-index-card-grid">
-    <% index = 1 %>
     <% interpreters.each do |filename, i| %>
       <% teams = i.teams %>
       <div class="card" data-search="<%= search_string(i) %>">
@@ -170,13 +169,13 @@ manifest: /results/manifest.json
         </div>
         <div class="card-body splash-wrapper"
              data-toggle="collapse"
-             data-target="#summary-<%= index %>"
+             data-target="#summary-<%= filename %>"
              aria-expanded="false"
-             aria-controls="summary-<%= index %>">
+             aria-controls="summary-<%= filename %>">
           <img class="lazy"
                data-src="<%= find_logo_path(filename) %>"
                alt="Tournament logo"/>
-          <div class="summary collapse" id="summary-<%= index %>">
+          <div class="summary collapse" id="summary-<%= filename %>">
             <dl class="list-unstyled row">
               <% summary_titles.each_with_index do |title, i| %>
                 <% next unless teams[i] %>
@@ -202,7 +201,6 @@ manifest: /results/manifest.json
         </div>
       </div>
 
-      <% index += 1 %>
     <% end %>
   </div>
   <a href="#top" class="btn btn-float btn-light" id="scroll-back" role="button" aria-label="scroll to top">
