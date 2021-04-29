@@ -323,7 +323,7 @@ module CustomHelpers
 
   def bids_sup_tag_note(tournament)
     next_tournament = if tournament.level == 'Regionals'
-                        "#{tournament.state} State Tournament"
+                        "#{tournament.state.gsub('sCA', 'SoCal').gsub('nCA', 'NorCal')} State Tournament"
                       else
                         "National Tournament"
                       end
