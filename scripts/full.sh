@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ $NETLIFY -gt 0 ]
+if [ $NETLIFY = "1" ]
 then
   echo "In Netlify, installing Python stuff..."
   apt -y install python3-pip
