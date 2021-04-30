@@ -1,7 +1,7 @@
 [build]
 base = "./"
-#command = "bundle exec middleman build --verbose"
-command = "/bin/sh ./scripts/full.sh"
+command = "bundle exec middleman build --verbose"
+# command = "/bin/sh ./scripts/full.sh"
 publish = "build"
 
 [build.processing]
