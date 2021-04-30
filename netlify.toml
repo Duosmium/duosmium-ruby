@@ -18,7 +18,3 @@ status = 302
 [[redirects]]
 from = "/input-template"
 to = "https://docs.google.com/spreadsheets/d/1FwPwN9vFKjEnJxHYJG6hzOMnMSCKzCpPGE-n_KSHyGs/copy"
-
-[[redirects]]
-from = "/results/2021-04-03_socal_states_c"
-to = "/results/2021-04-03_sCA_states_c"

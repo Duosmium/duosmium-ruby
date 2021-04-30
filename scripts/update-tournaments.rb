@@ -1,5 +1,6 @@
-require 'rugged'
+require 'git'
 
-Rugged::Repository.discover
+repo = Git.open(Pathname("#{__dir__}/.."))
 
-repo.head
+log = repo.log.between(repo.log.first)
+puts log
