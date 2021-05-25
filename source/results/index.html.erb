@@ -90,6 +90,7 @@ manifest: /results/manifest.json
     <div class="row mt-3 pb-5 mb-5 justify-content-between">
       <div class="col-md-auto">
         <h2 class="h4">Upcoming</h2>
+        <% upcoming_count = 0 %>
         <% data.upcoming.group_by(&:date).sort.each do |date, tournaments| %>
           <% next if Date.today >= date %>
           <h3 class="h5"><%= date.strftime('%A, %B %-d, %Y') %></h3>
@@ -97,9 +98,13 @@ manifest: /results/manifest.json
             <% tournaments.sort_by(&:name).each do |t| %>
               <%= "<s>" if t.cancelled %>
               <li><a href="<%= t.link %>"><%= t.name.gsub('(Div. ', '(Div.&nbsp') %></a></li>
+              <% upcoming_count += 1 %>
               <%= "</s>" if t.cancelled %>
             <% end %>
           </ul>
+        <% end %>
+        <% if upcoming_count == 0 %>
+        <p>No tournaments coming up... for now.</p>
         <% end %>
       </div>
       <div class="col-md-auto">
