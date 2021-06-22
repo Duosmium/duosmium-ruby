@@ -35,12 +35,12 @@
     <%= yield %>
     <script src="<%= rel_link_prefix(current_page.path) %>main.js"></script>
 <% if current_page.data.custom_colors && i.tournament.tracks? %>
-    <x-st id="sub-combined-style">
+    <x-st id="sub-combined-style" style="display: none;">
       <%= trophy_and_medal_css(i.tournament.trophies, i.tournament.medals) %>
     </x-st>
-  <% i.tracks.each do |sub, sub_i| %>
-    <x-st id="sub-<%= sub %>-style">
-      <%= trophy_and_medal_css(sub_i.tournament.trophies, sub_i.tournament.medals) %>
+  <% i.tracks.each do |sub| %>
+    <x-st id="sub-<%= sub.name %>-style" style="display: none;">
+      <%= trophy_and_medal_css(sub.trophies, sub.medals) %>
     </x-st>
   <% end %>
 <% end %>

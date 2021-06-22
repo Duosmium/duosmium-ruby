@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/Duosmium/sciolyff.git
+  revision: 19eeb596b1a8ddda973bf332b56e02ed9c7d5bc0
+  specs:
+    sciolyff-duosmium (0.13.1)
+      erubi (~> 1.9)
+      optimist (~> 3.0)
+      psych (~> 3.1)
+
+GIT
   remote: https://github.com/middleman/middleman.git
   revision: 2975cd2b1794d6875ceab22c00117bf9daa7a6dc
   specs:
@@ -102,7 +111,7 @@ GEM
     padrino-support (0.14.4)
     parallel (1.20.1)
     parslet (1.8.2)
-    psych (3.3.1)
+    psych (3.3.2)
     public_suffix (4.0.6)
     rack (2.2.3)
     rb-fsevent (0.10.4)
@@ -115,10 +124,6 @@ GEM
       stream (~> 0.5.3)
     sassc (2.4.0)
       ffi (~> 1.9)
-    sciolyff-duosmium (0.13.1)
-      erubi (~> 1.9)
-      optimist (~> 3.0)
-      psych (~> 3.1)
     servolux (0.13.0)
     stream (0.5.3)
       generator
@@ -147,8 +152,8 @@ DEPENDENCIES
   git
   middleman!
   miro
-  sciolyff-duosmium (~> 0.13.1)
+  sciolyff-duosmium!
   thor (~> 0.19.4)
 
 BUNDLED WITH
-   2.2.16
+   2.2.20

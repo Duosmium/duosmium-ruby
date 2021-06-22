@@ -150,7 +150,7 @@ custom_colors: true
       <tr data-team-number="<%= tm.number %>"
           data-school="<%= full_school_name(tm) %>"
           data-team-name="<%= full_team_name(tm) %>"
-          data-state="<%= tm.state %>"<%= " data-track=\"#{tm.track}\"" if i.tournament.tracks? %>>
+          data-state="<%= tm.state %>"<%= " data-track=\"#{tm.track.name}\"" if i.tournament.tracks? %>>
         <td class="number">
           <a href="?team=<%= tm.number %>"
              data-toggle="modal" data-target="#team-detail">
@@ -189,10 +189,10 @@ custom_colors: true
         <td class="event-points-focus" data-points="">
           <div></div>
         </td>
-        <td class="rank" data-points="<%= tm.rank %>"<%= " data-o-points=\"#{tm.rank}\" data-o-sup-tag=\"#{bids_sup_tag(tm)}\" data-sub-points=\"#{tm.track_team.rank}\"" if tm.track %>>
+        <td class="rank" data-points="<%= tm.rank %>"<%= " data-o-points=\"#{tm.rank}\" data-o-sup-tag=\"#{bids_sup_tag(tm)}\" data-sub-points=\"#{tm.track_rank}\"" if tm.track %>>
           <div><%= tm.rank %><%= bids_sup_tag(tm) %></div>
         </td>
-        <td class="total-points"<%= " data-o-points=\"#{tm.points}\" data-sub-points=\"#{tm.track_team.points}\"" if tm.track %>><%= tm.points %></td>
+        <td class="total-points"<%= " data-o-points=\"#{tm.points}\" data-sub-points=\"#{tm.track_points}\"" if tm.track %>><%= tm.points %></td>
         <% i.events.each do |e| %>
           <% placing = e.placing_for(tm) %>
           <% points = placing.isolated_points %>
@@ -209,11 +209,11 @@ custom_colors: true
               data-o-points="<%= unknown ? '??' : points %>"
               data-o-place="<%= unknown && placing.points_limited_by_maximum_place? ? "≥#{i.tournament.maximum_place}" : place %>"
               data-o-sup-tag="<%= sup_tag(placing) %>"
-              <% sp = placing.track_placing %>
-              data-sub-true-points="<%= sp.points %>"
+              <% sp = placing %>
+              data-sub-true-points="<%= sp.track_points %>"
               data-sub-notes="<%= placing_notes(sp) %>"
-              data-sub-points="<%= sp.unknown? ? '??' : sp.isolated_points %>"
-              data-sub-place="<%= sp.place %>"
+              data-sub-points="<%= sp.unknown? ? '??' : sp.isolated_track_points %>"
+              data-sub-place="<%= sp.track_place %>"
               data-sub-sup-tag="<%= sup_tag(sp) %>"
               <% end %>
               data-sortable-place="<%= place ? place : (unknown ? 998000 + points : 999000 + points) %>">
@@ -277,11 +277,11 @@ custom_colors: true
                   Combined (all teams)
                 </label>
               </div>
-              <% i.tournament.tracks.each do |s, _| %>
+              <% i.tournament.tracks.each do |s| %>
                 <div>
-                  <input type="radio" id="sub-<%= s %>" name="track">
-                  <label class="custom-control-label" for="sub-<%= s %>">
-                    <%= s %>
+                  <input type="radio" id="sub-<%= s.name %>" name="track">
+                  <label class="custom-control-label" for="sub-<%= s.name %>">
+                    <%= s.name %>
                   </label>
                 </div>
               <% end %>
@@ -326,7 +326,7 @@ custom_colors: true
               </label>
             </div>
             <% i.teams.sort_by(&:number).each do |tm| %>
-              <div <%= "data-track=\"#{tm.track}\"" if i.tournament.tracks? %>>
+              <div <%= "data-track=\"#{tm.track.name}\"" if i.tournament.tracks? %>>
                 <input type="checkbox"
                        id="team<%= tm.number %>" checked>
                 <label class="custom-control-label" for="team<%= tm.number %>">
@@ -511,14 +511,13 @@ custom_colors: true
     <%# populated using JS %>
   </div>
 </div>
-
 <script>
     const teamPoints = [<% i.teams.each do |tm| %><%= tm.points %>, <% end %>]
     const teamPointsByTrack = {
-    <% if i.tournament.tracks? %>
-    <% i.tournament.tracks.each do |s, t| %><%= s %>:
-    [<% t.teams.each do |tm| %><%= tm.points %>, <% end %>],
-    <% end %>
-    <% end %>
+      <% if i.tournament.tracks? %>
+        <% i.tournament.tracks.each do |t| %><%= t.name %>:
+          [<% t.teams.each do |tm| %><%= tm.track_points %>, <% end %>],
+        <% end %>
+      <% end %>
     }
 </script>

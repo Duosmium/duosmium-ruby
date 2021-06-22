@@ -316,14 +316,17 @@ Teams:
 - school: Solon High School
   number: 70
   state: OH
+  track: Solon
 - school: Solon High School
   number: 71
   state: OH
+  track: Solon
   suffix: Trial A
   exhibition: true
 - school: Solon High School
   number: 72
   state: OH
+  track: Solon
   suffix: Trial B
   exhibition: true
 - school: St. Edward High School
