@@ -12,6 +12,7 @@ Tournament:
   medals: 8
 Tracks:
 - name: Visitors
+- name: Solon
 Events:
 - name: Anatomy and Physiology
 - name: Astronomy
