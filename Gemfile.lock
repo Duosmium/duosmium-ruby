@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Duosmium/sciolyff.git
-  revision: 19eeb596b1a8ddda973bf332b56e02ed9c7d5bc0
+  revision: b75168e4d406539eca7b56b267d29054c6c15be3
   specs:
     sciolyff-duosmium (0.13.1)
       erubi (~> 1.9)
@@ -156,4 +156,4 @@ DEPENDENCIES
   thor (~> 0.19.4)
 
 BUNDLED WITH
-   2.2.20
+   2.2.21
