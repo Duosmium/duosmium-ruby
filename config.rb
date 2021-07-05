@@ -42,7 +42,6 @@ page '/results/index.html', locals: { interpreters: interpreters }
 page '/results/schools.html', locals: { interpreters: interpreters }
 page '/results/schools.csv', locals: { interpreters: interpreters }
 page '/results/events.csv', locals: { interpreters: interpreters }
-page '/results/tournaments.json', locals: { interpreters: interpreters }
 
 # strip trailing whitespace from CSV files
 after_build do |builder|
