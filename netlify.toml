@@ -13,9 +13,13 @@ publish = "build"
 
 [[redirects]]
 from = "/"
-to = "/results/"
+to = "/results"
 status = 302
 
 [[redirects]]
 from = "/input-template"
-to = "https://docs.google.com/spreadsheets/d/1FwPwN9vFKjEnJxHYJG6hzOMnMSCKzCpPGE-n_KSHyGs/copy"
+to = "https://docs.google.com/spreadsheets/d/1thaKvnlrv1j0CLbsZUvpjalGUbX0Q93TAeEAFSvjv8M/copy"
+
+[[redirects]]
+from = "/duostac"
+to = "https://docs.google.com/forms/d/e/1FAIpQLSeYZ8YaTm9t-A80xewnUtIZ_NqIUZHDrFf1UsGon-DbEH5uQQ/viewform?usp=sf_link"
