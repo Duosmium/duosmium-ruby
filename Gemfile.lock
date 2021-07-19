@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Duosmium/sciolyff.git
-  revision: e5abff75ef596b30ce3514c2d29e91bd37b65d92
+  revision: 6c05ee85168e302286b78fc6af181fecd81d1c21
   specs:
     sciolyff-duosmium (0.13.1)
       erubi (~> 1.9)
@@ -9,7 +9,7 @@ GIT
 
 GIT
   remote: https://github.com/middleman/middleman.git
-  revision: 32e3df8e5301abd51cb019241351b12bf34d485b
+  revision: e260fff30b116a7ee0827bca667d8f3fe99c4553
   specs:
     middleman (5.0.0.rc.2)
       coffee-script (~> 2.2)
@@ -155,4 +155,4 @@ DEPENDENCIES
   thor (~> 0.19.4)
 
 BUNDLED WITH
-   2.2.23
+   2.2.24

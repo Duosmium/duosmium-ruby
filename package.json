@@ -1,9 +1,11 @@
 {
   "dependencies": {
     "bootstrap": "^4.6.0",
+    "browserslist": "^4.16.6",
     "chartist": "^0.11.4",
     "daemonite-material": "^4.1.1",
     "jquery": "^3.6.0",
+    "lodash": "^4.17.21",
     "popper.js": "^1.14.7",
     "rfs": "^9.0.2"
   },
