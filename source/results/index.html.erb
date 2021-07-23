@@ -165,7 +165,7 @@ manifest: /results/manifest.json
           </h2>
           <h3 class="card-subtitle">
             <% if i.tournament.start_date.strftime('%A, %B %-d, %Y') == i.tournament.end_date.strftime('%A, %B %-d, %Y') %>
-              <%= i.tournament.date.strftime('%A, %B %-d, %Y') %>
+              <%= i.tournament.start_date.strftime('%A, %B %-d, %Y') %>
             <% else %>
               <%= i.tournament.start_date.strftime('%A, %B %-d, %Y') %>
               - <%= i.tournament.end_date.strftime('%A, %B %-d, %Y') %>
