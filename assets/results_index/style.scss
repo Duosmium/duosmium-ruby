@@ -183,13 +183,16 @@ div.results-index-card-grid {
     color: white;
 
     &.division-a {
-      background-color: #85c648
+      background-color: #ffea17
     }
     &.division-b {
       background-color: #0072bb;
     }
     &.division-c {
       background-color: #d5232a;
+    }
+    &.official {
+      background-color: #85c648;
     }
   }
 
