@@ -162,7 +162,7 @@ manifest: /results/manifest.json
             <span class="badge division-<%= i.tournament.division.downcase %>">
           <small>Division <%= i.tournament.division %></small>
         </span>
-            <% if i.tournament.official == "yes" %>
+            <% if i.tournament.official == "official" %>
                <span class="badge official"><small>Official</small></span>
             <% end %>
           </h2>
