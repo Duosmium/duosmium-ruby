@@ -162,6 +162,9 @@ manifest: /results/manifest.json
             <span class="badge division-<%= i.tournament.division.downcase %>">
           <small>Division <%= i.tournament.division %></small>
         </span>
+            <% if i.tournament.official == "yes" %>
+               <%= <span class="badge official"><small>Official</small></span> %>
+            <% end %>
           </h2>
           <h3 class="card-subtitle">
             <% if i.tournament.start_date.strftime('%A, %B %-d, %Y') == i.tournament.end_date.strftime('%A, %B %-d, %Y') %>
