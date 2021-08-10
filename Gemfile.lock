@@ -77,8 +77,6 @@ GEM
     fastimage (2.2.4)
     ffi (1.15.3)
     generator (0.0.1)
-    git (1.9.1)
-      rchardet (~> 1.8)
     haml (5.2.1)
       temple (>= 0.8.0)
       tilt
@@ -117,7 +115,6 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rchardet (1.8.0)
     rexml (3.2.5)
     rgl (0.5.7)
       lazy_priority_queue (~> 0.1.0)
@@ -149,11 +146,10 @@ PLATFORMS
 DEPENDENCIES
   chroma (~> 0.2.0)
   color_contrast_calc (~> 0.9.0)
-  git
   middleman!
   miro
   sciolyff-duosmium!
   thor (~> 0.19.4)
 
 BUNDLED WITH
-   2.2.24
+   2.2.25

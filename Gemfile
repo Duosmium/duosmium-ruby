@@ -12,5 +12,3 @@ gem 'sciolyff-duosmium', git: 'https://github.com/Duosmium/sciolyff.git'
 gem 'thor', '~> 0.19.4'
 
 gem 'color_contrast_calc', '~> 0.9.0'
-
-gem 'git'

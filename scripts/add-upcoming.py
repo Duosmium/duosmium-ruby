@@ -6,7 +6,7 @@ while True:
     div = input("Tournament division (i.e. A, B, or C): ")
     link = input("URL to website: ")
     date = input("Start date of tournament (yyyy-mm-dd): ")
-    official = input("Is this an official result? [y/N]")
+    official = input("Is this an official result? [y/N] ")
     if official.lower() in ["y", "yes"]:
         official = True
     else:

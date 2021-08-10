@@ -7,7 +7,8 @@
     "jquery": "^3.6.0",
     "lodash": "^4.17.21",
     "popper.js": "^1.14.7",
-    "rfs": "^9.0.2"
+    "rfs": "^9.0.2",
+    "mdb-ui-kit": "^3.9.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "3.0.0",
