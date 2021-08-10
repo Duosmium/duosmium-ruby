@@ -38,7 +38,7 @@ interpreters = interpreters.sort_by do |_, i|
    i.tournament.division]
 end.to_h
 
-page '/results/index.html', locals: { interpreters: interpreters }
+page '/results/index.html', locals: { interpreters: interpreters, officials: @app.data.official }
 page '/results/schools.html', locals: { interpreters: interpreters }
 page '/results/schools.csv', locals: { interpreters: interpreters }
 page '/results/events.csv', locals: { interpreters: interpreters }
@@ -55,7 +55,7 @@ return if ENV['INDEX_ONLY']
 interpreters.each do |filename, interpreter|
   proxy "/results/#{filename}.html",
         '/results/template.html',
-        locals: { i: interpreter }
+        locals: { i: interpreter, official: (@app.data.official.include? filename) }
 end
 
 # data.upcoming.each do |info|

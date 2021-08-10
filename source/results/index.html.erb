@@ -96,7 +96,12 @@ manifest: /results/manifest.json
           <ul>
             <% tournaments.sort_by(&:name).each do |t| %>
               <%= "<s>" if t.cancelled %>
-              <li><a href="<%= t.link %>"><%= t.name.gsub('(Div. ', '(Div.&nbsp') %></a></li>
+              <li>
+              <a href="<%= t.link %>"><%= t.name.gsub('(Div. ', '(Div.&nbsp') %></a>
+              <% if officials.include? t.file %>
+                <span class="badge official"><small>Official</small></span>
+              <% end %> 
+              </li>
               <% upcoming_count += 1 %>
               <%= "</s>" if t.cancelled %>
             <% end %>
@@ -116,6 +121,9 @@ manifest: /results/manifest.json
               <a href="../results/<%= filename %>.html" class="full-results">
                 <%= "#{t.year} #{tournament_title_short(t)} (Div.&nbsp;#{t.division})" %>
               </a>
+              <% if officials.include? filename %>
+                <span class="badge official"><small>Official</small></span>
+              <% end %>
             </li>
           <% end %>
         </ul>
@@ -162,7 +170,7 @@ manifest: /results/manifest.json
             <span class="badge division-<%= i.tournament.division.downcase %>">
           <small>Division <%= i.tournament.division %></small>
         </span>
-            <% if i.tournament.official == "official" %>
+            <% if officials.include? filename %>
                <span class="badge official"><small>Official</small></span>
             <% end %>
           </h2>
