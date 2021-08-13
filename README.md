@@ -44,8 +44,7 @@ a YAML file in format of [SciolyFF](https://github.com/duosmium/sciolyff) in the
 A Google Sheets [input
 template](https://duosmium.org/input-template)
 can be used to generate a CSV file that then can be converted into a SciolyFF
-file using the script in [this
-repository](https://github.com/duosmium/sciolyff-conversions).  The files
+file using [this site](https://convert.duosmium.org).  The files
 already in the data directory should serve as an example of expected output.
 Additionally, the `sciolyff` command line utility should be used to verify the
 data files.
