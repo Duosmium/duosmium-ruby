@@ -5,6 +5,18 @@ require 'sciolyff/interpreter'
 ignore '/results/placeholder.html'
 ignore '/results/template.html'
 
+if (comp = ENV['RESULT_TO_BUILD'])
+  ignore '/results/index.html'
+  ignore '/results/schools.html'
+  ignore '/results/schools.csv'
+  ignore '/results/events.csv'
+  filename = comp.to_sym
+  proxy "/results/#{filename}.html",
+        '/results/template.html',
+        locals: { i: SciolyFF::Interpreter.new(@app.data.to_h[filename]) }
+  return
+end
+
 if (num = ENV['MIN_BUILD'])
   ignore '/results/index.html'
   ignore '/results/schools.html'
