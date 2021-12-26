@@ -24,7 +24,8 @@ while True:
         fil.write("\n")
         fil.write(f"  official: {str(official).lower()}")
         fil.write("\n")
-    with open(os.path.join(os.path.dirname(sys.argv[0]), "../data/official.yaml"), "a") as fil:
-        fil.write(f"- {date}_{new_name}_{div.lower()}")
-        fil.write("\n")
+    if official:
+        with open(os.path.join(os.path.dirname(sys.argv[0]), "../data/official.yaml"), "a") as fil:
+            fil.write(f"- {date}_{new_name}_{div.lower()}")
+            fil.write("\n")
     print(f"Wrote {name} to file!")
