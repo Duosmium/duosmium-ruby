@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body onload="redirect()">
+    <script>
+      function redirect() {
+        let links = [
+          "https://docs.google.com/spreadsheets/d/1jzmMDf0IDlVJW5ZRN10c3GT43cvg_EL4R0ssveWB7xs/edit#gid=375843611",
+          "https://docs.google.com/spreadsheets/d/1aCBcwmjmB20jm6-tIGm-AKAJJXqC8r9OSJ2078TKWFQ/edit#gid=375843611",
+          "https://docs.google.com/spreadsheets/d/1tBg3kPFn06mPKOJUQu7ExwefxVpJUUmuvrtSh0a-MXY/edit#gid=1108104897",
+          "https://docs.google.com/spreadsheets/d/1yySyzaMDOZ6ebJTdFEfgnvMsC2HB_vFhSqY4nE6pZzE/edit#gid=1108104897",
+          "https://docs.google.com/spreadsheets/d/11VLrCMv243jH-GK6wtqOWhRbuqym-kbzOev2rzWradc/edit#gid=375843611"
+        ]
+        window.location.replace(links[Math.floor(Math.random()*links.length)])
+      }
+    </script>
+  </body>
+</html>
