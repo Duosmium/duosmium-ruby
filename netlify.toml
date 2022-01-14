@@ -1,15 +1,8 @@
 [build]
 base = "./"
-command = "bundle exec middleman build --verbose"
+command = "bundle exec middleman build --verbose && mv redirects/*.html build"
 # command = "/bin/sh ./scripts/full.sh"
 publish = "build"
-
-[build.processing]
-  skip_processing = false
-[build.processing.html]
-  pretty_urls = true
-[build.processing.images]
-  compress = true
 
 [[redirects]]
 from = "/"
