@@ -5,7 +5,7 @@ description: Science Olympiad tournament results grouped by schools!
 <header class="schools-index jumbotron jumbotron-fluid bg-primary mb-5">
   <div class="container">
     <h1 class="text-light">
-      <a href="index.html">All Results</a> by School
+      <a href="index.html">All Results</a> by School (<%= letter.upcase %>)
     </h1>
   </div>
 </header>
@@ -54,3 +54,9 @@ description: Science Olympiad tournament results grouped by schools!
   </a>
 
 </main>
+
+<script>
+if (window.location.hash && window.location.hash != '#top' && window.location.hash[1].toLowerCase() != "<%= letter %>") {
+  window.location.href = `/results/schools/${window.location.hash[1].toLowerCase()}.html${window.location.hash}`
+}
+</script>
