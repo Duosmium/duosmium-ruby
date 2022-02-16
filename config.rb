@@ -4,6 +4,7 @@ require 'sciolyff/interpreter'
 
 ignore '/results/placeholder.html'
 ignore '/results/template.html'
+ignore '/results/schools_template.html'
 
 if (comp = ENV['RESULT_TO_BUILD'])
   ignore '/results/index.html'
@@ -51,7 +52,7 @@ interpreters = interpreters.sort_by do |_, i|
 end.to_h
 
 page '/results/index.html', locals: { interpreters: interpreters, officials: @app.data.official }
-page '/results/schools.html', locals: { interpreters: interpreters }
+page '/results/schools.html'
 page '/results/schools.csv', locals: { interpreters: interpreters }
 page '/results/events.csv', locals: { interpreters: interpreters }
 
@@ -63,6 +64,43 @@ after_build do |builder|
 end
 
 return if ENV['INDEX_ONLY']
+
+fsn = -> (t) { [t.school, t.city ? "(#{t.city}, #{t.state})" : "(#{t.state})"].join(" ") }
+schools = interpreters
+    .values
+    .flat_map { |i| i.teams.map {|t| fsn.call(t) } }
+    .uniq
+    .sort_by { |t| t.downcase.tr('^A-Za-z0-9', '') }
+    .reduce({}) {
+      |acc, school|
+        if acc[school[0].downcase].nil?
+          then acc[school[0].downcase] = [school]
+          else acc[school[0].downcase] << school
+        end
+        acc
+    }
+    .map do |letter, schools|
+      [
+        letter,
+        schools.map do |s|
+          [
+            s,
+            interpreters.keys.map do |k|
+              teams = interpreters[k].teams.select {|t| fsn.call(t) == s }
+              next if teams.empty?
+
+              [k, teams.map(&:rank).sort.map(&:ordinalize)]
+            end.compact.to_h
+          ]
+        end.to_h
+      ]
+    end.to_h
+
+schools.each do |l, s|
+  proxy "/results/schools/#{l}.html",
+        '/results/schools_template.html',
+        locals: { interpreters: interpreters, schools: s, letter: l, letters: schools.keys }
+end
 
 interpreters.each do |filename, interpreter|
   proxy "/results/#{filename}.html",
