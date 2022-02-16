@@ -38,4 +38,21 @@ main.schools-index {
       color: inherit;
     }
   }
+
+  margin-bottom: 96px;
+}
+
+ol.schools-letters-nav {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  font-size: 1.25em;
+  margin: 24px 0;
+}
+ol.schools-letters-nav li {
+  display: flex;
+}
+ol.schools-letters-nav > * + *::before {
+  content: '•';
+  margin: 0 0.25em;
 }

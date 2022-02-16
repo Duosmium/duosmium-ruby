@@ -287,25 +287,6 @@ module CustomHelpers
     "Qualified #{qualifiee} for the #{tournament.year} #{next_tournament}"
   end
 
-  def group_by_schools(interpreters)
-    interpreters
-      .values
-      .flat_map { |i| i.teams.map {|t| full_school_name(t) } }
-      .uniq
-      .sort_by { |t| t.downcase.tr('^A-Za-z0-9', '') }
-      .map do |s|
-      [
-        s,
-        interpreters.keys.map do |k|
-          teams = interpreters[k].teams.select {|t| full_school_name(t) == s }
-          next if teams.empty?
-
-          [k, teams.map(&:rank).sort.map(&:ordinalize)]
-        end.compact.to_h
-      ]
-    end.to_h
-  end
-
   def csv_schools(interpreters)
     CSV.generate do |csv|
       interpreters
