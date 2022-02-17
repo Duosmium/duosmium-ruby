@@ -44,10 +44,12 @@ main.schools-index {
 
 ol.schools-letters-nav {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   justify-content: center;
   font-size: 1.25em;
   margin: 24px 0;
+  padding: 0;
 }
 ol.schools-letters-nav li {
   display: flex;
