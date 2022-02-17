@@ -31,7 +31,7 @@ description: Science Olympiad tournament results grouped by schools!
     <ul>
       <% filenames.each do |f, ranks| %>
         <li>
-          <a href="<%= f %>.html">
+          <a href="/results/<%= f %>.html">
             <% tournament = interpreters[f].tournament %>
             <%= tournament.year %>
             <% if !tournament.short_name.nil? %>
