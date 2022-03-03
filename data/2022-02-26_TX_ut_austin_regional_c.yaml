@@ -35,15 +35,10 @@ Events:
 - name: Wright Stuff
 - name: Write It Do It
 - name: Botany
-  trial: true
 - name: Cybersecurity
-  trial: true
 - name: Science Word
-  trial: true
 - name: Solar Power
-  trial: true
 - name: We've Got Your Number
-  trial: true
 Teams:
 - number: 15
   school: Jordan High School
